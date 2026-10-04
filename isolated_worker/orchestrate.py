@@ -158,7 +158,12 @@ def evaluate_selftest(r: dict) -> dict:
 
 def sh(cmd, timeout=60):
     assert cmd[0] == "docker", "orchestrator may only invoke docker"
-    return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    try:
+        return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    except FileNotFoundError:
+        # docker binary absent: behave like a failed command so preflight()
+        # prints its designed REFUSING message instead of a raw traceback.
+        return subprocess.CompletedProcess(cmd, 127, "", "docker: command not found")
 
 
 def preflight() -> str:

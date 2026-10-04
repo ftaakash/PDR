@@ -197,3 +197,17 @@ def test_real_cmd_is_not_mutated_by_repeated_calls():
     assert c1 == c2
     c1.append("--privileged")
     assert "--privileged" not in real_cmd()
+
+
+def test_missing_docker_binary_yields_clean_refusal_not_traceback(monkeypatch):
+    import subprocess
+    import pytest
+    from isolated_worker import orchestrate
+
+    def boom(*a, **k):
+        raise FileNotFoundError("docker")
+    monkeypatch.setattr(subprocess, "run", boom)
+    assert orchestrate.sh(["docker", "version"]).returncode == 127
+    with pytest.raises(SystemExit) as e:
+        orchestrate.preflight()
+    assert "docker daemon not available" in str(e.value)
