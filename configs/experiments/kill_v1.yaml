@@ -1,0 +1,36 @@
+# configs/experiments/kill_v1.yaml
+#
+# PILOT corpus for PDR-G1 (NOT the full 200-repo kill-test sample specified
+# in the audit prompt's Kill Test 10). This is a smoke-test / feasibility
+# corpus: 7 real, actively-maintained, npm-lockfile-v3 repositories, chosen
+# only by "does a plain `npm` lockfile exist at HEAD" (verified live against
+# GitHub before being added here -- yarn/pnpm-only repos were excluded
+# because this pilot's resolver only understands npm lockfile v2/v3).
+#
+# Selection is a convenience sample, not a random or stratified sample of the
+# npm ecosystem -- see docs/gate_status.md for why this blocks any
+# ecosystem-wide prevalence claim (Kill Test 10) even though it's enough to
+# test whether the pipeline and the constructs behave sensibly on real data.
+
+repos:
+  - repo: microsoft/vscode
+    ref: HEAD
+    lockfile_path: package-lock.json
+  - repo: npm/cli
+    ref: HEAD
+    lockfile_path: package-lock.json
+  - repo: microsoft/playwright
+    ref: HEAD
+    lockfile_path: package-lock.json
+  - repo: puppeteer/puppeteer
+    ref: HEAD
+    lockfile_path: package-lock.json
+  - repo: axios/axios
+    ref: HEAD
+    lockfile_path: package-lock.json
+  - repo: socketio/socket.io
+    ref: HEAD
+    lockfile_path: package-lock.json
+  - repo: nestjs/nest
+    ref: HEAD
+    lockfile_path: package-lock.json

@@ -1,0 +1,58 @@
+{
+  "pilot7": {
+    "edges": 19148,
+    "repos": 7,
+    "unknown_pct": 1.46,
+    "opg_pct": 84.07,
+    "semantic_recovery_pct": 3.8,
+    "deficient_edges": 15862,
+    "proxy_positive_edges": 586
+  },
+  "phase1_45": {
+    "edges": 69692,
+    "repos": 45,
+    "unknown_pct": 1.09,
+    "opg_pct": 83.29,
+    "semantic_recovery_pct": 4.29,
+    "deficient_edges": 57415,
+    "proxy_positive_edges": 2349
+  },
+  "phase1_bootstrap": {
+    "point_pct": 4.29,
+    "ci95_pct": [
+      2.17,
+      6.5
+    ],
+    "repos_with_recoverable": 40
+  },
+  "layer1": {
+    "n": 2349,
+    "unique_edge_ids": 2349,
+    "OK": 638,
+    "RIPPLE": 1656,
+    "PEER_CONFLICT": 55,
+    "RESOLUTION_FAIL": 0,
+    "ok_pct_pooled": 27.16,
+    "ok_pct_ci95_clustered": [
+      18.0,
+      40.1
+    ],
+    "ok_pct_repo_macro_mean": 52.3
+  },
+  "layer2": {
+    "n": 13,
+    "pdr_install_ok": 13
+  },
+  "phase3_manifest": {
+    "layer1_ok_edges": 638,
+    "unique_experiments_after_screen": 166,
+    "repos_excluded_by_screen": 9,
+    "n_selected": 23,
+    "pinned": 19,
+    "pinned_not_at_head": [
+      "cheeriojs/cheerio",
+      "motdotla/dotenv"
+    ]
+  },
+  "_note": "Registry of headline numbers quoted in docs. Recomputed from raw data by scripts/check_claims.py (tested in tests/test_claims_registry.py). Change a value ONLY in the same commit as the data change and the doc edits that quote it. Seeded values recorded on 2026-10; see PILOT_RUN_REPORT.md."
+}

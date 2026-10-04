@@ -1,0 +1,5 @@
+# configs/experiments/regression_v1.yaml
+# SECONDARY / independently-killable per README. Reuses the packument cache
+# already populated by check_provenance.py -- no new network calls.
+packument_cache_dir: results/raw/provenance/packuments
+out_dir: results/processed

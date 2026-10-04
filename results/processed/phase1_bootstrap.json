@@ -1,0 +1,293 @@
+{
+  "method": "repository-clustered percentile bootstrap (primary) + Wilson score CI (secondary); frozen before running against Phase-1 data per docs/methodology_freeze.md Section 3",
+  "n_repos_with_deficient_edges": 45,
+  "n_bootstrap_resamples": 5000,
+  "seed": 20260924,
+  "primary_statistic": "semantic_recovery_pct_of_deficient (pooled across repository-resampled edges)",
+  "point_estimate_pct": 4.29,
+  "bootstrap_ci95_pct": [
+    2.17,
+    6.5
+  ],
+  "secondary_statistic": "proportion of repositories containing >=1 recoverable deficient edge",
+  "repos_with_recoverable_case": 40,
+  "repos_with_recoverable_case_pct": 88.89,
+  "repos_with_recoverable_case_wilson_ci95_pct": [
+    76.5,
+    95.16
+  ],
+  "repos_with_resolution_preserving_case": 40,
+  "repos_with_resolution_preserving_case_pct": 88.89,
+  "per_repo": {
+    "axios/axios": {
+      "deficient": 737,
+      "recoverable": 16,
+      "resolution_preserving": 16,
+      "recoverable_pct_of_deficient": 2.17
+    },
+    "caolan/async": {
+      "deficient": 1448,
+      "recoverable": 64,
+      "resolution_preserving": 64,
+      "recoverable_pct_of_deficient": 4.42
+    },
+    "chaijs/chai": {
+      "deficient": 716,
+      "recoverable": 31,
+      "resolution_preserving": 31,
+      "recoverable_pct_of_deficient": 4.33
+    },
+    "cheeriojs/cheerio": {
+      "deficient": 479,
+      "recoverable": 10,
+      "resolution_preserving": 10,
+      "recoverable_pct_of_deficient": 2.09
+    },
+    "commitizen/cz-cli": {
+      "deficient": 1159,
+      "recoverable": 19,
+      "resolution_preserving": 17,
+      "recoverable_pct_of_deficient": 1.64
+    },
+    "eemeli/yaml": {
+      "deficient": 155,
+      "recoverable": 0,
+      "resolution_preserving": 0,
+      "recoverable_pct_of_deficient": 0.0
+    },
+    "google/zx": {
+      "deficient": 617,
+      "recoverable": 26,
+      "resolution_preserving": 26,
+      "recoverable_pct_of_deficient": 4.21
+    },
+    "isaacs/minimatch": {
+      "deficient": 433,
+      "recoverable": 2,
+      "resolution_preserving": 1,
+      "recoverable_pct_of_deficient": 0.46
+    },
+    "isaacs/node-glob": {
+      "deficient": 547,
+      "recoverable": 2,
+      "resolution_preserving": 1,
+      "recoverable_pct_of_deficient": 0.37
+    },
+    "jquery/jquery": {
+      "deficient": 1110,
+      "recoverable": 3,
+      "resolution_preserving": 3,
+      "recoverable_pct_of_deficient": 0.27
+    },
+    "jsdom/jsdom": {
+      "deficient": 226,
+      "recoverable": 0,
+      "resolution_preserving": 0,
+      "recoverable_pct_of_deficient": 0.0
+    },
+    "jshttp/content-type": {
+      "deficient": 213,
+      "recoverable": 1,
+      "resolution_preserving": 1,
+      "recoverable_pct_of_deficient": 0.47
+    },
+    "karma-runner/karma": {
+      "deficient": 2151,
+      "recoverable": 68,
+      "resolution_preserving": 34,
+      "recoverable_pct_of_deficient": 3.16
+    },
+    "koajs/koa": {
+      "deficient": 760,
+      "recoverable": 2,
+      "resolution_preserving": 2,
+      "recoverable_pct_of_deficient": 0.26
+    },
+    "less/less.js": {
+      "deficient": 505,
+      "recoverable": 3,
+      "resolution_preserving": 3,
+      "recoverable_pct_of_deficient": 0.59
+    },
+    "markedjs/marked": {
+      "deficient": 742,
+      "recoverable": 8,
+      "resolution_preserving": 8,
+      "recoverable_pct_of_deficient": 1.08
+    },
+    "microsoft/TypeScript": {
+      "deficient": 404,
+      "recoverable": 0,
+      "resolution_preserving": 0,
+      "recoverable_pct_of_deficient": 0.0
+    },
+    "microsoft/playwright": {
+      "deficient": 985,
+      "recoverable": 5,
+      "resolution_preserving": 4,
+      "recoverable_pct_of_deficient": 0.51
+    },
+    "microsoft/vscode": {
+      "deficient": 2871,
+      "recoverable": 26,
+      "resolution_preserving": 25,
+      "recoverable_pct_of_deficient": 0.91
+    },
+    "mochajs/mocha": {
+      "deficient": 1084,
+      "recoverable": 57,
+      "resolution_preserving": 57,
+      "recoverable_pct_of_deficient": 5.26
+    },
+    "motdotla/dotenv": {
+      "deficient": 1101,
+      "recoverable": 10,
+      "resolution_preserving": 9,
+      "recoverable_pct_of_deficient": 0.91
+    },
+    "mozilla/source-map": {
+      "deficient": 275,
+      "recoverable": 9,
+      "resolution_preserving": 9,
+      "recoverable_pct_of_deficient": 3.27
+    },
+    "nestjs/nest": {
+      "deficient": 2500,
+      "recoverable": 30,
+      "resolution_preserving": 30,
+      "recoverable_pct_of_deficient": 1.2
+    },
+    "nodeca/js-yaml": {
+      "deficient": 943,
+      "recoverable": 0,
+      "resolution_preserving": 0,
+      "recoverable_pct_of_deficient": 0.0
+    },
+    "nodejs/undici": {
+      "deficient": 1325,
+      "recoverable": 1,
+      "resolution_preserving": 1,
+      "recoverable_pct_of_deficient": 0.08
+    },
+    "npm/cli": {
+      "deficient": 1884,
+      "recoverable": 66,
+      "resolution_preserving": 65,
+      "recoverable_pct_of_deficient": 3.5
+    },
+    "npm/node-tar": {
+      "deficient": 496,
+      "recoverable": 2,
+      "resolution_preserving": 1,
+      "recoverable_pct_of_deficient": 0.4
+    },
+    "puppeteer/puppeteer": {
+      "deficient": 4310,
+      "recoverable": 63,
+      "resolution_preserving": 62,
+      "recoverable_pct_of_deficient": 1.46
+    },
+    "redis/node-redis": {
+      "deficient": 999,
+      "recoverable": 19,
+      "resolution_preserving": 19,
+      "recoverable_pct_of_deficient": 1.9
+    },
+    "rollup/rollup": {
+      "deficient": 1616,
+      "recoverable": 24,
+      "resolution_preserving": 2,
+      "recoverable_pct_of_deficient": 1.49
+    },
+    "showdownjs/showdown": {
+      "deficient": 998,
+      "recoverable": 5,
+      "resolution_preserving": 4,
+      "recoverable_pct_of_deficient": 0.5
+    },
+    "sinonjs/sinon": {
+      "deficient": 964,
+      "recoverable": 64,
+      "resolution_preserving": 64,
+      "recoverable_pct_of_deficient": 6.64
+    },
+    "socketio/socket.io": {
+      "deficient": 2570,
+      "recoverable": 397,
+      "resolution_preserving": 384,
+      "recoverable_pct_of_deficient": 15.45
+    },
+    "stylelint/stylelint": {
+      "deficient": 1351,
+      "recoverable": 37,
+      "resolution_preserving": 37,
+      "recoverable_pct_of_deficient": 2.74
+    },
+    "terser/terser": {
+      "deficient": 282,
+      "recoverable": 2,
+      "resolution_preserving": 2,
+      "recoverable_pct_of_deficient": 0.71
+    },
+    "tj/commander.js": {
+      "deficient": 232,
+      "recoverable": 2,
+      "resolution_preserving": 2,
+      "recoverable_pct_of_deficient": 0.86
+    },
+    "uuidjs/uuid": {
+      "deficient": 1650,
+      "recoverable": 1,
+      "resolution_preserving": 1,
+      "recoverable_pct_of_deficient": 0.06
+    },
+    "visionmedia/superagent": {
+      "deficient": 3998,
+      "recoverable": 353,
+      "resolution_preserving": 346,
+      "recoverable_pct_of_deficient": 8.83
+    },
+    "webpack-contrib/css-loader": {
+      "deficient": 2810,
+      "recoverable": 471,
+      "resolution_preserving": 465,
+      "recoverable_pct_of_deficient": 16.76
+    },
+    "webpack-contrib/mini-css-extract-plugin": {
+      "deficient": 3028,
+      "recoverable": 444,
+      "resolution_preserving": 437,
+      "recoverable_pct_of_deficient": 14.66
+    },
+    "webpack/webpack-cli": {
+      "deficient": 2399,
+      "recoverable": 6,
+      "resolution_preserving": 5,
+      "recoverable_pct_of_deficient": 0.25
+    },
+    "webpack/webpack-dev-server": {
+      "deficient": 1773,
+      "recoverable": 3,
+      "resolution_preserving": 2,
+      "recoverable_pct_of_deficient": 0.17
+    },
+    "winstonjs/winston": {
+      "deficient": 924,
+      "recoverable": 104,
+      "resolution_preserving": 96,
+      "recoverable_pct_of_deficient": 11.26
+    },
+    "yargs/yargs": {
+      "deficient": 926,
+      "recoverable": 5,
+      "resolution_preserving": 3,
+      "recoverable_pct_of_deficient": 0.54
+    },
+    "zloirock/core-js": {
+      "deficient": 719,
+      "recoverable": 0,
+      "resolution_preserving": 0,
+      "recoverable_pct_of_deficient": 0.0
+    }
+  }
+}

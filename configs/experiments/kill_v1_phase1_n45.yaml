@@ -1,0 +1,370 @@
+_comment: 'Phase 1 de-risking corpus (experiment ID: kill_v1_phase1_n45). NEW experiment ID per README''s
+  frozen-protocol rule -- kill_v1.yaml (the original 7-repo pilot) is left untouched as the frozen pilot
+  record. Stratified, not a plain convenience-sample expansion: repos selected across lockfileVersion
+  (v2 vs v3), dependency-tree size (package count at probe time), and monorepo-vs-single-package structure
+  -- all three computed objectively from each repo''s own lockfile, not estimated or guessed. GitHub stars/creation-date
+  were NOT used as strata: this session''s anonymous GitHub API quota was exhausted (60/hour) partway
+  through metadata collection, so rather than mix verified and unverified popularity/age data, popularity/age
+  stratification is deferred to Phase 3 (200-repo run), where an authenticated API budget should be arranged
+  first.'
+repos:
+- repo: microsoft/TypeScript
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 334
+    is_monorepo: true
+- repo: nodejs/undici
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 774
+    is_monorepo: false
+- repo: jquery/jquery
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 787
+    is_monorepo: false
+- repo: less/less.js
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: small
+    n_packages_at_probe_time: 268
+    is_monorepo: false
+- repo: rollup/rollup
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 1243
+    is_monorepo: false
+- repo: webpack/webpack-cli
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 1570
+    is_monorepo: true
+- repo: webpack/webpack-dev-server
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 1223
+    is_monorepo: false
+- repo: stylelint/stylelint
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 810
+    is_monorepo: false
+- repo: koajs/koa
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 375
+    is_monorepo: false
+- repo: mochajs/mocha
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 745
+    is_monorepo: true
+- repo: sinonjs/sinon
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 759
+    is_monorepo: false
+- repo: chaijs/chai
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 584
+    is_monorepo: false
+- repo: karma-runner/karma
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 1300
+    is_monorepo: true
+- repo: visionmedia/superagent
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: very_large
+    n_packages_at_probe_time: 2122
+    is_monorepo: false
+- repo: cheeriojs/cheerio
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 438
+    is_monorepo: false
+- repo: jsdom/jsdom
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: small
+    n_packages_at_probe_time: 227
+    is_monorepo: false
+- repo: tj/commander.js
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: small
+    n_packages_at_probe_time: 205
+    is_monorepo: false
+- repo: yargs/yargs
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 563
+    is_monorepo: false
+- repo: isaacs/node-glob
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 404
+    is_monorepo: false
+- repo: isaacs/minimatch
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 309
+    is_monorepo: false
+- repo: npm/node-tar
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 385
+    is_monorepo: false
+- repo: commitizen/cz-cli
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 2
+    size_bucket: large
+    n_packages_at_probe_time: 1046
+    is_monorepo: false
+- repo: motdotla/dotenv
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 2
+    size_bucket: medium
+    n_packages_at_probe_time: 753
+    is_monorepo: false
+- repo: winstonjs/winston
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 614
+    is_monorepo: false
+- repo: redis/node-redis
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 755
+    is_monorepo: true
+- repo: jshttp/content-type
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: small
+    n_packages_at_probe_time: 272
+    is_monorepo: false
+- repo: markedjs/marked
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 661
+    is_monorepo: false
+- repo: showdownjs/showdown
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 752
+    is_monorepo: false
+- repo: eemeli/yaml
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: small
+    n_packages_at_probe_time: 200
+    is_monorepo: false
+- repo: caolan/async
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 842
+    is_monorepo: false
+- repo: uuidjs/uuid
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 938
+    is_monorepo: false
+- repo: nodeca/js-yaml
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 542
+    is_monorepo: false
+- repo: zloirock/core-js
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 499
+    is_monorepo: true
+- repo: mozilla/source-map
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 2
+    size_bucket: small
+    n_packages_at_probe_time: 197
+    is_monorepo: false
+- repo: terser/terser
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 2
+    size_bucket: small
+    n_packages_at_probe_time: 223
+    is_monorepo: false
+- repo: google/zx
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 581
+    is_monorepo: false
+- repo: webpack-contrib/mini-css-extract-plugin
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 1499
+    is_monorepo: false
+- repo: webpack-contrib/css-loader
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 1493
+    is_monorepo: false
+- repo: microsoft/vscode
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: very_large
+    n_packages_at_probe_time: 1660
+    is_monorepo: false
+- repo: npm/cli
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 1202
+    is_monorepo: true
+- repo: microsoft/playwright
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 706
+    is_monorepo: true
+- repo: puppeteer/puppeteer
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: very_large
+    n_packages_at_probe_time: 2815
+    is_monorepo: true
+- repo: axios/axios
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: medium
+    n_packages_at_probe_time: 689
+    is_monorepo: false
+- repo: socketio/socket.io
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: large
+    n_packages_at_probe_time: 1513
+    is_monorepo: true
+- repo: nestjs/nest
+  ref: HEAD
+  lockfile_path: package-lock.json
+  strata:
+    lockfile_version: 3
+    size_bucket: very_large
+    n_packages_at_probe_time: 1676
+    is_monorepo: true

@@ -1,0 +1,12 @@
+{
+  "query_date": "2026-09-22",
+  "node_version": "v22.22.2",
+  "npm_version": "10.9.7",
+  "node_semver_package_version": "7.8.5",
+  "registry_base": "https://registry.npmjs.org",
+  "provenance_signal_field": "versions[<v>].dist.attestations (presence = has provenance)",
+  "provenance_ga_date": "2023-09-26",
+  "provenance_beta_date": "2023-04-19 (npm 9.5.0)",
+  "corpus_config": "configs/experiments/kill_v1.yaml",
+  "notes": "All provenance facts in this manifest were verified live against the registry before use (see pdr/provenance.py docstring), not assumed from training data."
+}

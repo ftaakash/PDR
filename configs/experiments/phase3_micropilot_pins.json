@@ -1,0 +1,173 @@
+{
+  "caolan/async": {
+    "commits_examined": 1,
+    "head_at_pin_time": "c2ba6566f12c5cf5a6e421eb74138db558d05e36",
+    "is_head": true,
+    "lock_blob": "fe6fdcacccf3b949b0bf723f5814b2a5a26b9622",
+    "repo": "caolan/async",
+    "sha": "c2ba6566f12c5cf5a6e421eb74138db558d05e36",
+    "status": "PINNED"
+  },
+  "cheeriojs/cheerio": {
+    "commits_examined": 5,
+    "head_at_pin_time": "48e782203936b1be9c7b11ef55321f7b3fc02a3a",
+    "is_head": false,
+    "lock_blob": "043787a8aea8b8419e50cbc11e2bdf937c230ce9",
+    "repo": "cheeriojs/cheerio",
+    "sha": "f51ff4d5c27588adf42c3b4055031e2673ab0f3b",
+    "status": "PINNED"
+  },
+  "commitizen/cz-cli": {
+    "commits_examined": 1,
+    "head_at_pin_time": "1a8c49c02c9d52d1b4ef8cdabefb538088ddea03",
+    "is_head": true,
+    "lock_blob": "ac61c4e8cbfae340bdd21105eed7c1c24bbeed22",
+    "repo": "commitizen/cz-cli",
+    "sha": "1a8c49c02c9d52d1b4ef8cdabefb538088ddea03",
+    "status": "PINNED"
+  },
+  "google/zx": {
+    "commits_examined": 1,
+    "head_at_pin_time": "65fc542d88baac578967e22bea28cb610976578c",
+    "is_head": true,
+    "lock_blob": "b4cd5444c54c695e6c227071123d8fb1dc532d7c",
+    "repo": "google/zx",
+    "sha": "65fc542d88baac578967e22bea28cb610976578c",
+    "status": "PINNED"
+  },
+  "isaacs/minimatch": {
+    "commits_examined": 1,
+    "head_at_pin_time": "ded1bbd01beca62a5978bc1650ed0a1ccf9039d5",
+    "is_head": true,
+    "lock_blob": "d337a2a39999a3aadbafedb1e726e3ca8fc78a0b",
+    "repo": "isaacs/minimatch",
+    "sha": "ded1bbd01beca62a5978bc1650ed0a1ccf9039d5",
+    "status": "PINNED"
+  },
+  "isaacs/node-glob": {
+    "commits_examined": 1,
+    "head_at_pin_time": "3386a2aca38d36db71500d10df68d34c14d92013",
+    "is_head": true,
+    "lock_blob": "d97c70810ebc748614c6a6a364119579fcdb0308",
+    "repo": "isaacs/node-glob",
+    "sha": "3386a2aca38d36db71500d10df68d34c14d92013",
+    "status": "PINNED"
+  },
+  "jshttp/content-type": {
+    "commits_examined": 1,
+    "head_at_pin_time": "d005d8bfd9846bb9eb73a9aad0944536e1a5cf39",
+    "is_head": true,
+    "lock_blob": "b8cb1bde204bb6da69e15d27e7f4d63b1a3d3c41",
+    "repo": "jshttp/content-type",
+    "sha": "d005d8bfd9846bb9eb73a9aad0944536e1a5cf39",
+    "status": "PINNED"
+  },
+  "markedjs/marked": {
+    "commits_examined": 1,
+    "head_at_pin_time": "ef0704c58459e927c805b92a5cc7d0c629e6fe43",
+    "is_head": true,
+    "lock_blob": "14e02e0d482749cd5b4511b0f6ba8bfc1d05aa5f",
+    "repo": "markedjs/marked",
+    "sha": "ef0704c58459e927c805b92a5cc7d0c629e6fe43",
+    "status": "PINNED"
+  },
+  "motdotla/dotenv": {
+    "commits_examined": 6,
+    "head_at_pin_time": "86804c0507aff98d3a82204759729af3bc2ce1a9",
+    "is_head": false,
+    "lock_blob": "bf9bf3cd3c945a25c81aa4d3445685d22815746e",
+    "repo": "motdotla/dotenv",
+    "sha": "b8a12b4c3ba75200504c2d744d2fac6fce2f62c2",
+    "status": "PINNED"
+  },
+  "npm/cli": {
+    "commits_examined": 1,
+    "head_at_pin_time": "0c3b82a9a612c3f9399d35c28c86708b1f8ea7d4",
+    "is_head": true,
+    "lock_blob": "4bcdd51466710f657c670e61a8c384294fa72c3f",
+    "repo": "npm/cli",
+    "sha": "0c3b82a9a612c3f9399d35c28c86708b1f8ea7d4",
+    "status": "PINNED"
+  },
+  "npm/node-tar": {
+    "commits_examined": 1,
+    "head_at_pin_time": "2a22bfc5d3a432a606d9da0e2d87ba634aa3b1cb",
+    "is_head": true,
+    "lock_blob": "df446b009eec4ce89d79d2b2f48b1c745c959a54",
+    "repo": "npm/node-tar",
+    "sha": "2a22bfc5d3a432a606d9da0e2d87ba634aa3b1cb",
+    "status": "PINNED"
+  },
+  "showdownjs/showdown": {
+    "commits_examined": 1,
+    "head_at_pin_time": "d1a8d16344b855ea2f37677ee8a9e0cc2c597ea4",
+    "is_head": true,
+    "lock_blob": "6d4d328f2a606e23f649298d1e8b331ebe7c604e",
+    "repo": "showdownjs/showdown",
+    "sha": "d1a8d16344b855ea2f37677ee8a9e0cc2c597ea4",
+    "status": "PINNED"
+  },
+  "stylelint/stylelint": {
+    "commits_examined": 1,
+    "head_at_pin_time": "f4fb76f709c5046e9b1b2d9888d1d2dd1d9e61a8",
+    "is_head": true,
+    "lock_blob": "a525a3369b0efa1db84858035b9e313a9d1b9b40",
+    "repo": "stylelint/stylelint",
+    "sha": "f4fb76f709c5046e9b1b2d9888d1d2dd1d9e61a8",
+    "status": "PINNED"
+  },
+  "terser/terser": {
+    "commits_examined": 1,
+    "head_at_pin_time": "707c978227009aa6948f2a1048aa59f5fdd5bc40",
+    "is_head": true,
+    "lock_blob": "d4da106532a702322fb5c2daceba948000b6b0c6",
+    "repo": "terser/terser",
+    "sha": "707c978227009aa6948f2a1048aa59f5fdd5bc40",
+    "status": "PINNED"
+  },
+  "tj/commander.js": {
+    "commits_examined": 1,
+    "head_at_pin_time": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+    "is_head": true,
+    "lock_blob": "9b1020f27a2a1fec819c7638fe9cf78adeccec2a",
+    "repo": "tj/commander.js",
+    "sha": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+    "status": "PINNED"
+  },
+  "webpack-contrib/css-loader": {
+    "commits_examined": 1,
+    "head_at_pin_time": "be04ec290ee57bafbc75f5936c1f6a2532681b49",
+    "is_head": true,
+    "lock_blob": "2441d59f1dec8c18c244a069e50c1f8d23b44068",
+    "repo": "webpack-contrib/css-loader",
+    "sha": "be04ec290ee57bafbc75f5936c1f6a2532681b49",
+    "status": "PINNED"
+  },
+  "webpack-contrib/mini-css-extract-plugin": {
+    "commits_examined": 1,
+    "head_at_pin_time": "197b644e63103c328967f216ca3f299198f44d6a",
+    "is_head": true,
+    "lock_blob": "4fcc117d4533e3eea1b802421f327c51d1b83d6d",
+    "repo": "webpack-contrib/mini-css-extract-plugin",
+    "sha": "197b644e63103c328967f216ca3f299198f44d6a",
+    "status": "PINNED"
+  },
+  "webpack/webpack-cli": {
+    "commits_examined": 1,
+    "head_at_pin_time": "bcf615042c92cfe90cc3bd5d8b42e040f8e535dc",
+    "is_head": true,
+    "lock_blob": "a295e9958ddcebe92519741675fb067423c3c282",
+    "repo": "webpack/webpack-cli",
+    "sha": "bcf615042c92cfe90cc3bd5d8b42e040f8e535dc",
+    "status": "PINNED"
+  },
+  "winstonjs/winston": {
+    "commits_examined": 1,
+    "head_at_pin_time": "ff0b79de8562bb322c390fbc82fe71c11f373428",
+    "is_head": true,
+    "lock_blob": "0a17e82c0a0ee8cfafba50dfda3079d5de8b7773",
+    "repo": "winstonjs/winston",
+    "sha": "ff0b79de8562bb322c390fbc82fe71c11f373428",
+    "status": "PINNED"
+  }
+}

@@ -1,0 +1,402 @@
+{
+  "frozen_parameters": {
+    "allocation": {
+      "large": 10,
+      "medium": 10,
+      "small": 5
+    },
+    "direct_floor": {
+      "large": 3,
+      "medium": 1
+    },
+    "non_hermetic_keywords": [
+      "browser",
+      "chrome",
+      "playwright",
+      "puppeteer",
+      "wireit",
+      "submodule",
+      "e2e",
+      "selenium",
+      "docker"
+    ],
+    "non_hermetic_repos": {
+      "redis/node-redis": "tests require a running Redis server"
+    },
+    "per_repo_cap": 3,
+    "seed": 20260928
+  },
+  "generated_on": "2026-09-28",
+  "n_selected": 23,
+  "outcome_blind": true,
+  "pool": {
+    "layer1_ok_edges": 638,
+    "repos_excluded_by_screen": {
+      "chaijs/chai": "test script mentions 'chrome' (non-hermetic screen)",
+      "jquery/jquery": "test script mentions 'browser' (non-hermetic screen)",
+      "karma-runner/karma": "test script mentions 'e2e' (non-hermetic screen)",
+      "microsoft/playwright": "test script mentions 'playwright' (non-hermetic screen)",
+      "mochajs/mocha": "test script mentions 'browser' (non-hermetic screen)",
+      "mozilla/source-map": "test script mentions 'submodule' (non-hermetic screen)",
+      "puppeteer/puppeteer": "test script mentions 'wireit' (non-hermetic screen)",
+      "redis/node-redis": "tests require a running Redis server",
+      "sinonjs/sinon": "test script mentions 'browser' (non-hermetic screen)"
+    },
+    "unique_experiments_after_screen": 166,
+    "unique_experiments_by_bucket": {
+      "large": 101,
+      "medium": 38,
+      "small": 3,
+      "very_large": 24
+    }
+  },
+  "protocol": "docs/phase3_protocol.md",
+  "selected": [
+    {
+      "candidate_version": "7.29.9",
+      "dep_field": "devDependencies",
+      "dep_name": "@babel/eslint-parser",
+      "edge_ids": [
+        "caolan/async#12340"
+      ],
+      "experiment_id": "caolan/async::@babel/eslint-parser@7.29.9",
+      "patch_mode": "direct_field",
+      "repo": "caolan/async",
+      "resolved_version": "7.28.6",
+      "size_bucket": "large",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-plugin-utils",
+      "edge_ids": [
+        "caolan/async#12605"
+      ],
+      "experiment_id": "caolan/async::@babel/helper-plugin-utils@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "caolan/async",
+      "resolved_version": "7.20.2",
+      "size_bucket": "large",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.1",
+      "dep_field": null,
+      "dep_name": "tinyrainbow",
+      "edge_ids": [
+        "cheeriojs/cheerio#12301",
+        "cheeriojs/cheerio#12302",
+        "cheeriojs/cheerio#12303",
+        "cheeriojs/cheerio#12304",
+        "cheeriojs/cheerio#12305"
+      ],
+      "experiment_id": "cheeriojs/cheerio::tinyrainbow@3.1.1",
+      "patch_mode": "overrides",
+      "repo": "cheeriojs/cheerio",
+      "resolved_version": "3.1.0",
+      "size_bucket": "medium",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "commitizen/cz-cli#12669",
+        "commitizen/cz-cli#12670",
+        "commitizen/cz-cli#12671",
+        "commitizen/cz-cli#12672",
+        "commitizen/cz-cli#12673",
+        "commitizen/cz-cli#12674"
+      ],
+      "experiment_id": "commitizen/cz-cli::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "commitizen/cz-cli",
+      "resolved_version": "0.1.2",
+      "size_bucket": "large",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "google/zx#12584"
+      ],
+      "experiment_id": "google/zx::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "google/zx",
+      "resolved_version": "7.27.1",
+      "size_bucket": "medium",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "18.2.0",
+      "dep_field": null,
+      "dep_name": "yargs",
+      "edge_ids": [
+        "isaacs/minimatch#12282"
+      ],
+      "experiment_id": "isaacs/minimatch::yargs@18.2.0",
+      "patch_mode": "overrides",
+      "repo": "isaacs/minimatch",
+      "resolved_version": "18.1.0",
+      "size_bucket": "medium",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "10.7.2",
+      "dep_field": null,
+      "dep_name": "ip-address",
+      "edge_ids": [
+        "isaacs/node-glob#12810"
+      ],
+      "experiment_id": "isaacs/node-glob::ip-address@10.7.2",
+      "patch_mode": "overrides",
+      "repo": "isaacs/node-glob",
+      "resolved_version": "10.2.0",
+      "size_bucket": "medium",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.6.1",
+      "dep_field": null,
+      "dep_name": "pidtree",
+      "edge_ids": [
+        "jshttp/content-type#12900"
+      ],
+      "experiment_id": "jshttp/content-type::pidtree@0.6.1",
+      "patch_mode": "overrides",
+      "repo": "jshttp/content-type",
+      "resolved_version": "0.6.0",
+      "size_bucket": "small",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.14.3",
+      "dep_field": null,
+      "dep_name": "get-tsconfig",
+      "edge_ids": [
+        "markedjs/marked#12973"
+      ],
+      "experiment_id": "markedjs/marked::get-tsconfig@4.14.3",
+      "patch_mode": "overrides",
+      "repo": "markedjs/marked",
+      "resolved_version": "4.13.0",
+      "size_bucket": "medium",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.4.3",
+      "dep_field": null,
+      "dep_name": "eslint-visitor-keys",
+      "edge_ids": [
+        "motdotla/dotenv#13125",
+        "motdotla/dotenv#13126"
+      ],
+      "experiment_id": "motdotla/dotenv::eslint-visitor-keys@3.4.3",
+      "patch_mode": "overrides",
+      "repo": "motdotla/dotenv",
+      "resolved_version": "3.3.0",
+      "size_bucket": "medium",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "npm/cli#12711",
+        "npm/cli#12712",
+        "npm/cli#12713"
+      ],
+      "experiment_id": "npm/cli::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "npm/cli",
+      "resolved_version": "7.22.20",
+      "size_bucket": "large",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "10.7.2",
+      "dep_field": null,
+      "dep_name": "ip-address",
+      "edge_ids": [
+        "npm/node-tar#12813"
+      ],
+      "experiment_id": "npm/node-tar::ip-address@10.7.2",
+      "patch_mode": "overrides",
+      "repo": "npm/node-tar",
+      "resolved_version": "10.2.0",
+      "size_bucket": "medium",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.2.0",
+      "dep_field": null,
+      "dep_name": "argue-cli",
+      "edge_ids": [
+        "showdownjs/showdown#12313",
+        "showdownjs/showdown#12314",
+        "showdownjs/showdown#12315"
+      ],
+      "experiment_id": "showdownjs/showdown::argue-cli@3.2.0",
+      "patch_mode": "overrides",
+      "repo": "showdownjs/showdown",
+      "resolved_version": "3.1.0",
+      "size_bucket": "medium",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.1.0",
+      "dep_field": "dependencies",
+      "dep_name": "postcss-safe-parser",
+      "edge_ids": [
+        "stylelint/stylelint#13983",
+        "stylelint/stylelint#13984"
+      ],
+      "experiment_id": "stylelint/stylelint::postcss-safe-parser@7.1.0",
+      "patch_mode": "direct_field",
+      "repo": "stylelint/stylelint",
+      "resolved_version": "7.0.1",
+      "size_bucket": "large",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.2",
+      "dep_field": null,
+      "dep_name": "remark-preset-prettier",
+      "edge_ids": [
+        "stylelint/stylelint#14137"
+      ],
+      "experiment_id": "stylelint/stylelint::remark-preset-prettier@2.0.2",
+      "patch_mode": "overrides",
+      "repo": "stylelint/stylelint",
+      "resolved_version": "2.0.1",
+      "size_bucket": "large",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "terser/terser#14147"
+      ],
+      "experiment_id": "terser/terser::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "terser/terser",
+      "resolved_version": "7.19.1",
+      "size_bucket": "small",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "tj/commander.js#12352"
+      ],
+      "experiment_id": "tj/commander.js::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "tj/commander.js",
+      "resolved_version": "7.28.5",
+      "size_bucket": "small",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-option",
+      "edge_ids": [
+        "webpack-contrib/css-loader#12448",
+        "webpack-contrib/css-loader#12449"
+      ],
+      "experiment_id": "webpack-contrib/css-loader::@babel/helper-validator-option@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "webpack-contrib/css-loader",
+      "resolved_version": "7.27.1",
+      "size_bucket": "large",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.105.0",
+      "dep_field": "devDependencies",
+      "dep_name": "sass",
+      "edge_ids": [
+        "webpack-contrib/css-loader#14437",
+        "webpack-contrib/css-loader#14570"
+      ],
+      "experiment_id": "webpack-contrib/css-loader::sass@1.105.0",
+      "patch_mode": "direct_field",
+      "repo": "webpack-contrib/css-loader",
+      "resolved_version": "1.89.2",
+      "size_bucket": "large",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "webpack-contrib/mini-css-extract-plugin#12635"
+      ],
+      "experiment_id": "webpack-contrib/mini-css-extract-plugin::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "webpack-contrib/mini-css-extract-plugin",
+      "resolved_version": "2.0.36",
+      "size_bucket": "large",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "18.2.0",
+      "dep_field": null,
+      "dep_name": "yargs",
+      "edge_ids": [
+        "webpack/webpack-cli#12293"
+      ],
+      "experiment_id": "webpack/webpack-cli::yargs@18.2.0",
+      "patch_mode": "overrides",
+      "repo": "webpack/webpack-cli",
+      "resolved_version": "18.1.0",
+      "size_bucket": "large",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": "devDependencies",
+      "dep_name": "@babel/cli",
+      "edge_ids": [
+        "winstonjs/winston#14731"
+      ],
+      "experiment_id": "winstonjs/winston::@babel/cli@7.29.7",
+      "patch_mode": "direct_field",
+      "repo": "winstonjs/winston",
+      "resolved_version": "7.25.6",
+      "size_bucket": "medium",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helpers",
+      "edge_ids": [
+        "winstonjs/winston#13031"
+      ],
+      "experiment_id": "winstonjs/winston::@babel/helpers@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "winstonjs/winston",
+      "resolved_version": "7.28.4",
+      "size_bucket": "medium",
+      "test_command": "npm test"
+    }
+  ],
+  "shortfalls": {
+    "small": {
+      "got": 3,
+      "note": "not backfilled from other buckets (allocation is frozen)",
+      "target": 5
+    }
+  }
+}

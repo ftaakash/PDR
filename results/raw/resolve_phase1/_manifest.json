@@ -1,0 +1,320 @@
+{
+  "config": "configs/experiments/kill_v1_phase1_n45.yaml",
+  "repos": [
+    {
+      "repo": "microsoft/TypeScript",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 480,
+      "lockfile_bytes": 189390
+    },
+    {
+      "repo": "nodejs/undici",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1601,
+      "lockfile_bytes": 397182
+    },
+    {
+      "repo": "jquery/jquery",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1397,
+      "lockfile_bytes": 385394
+    },
+    {
+      "repo": "less/less.js",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 509,
+      "lockfile_bytes": 115495
+    },
+    {
+      "repo": "rollup/rollup",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 2303,
+      "lockfile_bytes": 615137
+    },
+    {
+      "repo": "webpack/webpack-cli",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 3531,
+      "lockfile_bytes": 825946
+    },
+    {
+      "repo": "webpack/webpack-dev-server",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 2573,
+      "lockfile_bytes": 398978
+    },
+    {
+      "repo": "stylelint/stylelint",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1639,
+      "lockfile_bytes": 412067
+    },
+    {
+      "repo": "koajs/koa",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 778,
+      "lockfile_bytes": 184679
+    },
+    {
+      "repo": "mochajs/mocha",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1285,
+      "lockfile_bytes": 361043
+    },
+    {
+      "repo": "sinonjs/sinon",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1182,
+      "lockfile_bytes": 365740
+    },
+    {
+      "repo": "chaijs/chai",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 872,
+      "lockfile_bytes": 266484
+    },
+    {
+      "repo": "karma-runner/karma",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 2161,
+      "lockfile_bytes": 505069
+    },
+    {
+      "repo": "visionmedia/superagent",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 4039,
+      "lockfile_bytes": 579771
+    },
+    {
+      "repo": "cheeriojs/cheerio",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 765,
+      "lockfile_bytes": 230863
+    },
+    {
+      "repo": "jsdom/jsdom",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 324,
+      "lockfile_bytes": 109071
+    },
+    {
+      "repo": "tj/commander.js",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 288,
+      "lockfile_bytes": 95149
+    },
+    {
+      "repo": "yargs/yargs",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1084,
+      "lockfile_bytes": 281077
+    },
+    {
+      "repo": "isaacs/node-glob",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 748,
+      "lockfile_bytes": 204058
+    },
+    {
+      "repo": "isaacs/minimatch",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 581,
+      "lockfile_bytes": 154059
+    },
+    {
+      "repo": "npm/node-tar",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 673,
+      "lockfile_bytes": 190259
+    },
+    {
+      "repo": "commitizen/cz-cli",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1776,
+      "lockfile_bytes": 808641
+    },
+    {
+      "repo": "motdotla/dotenv",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1243,
+      "lockfile_bytes": 624713
+    },
+    {
+      "repo": "winstonjs/winston",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1264,
+      "lockfile_bytes": 279592
+    },
+    {
+      "repo": "redis/node-redis",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1212,
+      "lockfile_bytes": 307758
+    },
+    {
+      "repo": "jshttp/content-type",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 351,
+      "lockfile_bytes": 140059
+    },
+    {
+      "repo": "markedjs/marked",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1152,
+      "lockfile_bytes": 295520
+    },
+    {
+      "repo": "showdownjs/showdown",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1254,
+      "lockfile_bytes": 360951
+    },
+    {
+      "repo": "eemeli/yaml",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 329,
+      "lockfile_bytes": 105500
+    },
+    {
+      "repo": "caolan/async",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1490,
+      "lockfile_bytes": 369692
+    },
+    {
+      "repo": "uuidjs/uuid",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1965,
+      "lockfile_bytes": 480551
+    },
+    {
+      "repo": "nodeca/js-yaml",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1107,
+      "lockfile_bytes": 276455
+    },
+    {
+      "repo": "zloirock/core-js",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 921,
+      "lockfile_bytes": 224880
+    },
+    {
+      "repo": "mozilla/source-map",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 275,
+      "lockfile_bytes": 153079
+    },
+    {
+      "repo": "terser/terser",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 284,
+      "lockfile_bytes": 164239
+    },
+    {
+      "repo": "google/zx",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 899,
+      "lockfile_bytes": 277731
+    },
+    {
+      "repo": "webpack-contrib/mini-css-extract-plugin",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 3238,
+      "lockfile_bytes": 760098
+    },
+    {
+      "repo": "webpack-contrib/css-loader",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 2976,
+      "lockfile_bytes": 770805
+    },
+    {
+      "repo": "microsoft/vscode",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 3136,
+      "lockfile_bytes": 780806
+    },
+    {
+      "repo": "npm/cli",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 2406,
+      "lockfile_bytes": 437416
+    },
+    {
+      "repo": "microsoft/playwright",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1377,
+      "lockfile_bytes": 347082
+    },
+    {
+      "repo": "puppeteer/puppeteer",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 4920,
+      "lockfile_bytes": 1418268
+    },
+    {
+      "repo": "axios/axios",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1272,
+      "lockfile_bytes": 345219
+    },
+    {
+      "repo": "socketio/socket.io",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 2866,
+      "lockfile_bytes": 714127
+    },
+    {
+      "repo": "nestjs/nest",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 3166,
+      "lockfile_bytes": 806158
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "pdr-g1-pipeline",
+  "private": true,
+  "description": "Node-side helper for pdr/semver_client.py -- uses npm's own semver engine for correct npm-range semantics.",
+  "dependencies": {
+    "semver": "^7.6.0"
+  }
+}

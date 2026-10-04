@@ -1,0 +1,285 @@
+{
+  "pilot_disclaimer": "DE-RISKING SCALE (7 real repos, 19,148 edges; not the full 200-repo G1 kill-test sample specified in the audit prompt's Kill Test 10, unless n_repos >= 200 as noted above). Corpus composition (convenience vs. diversified vs. stratified) is documented per-experiment in its own config/results docs, not asserted generically here -- see docs/phase1_results.md or the equivalent for this run's actual corpus, and docs/methodology_freeze.md Section 4 for the standing caution against calling any pre-200-repo corpus a representative sample of npm.",
+  "overall": {
+    "n_edges": 19148,
+    "state_counts": {
+      "PROVENANCED": 3006,
+      "DEFICIENT_UNRECOVERABLE": 15259,
+      "DEFICIENT_SEMANTIC_ONLY": 17,
+      "DEFICIENT_RESOLUTION_PRESERVING": 586,
+      "UNKNOWN": 280
+    },
+    "unknown_pct": 1.46,
+    "opg_pct_of_known": 84.07,
+    "semantic_recovery_pct_of_deficient": 3.8,
+    "resolution_preserving_pct_of_deficient": 3.69,
+    "resolution_preserving_pct_of_recoverable": 97.18
+  },
+  "n_repos": 7,
+  "n_edges_total": 19148,
+  "scale_label": "7 real repos, 19,148 edges",
+  "production_only": {
+    "n_edges": 18567,
+    "state_counts": {
+      "PROVENANCED": 2834,
+      "DEFICIENT_UNRECOVERABLE": 14881,
+      "DEFICIENT_SEMANTIC_ONLY": 17,
+      "DEFICIENT_RESOLUTION_PRESERVING": 578,
+      "UNKNOWN": 257
+    },
+    "unknown_pct": 1.38,
+    "opg_pct_of_known": 84.52,
+    "semantic_recovery_pct_of_deficient": 3.84,
+    "resolution_preserving_pct_of_deficient": 3.73,
+    "resolution_preserving_pct_of_recoverable": 97.14
+  },
+  "by_direct_vs_transitive": {
+    "direct": {
+      "n_edges": 1003,
+      "state_counts": {
+        "PROVENANCED": 296,
+        "DEFICIENT_UNRECOVERABLE": 610,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 9,
+        "UNKNOWN": 88
+      },
+      "unknown_pct": 8.77,
+      "opg_pct_of_known": 67.65,
+      "semantic_recovery_pct_of_deficient": 1.45,
+      "resolution_preserving_pct_of_deficient": 1.45,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "transitive": {
+      "n_edges": 18145,
+      "state_counts": {
+        "PROVENANCED": 2710,
+        "DEFICIENT_UNRECOVERABLE": 14649,
+        "DEFICIENT_SEMANTIC_ONLY": 17,
+        "DEFICIENT_RESOLUTION_PRESERVING": 577,
+        "UNKNOWN": 192
+      },
+      "unknown_pct": 1.06,
+      "opg_pct_of_known": 84.91,
+      "semantic_recovery_pct_of_deficient": 3.9,
+      "resolution_preserving_pct_of_deficient": 3.79,
+      "resolution_preserving_pct_of_recoverable": 97.14
+    }
+  },
+  "by_era": {
+    "pre_provenance_existed": {
+      "n_edges": 6168,
+      "state_counts": {
+        "PROVENANCED": 0,
+        "DEFICIENT_UNRECOVERABLE": 6137,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 30,
+        "UNKNOWN": 0
+      },
+      "unknown_pct": 0.0,
+      "opg_pct_of_known": 100.0,
+      "semantic_recovery_pct_of_deficient": 0.5,
+      "resolution_preserving_pct_of_deficient": 0.49,
+      "resolution_preserving_pct_of_recoverable": 96.77
+    },
+    "provenance_beta_window": {
+      "n_edges": 535,
+      "state_counts": {
+        "PROVENANCED": 29,
+        "DEFICIENT_UNRECOVERABLE": 486,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 20,
+        "UNKNOWN": 0
+      },
+      "unknown_pct": 0.0,
+      "opg_pct_of_known": 94.58,
+      "semantic_recovery_pct_of_deficient": 3.95,
+      "resolution_preserving_pct_of_deficient": 3.95,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "post_ga": {
+      "n_edges": 12169,
+      "state_counts": {
+        "PROVENANCED": 2977,
+        "DEFICIENT_UNRECOVERABLE": 8636,
+        "DEFICIENT_SEMANTIC_ONLY": 16,
+        "DEFICIENT_RESOLUTION_PRESERVING": 536,
+        "UNKNOWN": 4
+      },
+      "unknown_pct": 0.03,
+      "opg_pct_of_known": 75.53,
+      "semantic_recovery_pct_of_deficient": 6.01,
+      "resolution_preserving_pct_of_deficient": 5.83,
+      "resolution_preserving_pct_of_recoverable": 97.1
+    },
+    "unknown_era": {
+      "n_edges": 276,
+      "state_counts": {
+        "PROVENANCED": 0,
+        "DEFICIENT_UNRECOVERABLE": 0,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 0,
+        "UNKNOWN": 276
+      },
+      "unknown_pct": 100.0,
+      "opg_pct_of_known": null,
+      "semantic_recovery_pct_of_deficient": null,
+      "resolution_preserving_pct_of_deficient": null,
+      "resolution_preserving_pct_of_recoverable": null
+    }
+  },
+  "by_repo": {
+    "axios/axios": {
+      "n_edges": 1277,
+      "state_counts": {
+        "PROVENANCED": 511,
+        "DEFICIENT_UNRECOVERABLE": 726,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 16,
+        "UNKNOWN": 24
+      },
+      "unknown_pct": 1.88,
+      "opg_pct_of_known": 59.22,
+      "semantic_recovery_pct_of_deficient": 2.16,
+      "resolution_preserving_pct_of_deficient": 2.16,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "microsoft/playwright": {
+      "n_edges": 1377,
+      "state_counts": {
+        "PROVENANCED": 365,
+        "DEFICIENT_UNRECOVERABLE": 980,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 4,
+        "UNKNOWN": 27
+      },
+      "unknown_pct": 1.96,
+      "opg_pct_of_known": 72.96,
+      "semantic_recovery_pct_of_deficient": 0.51,
+      "resolution_preserving_pct_of_deficient": 0.41,
+      "resolution_preserving_pct_of_recoverable": 80.0
+    },
+    "microsoft/vscode": {
+      "n_edges": 3136,
+      "state_counts": {
+        "PROVENANCED": 239,
+        "DEFICIENT_UNRECOVERABLE": 2845,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 25,
+        "UNKNOWN": 26
+      },
+      "unknown_pct": 0.83,
+      "opg_pct_of_known": 92.32,
+      "semantic_recovery_pct_of_deficient": 0.91,
+      "resolution_preserving_pct_of_deficient": 0.87,
+      "resolution_preserving_pct_of_recoverable": 96.15
+    },
+    "nestjs/nest": {
+      "n_edges": 3166,
+      "state_counts": {
+        "PROVENANCED": 565,
+        "DEFICIENT_UNRECOVERABLE": 2470,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 30,
+        "UNKNOWN": 101
+      },
+      "unknown_pct": 3.19,
+      "opg_pct_of_known": 81.57,
+      "semantic_recovery_pct_of_deficient": 1.2,
+      "resolution_preserving_pct_of_deficient": 1.2,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "npm/cli": {
+      "n_edges": 2406,
+      "state_counts": {
+        "PROVENANCED": 479,
+        "DEFICIENT_UNRECOVERABLE": 1818,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 65,
+        "UNKNOWN": 43
+      },
+      "unknown_pct": 1.79,
+      "opg_pct_of_known": 79.73,
+      "semantic_recovery_pct_of_deficient": 3.5,
+      "resolution_preserving_pct_of_deficient": 3.45,
+      "resolution_preserving_pct_of_recoverable": 98.48
+    },
+    "puppeteer/puppeteer": {
+      "n_edges": 4920,
+      "state_counts": {
+        "PROVENANCED": 586,
+        "DEFICIENT_UNRECOVERABLE": 4247,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 62,
+        "UNKNOWN": 24
+      },
+      "unknown_pct": 0.49,
+      "opg_pct_of_known": 88.03,
+      "semantic_recovery_pct_of_deficient": 1.46,
+      "resolution_preserving_pct_of_deficient": 1.44,
+      "resolution_preserving_pct_of_recoverable": 98.41
+    },
+    "socketio/socket.io": {
+      "n_edges": 2866,
+      "state_counts": {
+        "PROVENANCED": 261,
+        "DEFICIENT_UNRECOVERABLE": 2173,
+        "DEFICIENT_SEMANTIC_ONLY": 13,
+        "DEFICIENT_RESOLUTION_PRESERVING": 384,
+        "UNKNOWN": 35
+      },
+      "unknown_pct": 1.22,
+      "opg_pct_of_known": 90.78,
+      "semantic_recovery_pct_of_deficient": 15.45,
+      "resolution_preserving_pct_of_deficient": 14.94,
+      "resolution_preserving_pct_of_recoverable": 96.73
+    }
+  },
+  "gate": {
+    "A_opg_era_controlled": {
+      "verdict": "PASS",
+      "post_ga_opg_pct": 75.53,
+      "overall_opg_pct": 84.07,
+      "note": "era-controlled denominator = edges whose resolved version was published on/after npm provenance GA (2023-09-26); pre-GA versions cannot fairly be called 'deficient'."
+    },
+    "B_semantic_pd": {
+      "verdict": "FAIL",
+      "semantic_recovery_pct_of_deficient": 3.8,
+      "n_deficient": 15862,
+      "n_recoverable": 603
+    },
+    "C_semantic_to_operational_gap": {
+      "verdict": "PENDING",
+      "note": "Not measured at this scale -- requires the Phase 2 isolated-worker sandbox (docs/methodology_freeze.md Section 7) to determine, for each resolution-confirmed candidate, whether it is an OPERATIONALLY VIABLE substitution: real npm resolution succeeds, structural install (npm ci --ignore-scripts) succeeds, no new peer conflict, no npm-audit-signatures regression, and no new test failure. Deliberately NOT called 'deployability' -- docs/methodology_freeze.md Section 5 -- since surviving install+tests is not a production-deployability claim."
+    },
+    "D_excess_enforcement_cost": {
+      "verdict": "PENDING",
+      "note": "Not measured in this pilot -- requires B0/B1 baseline install runs to compare against. See docs/gate_status.md, Phase 2."
+    },
+    "E_robustness": {
+      "verdict": "PASS",
+      "direct_opg_pct": 67.65,
+      "transitive_opg_pct": 84.91,
+      "by_era_opg_pct": {
+        "pre_provenance_existed": 100.0,
+        "provenance_beta_window": 94.58,
+        "post_ga": 75.53,
+        "unknown_era": null
+      },
+      "by_repo_opg_pct": {
+        "axios/axios": 59.22,
+        "microsoft/playwright": 72.96,
+        "microsoft/vscode": 92.32,
+        "nestjs/nest": 81.57,
+        "npm/cli": 79.73,
+        "puppeteer/puppeteer": 88.03,
+        "socketio/socket.io": 90.78
+      },
+      "note": "lockfile-vs-floating stratification NOT evaluated (pilot only analyzes committed lockfiles); direct-vs-transitive and era/repo slices are."
+    },
+    "F_unknowns_bounded": {
+      "verdict": "PASS",
+      "unknown_pct": 1.46
+    }
+  },
+  "overall_verdict_measured_criteria_only": "MEASURED_FAIL_B__C_D_PENDING"
+}

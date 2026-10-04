@@ -1,0 +1,12 @@
+node_modules/
+__pycache__/
+*.pyc
+results/raw/provenance/packuments/
+
+# regenerable / local
+results/raw/provenance_phase1/packuments/
+results/raw/phase3_snapshots/
+.pytest_cache/
+.claude/settings.local.json
+.env
+.env.*

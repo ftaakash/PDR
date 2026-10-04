@@ -1,0 +1,893 @@
+{
+  "pilot_disclaimer": "DE-RISKING SCALE (45 real repos, 69,692 edges; not the full 200-repo G1 kill-test sample specified in the audit prompt's Kill Test 10, unless n_repos >= 200 as noted above). Corpus composition (convenience vs. diversified vs. stratified) is documented per-experiment in its own config/results docs, not asserted generically here -- see docs/phase1_results.md or the equivalent for this run's actual corpus, and docs/methodology_freeze.md Section 4 for the standing caution against calling any pre-200-repo corpus a representative sample of npm.",
+  "overall": {
+    "n_edges": 69692,
+    "state_counts": {
+      "PROVENANCED": 11516,
+      "DEFICIENT_UNRECOVERABLE": 54954,
+      "DEFICIENT_SEMANTIC_ONLY": 112,
+      "DEFICIENT_RESOLUTION_PRESERVING": 2349,
+      "UNKNOWN": 761
+    },
+    "unknown_pct": 1.09,
+    "opg_pct_of_known": 83.29,
+    "semantic_recovery_pct_of_deficient": 4.29,
+    "resolution_preserving_pct_of_deficient": 4.09,
+    "resolution_preserving_pct_of_recoverable": 95.45
+  },
+  "n_repos": 45,
+  "n_edges_total": 69692,
+  "scale_label": "45 real repos, 69,692 edges",
+  "production_only": {
+    "n_edges": 68153,
+    "state_counts": {
+      "PROVENANCED": 11049,
+      "DEFICIENT_UNRECOVERABLE": 53951,
+      "DEFICIENT_SEMANTIC_ONLY": 112,
+      "DEFICIENT_RESOLUTION_PRESERVING": 2314,
+      "UNKNOWN": 727
+    },
+    "unknown_pct": 1.07,
+    "opg_pct_of_known": 83.61,
+    "semantic_recovery_pct_of_deficient": 4.3,
+    "resolution_preserving_pct_of_deficient": 4.1,
+    "resolution_preserving_pct_of_recoverable": 95.38
+  },
+  "by_direct_vs_transitive": {
+    "direct": {
+      "n_edges": 2235,
+      "state_counts": {
+        "PROVENANCED": 632,
+        "DEFICIENT_UNRECOVERABLE": 1443,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 45,
+        "UNKNOWN": 115
+      },
+      "unknown_pct": 5.15,
+      "opg_pct_of_known": 70.19,
+      "semantic_recovery_pct_of_deficient": 3.02,
+      "resolution_preserving_pct_of_deficient": 3.02,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "transitive": {
+      "n_edges": 67457,
+      "state_counts": {
+        "PROVENANCED": 10884,
+        "DEFICIENT_UNRECOVERABLE": 53511,
+        "DEFICIENT_SEMANTIC_ONLY": 112,
+        "DEFICIENT_RESOLUTION_PRESERVING": 2304,
+        "UNKNOWN": 646
+      },
+      "unknown_pct": 0.96,
+      "opg_pct_of_known": 83.71,
+      "semantic_recovery_pct_of_deficient": 4.32,
+      "resolution_preserving_pct_of_deficient": 4.12,
+      "resolution_preserving_pct_of_recoverable": 95.36
+    }
+  },
+  "by_era": {
+    "pre_provenance_existed": {
+      "n_edges": 25349,
+      "state_counts": {
+        "PROVENANCED": 0,
+        "DEFICIENT_UNRECOVERABLE": 25158,
+        "DEFICIENT_SEMANTIC_ONLY": 39,
+        "DEFICIENT_RESOLUTION_PRESERVING": 152,
+        "UNKNOWN": 0
+      },
+      "unknown_pct": 0.0,
+      "opg_pct_of_known": 100.0,
+      "semantic_recovery_pct_of_deficient": 0.75,
+      "resolution_preserving_pct_of_deficient": 0.6,
+      "resolution_preserving_pct_of_recoverable": 79.58
+    },
+    "provenance_beta_window": {
+      "n_edges": 2146,
+      "state_counts": {
+        "PROVENANCED": 137,
+        "DEFICIENT_UNRECOVERABLE": 1984,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 25,
+        "UNKNOWN": 0
+      },
+      "unknown_pct": 0.0,
+      "opg_pct_of_known": 93.62,
+      "semantic_recovery_pct_of_deficient": 1.24,
+      "resolution_preserving_pct_of_deficient": 1.24,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "post_ga": {
+      "n_edges": 41442,
+      "state_counts": {
+        "PROVENANCED": 11379,
+        "DEFICIENT_UNRECOVERABLE": 27812,
+        "DEFICIENT_SEMANTIC_ONLY": 73,
+        "DEFICIENT_RESOLUTION_PRESERVING": 2172,
+        "UNKNOWN": 6
+      },
+      "unknown_pct": 0.01,
+      "opg_pct_of_known": 72.54,
+      "semantic_recovery_pct_of_deficient": 7.47,
+      "resolution_preserving_pct_of_deficient": 7.23,
+      "resolution_preserving_pct_of_recoverable": 96.75
+    },
+    "unknown_era": {
+      "n_edges": 755,
+      "state_counts": {
+        "PROVENANCED": 0,
+        "DEFICIENT_UNRECOVERABLE": 0,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 0,
+        "UNKNOWN": 755
+      },
+      "unknown_pct": 100.0,
+      "opg_pct_of_known": null,
+      "semantic_recovery_pct_of_deficient": null,
+      "resolution_preserving_pct_of_deficient": null,
+      "resolution_preserving_pct_of_recoverable": null
+    }
+  },
+  "by_repo": {
+    "axios/axios": {
+      "n_edges": 1272,
+      "state_counts": {
+        "PROVENANCED": 511,
+        "DEFICIENT_UNRECOVERABLE": 721,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 16,
+        "UNKNOWN": 24
+      },
+      "unknown_pct": 1.89,
+      "opg_pct_of_known": 59.05,
+      "semantic_recovery_pct_of_deficient": 2.17,
+      "resolution_preserving_pct_of_deficient": 2.17,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "caolan/async": {
+      "n_edges": 1490,
+      "state_counts": {
+        "PROVENANCED": 40,
+        "DEFICIENT_UNRECOVERABLE": 1384,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 64,
+        "UNKNOWN": 2
+      },
+      "unknown_pct": 0.13,
+      "opg_pct_of_known": 97.31,
+      "semantic_recovery_pct_of_deficient": 4.42,
+      "resolution_preserving_pct_of_deficient": 4.42,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "chaijs/chai": {
+      "n_edges": 872,
+      "state_counts": {
+        "PROVENANCED": 146,
+        "DEFICIENT_UNRECOVERABLE": 685,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 31,
+        "UNKNOWN": 10
+      },
+      "unknown_pct": 1.15,
+      "opg_pct_of_known": 83.06,
+      "semantic_recovery_pct_of_deficient": 4.33,
+      "resolution_preserving_pct_of_deficient": 4.33,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "cheeriojs/cheerio": {
+      "n_edges": 765,
+      "state_counts": {
+        "PROVENANCED": 263,
+        "DEFICIENT_UNRECOVERABLE": 469,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 10,
+        "UNKNOWN": 23
+      },
+      "unknown_pct": 3.01,
+      "opg_pct_of_known": 64.56,
+      "semantic_recovery_pct_of_deficient": 2.09,
+      "resolution_preserving_pct_of_deficient": 2.09,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "commitizen/cz-cli": {
+      "n_edges": 1776,
+      "state_counts": {
+        "PROVENANCED": 614,
+        "DEFICIENT_UNRECOVERABLE": 1140,
+        "DEFICIENT_SEMANTIC_ONLY": 2,
+        "DEFICIENT_RESOLUTION_PRESERVING": 17,
+        "UNKNOWN": 3
+      },
+      "unknown_pct": 0.17,
+      "opg_pct_of_known": 65.37,
+      "semantic_recovery_pct_of_deficient": 1.64,
+      "resolution_preserving_pct_of_deficient": 1.47,
+      "resolution_preserving_pct_of_recoverable": 89.47
+    },
+    "eemeli/yaml": {
+      "n_edges": 329,
+      "state_counts": {
+        "PROVENANCED": 147,
+        "DEFICIENT_UNRECOVERABLE": 155,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 0,
+        "UNKNOWN": 27
+      },
+      "unknown_pct": 8.21,
+      "opg_pct_of_known": 51.32,
+      "semantic_recovery_pct_of_deficient": 0.0,
+      "resolution_preserving_pct_of_deficient": 0.0,
+      "resolution_preserving_pct_of_recoverable": null
+    },
+    "google/zx": {
+      "n_edges": 899,
+      "state_counts": {
+        "PROVENANCED": 256,
+        "DEFICIENT_UNRECOVERABLE": 591,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 26,
+        "UNKNOWN": 26
+      },
+      "unknown_pct": 2.89,
+      "opg_pct_of_known": 70.68,
+      "semantic_recovery_pct_of_deficient": 4.21,
+      "resolution_preserving_pct_of_deficient": 4.21,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "isaacs/minimatch": {
+      "n_edges": 581,
+      "state_counts": {
+        "PROVENANCED": 140,
+        "DEFICIENT_UNRECOVERABLE": 431,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 1,
+        "UNKNOWN": 8
+      },
+      "unknown_pct": 1.38,
+      "opg_pct_of_known": 75.57,
+      "semantic_recovery_pct_of_deficient": 0.46,
+      "resolution_preserving_pct_of_deficient": 0.23,
+      "resolution_preserving_pct_of_recoverable": 50.0
+    },
+    "isaacs/node-glob": {
+      "n_edges": 748,
+      "state_counts": {
+        "PROVENANCED": 191,
+        "DEFICIENT_UNRECOVERABLE": 545,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 1,
+        "UNKNOWN": 10
+      },
+      "unknown_pct": 1.34,
+      "opg_pct_of_known": 74.12,
+      "semantic_recovery_pct_of_deficient": 0.37,
+      "resolution_preserving_pct_of_deficient": 0.18,
+      "resolution_preserving_pct_of_recoverable": 50.0
+    },
+    "jquery/jquery": {
+      "n_edges": 1397,
+      "state_counts": {
+        "PROVENANCED": 270,
+        "DEFICIENT_UNRECOVERABLE": 1107,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 3,
+        "UNKNOWN": 17
+      },
+      "unknown_pct": 1.22,
+      "opg_pct_of_known": 80.43,
+      "semantic_recovery_pct_of_deficient": 0.27,
+      "resolution_preserving_pct_of_deficient": 0.27,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "jsdom/jsdom": {
+      "n_edges": 324,
+      "state_counts": {
+        "PROVENANCED": 91,
+        "DEFICIENT_UNRECOVERABLE": 226,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 0,
+        "UNKNOWN": 7
+      },
+      "unknown_pct": 2.16,
+      "opg_pct_of_known": 71.29,
+      "semantic_recovery_pct_of_deficient": 0.0,
+      "resolution_preserving_pct_of_deficient": 0.0,
+      "resolution_preserving_pct_of_recoverable": null
+    },
+    "jshttp/content-type": {
+      "n_edges": 351,
+      "state_counts": {
+        "PROVENANCED": 113,
+        "DEFICIENT_UNRECOVERABLE": 212,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 1,
+        "UNKNOWN": 25
+      },
+      "unknown_pct": 7.12,
+      "opg_pct_of_known": 65.34,
+      "semantic_recovery_pct_of_deficient": 0.47,
+      "resolution_preserving_pct_of_deficient": 0.47,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "karma-runner/karma": {
+      "n_edges": 2161,
+      "state_counts": {
+        "PROVENANCED": 0,
+        "DEFICIENT_UNRECOVERABLE": 2083,
+        "DEFICIENT_SEMANTIC_ONLY": 34,
+        "DEFICIENT_RESOLUTION_PRESERVING": 34,
+        "UNKNOWN": 10
+      },
+      "unknown_pct": 0.46,
+      "opg_pct_of_known": 100.0,
+      "semantic_recovery_pct_of_deficient": 3.16,
+      "resolution_preserving_pct_of_deficient": 1.58,
+      "resolution_preserving_pct_of_recoverable": 50.0
+    },
+    "koajs/koa": {
+      "n_edges": 778,
+      "state_counts": {
+        "PROVENANCED": 17,
+        "DEFICIENT_UNRECOVERABLE": 758,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 2,
+        "UNKNOWN": 1
+      },
+      "unknown_pct": 0.13,
+      "opg_pct_of_known": 97.81,
+      "semantic_recovery_pct_of_deficient": 0.26,
+      "resolution_preserving_pct_of_deficient": 0.26,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "less/less.js": {
+      "n_edges": 509,
+      "state_counts": {
+        "PROVENANCED": 3,
+        "DEFICIENT_UNRECOVERABLE": 502,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 3,
+        "UNKNOWN": 1
+      },
+      "unknown_pct": 0.2,
+      "opg_pct_of_known": 99.41,
+      "semantic_recovery_pct_of_deficient": 0.59,
+      "resolution_preserving_pct_of_deficient": 0.59,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "markedjs/marked": {
+      "n_edges": 1152,
+      "state_counts": {
+        "PROVENANCED": 408,
+        "DEFICIENT_UNRECOVERABLE": 734,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 8,
+        "UNKNOWN": 2
+      },
+      "unknown_pct": 0.17,
+      "opg_pct_of_known": 64.52,
+      "semantic_recovery_pct_of_deficient": 1.08,
+      "resolution_preserving_pct_of_deficient": 1.08,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "microsoft/TypeScript": {
+      "n_edges": 480,
+      "state_counts": {
+        "PROVENANCED": 72,
+        "DEFICIENT_UNRECOVERABLE": 404,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 0,
+        "UNKNOWN": 4
+      },
+      "unknown_pct": 0.83,
+      "opg_pct_of_known": 84.87,
+      "semantic_recovery_pct_of_deficient": 0.0,
+      "resolution_preserving_pct_of_deficient": 0.0,
+      "resolution_preserving_pct_of_recoverable": null
+    },
+    "microsoft/playwright": {
+      "n_edges": 1377,
+      "state_counts": {
+        "PROVENANCED": 365,
+        "DEFICIENT_UNRECOVERABLE": 980,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 4,
+        "UNKNOWN": 27
+      },
+      "unknown_pct": 1.96,
+      "opg_pct_of_known": 72.96,
+      "semantic_recovery_pct_of_deficient": 0.51,
+      "resolution_preserving_pct_of_deficient": 0.41,
+      "resolution_preserving_pct_of_recoverable": 80.0
+    },
+    "microsoft/vscode": {
+      "n_edges": 3136,
+      "state_counts": {
+        "PROVENANCED": 239,
+        "DEFICIENT_UNRECOVERABLE": 2845,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 25,
+        "UNKNOWN": 26
+      },
+      "unknown_pct": 0.83,
+      "opg_pct_of_known": 92.32,
+      "semantic_recovery_pct_of_deficient": 0.91,
+      "resolution_preserving_pct_of_deficient": 0.87,
+      "resolution_preserving_pct_of_recoverable": 96.15
+    },
+    "mochajs/mocha": {
+      "n_edges": 1285,
+      "state_counts": {
+        "PROVENANCED": 192,
+        "DEFICIENT_UNRECOVERABLE": 1027,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 57,
+        "UNKNOWN": 9
+      },
+      "unknown_pct": 0.7,
+      "opg_pct_of_known": 84.95,
+      "semantic_recovery_pct_of_deficient": 5.26,
+      "resolution_preserving_pct_of_deficient": 5.26,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "motdotla/dotenv": {
+      "n_edges": 1243,
+      "state_counts": {
+        "PROVENANCED": 132,
+        "DEFICIENT_UNRECOVERABLE": 1091,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 9,
+        "UNKNOWN": 10
+      },
+      "unknown_pct": 0.8,
+      "opg_pct_of_known": 89.29,
+      "semantic_recovery_pct_of_deficient": 0.91,
+      "resolution_preserving_pct_of_deficient": 0.82,
+      "resolution_preserving_pct_of_recoverable": 90.0
+    },
+    "mozilla/source-map": {
+      "n_edges": 275,
+      "state_counts": {
+        "PROVENANCED": 0,
+        "DEFICIENT_UNRECOVERABLE": 266,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 9,
+        "UNKNOWN": 0
+      },
+      "unknown_pct": 0.0,
+      "opg_pct_of_known": 100.0,
+      "semantic_recovery_pct_of_deficient": 3.27,
+      "resolution_preserving_pct_of_deficient": 3.27,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "nestjs/nest": {
+      "n_edges": 3166,
+      "state_counts": {
+        "PROVENANCED": 565,
+        "DEFICIENT_UNRECOVERABLE": 2470,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 30,
+        "UNKNOWN": 101
+      },
+      "unknown_pct": 3.19,
+      "opg_pct_of_known": 81.57,
+      "semantic_recovery_pct_of_deficient": 1.2,
+      "resolution_preserving_pct_of_deficient": 1.2,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "nodeca/js-yaml": {
+      "n_edges": 1107,
+      "state_counts": {
+        "PROVENANCED": 152,
+        "DEFICIENT_UNRECOVERABLE": 943,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 0,
+        "UNKNOWN": 12
+      },
+      "unknown_pct": 1.08,
+      "opg_pct_of_known": 86.12,
+      "semantic_recovery_pct_of_deficient": 0.0,
+      "resolution_preserving_pct_of_deficient": 0.0,
+      "resolution_preserving_pct_of_recoverable": null
+    },
+    "nodejs/undici": {
+      "n_edges": 1601,
+      "state_counts": {
+        "PROVENANCED": 259,
+        "DEFICIENT_UNRECOVERABLE": 1324,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 1,
+        "UNKNOWN": 17
+      },
+      "unknown_pct": 1.06,
+      "opg_pct_of_known": 83.65,
+      "semantic_recovery_pct_of_deficient": 0.08,
+      "resolution_preserving_pct_of_deficient": 0.08,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "npm/cli": {
+      "n_edges": 2406,
+      "state_counts": {
+        "PROVENANCED": 479,
+        "DEFICIENT_UNRECOVERABLE": 1818,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 65,
+        "UNKNOWN": 43
+      },
+      "unknown_pct": 1.79,
+      "opg_pct_of_known": 79.73,
+      "semantic_recovery_pct_of_deficient": 3.5,
+      "resolution_preserving_pct_of_deficient": 3.45,
+      "resolution_preserving_pct_of_recoverable": 98.48
+    },
+    "npm/node-tar": {
+      "n_edges": 673,
+      "state_counts": {
+        "PROVENANCED": 166,
+        "DEFICIENT_UNRECOVERABLE": 494,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 1,
+        "UNKNOWN": 11
+      },
+      "unknown_pct": 1.63,
+      "opg_pct_of_known": 74.92,
+      "semantic_recovery_pct_of_deficient": 0.4,
+      "resolution_preserving_pct_of_deficient": 0.2,
+      "resolution_preserving_pct_of_recoverable": 50.0
+    },
+    "puppeteer/puppeteer": {
+      "n_edges": 4920,
+      "state_counts": {
+        "PROVENANCED": 586,
+        "DEFICIENT_UNRECOVERABLE": 4247,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 62,
+        "UNKNOWN": 24
+      },
+      "unknown_pct": 0.49,
+      "opg_pct_of_known": 88.03,
+      "semantic_recovery_pct_of_deficient": 1.46,
+      "resolution_preserving_pct_of_deficient": 1.44,
+      "resolution_preserving_pct_of_recoverable": 98.41
+    },
+    "redis/node-redis": {
+      "n_edges": 1212,
+      "state_counts": {
+        "PROVENANCED": 193,
+        "DEFICIENT_UNRECOVERABLE": 980,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 19,
+        "UNKNOWN": 20
+      },
+      "unknown_pct": 1.65,
+      "opg_pct_of_known": 83.81,
+      "semantic_recovery_pct_of_deficient": 1.9,
+      "resolution_preserving_pct_of_deficient": 1.9,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "rollup/rollup": {
+      "n_edges": 2303,
+      "state_counts": {
+        "PROVENANCED": 643,
+        "DEFICIENT_UNRECOVERABLE": 1592,
+        "DEFICIENT_SEMANTIC_ONLY": 22,
+        "DEFICIENT_RESOLUTION_PRESERVING": 2,
+        "UNKNOWN": 44
+      },
+      "unknown_pct": 1.91,
+      "opg_pct_of_known": 71.54,
+      "semantic_recovery_pct_of_deficient": 1.49,
+      "resolution_preserving_pct_of_deficient": 0.12,
+      "resolution_preserving_pct_of_recoverable": 8.33
+    },
+    "showdownjs/showdown": {
+      "n_edges": 1254,
+      "state_counts": {
+        "PROVENANCED": 222,
+        "DEFICIENT_UNRECOVERABLE": 993,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 4,
+        "UNKNOWN": 34
+      },
+      "unknown_pct": 2.71,
+      "opg_pct_of_known": 81.8,
+      "semantic_recovery_pct_of_deficient": 0.5,
+      "resolution_preserving_pct_of_deficient": 0.4,
+      "resolution_preserving_pct_of_recoverable": 80.0
+    },
+    "sinonjs/sinon": {
+      "n_edges": 1182,
+      "state_counts": {
+        "PROVENANCED": 204,
+        "DEFICIENT_UNRECOVERABLE": 900,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 64,
+        "UNKNOWN": 14
+      },
+      "unknown_pct": 1.18,
+      "opg_pct_of_known": 82.53,
+      "semantic_recovery_pct_of_deficient": 6.64,
+      "resolution_preserving_pct_of_deficient": 6.64,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "socketio/socket.io": {
+      "n_edges": 2866,
+      "state_counts": {
+        "PROVENANCED": 261,
+        "DEFICIENT_UNRECOVERABLE": 2173,
+        "DEFICIENT_SEMANTIC_ONLY": 13,
+        "DEFICIENT_RESOLUTION_PRESERVING": 384,
+        "UNKNOWN": 35
+      },
+      "unknown_pct": 1.22,
+      "opg_pct_of_known": 90.78,
+      "semantic_recovery_pct_of_deficient": 15.45,
+      "resolution_preserving_pct_of_deficient": 14.94,
+      "resolution_preserving_pct_of_recoverable": 96.73
+    },
+    "stylelint/stylelint": {
+      "n_edges": 1639,
+      "state_counts": {
+        "PROVENANCED": 273,
+        "DEFICIENT_UNRECOVERABLE": 1314,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 37,
+        "UNKNOWN": 15
+      },
+      "unknown_pct": 0.92,
+      "opg_pct_of_known": 83.19,
+      "semantic_recovery_pct_of_deficient": 2.74,
+      "resolution_preserving_pct_of_deficient": 2.74,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "terser/terser": {
+      "n_edges": 284,
+      "state_counts": {
+        "PROVENANCED": 2,
+        "DEFICIENT_UNRECOVERABLE": 280,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 2,
+        "UNKNOWN": 0
+      },
+      "unknown_pct": 0.0,
+      "opg_pct_of_known": 99.3,
+      "semantic_recovery_pct_of_deficient": 0.71,
+      "resolution_preserving_pct_of_deficient": 0.71,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "tj/commander.js": {
+      "n_edges": 288,
+      "state_counts": {
+        "PROVENANCED": 55,
+        "DEFICIENT_UNRECOVERABLE": 230,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 2,
+        "UNKNOWN": 1
+      },
+      "unknown_pct": 0.35,
+      "opg_pct_of_known": 80.84,
+      "semantic_recovery_pct_of_deficient": 0.86,
+      "resolution_preserving_pct_of_deficient": 0.86,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "uuidjs/uuid": {
+      "n_edges": 1965,
+      "state_counts": {
+        "PROVENANCED": 302,
+        "DEFICIENT_UNRECOVERABLE": 1649,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 1,
+        "UNKNOWN": 13
+      },
+      "unknown_pct": 0.66,
+      "opg_pct_of_known": 84.53,
+      "semantic_recovery_pct_of_deficient": 0.06,
+      "resolution_preserving_pct_of_deficient": 0.06,
+      "resolution_preserving_pct_of_recoverable": 100.0
+    },
+    "visionmedia/superagent": {
+      "n_edges": 4039,
+      "state_counts": {
+        "PROVENANCED": 38,
+        "DEFICIENT_UNRECOVERABLE": 3645,
+        "DEFICIENT_SEMANTIC_ONLY": 7,
+        "DEFICIENT_RESOLUTION_PRESERVING": 346,
+        "UNKNOWN": 3
+      },
+      "unknown_pct": 0.07,
+      "opg_pct_of_known": 99.06,
+      "semantic_recovery_pct_of_deficient": 8.83,
+      "resolution_preserving_pct_of_deficient": 8.65,
+      "resolution_preserving_pct_of_recoverable": 98.02
+    },
+    "webpack-contrib/css-loader": {
+      "n_edges": 2976,
+      "state_counts": {
+        "PROVENANCED": 144,
+        "DEFICIENT_UNRECOVERABLE": 2339,
+        "DEFICIENT_SEMANTIC_ONLY": 6,
+        "DEFICIENT_RESOLUTION_PRESERVING": 465,
+        "UNKNOWN": 22
+      },
+      "unknown_pct": 0.74,
+      "opg_pct_of_known": 95.13,
+      "semantic_recovery_pct_of_deficient": 16.76,
+      "resolution_preserving_pct_of_deficient": 16.55,
+      "resolution_preserving_pct_of_recoverable": 98.73
+    },
+    "webpack-contrib/mini-css-extract-plugin": {
+      "n_edges": 3238,
+      "state_counts": {
+        "PROVENANCED": 193,
+        "DEFICIENT_UNRECOVERABLE": 2584,
+        "DEFICIENT_SEMANTIC_ONLY": 7,
+        "DEFICIENT_RESOLUTION_PRESERVING": 437,
+        "UNKNOWN": 17
+      },
+      "unknown_pct": 0.53,
+      "opg_pct_of_known": 94.01,
+      "semantic_recovery_pct_of_deficient": 14.66,
+      "resolution_preserving_pct_of_deficient": 14.43,
+      "resolution_preserving_pct_of_recoverable": 98.42
+    },
+    "webpack/webpack-cli": {
+      "n_edges": 3531,
+      "state_counts": {
+        "PROVENANCED": 1106,
+        "DEFICIENT_UNRECOVERABLE": 2393,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 5,
+        "UNKNOWN": 26
+      },
+      "unknown_pct": 0.74,
+      "opg_pct_of_known": 68.45,
+      "semantic_recovery_pct_of_deficient": 0.25,
+      "resolution_preserving_pct_of_deficient": 0.21,
+      "resolution_preserving_pct_of_recoverable": 83.33
+    },
+    "webpack/webpack-dev-server": {
+      "n_edges": 2573,
+      "state_counts": {
+        "PROVENANCED": 784,
+        "DEFICIENT_UNRECOVERABLE": 1770,
+        "DEFICIENT_SEMANTIC_ONLY": 1,
+        "DEFICIENT_RESOLUTION_PRESERVING": 2,
+        "UNKNOWN": 16
+      },
+      "unknown_pct": 0.62,
+      "opg_pct_of_known": 69.34,
+      "semantic_recovery_pct_of_deficient": 0.17,
+      "resolution_preserving_pct_of_deficient": 0.11,
+      "resolution_preserving_pct_of_recoverable": 66.67
+    },
+    "winstonjs/winston": {
+      "n_edges": 1264,
+      "state_counts": {
+        "PROVENANCED": 327,
+        "DEFICIENT_UNRECOVERABLE": 820,
+        "DEFICIENT_SEMANTIC_ONLY": 8,
+        "DEFICIENT_RESOLUTION_PRESERVING": 96,
+        "UNKNOWN": 13
+      },
+      "unknown_pct": 1.03,
+      "opg_pct_of_known": 73.86,
+      "semantic_recovery_pct_of_deficient": 11.26,
+      "resolution_preserving_pct_of_deficient": 10.39,
+      "resolution_preserving_pct_of_recoverable": 92.31
+    },
+    "yargs/yargs": {
+      "n_edges": 1084,
+      "state_counts": {
+        "PROVENANCED": 152,
+        "DEFICIENT_UNRECOVERABLE": 921,
+        "DEFICIENT_SEMANTIC_ONLY": 2,
+        "DEFICIENT_RESOLUTION_PRESERVING": 3,
+        "UNKNOWN": 6
+      },
+      "unknown_pct": 0.55,
+      "opg_pct_of_known": 85.9,
+      "semantic_recovery_pct_of_deficient": 0.54,
+      "resolution_preserving_pct_of_deficient": 0.32,
+      "resolution_preserving_pct_of_recoverable": 60.0
+    },
+    "zloirock/core-js": {
+      "n_edges": 921,
+      "state_counts": {
+        "PROVENANCED": 200,
+        "DEFICIENT_UNRECOVERABLE": 719,
+        "DEFICIENT_SEMANTIC_ONLY": 0,
+        "DEFICIENT_RESOLUTION_PRESERVING": 0,
+        "UNKNOWN": 2
+      },
+      "unknown_pct": 0.22,
+      "opg_pct_of_known": 78.24,
+      "semantic_recovery_pct_of_deficient": 0.0,
+      "resolution_preserving_pct_of_deficient": 0.0,
+      "resolution_preserving_pct_of_recoverable": null
+    }
+  },
+  "gate": {
+    "A_opg_era_controlled": {
+      "verdict": "PASS",
+      "post_ga_opg_pct": 72.54,
+      "overall_opg_pct": 83.29,
+      "note": "era-controlled denominator = edges whose resolved version was published on/after npm provenance GA (2023-09-26); pre-GA versions cannot fairly be called 'deficient'."
+    },
+    "B_semantic_pd": {
+      "verdict": "FAIL",
+      "semantic_recovery_pct_of_deficient": 4.29,
+      "n_deficient": 57415,
+      "n_recoverable": 2461
+    },
+    "C_semantic_to_operational_gap": {
+      "verdict": "PENDING",
+      "note": "Not measured at this scale -- requires the Phase 2 isolated-worker sandbox (docs/methodology_freeze.md Section 7) to determine, for each resolution-confirmed candidate, whether it is an OPERATIONALLY VIABLE substitution: real npm resolution succeeds, structural install (npm ci --ignore-scripts) succeeds, no new peer conflict, no npm-audit-signatures regression, and no new test failure. Deliberately NOT called 'deployability' -- docs/methodology_freeze.md Section 5 -- since surviving install+tests is not a production-deployability claim."
+    },
+    "D_excess_enforcement_cost": {
+      "verdict": "PENDING",
+      "note": "Not measured in this pilot -- requires B0/B1 baseline install runs to compare against. See docs/gate_status.md, Phase 2."
+    },
+    "E_robustness": {
+      "verdict": "PASS",
+      "direct_opg_pct": 70.19,
+      "transitive_opg_pct": 83.71,
+      "by_era_opg_pct": {
+        "pre_provenance_existed": 100.0,
+        "provenance_beta_window": 93.62,
+        "post_ga": 72.54,
+        "unknown_era": null
+      },
+      "by_repo_opg_pct": {
+        "axios/axios": 59.05,
+        "caolan/async": 97.31,
+        "chaijs/chai": 83.06,
+        "cheeriojs/cheerio": 64.56,
+        "commitizen/cz-cli": 65.37,
+        "eemeli/yaml": 51.32,
+        "google/zx": 70.68,
+        "isaacs/minimatch": 75.57,
+        "isaacs/node-glob": 74.12,
+        "jquery/jquery": 80.43,
+        "jsdom/jsdom": 71.29,
+        "jshttp/content-type": 65.34,
+        "karma-runner/karma": 100.0,
+        "koajs/koa": 97.81,
+        "less/less.js": 99.41,
+        "markedjs/marked": 64.52,
+        "microsoft/TypeScript": 84.87,
+        "microsoft/playwright": 72.96,
+        "microsoft/vscode": 92.32,
+        "mochajs/mocha": 84.95,
+        "motdotla/dotenv": 89.29,
+        "mozilla/source-map": 100.0,
+        "nestjs/nest": 81.57,
+        "nodeca/js-yaml": 86.12,
+        "nodejs/undici": 83.65,
+        "npm/cli": 79.73,
+        "npm/node-tar": 74.92,
+        "puppeteer/puppeteer": 88.03,
+        "redis/node-redis": 83.81,
+        "rollup/rollup": 71.54,
+        "showdownjs/showdown": 81.8,
+        "sinonjs/sinon": 82.53,
+        "socketio/socket.io": 90.78,
+        "stylelint/stylelint": 83.19,
+        "terser/terser": 99.3,
+        "tj/commander.js": 80.84,
+        "uuidjs/uuid": 84.53,
+        "visionmedia/superagent": 99.06,
+        "webpack-contrib/css-loader": 95.13,
+        "webpack-contrib/mini-css-extract-plugin": 94.01,
+        "webpack/webpack-cli": 68.45,
+        "webpack/webpack-dev-server": 69.34,
+        "winstonjs/winston": 73.86,
+        "yargs/yargs": 85.9,
+        "zloirock/core-js": 78.24
+      },
+      "note": "lockfile-vs-floating stratification NOT evaluated (pilot only analyzes committed lockfiles); direct-vs-transitive and era/repo slices are."
+    },
+    "F_unknowns_bounded": {
+      "verdict": "PASS",
+      "unknown_pct": 1.09
+    }
+  },
+  "overall_verdict_measured_criteria_only": "MEASURED_FAIL_B__C_D_PENDING"
+}

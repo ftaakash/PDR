@@ -1,0 +1,11 @@
+{
+  "note": "SECONDARY / independently-killable. Prevalence only -- builder/source-path change enrichment NOT computed in this pilot (see pdr/regression.py docstring). NA means insufficient dated version history to say anything, and is reported separately from 'no_regression' -- these are different claims.",
+  "packages_scanned": 2841,
+  "status_counts": {
+    "regressed": 137,
+    "no_regression": 2632,
+    "NA": 58
+  },
+  "regression_prevalence_pct_among_dated_packages": 4.95,
+  "n_regression_events": 1597
+}

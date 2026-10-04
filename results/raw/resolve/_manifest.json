@@ -1,0 +1,54 @@
+{
+  "config": "configs/experiments/kill_v1.yaml",
+  "repos": [
+    {
+      "repo": "microsoft/vscode",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 3136,
+      "lockfile_bytes": 781711
+    },
+    {
+      "repo": "npm/cli",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 2406,
+      "lockfile_bytes": 437416
+    },
+    {
+      "repo": "microsoft/playwright",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1377,
+      "lockfile_bytes": 347082
+    },
+    {
+      "repo": "puppeteer/puppeteer",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 4920,
+      "lockfile_bytes": 1418268
+    },
+    {
+      "repo": "axios/axios",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 1277,
+      "lockfile_bytes": 346093
+    },
+    {
+      "repo": "socketio/socket.io",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 2866,
+      "lockfile_bytes": 714127
+    },
+    {
+      "repo": "nestjs/nest",
+      "ok": true,
+      "ref": "HEAD",
+      "n_edges": 3166,
+      "lockfile_bytes": 806158
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m pytest:*)",
+      "Bash(python3 scripts/check_claims.py:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git tag:*)",
+      "Bash(ls:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)"
+    ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(npm install:*)",
+      "Bash(bash isolated_worker/setup.sh:*)",
+      "Bash(python3 isolated_worker/orchestrate.py:*)",
+      "Edit(isolated_worker/**)",
+      "Edit(docs/methodology_freeze.md)",
+      "Edit(docs/claims.json)",
+      "Edit(configs/experiments/phase3_micropilot_manifest.json)",
+      "Edit(configs/experiments/phase3_micropilot_manifest.sha256)",
+      "Edit(results/raw/**)"
+    ],
+    "deny": [
+      "Bash(docker run:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker cp:*)",
+      "Bash(docker create:*)",
+      "Bash(python3 isolated_worker/runner.py:*)",
+      "Bash(python isolated_worker/runner.py:*)",
+      "Bash(py isolated_worker/runner.py:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run:*)",
+      "Bash(npm rebuild:*)",
+      "Bash(npm start:*)",
+      "Bash(npx:*)",
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  }
+}

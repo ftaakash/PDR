@@ -1,0 +1,72 @@
+{
+  "by_lockfile_version": {
+    "v3": {
+      "deficient": 54598,
+      "recoverable": 2421,
+      "total": 66114,
+      "unknown": 748,
+      "opg_pct": 83.53,
+      "semrec_pct": 4.43
+    },
+    "v2": {
+      "deficient": 2817,
+      "recoverable": 40,
+      "total": 3578,
+      "unknown": 13,
+      "opg_pct": 79.02,
+      "semrec_pct": 1.42
+    }
+  },
+  "by_size_bucket": {
+    "medium": {
+      "deficient": 18009,
+      "recoverable": 372,
+      "total": 23147,
+      "unknown": 300,
+      "opg_pct": 78.82,
+      "semrec_pct": 2.07
+    },
+    "large": {
+      "deficient": 23839,
+      "recoverable": 1600,
+      "total": 28924,
+      "unknown": 246,
+      "opg_pct": 83.13,
+      "semrec_pct": 6.71
+    },
+    "small": {
+      "deficient": 1888,
+      "recoverable": 17,
+      "total": 2360,
+      "unknown": 61,
+      "opg_pct": 82.12,
+      "semrec_pct": 0.9
+    },
+    "very_large": {
+      "deficient": 13679,
+      "recoverable": 472,
+      "total": 15261,
+      "unknown": 154,
+      "opg_pct": 90.55,
+      "semrec_pct": 3.45
+    }
+  },
+  "by_monorepo": {
+    "False": {
+      "deficient": 37410,
+      "recoverable": 1750,
+      "total": 45367,
+      "unknown": 460,
+      "opg_pct": 83.31,
+      "semrec_pct": 4.68
+    },
+    "True": {
+      "deficient": 20005,
+      "recoverable": 711,
+      "total": 24325,
+      "unknown": 301,
+      "opg_pct": 83.27,
+      "semrec_pct": 3.55
+    }
+  }
+}
