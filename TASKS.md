@@ -30,7 +30,7 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
 - [ ] **T3 [AUTO] `scripts/layer1_report.py`** producing
   `results/processed/layer1_summary.json` (edge-weighted, repo-weighted,
   clustered CIs, per-repo table, concentration). Register in `claims.json`.
-- [ ] **T4 [AUTO] Related-work pass.** Close the gap found in review: the
+- [ ] **T4 [AUTO] Related-work pass.** (Started 2026-10-04: verified rows in `docs/audit_v2.md`.) Close the gap found in review: the
   dependency-update / breaking-update literature (semver update flow in npm,
   Dependabot compatibility and test-reliability studies, update-reproducibility
   work) next to the provenance literature. Open and read each source; fill
@@ -41,6 +41,10 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
 
 ## Track 2 — Layer 3 on a Docker machine
 
+- [ ] **T4b [HUMAN-GATE, optional] Optimizer upper bound.** `docs/audit_v2.md`
+  found MaxNPM/PacSolve (ICSE 2023), a configurable npm solver. Decide whether
+  to compare PDR's real-resolver recovery against an optimizer with a
+  provenance objective on a subset. Strengthens Gate B; costs time.
 - [ ] **T5 [HUMAN-GATE] Docker environment.** Human installs Docker (Windows:
   Docker Desktop + WSL2) and runs Claude Code inside WSL. Resolve the real base
   image digest (`docker pull node:20-bookworm-slim && docker inspect
