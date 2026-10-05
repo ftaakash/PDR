@@ -17,10 +17,12 @@ FROM node:20-bookworm-slim@sha256:2cf067cfed83d5ea958367df9f966191a942351a2df77d
 # with it, on purpose, in the same commit.
 RUN npm install -g npm@10.9.7 && npm cache clean --force
 
+# python3: the entrypoint (runner.py) -- node:*-slim images do not ship it; the first
+# real --limit 2 run failed with 'exec: "python3": executable file not found'.
 # curl: used only by orchestrate.py's --selftest to prove network isolation
 # actually works, from inside a throwaway container of this same image --
 # not used by runner.py during a real experiment.
-RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates git \
+RUN apt-get update && apt-get install -y --no-install-recommends python3 curl ca-certificates git \
     && rm -rf /var/lib/apt/lists/*
 
 # Non-root, fixed UID/GID matching orchestrate.py's --user 10001:10001 --
