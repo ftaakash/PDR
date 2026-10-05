@@ -135,6 +135,12 @@ def compute():
         "b0_invalid": m["flags"]["b0_invalid"], "REWORK": m["flags"]["REWORK"],
         "test_delta_n_pairs": m["primary"]["n_pairs"], "test_delta_new_failures": m["primary"]["new_failures_b"],
     }
+    m2 = p3r.build(jsonl(p("results", "processed", "phase3_micropilot_v2_results.jsonl")))
+    out["phase3_micropilot_v2"] = {
+        "n_records": m2["n_records"], "n_valid": m2["n_valid"], "outcome_counts": m2["outcome_counts"],
+        "b0_invalid": m2["flags"]["b0_invalid"], "REWORK": m2["flags"]["REWORK"],
+        "test_delta_n_pairs": m2["primary"]["n_pairs"], "test_delta_new_failures": m2["primary"]["new_failures_b"],
+    }
     l2 = jsonl(p("results", "processed", "phase2_layer2_results.jsonl"))
     out["layer2"] = {"n": len(l2), "pdr_install_ok": sum(1 for r in l2 if r["pdr"]["install"]["install_ok"])}
     man = json.load(open(p("configs", "experiments", "phase3_micropilot_manifest.json")))
