@@ -281,3 +281,46 @@ transcription error caught by re-checking the pins file against the text.)
 7. Only then: scale to the larger 100-200-candidate Layer-3 cohort the
    review recommends, via the same frozen selection script with an updated
    `ALLOCATION` -- a new, reviewable one-line change, not a rewrite.
+
+## 10. Pre-specified analysis (added 2026-10-05, before any Layer 3 result exists; TASKS.md T6)
+
+`scripts/phase3_report.py` reads `results/processed/phase3_micropilot_results.jsonl`
+and writes `results/processed/phase3_summary.json`. It was written and tested
+on synthetic fixtures only (`tests/test_phase3_report.py`); no real record
+existed when it was committed. Everything below is fixed now; anything else
+computed later is labelled exploratory.
+
+1. **Record validity.** Every record is checked with
+   `pdr.phase3.validate_record`; invalid records are listed and excluded, never
+   repaired. Classification is always **recomputed** with
+   `pdr.phase3.classify_pair` from the raw arms; the stored `classification`
+   is ignored, so a later taxonomy fix needs no re-execution.
+2. **Outcome counts** over experiments (unit: `(repo, package, candidate)`),
+   plus a per-repo table.
+3. **Funnel**: `pdr.phase3.funnel`, unchanged.
+4. **Paired deltas** with `pdr.phase3.paired_delta` (repo-clustered bootstrap,
+   5,000 resamples, seed 20260928) for `install`, `lifecycle` and `test`.
+   **Frozen primary: the `test` delta** (flaky-B0 pairs excluded, as in
+   Section 3). Per `docs/audit_v2.md`, the test delta is **not reported as a
+   Gate D result if fewer than 10 attributable test pairs exist**; it is still
+   printed, marked underpowered.
+5. **Audit** is summarised from the parsed counts, not through
+   `paired_delta`: pairs with `audit_parse_ok`, pairs classified
+   `AUDIT_SIGNATURE_CHANGE`, and the change in `invalid`/`missing`. (While
+   writing this section, `paired_delta(records, "audit")` was found to count
+   every audit pair as "passed" on both arms, because audit is judged by
+   comparison, not exit code; `pdr.phase3._stage_fail` now returns
+   "indeterminate" for audit, so that call yields `n_pairs = 0` instead of a
+   spurious zero delta. Regression test added.)
+6. **Attestation gain** (`classify_pair`'s `attestation_gain`, the intended
+   effect): n with a parseable audit on both arms, count with gain > 0, = 0,
+   < 0, and the median.
+7. **Both estimands** for the viability rate (`OK` share): experiment-weighted
+   and repo-weighted, each with the repo-clustered CI from `pdr.stats.clustered`,
+   over (a) all valid experiments and (b) experiments with a usable baseline
+   (B0 installed and B0 tests `PASS`).
+8. **Kill / downgrade flags** from `docs/audit_v2.md`, computed and printed,
+   never acted on by the script: B0 invalid (install fails, tests fail or
+   flaky) in more than 30% of experiments -> `REWORK`; `NO_BEHAVIORAL_CHANGE`
+   in more than 50% of experiments that reached the end -> "Layer 3 adds
+   nothing"; fewer than 10 attributable test pairs -> "no Gate D claim".

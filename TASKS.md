@@ -52,7 +52,7 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
   placeholder in `isolated_worker/Dockerfile`, pin the mitmproxy image version
   too, then run `bash isolated_worker/setup.sh`. Claude Code may prepare exact
   commands and review output; the human executes.
-- [ ] **T6 [AUTO, write before T7] `scripts/phase3_report.py`.** Pre-specify the
+- [x] **T6 [AUTO, write before T7] `scripts/phase3_report.py`.** *(2026-10-05: done; analysis pre-specified in `docs/phase3_protocol.md` Section 10, tested on synthetic fixtures only. Found and fixed `paired_delta(..., "audit")` silently reporting a zero delta.)* Pre-specify the
   analysis *before any result exists*: outcome counts, `pdr.phase3.funnel`,
   paired deltas for install/audit/test (frozen primary: test-failure delta),
   per-repo table, attestation-gain summary. Test it on synthetic fixtures only.

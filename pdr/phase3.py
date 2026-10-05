@@ -285,7 +285,11 @@ def _stage_fail(arm: dict, stage: str, rec_classification: Optional[dict] = None
     if stage == "test":
         flags = test_pass_flags(arm)
         return None if not flags else (not all(flags))
-    if stage == "peer":
+    if stage in ("peer", "audit"):
+        # Both are judged by comparison with B0, never by the arm's own exit
+        # code (stage_kind returns None for them), so a per-arm pass/fail is
+        # indeterminate. Returning False here made paired_delta(..., "audit")
+        # report every pair as passing on both arms (found 2026-10-05).
         return None
     return stage_kind(arm, stage) is not None
 
