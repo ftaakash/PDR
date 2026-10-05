@@ -180,3 +180,30 @@ def test_parse_audit_signatures_variants():
     assert p3.parse_audit_signatures("1 package has verified attestations")["verified_attestations"] == 1
     assert p3.parse_audit_signatures("")["parse_ok"] is False
     assert p3.parse_audit_signatures("npm error Failed to download")["parse_ok"] is False
+
+
+def test_pdr_runs_twice_and_flaky_pdr_is_its_own_outcome():
+    # T7 amendment 2026-10-05: PDR tests run twice; disagreement is TEST_FLAKY, not TEST_FAIL
+    flaky_pdr = pdr_arm(test_runs=(0, 1))
+    c = p3.classify_pair(b0_arm(), flaky_pdr)
+    assert c["outcome"] == p3.TEST_FLAKY and c["pdr_test_status"] == "FLAKY" and not c["attributable"]["test"]
+    both_fail = pdr_arm(test_runs=(1, 1))
+    c2 = p3.classify_pair(b0_arm(), both_fail)
+    assert c2["outcome"] == sb.TEST_FAIL and c2["attributable"]["test"]
+    both_pass = pdr_arm(test_runs=(0, 0))
+    assert p3.classify_pair(b0_arm(), both_pass)["outcome"] == sb.OK
+
+
+def test_paired_test_delta_excludes_flaky_pdr():
+    rs = [rec("a", pdr=pdr_arm(test_runs=(0, 1))), rec("b", pdr=pdr_arm(test_runs=(1, 1))), rec("c")]
+    d = p3.paired_delta(rs, "test", n_boot=100)
+    assert d["n_pairs"] == 2 and d["new_failures_b"] == 1
+
+
+def test_orchestrator_runs_pdr_tests_twice():
+    import importlib.util
+    path = os.path.join(os.path.dirname(__file__), "..", "isolated_worker", "orchestrate.py")
+    spec = importlib.util.spec_from_file_location("orch", path)
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    assert m.CFG["pdr_test_runs"] == 2 and m.CFG["b0_test_runs"] == 2

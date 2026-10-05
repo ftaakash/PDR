@@ -58,7 +58,7 @@ CFG = {
     "tmpfs_tmp": "/tmp:rw,noexec,nosuid,size=512m",
     "user": "10001:10001",
     "timeouts": {"resolve": 300, "install": 600, "lifecycle": 600, "peer": 120, "audit": 180, "test": 900},
-    "b0_test_runs": 2, "pdr_test_runs": 1,
+    "b0_test_runs": 2, "pdr_test_runs": 2,   # T7 decision 2026-10-05: symmetric with B0
     "container_wall_s": 3600,         # hard ceiling enforced by the orchestrator, independent of in-container timeouts
 }
 

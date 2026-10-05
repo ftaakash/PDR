@@ -353,3 +353,21 @@ network self-test had been executed. Section 2 is otherwise unchanged.
   that POST did not already allow. Tests: `tests/test_proxy_allowlist.py`.
 - The same self-test confirmed the other isolation layer: a direct
   (proxy-bypassing) request fails with `Could not resolve host`.
+
+## 3.1 Amendment 2026-10-05: PDR tests also run twice (TASKS.md T7)
+
+Decided by the project owner before any Layer 3 experiment ran. Section 3
+ran B0's tests twice and PDR's once, which was asymmetric: a flaky test
+could make PDR look broken while the same flakiness on B0 was screened out.
+Reason (stated before outcomes): single-run npm test outcomes are not
+reliably reproducible (Maksymiuk, TU Delft BSc thesis 2026: 4.8% of npm
+update experiments non-reproducible; `docs/literature_matrix.md`).
+
+- `pdr_test_runs = 2` (`isolated_worker/orchestrate.py`).
+- PDR test status is PASS / FAIL / FLAKY over its two runs, like B0's.
+- A PDR arm whose two runs disagree gets the new outcome **`TEST_FLAKY`**:
+  never counted as `TEST_FAIL` or `OK`, excluded from the test stage's
+  attributable denominator in the funnel, and excluded from the primary
+  test-failure delta (as flaky-B0 pairs already were). Counts of `TEST_FLAKY`
+  are reported.
+- Cost: roughly 1.5x the test-stage time per experiment.

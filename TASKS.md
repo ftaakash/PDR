@@ -45,7 +45,7 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
   found MaxNPM/PacSolve (ICSE 2023), a configurable npm solver. Decide whether
   to compare PDR's real-resolver recovery against an optimizer with a
   provenance objective on a subset. Strengthens Gate B; costs time.
-- [ ] **T5 [HUMAN-GATE] Docker environment.** Human installs Docker (Windows:
+- [x] **T5 [HUMAN-GATE] Docker environment.** *(2026-10-05: local Windows lacks Hyper-V; owner chose GitHub-hosted Ubuntu runners. Images pinned by digest, proxy fixed, self-test passed. `docs/phase3_protocol.md` Section 2.1.)* Human installs Docker (Windows:
   Docker Desktop + WSL2) and runs Claude Code inside WSL. Resolve the real base
   image digest (`docker pull node:20-bookworm-slim && docker inspect
   --format='{{index .RepoDigests 0}}' node:20-bookworm-slim`), replace the
@@ -56,8 +56,8 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
   analysis *before any result exists*: outcome counts, `pdr.phase3.funnel`,
   paired deltas for install/audit/test (frozen primary: test-failure delta),
   per-repo table, attestation-gain summary. Test it on synthetic fixtures only.
-- [ ] **T7 [HUMAN-GATE] Decide `pdr_test_runs` (1 or 2) before the first real
-  run.** Review evidence that single-run npm test outcomes can be unstable;
+- [x] **T7 [HUMAN-GATE] Decide `pdr_test_runs` (1 or 2) before the first real
+  run.** *(2026-10-05: owner chose 2; `docs/phase3_protocol.md` Section 3.1, new outcome TEST_FLAKY.)* Review evidence that single-run npm test outcomes can be unstable;
   PDR is currently run once while B0 runs twice, which is asymmetric. Record
   the decision as a dated amendment in `docs/phase3_protocol.md`.
 - [ ] **T8 [AUTO with stops] Execute Phase 3 in the order of

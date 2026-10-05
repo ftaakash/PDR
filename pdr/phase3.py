@@ -42,9 +42,13 @@ STAGES = ["resolve", "install", "lifecycle", "peer", "audit", "test"]
 
 # Outcomes (superset of pdr.sandbox.ALL_OUTCOMES, plus AUDIT_SIGNATURE_CHANGE)
 AUDIT_SIGNATURE_CHANGE = "AUDIT_SIGNATURE_CHANGE"
+# T7 amendment 2026-10-05 (docs/phase3_protocol.md Section 3.1): PDR tests run
+# twice like B0's. If the two PDR runs disagree, the substitution's test effect
+# is undetermined -- recorded as TEST_FLAKY, never as TEST_FAIL or OK.
+TEST_FLAKY = "TEST_FLAKY"
 OUTCOMES = [
     sb.OK, sb.RESOLUTION_FAIL, sb.INSTALL_FAIL, sb.LIFECYCLE_FAIL, sb.PEER_CONFLICT,
-    AUDIT_SIGNATURE_CHANGE, sb.TEST_FAIL, sb.NO_BEHAVIORAL_CHANGE, sb.TIMEOUT, sb.RESOURCE_LIMIT,
+    AUDIT_SIGNATURE_CHANGE, sb.TEST_FAIL, TEST_FLAKY, sb.NO_BEHAVIORAL_CHANGE, sb.TIMEOUT, sb.RESOURCE_LIMIT,
 ]
 
 # stage -> outcome name when that stage fails for a reason other than timeout/OOM
@@ -92,6 +96,11 @@ def test_pass_flags(arm: dict) -> List[bool]:
     s = (arm.get("stages") or {}).get("test") or {}
     return [(r.get("exit_code") == 0 and not r.get("timed_out") and not r.get("oom"))
             for r in (s.get("runs") or [])]
+
+
+def test_status(arm: dict) -> str:
+    """'PASS' | 'FAIL' | 'FLAKY' | 'NOT_RUN' over an arm's test runs (both arms run twice)."""
+    return b0_test_status(arm)
 
 
 def b0_test_status(b0: dict) -> str:
@@ -180,7 +189,8 @@ def classify_pair(b0: dict, pdr: dict) -> dict:
     attributable["peer"] = stage_ran(b0, "peer") and b0_kind["install"] is None
     attributable["audit"] = stage_ran(b0, "audit") and b0_kind["install"] is None
     tstat = b0_test_status(b0)
-    attributable["test"] = (tstat == "PASS")
+    pstat = test_status(pdr)
+    attributable["test"] = (tstat == "PASS") and pstat != "FLAKY"
 
     ap = audit_parsed(b0)
     aq = audit_parsed(pdr)
@@ -200,6 +210,9 @@ def classify_pair(b0: dict, pdr: dict) -> dict:
                 outcome, fail_stage = AUDIT_SIGNATURE_CHANGE, s
                 break
             continue
+        if s == "test" and test_status(pdr) == "FLAKY" and stage_kind(pdr, s) == "FAIL":
+            outcome, fail_stage = TEST_FLAKY, s
+            break
         kind = stage_kind(pdr, s)
         if kind is None:
             continue
@@ -222,6 +235,7 @@ def classify_pair(b0: dict, pdr: dict) -> dict:
         "failure_stage": fail_stage,
         "attributable": attributable,
         "b0_test_status": tstat,
+        "pdr_test_status": pstat,
         "audit_parse_ok": audit_parse_ok,
         "attestation_gain": gain,
         "tree_diff_size": len(diff),
@@ -303,7 +317,7 @@ def paired_delta(records: List[dict], stage: str, n_boot: int = 5000, seed: int 
     discipline as Phase 1, docs/methodology_freeze.md Section 3)."""
     pairs = []
     for r in records:
-        if stage == "test" and b0_test_status(r["b0"]) == "FLAKY":
+        if stage == "test" and (b0_test_status(r["b0"]) == "FLAKY" or test_status(r["pdr"]) == "FLAKY"):
             continue
         f0, f1 = _stage_fail(r["b0"], stage), _stage_fail(r["pdr"], stage)
         if f0 is None or f1 is None:
