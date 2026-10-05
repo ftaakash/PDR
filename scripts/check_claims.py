@@ -107,6 +107,25 @@ def compute():
                                for k in (0, 1, 2, 5, 10)
                                for c in [clustered_full(by_repo(lambda r, k=k: ok_within_ripple(r, k)))]},
     }
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("l1alt", p("scripts", "layer1_alt_report.py"))
+    l1alt = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(l1alt)
+    alt = l1alt.build(l1, json.load(open(p("results", "processed", "layer1_alt_v1_plan.json"), encoding="utf-8")),
+                      jsonl(p("results", "processed", "layer1_alt_v1_attempts.jsonl")))
+    pick = ("successes", "edge_weighted_pct", "edge_weighted_ci95_pct", "repo_weighted_pct", "repo_weighted_ci95_pct")
+    sec = alt["secondary"]
+    out["layer1_alt_v1"] = {
+        "complete": alt["complete"], "population_edges": alt["population_edges"], "n_attempts": alt["n_attempts"],
+        "exists_any": {k: alt["primary"]["exists_any"][k] for k in pick},
+        "alt_ok_within_population": {k: sec["alt_ok_within_population"][k] for k in pick},
+        "status_counts": sec["status_counts"],
+        "first_ok_index_dist": {str(k): v for k, v in sec["first_ok_index_dist"].items()},
+        "attempt0_concordance_substitutions": sec["attempt0_concordance_substitutions"],
+        "platform_blocked_edges": alt["platform_blocked"]["edges"],
+        "platform_blocked_edges_with_alternatives": alt["platform_blocked"]["edges_with_alternatives"],
+        "exists_any_upper_bound": {k: alt["platform_blocked"]["exists_any_upper_bound"][k] for k in pick},
+    }
     l2 = jsonl(p("results", "processed", "phase2_layer2_results.jsonl"))
     out["layer2"] = {"n": len(l2), "pdr_install_ok": sum(1 for r in l2 if r["pdr"]["install"]["install_ok"])}
     man = json.load(open(p("configs", "experiments", "phase3_micropilot_manifest.json")))

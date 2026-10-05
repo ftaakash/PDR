@@ -8,7 +8,7 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
 
 ## Track 1 — strengthen what already exists (no Docker needed)
 
-- [ ] **T1 [AUTO] Layer 1 "exists-any" retry** (`layer1_alt_v1`, new experiment ID).
+- [x] **T1 [AUTO] Layer 1 "exists-any" retry** *(2026-10-05: done, `docs/phase2_layer1_alt_results.md`. Exists-any 27.67% [18.2, 41.5] edge / 52.7% repo vs 27.16% / 52.3% single-candidate; only 12 of 1,711 edges recovered. socket.io (384 edges) platform-blocked on Windows; needs a Linux rerun.)* (`layer1_alt_v1`, new experiment ID).
   *Why:* RQ2 asks whether *any* provenance-bearing in-range version exists;
   Layer 1 tried only the single highest. *Design first* (add a section to
   `docs/phase2_protocol.md` BEFORE running): for edges whose best candidate

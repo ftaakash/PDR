@@ -1,0 +1,461 @@
+{
+ "experiment_id": "layer1_alt_v1",
+ "k_max": 5,
+ "t_cut": "2026-09-24T00:00:00Z",
+ "complete": true,
+ "population_edges": 1711,
+ "population_edges_summarised": 1711,
+ "population_edges_missing_attempts": 0,
+ "n_attempts": 892,
+ "primary": {
+  "single_candidate": {
+   "successes": 638,
+   "n": 2349,
+   "n_repos": 40,
+   "edge_weighted_pct": 27.16,
+   "edge_weighted_ci95_pct": [
+    18.0,
+    40.1
+   ],
+   "repo_weighted_pct": 52.3,
+   "repo_weighted_ci95_pct": [
+    41.5,
+    63.0
+   ],
+   "repo_weighted_median_pct": 57.8
+  },
+  "exists_any": {
+   "successes": 650,
+   "n": 2349,
+   "n_repos": 40,
+   "edge_weighted_pct": 27.67,
+   "edge_weighted_ci95_pct": [
+    18.2,
+    41.5
+   ],
+   "repo_weighted_pct": 52.7,
+   "repo_weighted_ci95_pct": [
+    42.0,
+    63.6
+   ],
+   "repo_weighted_median_pct": 57.8
+  }
+ },
+ "platform_blocked": {
+  "edges": 384,
+  "edges_with_alternatives": 175,
+  "repos": [
+   "socketio/socket.io"
+  ],
+  "exists_any_upper_bound": {
+   "successes": 825,
+   "n": 2349,
+   "n_repos": 40,
+   "edge_weighted_pct": 35.12,
+   "edge_weighted_ci95_pct": [
+    28.7,
+    46.0
+   ],
+   "repo_weighted_pct": 53.9,
+   "repo_weighted_ci95_pct": [
+    43.5,
+    64.3
+   ],
+   "repo_weighted_median_pct": 57.8
+  }
+ },
+ "secondary": {
+  "alt_ok_within_population": {
+   "successes": 12,
+   "n": 1711,
+   "n_repos": 32,
+   "edge_weighted_pct": 0.7,
+   "edge_weighted_ci95_pct": [
+    0.0,
+    2.8
+   ],
+   "repo_weighted_pct": 1.5,
+   "repo_weighted_ci95_pct": [
+    0.0,
+    4.4
+   ],
+   "repo_weighted_median_pct": 0.0
+  },
+  "status_counts": {
+   "NO_ALTERNATIVE": 524,
+   "ALT_EXHAUSTED": 791,
+   "ALT_OK": 12,
+   "PLATFORM_BLOCKED": 384
+  },
+  "no_alternative": 524,
+  "first_ok_index_dist": {
+   "1": 5,
+   "2": 5,
+   "4": 2
+  },
+  "attempts_used_when_exhausted_dist": {
+   "1": 546,
+   "2": 57,
+   "3": 7,
+   "5": 181
+  },
+  "outcomes_by_attempt_index": {
+   "1": {
+    "RIPPLE": 775,
+    "PEER_CONFLICT": 23,
+    "OK": 5
+   },
+   "2": {
+    "RIPPLE": 233,
+    "OK": 5,
+    "PEER_CONFLICT": 14
+   },
+   "3": {
+    "RIPPLE": 177,
+    "PEER_CONFLICT": 13
+   },
+   "4": {
+    "RIPPLE": 171,
+    "OK": 2,
+    "PEER_CONFLICT": 10
+   },
+   "5": {
+    "RIPPLE": 171,
+    "PEER_CONFLICT": 10
+   }
+  },
+  "attempt0_concordance_edges": {
+   "PEER_CONFLICT->PEER_CONFLICT": 55,
+   "RIPPLE->PLATFORM_BLOCKED": 384,
+   "RIPPLE->RIPPLE": 1272
+  },
+  "attempt0_concordance_substitutions": {
+   "PEER_CONFLICT->PEER_CONFLICT": 31,
+   "RIPPLE->PLATFORM_BLOCKED": 119,
+   "RIPPLE->RIPPLE": 404
+  },
+  "drift_ok_edges": 0
+ },
+ "per_repo": [
+  {
+   "repo": "axios/axios",
+   "n": 16,
+   "single_ok": 16,
+   "exists_any_ok": 16,
+   "single_ok_pct": 100.0,
+   "exists_any_ok_pct": 100.0
+  },
+  {
+   "repo": "caolan/async",
+   "n": 64,
+   "single_ok": 26,
+   "exists_any_ok": 26,
+   "single_ok_pct": 40.6,
+   "exists_any_ok_pct": 40.6
+  },
+  {
+   "repo": "chaijs/chai",
+   "n": 31,
+   "single_ok": 22,
+   "exists_any_ok": 22,
+   "single_ok_pct": 71.0,
+   "exists_any_ok_pct": 71.0
+  },
+  {
+   "repo": "cheeriojs/cheerio",
+   "n": 10,
+   "single_ok": 7,
+   "exists_any_ok": 7,
+   "single_ok_pct": 70.0,
+   "exists_any_ok_pct": 70.0
+  },
+  {
+   "repo": "commitizen/cz-cli",
+   "n": 17,
+   "single_ok": 12,
+   "exists_any_ok": 12,
+   "single_ok_pct": 70.6,
+   "exists_any_ok_pct": 70.6
+  },
+  {
+   "repo": "google/zx",
+   "n": 26,
+   "single_ok": 10,
+   "exists_any_ok": 10,
+   "single_ok_pct": 38.5,
+   "exists_any_ok_pct": 38.5
+  },
+  {
+   "repo": "isaacs/minimatch",
+   "n": 1,
+   "single_ok": 1,
+   "exists_any_ok": 1,
+   "single_ok_pct": 100.0,
+   "exists_any_ok_pct": 100.0
+  },
+  {
+   "repo": "isaacs/node-glob",
+   "n": 1,
+   "single_ok": 1,
+   "exists_any_ok": 1,
+   "single_ok_pct": 100.0,
+   "exists_any_ok_pct": 100.0
+  },
+  {
+   "repo": "jquery/jquery",
+   "n": 3,
+   "single_ok": 2,
+   "exists_any_ok": 2,
+   "single_ok_pct": 66.7,
+   "exists_any_ok_pct": 66.7
+  },
+  {
+   "repo": "jshttp/content-type",
+   "n": 1,
+   "single_ok": 1,
+   "exists_any_ok": 1,
+   "single_ok_pct": 100.0,
+   "exists_any_ok_pct": 100.0
+  },
+  {
+   "repo": "karma-runner/karma",
+   "n": 34,
+   "single_ok": 24,
+   "exists_any_ok": 24,
+   "single_ok_pct": 70.6,
+   "exists_any_ok_pct": 70.6
+  },
+  {
+   "repo": "koajs/koa",
+   "n": 2,
+   "single_ok": 2,
+   "exists_any_ok": 2,
+   "single_ok_pct": 100.0,
+   "exists_any_ok_pct": 100.0
+  },
+  {
+   "repo": "less/less.js",
+   "n": 3,
+   "single_ok": 0,
+   "exists_any_ok": 0,
+   "single_ok_pct": 0.0,
+   "exists_any_ok_pct": 0.0
+  },
+  {
+   "repo": "markedjs/marked",
+   "n": 8,
+   "single_ok": 4,
+   "exists_any_ok": 4,
+   "single_ok_pct": 50.0,
+   "exists_any_ok_pct": 50.0
+  },
+  {
+   "repo": "microsoft/playwright",
+   "n": 4,
+   "single_ok": 4,
+   "exists_any_ok": 4,
+   "single_ok_pct": 100.0,
+   "exists_any_ok_pct": 100.0
+  },
+  {
+   "repo": "microsoft/vscode",
+   "n": 25,
+   "single_ok": 0,
+   "exists_any_ok": 0,
+   "single_ok_pct": 0.0,
+   "exists_any_ok_pct": 0.0
+  },
+  {
+   "repo": "mochajs/mocha",
+   "n": 57,
+   "single_ok": 22,
+   "exists_any_ok": 22,
+   "single_ok_pct": 38.6,
+   "exists_any_ok_pct": 38.6
+  },
+  {
+   "repo": "motdotla/dotenv",
+   "n": 9,
+   "single_ok": 5,
+   "exists_any_ok": 5,
+   "single_ok_pct": 55.6,
+   "exists_any_ok_pct": 55.6
+  },
+  {
+   "repo": "mozilla/source-map",
+   "n": 9,
+   "single_ok": 6,
+   "exists_any_ok": 6,
+   "single_ok_pct": 66.7,
+   "exists_any_ok_pct": 66.7
+  },
+  {
+   "repo": "nestjs/nest",
+   "n": 30,
+   "single_ok": 0,
+   "exists_any_ok": 0,
+   "single_ok_pct": 0.0,
+   "exists_any_ok_pct": 0.0
+  },
+  {
+   "repo": "nodejs/undici",
+   "n": 1,
+   "single_ok": 0,
+   "exists_any_ok": 0,
+   "single_ok_pct": 0.0,
+   "exists_any_ok_pct": 0.0
+  },
+  {
+   "repo": "npm/cli",
+   "n": 65,
+   "single_ok": 44,
+   "exists_any_ok": 53,
+   "single_ok_pct": 67.7,
+   "exists_any_ok_pct": 81.5
+  },
+  {
+   "repo": "npm/node-tar",
+   "n": 1,
+   "single_ok": 1,
+   "exists_any_ok": 1,
+   "single_ok_pct": 100.0,
+   "exists_any_ok_pct": 100.0
+  },
+  {
+   "repo": "puppeteer/puppeteer",
+   "n": 62,
+   "single_ok": 5,
+   "exists_any_ok": 5,
+   "single_ok_pct": 8.1,
+   "exists_any_ok_pct": 8.1
+  },
+  {
+   "repo": "redis/node-redis",
+   "n": 19,
+   "single_ok": 12,
+   "exists_any_ok": 12,
+   "single_ok_pct": 63.2,
+   "exists_any_ok_pct": 63.2
+  },
+  {
+   "repo": "rollup/rollup",
+   "n": 2,
+   "single_ok": 0,
+   "exists_any_ok": 0,
+   "single_ok_pct": 0.0,
+   "exists_any_ok_pct": 0.0
+  },
+  {
+   "repo": "showdownjs/showdown",
+   "n": 4,
+   "single_ok": 3,
+   "exists_any_ok": 3,
+   "single_ok_pct": 75.0,
+   "exists_any_ok_pct": 75.0
+  },
+  {
+   "repo": "sinonjs/sinon",
+   "n": 64,
+   "single_ok": 26,
+   "exists_any_ok": 28,
+   "single_ok_pct": 40.6,
+   "exists_any_ok_pct": 43.8
+  },
+  {
+   "repo": "socketio/socket.io",
+   "n": 384,
+   "single_ok": 0,
+   "exists_any_ok": 0,
+   "single_ok_pct": 0.0,
+   "exists_any_ok_pct": 0.0
+  },
+  {
+   "repo": "stylelint/stylelint",
+   "n": 37,
+   "single_ok": 32,
+   "exists_any_ok": 32,
+   "single_ok_pct": 86.5,
+   "exists_any_ok_pct": 86.5
+  },
+  {
+   "repo": "terser/terser",
+   "n": 2,
+   "single_ok": 1,
+   "exists_any_ok": 1,
+   "single_ok_pct": 50.0,
+   "exists_any_ok_pct": 50.0
+  },
+  {
+   "repo": "tj/commander.js",
+   "n": 2,
+   "single_ok": 1,
+   "exists_any_ok": 1,
+   "single_ok_pct": 50.0,
+   "exists_any_ok_pct": 50.0
+  },
+  {
+   "repo": "uuidjs/uuid",
+   "n": 1,
+   "single_ok": 0,
+   "exists_any_ok": 0,
+   "single_ok_pct": 0.0,
+   "exists_any_ok_pct": 0.0
+  },
+  {
+   "repo": "visionmedia/superagent",
+   "n": 346,
+   "single_ok": 102,
+   "exists_any_ok": 102,
+   "single_ok_pct": 29.5,
+   "exists_any_ok_pct": 29.5
+  },
+  {
+   "repo": "webpack-contrib/css-loader",
+   "n": 465,
+   "single_ok": 113,
+   "exists_any_ok": 113,
+   "single_ok_pct": 24.3,
+   "exists_any_ok_pct": 24.3
+  },
+  {
+   "repo": "webpack-contrib/mini-css-extract-plugin",
+   "n": 437,
+   "single_ok": 122,
+   "exists_any_ok": 123,
+   "single_ok_pct": 27.9,
+   "exists_any_ok_pct": 28.1
+  },
+  {
+   "repo": "webpack/webpack-cli",
+   "n": 5,
+   "single_ok": 3,
+   "exists_any_ok": 3,
+   "single_ok_pct": 60.0,
+   "exists_any_ok_pct": 60.0
+  },
+  {
+   "repo": "webpack/webpack-dev-server",
+   "n": 2,
+   "single_ok": 2,
+   "exists_any_ok": 2,
+   "single_ok_pct": 100.0,
+   "exists_any_ok_pct": 100.0
+  },
+  {
+   "repo": "winstonjs/winston",
+   "n": 96,
+   "single_ok": 4,
+   "exists_any_ok": 4,
+   "single_ok_pct": 4.2,
+   "exists_any_ok_pct": 4.2
+  },
+  {
+   "repo": "yargs/yargs",
+   "n": 3,
+   "single_ok": 2,
+   "exists_any_ok": 2,
+   "single_ok_pct": 66.7,
+   "exists_any_ok_pct": 66.7
+  }
+ ]
+}

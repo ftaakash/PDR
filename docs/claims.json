@@ -128,5 +128,67 @@
       }
     }
   },
+  "layer1_alt_v1": {
+    "complete": true,
+    "population_edges": 1711,
+    "n_attempts": 892,
+    "exists_any": {
+      "successes": 650,
+      "edge_weighted_pct": 27.67,
+      "edge_weighted_ci95_pct": [
+        18.2,
+        41.5
+      ],
+      "repo_weighted_pct": 52.7,
+      "repo_weighted_ci95_pct": [
+        42.0,
+        63.6
+      ]
+    },
+    "alt_ok_within_population": {
+      "successes": 12,
+      "edge_weighted_pct": 0.7,
+      "edge_weighted_ci95_pct": [
+        0.0,
+        2.8
+      ],
+      "repo_weighted_pct": 1.5,
+      "repo_weighted_ci95_pct": [
+        0.0,
+        4.4
+      ]
+    },
+    "status_counts": {
+      "NO_ALTERNATIVE": 524,
+      "ALT_EXHAUSTED": 791,
+      "ALT_OK": 12,
+      "PLATFORM_BLOCKED": 384
+    },
+    "first_ok_index_dist": {
+      "1": 5,
+      "2": 5,
+      "4": 2
+    },
+    "attempt0_concordance_substitutions": {
+      "PEER_CONFLICT->PEER_CONFLICT": 31,
+      "RIPPLE->PLATFORM_BLOCKED": 119,
+      "RIPPLE->RIPPLE": 404
+    },
+    "platform_blocked_edges": 384,
+    "platform_blocked_edges_with_alternatives": 175,
+    "exists_any_upper_bound": {
+      "successes": 825,
+      "edge_weighted_pct": 35.12,
+      "edge_weighted_ci95_pct": [
+        28.7,
+        46.0
+      ],
+      "repo_weighted_pct": 53.9,
+      "repo_weighted_ci95_pct": [
+        43.5,
+        64.3
+      ]
+    }
+  },
   "_note": "Registry of headline numbers quoted in docs. Recomputed from raw data by scripts/check_claims.py (tested in tests/test_claims_registry.py). Change a value ONLY in the same commit as the data change and the doc edits that quote it. Seeded values recorded on 2026-10; see PILOT_RUN_REPORT.md."
 }
