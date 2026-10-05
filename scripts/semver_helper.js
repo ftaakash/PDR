@@ -10,6 +10,7 @@
 //   {"op":"validRange","range":"^1.0.0"}
 //   {"op":"diff","a":"1.2.3","b":"1.9.0"}   // "major"|"minor"|"patch"|null-ish
 //   {"op":"gt","a":"1.2.3","b":"1.0.0"}
+//   {"op":"rsort","versions":["1.0.0","1.2.3"]}  // valid versions, descending
 'use strict';
 const semver = require('semver');
 
@@ -36,6 +37,8 @@ process.stdin.on('end', () => {
           return { ok: true, result: semver.diff(t.a, t.b) };
         case 'gt':
           return { ok: true, result: semver.gt(t.a, t.b) };
+        case 'rsort':
+          return { ok: true, result: semver.rsort(t.versions.filter((v) => semver.valid(v) !== null)) };
         case 'valid':
           return { ok: true, result: semver.valid(t.version) !== null };
         default:

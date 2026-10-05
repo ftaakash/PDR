@@ -138,3 +138,86 @@ scope: install-success-rate delta (PDR vs. B0) and
 `npm-audit-signatures`-status delta (PDR vs. B1), both secondary/co-primary
 metrics from the frozen matrix. These are real, if small-sample, first
 data points toward Gate D -- not a Gate D verdict.
+
+## 7. Amendment 2026-10-05: experiment `layer1_alt_v1` ("exists-any" retry)
+
+*Written and committed before any `layer1_alt_v1` attempt was run. Nothing in
+Sections 1-6 changes; this is a new experiment ID that reuses the Layer 1
+harness.*
+
+**Reason (stated before outcomes).** RQ2 asks whether *any* provenance-bearing
+in-range version is recoverable. Layer 1 tried only the single highest such
+version per edge (`docs/phase2_layer1_results.md`, addendum limit 1), so its
+27.16% OK rate is a lower bound by construction. This experiment measures how
+much of that gap closes when lower provenance-bearing versions are tried.
+
+**Population.** The 1,711 Layer 1 edges whose single candidate ended `RIPPLE`
+(1,656) or `PEER_CONFLICT` (55). Layer 1 `OK` edges are not re-run.
+
+**Alternative candidates per edge** (pure function
+`pdr.layer1_alt.alternative_candidates`, unit-tested). A version `v` of the
+edge's package qualifies iff all hold:
+1. `dist.attestations` is present in the registry packument (same signal as
+   `pdr.provenance`);
+2. `semver.satisfies(v, declared_range)` with `includePrerelease: false`;
+3. `semver.diff(resolved_version, v)` is in `{null, "patch", "minor"}` (the
+   frozen `RESOLUTION_TOLERANCE` of `pdr/policy.py`, unchanged);
+4. `semver.lt(v, original_candidate)` (the original candidate was the
+   maximum, so anything higher is a later release, not an alternative);
+5. registry publish time `<= T_cut = 2026-09-24T00:00:00Z`. Phase 1's run date
+   was not recorded; the latest publish timestamp of any resolved version in
+   the Phase 1 data is 2026-09-23T20:42Z, so this cut-off excludes releases
+   that could not have existed when Phase 1 ran (e.g. backports on a lower
+   line). The number of versions excluded by this rule is recorded.
+
+Qualifying versions are tried in descending semver order, at most **K = 5**
+per edge, stopping at the first `OK`. Edges with zero qualifying versions are
+recorded as `NO_ALTERNATIVE` (a result, not missing data).
+
+**Attempt procedure.** Identical to `scripts/layer1_resolution.py`: same
+`pdr.sandbox.patch_package_json_for_candidate` edit of the cached
+`package.json`, same Phase 1 lockfile, `npm install --package-lock-only
+--ignore-scripts --no-audit --no-fund`, 60 s timeout, same `OK`/`RIPPLE`
+definition (`OK` = candidate applied and zero other top-level version
+changes). A non-zero exit whose stderr contains `ERESOLVE` is `PEER_CONFLICT`
+(the rule Layer 1's documented reclassification applied by hand); any other
+non-zero exit is `RESOLUTION_FAIL`. Host-safe per Section 2: no scripts, no
+`node_modules`.
+
+Because the override is applied by package name, an attempt's outcome
+depends only on `(repo, package, version)`; each such triple is run once and
+its outcome is shared by every edge that tries it.
+
+**Inputs that had to be recovered.** The Phase 1 lockfiles were not in the
+handoff. `scripts/recover_phase1_lockfiles.py` recovers each from git history
+and accepts it only on exact git-blob match (repos pinned in
+`phase3_micropilot_pins.json`) or on exact byte length plus an identical
+re-parsed edge multiset versus `edges.csv`. Repos that cannot be recovered
+this way are excluded and reported, never replaced by HEAD.
+
+**Drift control.** The registry has moved since Layer 1 ran, and the local
+npm is 10.9.2 (Layer 1's tool lock records 10.9.7). Before any alternative,
+each population substitution's *original* candidate is re-run under the same
+conditions ("attempt 0"). Concordance with the recorded Layer 1 outcome is
+reported. An edge whose attempt 0 now comes back `OK` is reported as
+`DRIFT_OK` and is **not** credited as exists-any recovery (its alternatives
+are still tried and reported, as exploratory).
+
+**Estimands (pre-specified).**
+- Primary: exists-any resolution-confirmed rate over all 2,349 proxy-positive
+  edges = (Layer 1 `OK` + edges with an alternative `OK`) / 2,349, both
+  edge-weighted (repo-clustered percentile bootstrap, 5,000 resamples, seed
+  20260928, as in the Layer 1 addendum) and repo-weighted (macro mean, same
+  bootstrap), reported next to the single-candidate rate.
+- Secondary: alternative-`OK` rate within the 1,711-edge population; share
+  `NO_ALTERNATIVE`; distribution of the attempt index of the first `OK` and
+  of attempts used by edges that never reached `OK`; outcome counts per
+  attempt; attempt-0 concordance.
+- Anything else computed from these data is labelled exploratory.
+
+**Outputs.** `results/processed/layer1_alt_v1_plan.json` (every edge's retry
+list, built deterministically by `scripts/layer1_alt_resolution.py plan` and
+committed before the first attempt), `results/processed/layer1_alt_v1_attempts.jsonl` (append-only,
+one row per `(repo, package, version)` attempt, resumable) and
+`results/processed/layer1_alt_v1_summary.json` (from
+`scripts/layer1_alt_report.py`), registered in `docs/claims.json`.
