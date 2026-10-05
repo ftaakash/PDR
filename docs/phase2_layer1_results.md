@@ -148,6 +148,9 @@ report both, with the interval, rather than quote 27% alone.
    version per edge. The research question (RQ2) asks whether *any* such
    version exists; lower provenance-bearing versions were never tried, so
    resolution-confirmed recovery is under-counted by construction.
+   *Update 2026-10-05:* experiment `layer1_alt_v1` measured this and found
+   the under-count is small: exists-any 27.67% vs 27.16% edge-weighted
+   (`docs/phase2_layer1_alt_results.md`).
 2. "OK" requires **zero** change to any other top-level package. One benign
    patch bump elsewhere counts as RIPPLE. A ripple-size sensitivity analysis
    (e.g. OK if <=k other packages change, or only patch-level changes) has
