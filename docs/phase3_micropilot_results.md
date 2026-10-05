@@ -129,3 +129,50 @@ statement about this small, hermetic-test-screened cohort only.
 The pre-specified primary test delta (+0.095 [0.000, 0.250], 21 pairs, 2 new
 failures) is therefore **not interpretable as a substitution effect** and is
 reported only for completeness.
+
+---
+
+# v3 rerun (`phase3_micropilot_v3`, manifest restored before tests, 6 GB V8 heap) -- final round
+
+Run: GitHub Actions run 37352561861 (2 h 52 min), worker tag
+`freeze/phase3-worker-v3`, amendment `docs/phase3_protocol.md` Section 12
+(declared the last rework round). Raw:
+`results/processed/phase3_micropilot_v3_results.jsonl` (23/23 valid; every
+PDR arm that reached tests recorded `manifest_restored_before_test: true`);
+summary `results/processed/phase3_v3_summary.json`; counts registered in
+`docs/claims.json` (`phase3_micropilot_v3`).
+
+| Outcome | v1 | v2 | v3 |
+|---|---:|---:|---:|
+| OK | 9 | 8 | **12** |
+| TEST_FAIL | 12 | 12 | 6 |
+| TEST_FLAKY | 1 | 0 | 0 |
+| TIMEOUT | 0 | 2 | 4 |
+| INSTALL_FAIL | 1 | 1 | 1 |
+| Invalid baselines | 13 | 13 | **11 (47.8%)** |
+
+**The pre-specified REWORK threshold (30%) is still exceeded**, and Section 12
+made v3 the last round, so this is reported as-is: Layer 3 coverage of the
+micro-pilot cohort is 12 of 23 experiments (52%), 10 of 19 repositories.
+
+**Among the 12 judgeable experiments (B0 passes both runs), all 12 are OK**:
+PDR installs, runs lifecycle scripts, adds no new peer problem, keeps
+audit-signature status, and passes the tests on both runs. The two v2 failures
+(`content-type`, `mini-css-extract-plugin`) are now OK, confirming they were
+caused by the harness's `package.json` edit; `stylelint` x2 became judgeable
+through the heap tweak and are OK. Pre-specified primary test delta: 0.000
+[0.000, 0.000] over 21 pairs, 0 new failures (12 informative pairs; the other 9
+are B0-fail/PDR-fail).
+
+Still not judgeable (unchanged causes, by decision not fixed): `winston` x2
+(Jest does not exit), `google/zx` and `webpack/webpack-cli` (time out),
+`css-loader` x2 (external URL), `cheerio`, `showdown` (lint config),
+`commitizen` (`registry.yarnpkg.com` refused), `npm/cli` (B0 `npm ci` fails),
+`markedjs/marked` (git dependency refused).
+
+**How to read this.** In this small, hermetic-test-screened cohort, every
+Layer-1-confirmed substitution that could be tested behaved identically to
+the baseline under its own test suite, with +1 to +3 verified attestations.
+That is an observation on 12 experiments from 10 repositories with no CI to
+speak of, not an estimate of a population rate; the coverage limit (48% of
+baselines unusable) is as important a result as the 12/12.

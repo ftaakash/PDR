@@ -218,5 +218,20 @@
     "test_delta_n_pairs": 21,
     "test_delta_new_failures": 2
   },
+  "phase3_micropilot_v3": {
+    "n_records": 23,
+    "n_valid": 23,
+    "outcome_counts": {
+      "OK": 12,
+      "TEST_FAIL": 6,
+      "TIMEOUT": 4,
+      "INSTALL_FAIL": 1
+    },
+    "b0_invalid": 11,
+    "REWORK": true,
+    "test_delta_n_pairs": 21,
+    "test_delta_new_failures": 0,
+    "judgeable_attributable_test": 12
+  },
   "_note": "Registry of headline numbers quoted in docs. Recomputed from raw data by scripts/check_claims.py (tested in tests/test_claims_registry.py). Change a value ONLY in the same commit as the data change and the doc edits that quote it. Seeded values recorded on 2026-10; see PILOT_RUN_REPORT.md."
 }

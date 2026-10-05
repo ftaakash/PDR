@@ -141,6 +141,13 @@ def compute():
         "b0_invalid": m2["flags"]["b0_invalid"], "REWORK": m2["flags"]["REWORK"],
         "test_delta_n_pairs": m2["primary"]["n_pairs"], "test_delta_new_failures": m2["primary"]["new_failures_b"],
     }
+    m3 = p3r.build(jsonl(p("results", "processed", "phase3_micropilot_v3_results.jsonl")))
+    out["phase3_micropilot_v3"] = {
+        "n_records": m3["n_records"], "n_valid": m3["n_valid"], "outcome_counts": m3["outcome_counts"],
+        "b0_invalid": m3["flags"]["b0_invalid"], "REWORK": m3["flags"]["REWORK"],
+        "test_delta_n_pairs": m3["primary"]["n_pairs"], "test_delta_new_failures": m3["primary"]["new_failures_b"],
+        "judgeable_attributable_test": next(r["attributable"] for r in m3["funnel"] if r["stage"] == "test"),
+    }
     l2 = jsonl(p("results", "processed", "phase2_layer2_results.jsonl"))
     out["layer2"] = {"n": len(l2), "pdr_install_ok": sum(1 for r in l2 if r["pdr"]["install"]["install_ok"])}
     man = json.load(open(p("configs", "experiments", "phase3_micropilot_manifest.json")))
