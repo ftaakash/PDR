@@ -67,6 +67,13 @@ jobs:
         if: inputs.mode == 'full'
         run: python3 isolated_worker/orchestrate.py
 
+      - name: Diagnostics on failure
+        if: failure()
+        run: |
+          docker ps -a
+          docker logs pdr-proxy 2>&1 | tail -60 || true
+          docker inspect pdr-proxy --format '{{json .State}}' || true
+
       - name: Upload results
         if: always()
         uses: actions/upload-artifact@v4
