@@ -1,0 +1,243 @@
+{
+ "n_records": 23,
+ "n_valid": 23,
+ "invalid_records": [],
+ "outcome_counts": {
+  "OK": 9,
+  "TEST_FAIL": 12,
+  "INSTALL_FAIL": 1,
+  "TEST_FLAKY": 1
+ },
+ "per_repo": {
+  "caolan/async": {
+   "OK": 2
+  },
+  "cheeriojs/cheerio": {
+   "TEST_FAIL": 1
+  },
+  "commitizen/cz-cli": {
+   "TEST_FAIL": 1
+  },
+  "google/zx": {
+   "TEST_FAIL": 1
+  },
+  "isaacs/minimatch": {
+   "OK": 1
+  },
+  "isaacs/node-glob": {
+   "OK": 1
+  },
+  "jshttp/content-type": {
+   "TEST_FAIL": 1
+  },
+  "markedjs/marked": {
+   "INSTALL_FAIL": 1
+  },
+  "motdotla/dotenv": {
+   "OK": 1
+  },
+  "npm/cli": {
+   "TEST_FAIL": 1
+  },
+  "npm/node-tar": {
+   "TEST_FAIL": 1
+  },
+  "showdownjs/showdown": {
+   "TEST_FAIL": 1
+  },
+  "stylelint/stylelint": {
+   "TEST_FAIL": 1,
+   "TEST_FLAKY": 1
+  },
+  "terser/terser": {
+   "OK": 1
+  },
+  "tj/commander.js": {
+   "OK": 1
+  },
+  "webpack-contrib/css-loader": {
+   "TEST_FAIL": 2
+  },
+  "webpack-contrib/mini-css-extract-plugin": {
+   "TEST_FAIL": 1
+  },
+  "webpack/webpack-cli": {
+   "TEST_FAIL": 1
+  },
+  "winstonjs/winston": {
+   "OK": 2
+  }
+ },
+ "funnel": [
+  {
+   "stage": "resolve",
+   "label": "C0 resolves in worker",
+   "entering": 23,
+   "attributable": 23,
+   "passed": 23,
+   "failed": 0,
+   "pass_rate": 1.0
+  },
+  {
+   "stage": "install",
+   "label": "C1 structurally installable",
+   "entering": 23,
+   "attributable": 21,
+   "passed": 21,
+   "failed": 0,
+   "pass_rate": 1.0
+  },
+  {
+   "stage": "lifecycle",
+   "label": "C1b lifecycle scripts complete",
+   "entering": 22,
+   "attributable": 21,
+   "passed": 21,
+   "failed": 0,
+   "pass_rate": 1.0
+  },
+  {
+   "stage": "peer",
+   "label": "C2 no new peer problem",
+   "entering": 22,
+   "attributable": 21,
+   "passed": 21,
+   "failed": 0,
+   "pass_rate": 1.0
+  },
+  {
+   "stage": "audit",
+   "label": "C3 audit-signature status preserved",
+   "entering": 22,
+   "attributable": 21,
+   "passed": 21,
+   "failed": 0,
+   "pass_rate": 1.0
+  },
+  {
+   "stage": "test",
+   "label": "C4 tests do not newly fail",
+   "entering": 22,
+   "attributable": 10,
+   "passed": 9,
+   "failed": 1,
+   "pass_rate": 0.9
+  }
+ ],
+ "paired_deltas": {
+  "install": {
+   "stage": "install",
+   "n_pairs": 23,
+   "new_failures_b": 0,
+   "fixes_c": 1,
+   "pdr_failure_rate": 0.043478260869565216,
+   "b0_failure_rate": 0.08695652173913043,
+   "delta": -0.043478260869565216,
+   "ci95": [
+    -0.14285714285714285,
+    0.0
+   ],
+   "n_repos": 19
+  },
+  "lifecycle": {
+   "stage": "lifecycle",
+   "n_pairs": 21,
+   "new_failures_b": 0,
+   "fixes_c": 0,
+   "pdr_failure_rate": 0.0,
+   "b0_failure_rate": 0.0,
+   "delta": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_repos": 17
+  },
+  "test": {
+   "stage": "test",
+   "n_pairs": 19,
+   "new_failures_b": 1,
+   "fixes_c": 0,
+   "pdr_failure_rate": 0.5263157894736842,
+   "b0_failure_rate": 0.47368421052631576,
+   "delta": 0.05263157894736842,
+   "ci95": [
+    0.0,
+    0.17647058823529413
+   ],
+   "n_repos": 16
+  }
+ },
+ "primary": {
+  "stage": "test",
+  "n_pairs": 19,
+  "new_failures_b": 1,
+  "fixes_c": 0,
+  "pdr_failure_rate": 0.5263157894736842,
+  "b0_failure_rate": 0.47368421052631576,
+  "delta": 0.05263157894736842,
+  "ci95": [
+   0.0,
+   0.17647058823529413
+  ],
+  "n_repos": 16,
+  "underpowered": false
+ },
+ "audit": {
+  "pairs_with_audit_on_both_arms": 21,
+  "pairs_parse_ok": 20,
+  "pairs_parse_failed": 1,
+  "audit_signature_change": 0,
+  "invalid_delta_sum": 0,
+  "missing_delta_sum": 0
+ },
+ "attestation_gain": {
+  "n": 20,
+  "gain_gt0": 20,
+  "gain_eq0": 0,
+  "gain_lt0": 0,
+  "median": 1.0
+ },
+ "viability_ok_rate": {
+  "all_valid": {
+   "successes": 9,
+   "n": 23,
+   "n_repos": 19,
+   "edge_weighted_pct": 39.13,
+   "edge_weighted_ci95_pct": [
+    16.7,
+    62.5
+   ],
+   "repo_weighted_pct": 36.8,
+   "repo_weighted_ci95_pct": [
+    15.8,
+    57.9
+   ],
+   "repo_weighted_median_pct": 0.0
+  },
+  "usable_baseline": {
+   "successes": 9,
+   "n": 10,
+   "n_repos": 8,
+   "edge_weighted_pct": 90.0,
+   "edge_weighted_ci95_pct": [
+    66.7,
+    100.0
+   ],
+   "repo_weighted_pct": 87.5,
+   "repo_weighted_ci95_pct": [
+    62.5,
+    100.0
+   ],
+   "repo_weighted_median_pct": 100.0
+  }
+ },
+ "flags": {
+  "b0_invalid": 13,
+  "b0_invalid_share": 0.5652173913043478,
+  "REWORK": true,
+  "no_behavioral_change_share_of_completed": 0.0,
+  "LAYER3_ADDS_NOTHING": false,
+  "NO_GATE_D_CLAIM": false
+ }
+}

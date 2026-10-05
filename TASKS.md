@@ -60,14 +60,14 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
   run.** *(2026-10-05: owner chose 2; `docs/phase3_protocol.md` Section 3.1, new outcome TEST_FLAKY.)* Review evidence that single-run npm test outcomes can be unstable;
   PDR is currently run once while B0 runs twice, which is asymmetric. Record
   the decision as a dated amendment in `docs/phase3_protocol.md`.
-- [ ] **T8 [AUTO with stops] Execute Phase 3 in the order of
+- [x] **T8 [AUTO with stops] Execute Phase 3 in the order of
   `docs/phase3_protocol.md` Section 9.** Stop for the human after each of:
   (a) `--selftest` result (network isolation really verified, denial visible in
   the proxy log); (b) `--dry-run` command review; (c) `--limit 2` records
   inspected against `pdr.phase3.validate_record`; (d) audit-output parser
   checked against real `npm audit signatures` output and fixed if wrong (the
   regexes are unvalidated); (e) full 23-experiment micro-pilot. Tag
-  `freeze/phase3-worker-v1` once the worker image is final.
+  `freeze/phase3-worker-v1` once the worker image is final. *(2026-10-05: all stops done on GitHub runners; pre-specified REWORK flag raised, 13/23 invalid baselines; `docs/phase3_micropilot_results.md`.)*
 - [ ] **T9 [HUMAN-GATE] Verdict on the micro-pilot.** Present the funnel and
   deltas with all limitations (hermetic-test screen selection effect, small
   n). Human decides whether to scale. Do not choose the paper's story.

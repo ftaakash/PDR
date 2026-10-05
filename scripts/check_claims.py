@@ -126,6 +126,15 @@ def compute():
         "platform_blocked_edges_with_alternatives": alt["platform_blocked"]["edges_with_alternatives"],
         "exists_any_upper_bound": {k: alt["platform_blocked"]["exists_any_upper_bound"][k] for k in pick},
     }
+    spec3 = importlib.util.spec_from_file_location("p3r", p("scripts", "phase3_report.py"))
+    p3r = importlib.util.module_from_spec(spec3)
+    spec3.loader.exec_module(p3r)
+    m = p3r.build(jsonl(p("results", "processed", "phase3_micropilot_results.jsonl")))
+    out["phase3_micropilot"] = {
+        "n_records": m["n_records"], "n_valid": m["n_valid"], "outcome_counts": m["outcome_counts"],
+        "b0_invalid": m["flags"]["b0_invalid"], "REWORK": m["flags"]["REWORK"],
+        "test_delta_n_pairs": m["primary"]["n_pairs"], "test_delta_new_failures": m["primary"]["new_failures_b"],
+    }
     l2 = jsonl(p("results", "processed", "phase2_layer2_results.jsonl"))
     out["layer2"] = {"n": len(l2), "pdr_install_ok": sum(1 for r in l2 if r["pdr"]["install"]["install_ok"])}
     man = json.load(open(p("configs", "experiments", "phase3_micropilot_manifest.json")))

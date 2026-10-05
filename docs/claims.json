@@ -190,5 +190,19 @@
       ]
     }
   },
+  "phase3_micropilot": {
+    "n_records": 23,
+    "n_valid": 23,
+    "outcome_counts": {
+      "OK": 9,
+      "TEST_FAIL": 12,
+      "INSTALL_FAIL": 1,
+      "TEST_FLAKY": 1
+    },
+    "b0_invalid": 13,
+    "REWORK": true,
+    "test_delta_n_pairs": 19,
+    "test_delta_new_failures": 1
+  },
   "_note": "Registry of headline numbers quoted in docs. Recomputed from raw data by scripts/check_claims.py (tested in tests/test_claims_registry.py). Change a value ONLY in the same commit as the data change and the doc edits that quote it. Seeded values recorded on 2026-10; see PILOT_RUN_REPORT.md."
 }
