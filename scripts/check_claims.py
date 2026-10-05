@@ -26,6 +26,8 @@ import random
 import sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+sys.path.insert(0, ROOT)
+from pdr.stats import clustered as clustered_full, ok_within_ripple  # noqa: E402
 DEFICIENT = {"DEFICIENT_UNRECOVERABLE", "DEFICIENT_SEMANTIC_ONLY", "DEFICIENT_RESOLUTION_PRESERVING"}
 RECOVERABLE = {"DEFICIENT_SEMANTIC_ONLY", "DEFICIENT_RESOLUTION_PRESERVING"}
 TOL = 0.011  # percentages are recorded to 2 decimals
@@ -89,6 +91,22 @@ def compute():
                      "RESOLUTION_FAIL": cnt["RESOLUTION_FAIL"],
                      "ok_pct_pooled": round(100 * cnt["OK"] / len(l1), 2),
                      "ok_pct_ci95_clustered": [lo, hi], "ok_pct_repo_macro_mean": macro}
+    def by_repo(pred):
+        d = collections.defaultdict(lambda: [0, 0])
+        for r in l1:
+            d[r["repo"]][1] += 1
+            d[r["repo"]][0] += bool(pred(r))
+        return d
+    full = clustered_full(by_repo(lambda r: r["outcome"] == "OK"))
+    out["layer1_summary"] = {
+        "ok_pct_repo_weighted_ci95": full["repo_weighted_ci95_pct"],
+        "ok_pct_repo_weighted_median": full["repo_weighted_median_pct"],
+        "ripple_sensitivity": {str(k): {kk: c[kk] for kk in ("successes", "edge_weighted_pct",
+                                                              "edge_weighted_ci95_pct", "repo_weighted_pct",
+                                                              "repo_weighted_ci95_pct")}
+                               for k in (0, 1, 2, 5, 10)
+                               for c in [clustered_full(by_repo(lambda r, k=k: ok_within_ripple(r, k)))]},
+    }
     l2 = jsonl(p("results", "processed", "phase2_layer2_results.jsonl"))
     out["layer2"] = {"n": len(l2), "pdr_install_ok": sum(1 for r in l2 if r["pdr"]["install"]["install_ok"])}
     man = json.load(open(p("configs", "experiments", "phase3_micropilot_manifest.json")))

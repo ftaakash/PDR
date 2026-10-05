@@ -1,0 +1,435 @@
+{
+ "n": 2349,
+ "outcomes": {
+  "OK": 638,
+  "RIPPLE": 1656,
+  "PEER_CONFLICT": 55
+ },
+ "ok_rate": {
+  "successes": 638,
+  "n": 2349,
+  "n_repos": 40,
+  "edge_weighted_pct": 27.16,
+  "edge_weighted_ci95_pct": [
+   18.0,
+   40.1
+  ],
+  "repo_weighted_pct": 52.3,
+  "repo_weighted_ci95_pct": [
+   41.5,
+   63.0
+  ],
+  "repo_weighted_median_pct": 57.8
+ },
+ "concentration": {
+  "top3_repos": [
+   "webpack-contrib/css-loader",
+   "webpack-contrib/mini-css-extract-plugin",
+   "socketio/socket.io"
+  ],
+  "top3_share_pct": 54.7,
+  "repos_with_candidates": 40,
+  "repos_zero_ok": 7,
+  "repos_ge50_ok": 24,
+  "distinct_ok_substitutions": 234
+ },
+ "ripple_sensitivity": {
+  "label": "sensitivity analysis; k=0 is the frozen definition",
+  "ks": [
+   0,
+   1,
+   2,
+   5,
+   10
+  ],
+  "by_k": {
+   "0": {
+    "successes": 638,
+    "n": 2349,
+    "n_repos": 40,
+    "edge_weighted_pct": 27.16,
+    "edge_weighted_ci95_pct": [
+     18.0,
+     40.1
+    ],
+    "repo_weighted_pct": 52.3,
+    "repo_weighted_ci95_pct": [
+     41.5,
+     63.0
+    ],
+    "repo_weighted_median_pct": 57.8
+   },
+   "1": {
+    "successes": 973,
+    "n": 2349,
+    "n_repos": 40,
+    "edge_weighted_pct": 41.42,
+    "edge_weighted_ci95_pct": [
+     26.6,
+     58.7
+    ],
+    "repo_weighted_pct": 65.1,
+    "repo_weighted_ci95_pct": [
+     54.0,
+     75.8
+    ],
+    "repo_weighted_median_pct": 72.9
+   },
+   "2": {
+    "successes": 1109,
+    "n": 2349,
+    "n_repos": 40,
+    "edge_weighted_pct": 47.21,
+    "edge_weighted_ci95_pct": [
+     30.3,
+     64.8
+    ],
+    "repo_weighted_pct": 74.8,
+    "repo_weighted_ci95_pct": [
+     64.4,
+     84.2
+    ],
+    "repo_weighted_median_pct": 88.2
+   },
+   "5": {
+    "successes": 1494,
+    "n": 2349,
+    "n_repos": 40,
+    "edge_weighted_pct": 63.6,
+    "edge_weighted_ci95_pct": [
+     58.1,
+     74.3
+    ],
+    "repo_weighted_pct": 80.7,
+    "repo_weighted_ci95_pct": [
+     71.2,
+     89.0
+    ],
+    "repo_weighted_median_pct": 97.1
+   },
+   "10": {
+    "successes": 1673,
+    "n": 2349,
+    "n_repos": 40,
+    "edge_weighted_pct": 71.22,
+    "edge_weighted_ci95_pct": [
+     65.4,
+     80.4
+    ],
+    "repo_weighted_pct": 82.6,
+    "repo_weighted_ci95_pct": [
+     73.3,
+     90.9
+    ],
+    "repo_weighted_median_pct": 98.5
+   }
+  }
+ },
+ "per_repo": [
+  {
+   "repo": "webpack-contrib/css-loader",
+   "n": 465,
+   "ok": 113,
+   "ok_pct": 24.3,
+   "OK": 113,
+   "RIPPLE": 352
+  },
+  {
+   "repo": "webpack-contrib/mini-css-extract-plugin",
+   "n": 437,
+   "ok": 122,
+   "ok_pct": 27.9,
+   "OK": 122,
+   "RIPPLE": 315
+  },
+  {
+   "repo": "socketio/socket.io",
+   "n": 384,
+   "ok": 0,
+   "ok_pct": 0.0,
+   "RIPPLE": 384
+  },
+  {
+   "repo": "visionmedia/superagent",
+   "n": 346,
+   "ok": 102,
+   "ok_pct": 29.5,
+   "OK": 102,
+   "RIPPLE": 244
+  },
+  {
+   "repo": "winstonjs/winston",
+   "n": 96,
+   "ok": 4,
+   "ok_pct": 4.2,
+   "RIPPLE": 92,
+   "OK": 4
+  },
+  {
+   "repo": "npm/cli",
+   "n": 65,
+   "ok": 44,
+   "ok_pct": 67.7,
+   "OK": 44,
+   "RIPPLE": 21
+  },
+  {
+   "repo": "caolan/async",
+   "n": 64,
+   "ok": 26,
+   "ok_pct": 40.6,
+   "OK": 26,
+   "RIPPLE": 38
+  },
+  {
+   "repo": "sinonjs/sinon",
+   "n": 64,
+   "ok": 26,
+   "ok_pct": 40.6,
+   "OK": 26,
+   "RIPPLE": 38
+  },
+  {
+   "repo": "puppeteer/puppeteer",
+   "n": 62,
+   "ok": 5,
+   "ok_pct": 8.1,
+   "RIPPLE": 57,
+   "OK": 5
+  },
+  {
+   "repo": "mochajs/mocha",
+   "n": 57,
+   "ok": 22,
+   "ok_pct": 38.6,
+   "OK": 22,
+   "RIPPLE": 35
+  },
+  {
+   "repo": "stylelint/stylelint",
+   "n": 37,
+   "ok": 32,
+   "ok_pct": 86.5,
+   "OK": 32,
+   "RIPPLE": 5
+  },
+  {
+   "repo": "karma-runner/karma",
+   "n": 34,
+   "ok": 24,
+   "ok_pct": 70.6,
+   "OK": 24,
+   "RIPPLE": 10
+  },
+  {
+   "repo": "chaijs/chai",
+   "n": 31,
+   "ok": 22,
+   "ok_pct": 71.0,
+   "RIPPLE": 9,
+   "OK": 22
+  },
+  {
+   "repo": "nestjs/nest",
+   "n": 30,
+   "ok": 0,
+   "ok_pct": 0.0,
+   "PEER_CONFLICT": 30
+  },
+  {
+   "repo": "google/zx",
+   "n": 26,
+   "ok": 10,
+   "ok_pct": 38.5,
+   "RIPPLE": 16,
+   "OK": 10
+  },
+  {
+   "repo": "microsoft/vscode",
+   "n": 25,
+   "ok": 0,
+   "ok_pct": 0.0,
+   "PEER_CONFLICT": 25
+  },
+  {
+   "repo": "redis/node-redis",
+   "n": 19,
+   "ok": 12,
+   "ok_pct": 63.2,
+   "OK": 12,
+   "RIPPLE": 7
+  },
+  {
+   "repo": "commitizen/cz-cli",
+   "n": 17,
+   "ok": 12,
+   "ok_pct": 70.6,
+   "RIPPLE": 5,
+   "OK": 12
+  },
+  {
+   "repo": "axios/axios",
+   "n": 16,
+   "ok": 16,
+   "ok_pct": 100.0,
+   "OK": 16
+  },
+  {
+   "repo": "cheeriojs/cheerio",
+   "n": 10,
+   "ok": 7,
+   "ok_pct": 70.0,
+   "OK": 7,
+   "RIPPLE": 3
+  },
+  {
+   "repo": "motdotla/dotenv",
+   "n": 9,
+   "ok": 5,
+   "ok_pct": 55.6,
+   "OK": 5,
+   "RIPPLE": 4
+  },
+  {
+   "repo": "mozilla/source-map",
+   "n": 9,
+   "ok": 6,
+   "ok_pct": 66.7,
+   "OK": 6,
+   "RIPPLE": 3
+  },
+  {
+   "repo": "markedjs/marked",
+   "n": 8,
+   "ok": 4,
+   "ok_pct": 50.0,
+   "RIPPLE": 4,
+   "OK": 4
+  },
+  {
+   "repo": "webpack/webpack-cli",
+   "n": 5,
+   "ok": 3,
+   "ok_pct": 60.0,
+   "OK": 3,
+   "RIPPLE": 2
+  },
+  {
+   "repo": "microsoft/playwright",
+   "n": 4,
+   "ok": 4,
+   "ok_pct": 100.0,
+   "OK": 4
+  },
+  {
+   "repo": "showdownjs/showdown",
+   "n": 4,
+   "ok": 3,
+   "ok_pct": 75.0,
+   "OK": 3,
+   "RIPPLE": 1
+  },
+  {
+   "repo": "jquery/jquery",
+   "n": 3,
+   "ok": 2,
+   "ok_pct": 66.7,
+   "RIPPLE": 1,
+   "OK": 2
+  },
+  {
+   "repo": "less/less.js",
+   "n": 3,
+   "ok": 0,
+   "ok_pct": 0.0,
+   "RIPPLE": 3
+  },
+  {
+   "repo": "yargs/yargs",
+   "n": 3,
+   "ok": 2,
+   "ok_pct": 66.7,
+   "RIPPLE": 1,
+   "OK": 2
+  },
+  {
+   "repo": "koajs/koa",
+   "n": 2,
+   "ok": 2,
+   "ok_pct": 100.0,
+   "OK": 2
+  },
+  {
+   "repo": "rollup/rollup",
+   "n": 2,
+   "ok": 0,
+   "ok_pct": 0.0,
+   "RIPPLE": 2
+  },
+  {
+   "repo": "terser/terser",
+   "n": 2,
+   "ok": 1,
+   "ok_pct": 50.0,
+   "OK": 1,
+   "RIPPLE": 1
+  },
+  {
+   "repo": "tj/commander.js",
+   "n": 2,
+   "ok": 1,
+   "ok_pct": 50.0,
+   "OK": 1,
+   "RIPPLE": 1
+  },
+  {
+   "repo": "webpack/webpack-dev-server",
+   "n": 2,
+   "ok": 2,
+   "ok_pct": 100.0,
+   "OK": 2
+  },
+  {
+   "repo": "isaacs/minimatch",
+   "n": 1,
+   "ok": 1,
+   "ok_pct": 100.0,
+   "OK": 1
+  },
+  {
+   "repo": "isaacs/node-glob",
+   "n": 1,
+   "ok": 1,
+   "ok_pct": 100.0,
+   "OK": 1
+  },
+  {
+   "repo": "jshttp/content-type",
+   "n": 1,
+   "ok": 1,
+   "ok_pct": 100.0,
+   "OK": 1
+  },
+  {
+   "repo": "nodejs/undici",
+   "n": 1,
+   "ok": 0,
+   "ok_pct": 0.0,
+   "RIPPLE": 1
+  },
+  {
+   "repo": "npm/node-tar",
+   "n": 1,
+   "ok": 1,
+   "ok_pct": 100.0,
+   "OK": 1
+  },
+  {
+   "repo": "uuidjs/uuid",
+   "n": 1,
+   "ok": 0,
+   "ok_pct": 0.0,
+   "RIPPLE": 1
+  }
+ ]
+}

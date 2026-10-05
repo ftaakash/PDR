@@ -176,6 +176,8 @@ def cmd_run(limit, workers, budget_s) -> int:
 
     def work(item):
         (repo, dep), edges = item
+        if not os.path.exists(os.path.join(RESOLVE_DIR, repo.replace("/", "_") + ".lock.json")):
+            return False  # lockfile not (yet) recovered; picked up on a later invocation
         if get(repo, dep, edges[0]["original_candidate"], "attempt0") is None:
             return False
         for e in edges:

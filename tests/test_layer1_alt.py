@@ -79,3 +79,73 @@ def test_incomplete_run_cannot_be_summarised():
     import pytest
     with pytest.raises(KeyError):
         summarise_edge(["1.0.2", "1.0.1"], {"1.0.2": RIPPLE}, RIPPLE)
+
+
+def _report():
+    import importlib.util, os
+    path = os.path.join(os.path.dirname(__file__), "..", "scripts", "layer1_alt_report.py")
+    spec = importlib.util.spec_from_file_location("layer1_alt_report", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_clustered_reproduces_registered_layer1_figures():
+    import collections, json, os
+    root = os.path.join(os.path.dirname(__file__), "..")
+    rows = [json.loads(l) for l in open(os.path.join(root, "results/processed/phase2_layer1_results.jsonl"),
+                                        encoding="utf-8") if l.strip()]
+    claims = json.load(open(os.path.join(root, "docs/claims.json"), encoding="utf-8"))["layer1"]
+    by = collections.defaultdict(lambda: [0, 0])
+    for r in rows:
+        by[r["repo"]][1] += 1
+        by[r["repo"]][0] += r["outcome"] == "OK"
+    c = _report().clustered(by)
+    assert c["edge_weighted_pct"] == claims["ok_pct_pooled"]
+    assert c["edge_weighted_ci95_pct"] == claims["ok_pct_ci95_clustered"]
+    assert c["repo_weighted_pct"] == claims["ok_pct_repo_macro_mean"]
+
+
+def test_build_on_synthetic_fixture():
+    layer1 = [
+        {"edge_id": "a#1", "repo": "a", "outcome": OK},
+        {"edge_id": "a#2", "repo": "a", "outcome": RIPPLE},
+        {"edge_id": "b#1", "repo": "b", "outcome": RIPPLE},
+        {"edge_id": "b#2", "repo": "b", "outcome": PEER_CONFLICT},
+    ]
+    base = {"declared_range": "^1.0.0", "resolved_version": "1.0.0"}
+    plan = {"experiment_id": "layer1_alt_v1", "k_max": 5, "t_cut": T_CUT, "edges": [
+        {**base, "edge_id": "a#2", "repo": "a", "dep_name": "x", "original_candidate": "1.0.9",
+         "layer1_outcome": RIPPLE, "alternatives": ["1.0.8", "1.0.7"]},
+        {**base, "edge_id": "b#1", "repo": "b", "dep_name": "y", "original_candidate": "1.0.9",
+         "layer1_outcome": RIPPLE, "alternatives": []},
+        {**base, "edge_id": "b#2", "repo": "b", "dep_name": "z", "original_candidate": "1.0.9",
+         "layer1_outcome": PEER_CONFLICT, "alternatives": ["1.0.5"]},
+    ]}
+    attempts = [
+        {"repo": "a", "dep_name": "x", "version": "1.0.9", "outcome": RIPPLE},
+        {"repo": "a", "dep_name": "x", "version": "1.0.8", "outcome": RIPPLE},
+        {"repo": "a", "dep_name": "x", "version": "1.0.7", "outcome": OK},
+        {"repo": "b", "dep_name": "y", "version": "1.0.9", "outcome": RIPPLE},
+        {"repo": "b", "dep_name": "z", "version": "1.0.9", "outcome": PEER_CONFLICT},
+        {"repo": "b", "dep_name": "z", "version": "1.0.5", "outcome": PEER_CONFLICT},
+    ]
+    out = _report().build(layer1, plan, attempts)
+    assert out["complete"]
+    assert out["primary"]["single_candidate"]["successes"] == 1
+    assert out["primary"]["exists_any"]["successes"] == 2
+    assert out["primary"]["exists_any"]["n"] == 4
+    assert out["primary"]["exists_any"]["repo_weighted_pct"] == 50.0  # a: 2/2, b: 0/2
+    sec = out["secondary"]
+    assert sec["no_alternative"] == 1 and sec["first_ok_index_dist"] == {2: 1}
+    assert sec["attempts_used_when_exhausted_dist"] == {1: 1}
+    assert sec["attempt0_concordance_edges"] == {"PEER_CONFLICT->PEER_CONFLICT": 1, "RIPPLE->RIPPLE": 2}
+
+
+def test_build_flags_incomplete_runs():
+    layer1 = [{"edge_id": "a#1", "repo": "a", "outcome": RIPPLE}]
+    plan = {"experiment_id": "layer1_alt_v1", "k_max": 5, "t_cut": T_CUT, "edges": [
+        {"edge_id": "a#1", "repo": "a", "dep_name": "x", "original_candidate": "1.0.9", "declared_range": "^1",
+         "resolved_version": "1.0.0", "layer1_outcome": RIPPLE, "alternatives": ["1.0.8"]}]}
+    out = _report().build(layer1, plan, [{"repo": "a", "dep_name": "x", "version": "1.0.9", "outcome": RIPPLE}])
+    assert not out["complete"] and out["population_edges_missing_attempts"] == 1

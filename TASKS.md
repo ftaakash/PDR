@@ -21,13 +21,13 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
   exists-any rate reported with repo-clustered CI next to the single-candidate
   rate; attempt-count distribution; regression test for the candidate-ordering
   function; `claims.json` extended.
-- [ ] **T2 [AUTO] Ripple-size sensitivity.** Thresholds declared here, before
+- [x] **T2 [AUTO] Ripple-size sensitivity.** *(2026-10-05: done; table in `docs/phase2_layer1_results.md`, k=1 gives 41.4% edge / 65.1% repo vs 27.2% / 52.3% at k=0.)* Thresholds declared here, before
   computing: treat a candidate as OK if it changes at most k other top-level
   packages, k in {0, 1, 2, 5, 10}. Pure analysis of existing
   `phase2_layer1_results.jsonl` (`n_ripple` is stored). Label as a sensitivity
   analysis; do not replace the k=0 definition. *Done when:* table + clustered
   CIs in `docs/phase2_layer1_results.md`.
-- [ ] **T3 [AUTO] `scripts/layer1_report.py`** producing
+- [x] **T3 [AUTO] `scripts/layer1_report.py`** *(2026-10-05: done; reproduces the addendum figures, adds repo-weighted CI [41.5, 63.0]; registered as `layer1_summary`.)* producing
   `results/processed/layer1_summary.json` (edge-weighted, repo-weighted,
   clustered CIs, per-repo table, concentration). Register in `claims.json`.
 - [ ] **T4 [AUTO] Related-work pass.** (Started 2026-10-04: verified rows in `docs/audit_v2.md`.) Close the gap found in review: the

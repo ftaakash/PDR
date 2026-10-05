@@ -152,3 +152,34 @@ report both, with the interval, rather than quote 27% alone.
    patch bump elsewhere counts as RIPPLE. A ripple-size sensitivity analysis
    (e.g. OK if <=k other packages change, or only patch-level changes) has
    not been done.
+
+## Sensitivity analysis: ripple size (added 2026-10-05, TASKS.md T2)
+
+*Sensitivity analysis, not a redefinition.* The frozen `OK` definition
+(k = 0: zero other top-level packages change) is unchanged and remains the
+number carried forward. The thresholds k in {0, 1, 2, 5, 10} were declared in
+`TASKS.md` before this was computed. A candidate counts at tolerance k if it is
+`OK`, or `RIPPLE` with the candidate actually applied and at most k other
+top-level packages changing version; `PEER_CONFLICT` never counts. No new
+resolution was run: this uses the stored `n_ripple` of
+`phase2_layer1_results.jsonl`. Script: `scripts/layer1_report.py` ->
+`results/processed/layer1_summary.json`. CIs: repository-clustered percentile
+bootstrap, 5,000 resamples, seed 20260928.
+
+| k (max other packages changed) | OK edges | Edge-weighted % [95% CI] | Repo-weighted % [95% CI] |
+|---:|---:|---|---|
+| 0 (frozen) | 638 | 27.16 [18.0, 40.1] | 52.3 [41.5, 63.0] |
+| 1 | 973 | 41.42 [26.6, 58.7] | 65.1 [54.0, 75.8] |
+| 2 | 1,109 | 47.21 [30.3, 64.8] | 74.8 [64.4, 84.2] |
+| 5 | 1,494 | 63.60 [58.1, 74.3] | 80.7 [71.2, 89.0] |
+| 10 | 1,673 | 71.22 [65.4, 80.4] | 82.6 [73.3, 90.9] |
+
+**Reading.** The single most consequential definitional choice in Layer 1 is
+how much side-effect is tolerated. Allowing one other package to move raises
+the edge-weighted rate from 27% to 41%; allowing five raises it to 64%. The
+k = 0 figure is therefore a strict lower bound on "recoverable without
+disturbing the tree", and the paper should present this curve rather than a
+single cut-off. Two cautions: (1) `n_ripple` counts packages, not the size or
+direction of their version changes, so k = 1 can still mean a disruptive
+change; (2) the repo-weighted CI for k = 0 ([41.5, 63.0]) was not reported in
+the original addendum and is new here.
