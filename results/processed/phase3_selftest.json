@@ -1,0 +1,45 @@
+{
+  "image_id": "sha256:40425f9c514e96299ce071487765aaa685efd403f906a2e37995d75ef3274263",
+  "raw": {
+    "registry_via_proxy": "200",
+    "tuf_via_proxy": "200",
+    "denied_via_proxy": "000",
+    "direct_registry": "000",
+    "denied_hosts_seen_in_proxy_log": [
+      "example.com"
+    ]
+  },
+  "checks": {
+    "registry_via_proxy_ok": true,
+    "tuf_cdn_via_proxy_ok": true,
+    "denied_host_blocked": true,
+    "direct_connection_blocked": true,
+    "denied_host_is_logged": true
+  },
+  "passed": true,
+  "diagnostics": {
+    "curl": [
+      {
+        "args": "https://registry.npmjs.org/",
+        "rc": 0,
+        "stderr": ""
+      },
+      {
+        "args": "https://tuf-repo-cdn.sigstore.dev/timestamp.json",
+        "rc": 0,
+        "stderr": ""
+      },
+      {
+        "args": "https://example.com/",
+        "rc": 56,
+        "stderr": "curl: (56) CONNECT tunnel failed, response 403\n"
+      },
+      {
+        "args": "https://registry.npmjs.org/",
+        "rc": 6,
+        "stderr": "curl: (6) Could not resolve host: registry.npmjs.org\n"
+      }
+    ],
+    "proxy_log_tail": "[12:06:45.923] Loading script /addon.py\n[12:06:45.924] HTTP(S) proxy listening at *:8888.\n[12:07:02.160][172.18.0.3:35106] client connect\n[12:07:02.169][172.18.0.3:35106] server connect registry.npmjs.org:443 (104.16.8.34:443)\n[12:07:02.220][172.18.0.3:35106] server disconnect registry.npmjs.org:443 (104.16.8.34:443)\n[12:07:02.221][172.18.0.3:35106] client disconnect\n[12:07:02.451][172.18.0.3:35114] client connect\n[12:07:02.470][172.18.0.3:35114] server connect tuf-repo-cdn.sigstore.dev:443 (34.117.62.14:443)\n[12:07:02.544][172.18.0.3:35114] server disconnect tuf-repo-cdn.sigstore.dev:443 (34.117.62.14:443)\n[12:07:02.545][172.18.0.3:35114] client disconnect\n[12:07:02.757][172.18.0.3:35118] client connect\n[12:07:02.759] refused on filtered domain \"example.com\"\n172.18.0.3:35118: CONNECT example.com:443\n               << 403 Forbidden 0b\n"
+  }
+}
