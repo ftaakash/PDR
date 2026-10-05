@@ -30,7 +30,7 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
 - [x] **T3 [AUTO] `scripts/layer1_report.py`** *(2026-10-05: done; reproduces the addendum figures, adds repo-weighted CI [41.5, 63.0]; registered as `layer1_summary`.)* producing
   `results/processed/layer1_summary.json` (edge-weighted, repo-weighted,
   clustered CIs, per-repo table, concentration). Register in `claims.json`.
-- [ ] **T4 [AUTO] Related-work pass.** (Started 2026-10-04: verified rows in `docs/audit_v2.md`.) Close the gap found in review: the
+- [x] **T4 [AUTO] Related-work pass.** *(2026-10-05: 14 sources opened and tabled in `docs/literature_matrix.md` with URLs and retrieval date; unverified items listed separately; novelty statement drafted. Gate G sweep still due before submission.)* (Started 2026-10-04: verified rows in `docs/audit_v2.md`.) Close the gap found in review: the
   dependency-update / breaking-update literature (semver update flow in npm,
   Dependabot compatibility and test-reliability studies, update-reproducibility
   work) next to the provenance literature. Open and read each source; fill
