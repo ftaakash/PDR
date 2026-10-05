@@ -27,11 +27,16 @@ docker rm -f pdr-proxy >/dev/null 2>&1 || true
 # The proxy container is the ONLY thing on both the internal network and a
 # normal (outside-reaching) network -- that dual attachment is what lets
 # workers reach the real internet, filtered, without being on it directly.
+# Runs directly as the image's unprivileged `mitmproxy` user, bypassing the
+# image's entrypoint script: that script starts as root and switches user via
+# usermod/gosu, which --cap-drop=ALL (correctly) forbids -- observed on the
+# first real run, 2026-10-05: "usermod: invalid user ID '-g'", exit 3.
 docker run -d --name pdr-proxy \
   --cap-drop=ALL --security-opt=no-new-privileges \
+  --user mitmproxy --entrypoint mitmdump \
   -v "$(pwd)/isolated_worker/proxy_allowlist.py:/addon.py:ro" \
   mitmproxy/mitmproxy:12.2.3@sha256:00b77b5d8804c8ad18cb6caefbf9d5849e895e8986c5ce011f4ae30f4385962f \
-  mitmdump -s /addon.py --mode regular --listen-port 8888 --set block_global=false
+  -s /addon.py --mode regular --listen-port 8888 --set block_global=false
 docker network connect pdr-internal pdr-proxy
 docker network connect bridge pdr-proxy 2>/dev/null || true   # best-effort; may already be attached at creation
 
