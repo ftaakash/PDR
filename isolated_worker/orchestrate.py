@@ -200,9 +200,13 @@ def run_selftest(image_id: str) -> int:
         assert_no_forbidden(cmd)
         try:
             r = sh(cmd, timeout=60)
+            # diagnostic only (2026-10-05): keep curl's/docker's error text so a
+            # "000" can be told apart (DNS, refused, TLS, container start failure)
+            errors.append({"args": args[-1], "rc": r.returncode, "stderr": (r.stderr or "")[-600:]})
             return r.stdout.strip()
         finally:
             sh(["docker", "rm", "-f", name])
+    errors: list = []
     P = ["--proxy", CFG["proxy_url"]]
     res = {"registry_via_proxy": curl(P + ["https://registry.npmjs.org/"]),
            "tuf_via_proxy": curl(P + ["https://tuf-repo-cdn.sigstore.dev/timestamp.json"]),
@@ -211,7 +215,8 @@ def run_selftest(image_id: str) -> int:
     logs = sh(["docker", "logs", CFG["proxy_container"]])
     res["denied_hosts_seen_in_proxy_log"] = parse_denied_hosts(logs.stdout + logs.stderr)
     ev = evaluate_selftest(res)
-    out = {"image_id": image_id, "raw": res, **ev}
+    out = {"image_id": image_id, "raw": res, **ev,
+           "diagnostics": {"curl": errors, "proxy_log_tail": (logs.stdout + logs.stderr)[-3000:]}}
     json.dump(out, open(SELFTEST_OUT, "w"), indent=2)
     print(json.dumps(out, indent=2))
     return 0 if ev["passed"] else 1
