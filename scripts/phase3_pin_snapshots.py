@@ -54,7 +54,7 @@ def resolve_pin(repo: str) -> dict:
     lock_path = os.path.join(LOCK_DIR, f"{safe}.lock.json")
     pkg_path = os.path.join(PKG_DIR, f"{safe}.package.json")
     stored_pkg = json.load(open(pkg_path))
-    with tempfile.TemporaryDirectory(prefix="pdr_pin_") as tmp:
+    with tempfile.TemporaryDirectory(prefix="pdr_pin_", ignore_cleanup_errors=True) as tmp:
         try:
             git("clone", "--quiet", "--filter=blob:none", "--no-checkout",
                 f"https://github.com/{repo}.git", tmp, timeout=200)
@@ -90,8 +90,8 @@ def materialize(repo: str, sha: str) -> str:
     if os.path.isdir(dest) and os.listdir(dest):
         return dest
     os.makedirs(dest, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="pdr_snap_") as tmp:
-        git("clone", "--quiet", "--filter=blob:none", "--no-checkout", f"https://github.com/{repo}.git", tmp, timeout=250)
+    with tempfile.TemporaryDirectory(prefix="pdr_snap_", ignore_cleanup_errors=True) as tmp:
+        git("-c", "maintenance.auto=false", "-c", "gc.auto=0", "clone", "--quiet", "--filter=blob:none", "--no-checkout", f"https://github.com/{repo}.git", tmp, timeout=250)
         p1 = subprocess.Popen(["git", "archive", sha], cwd=tmp, stdout=subprocess.PIPE)
         subprocess.run(["tar", "-x", "-C", dest, "--no-same-owner", "--no-same-permissions"], stdin=p1.stdout, check=True)
         p1.wait()
