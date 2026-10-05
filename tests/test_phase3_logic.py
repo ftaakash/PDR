@@ -207,3 +207,16 @@ def test_orchestrator_runs_pdr_tests_twice():
     m = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(m)
     assert m.CFG["pdr_test_runs"] == 2 and m.CFG["b0_test_runs"] == 2
+
+
+def test_empty_worker_result_is_worker_error_never_ok():
+    # regression: the first real --limit 2 run (2026-10-05) produced arms with no stages
+    # ("no result line") and classify_pair called them OK
+    empty = {"arm": "b0", "stages": {}, "tree_versions": {}, "orchestrator_note": "no result line"}
+    for b0, pdr in [(empty, dict(empty, arm="pdr")), (b0_arm(), dict(empty, arm="pdr")), (empty, pdr_arm())]:
+        c = p3.classify_pair(b0, pdr)
+        assert c["outcome"] == p3.WORKER_ERROR and not any(c["attributable"].values())
+    r = rec("a", b0=empty, pdr=dict(empty, arm="pdr"))
+    assert any("worker produced no result" in x for x in p3.validate_record(r))
+    rows = p3.funnel([r])
+    assert all(row["attributable"] == 0 for row in rows)

@@ -46,10 +46,19 @@ AUDIT_SIGNATURE_CHANGE = "AUDIT_SIGNATURE_CHANGE"
 # twice like B0's. If the two PDR runs disagree, the substitution's test effect
 # is undetermined -- recorded as TEST_FLAKY, never as TEST_FAIL or OK.
 TEST_FLAKY = "TEST_FLAKY"
+# Bug fix 2026-10-05: an arm whose worker produced no result (no stages at all,
+# e.g. the container failed to start) used to classify as OK. It is now
+# WORKER_ERROR: an infrastructure failure, never a research outcome.
+WORKER_ERROR = "WORKER_ERROR"
 OUTCOMES = [
     sb.OK, sb.RESOLUTION_FAIL, sb.INSTALL_FAIL, sb.LIFECYCLE_FAIL, sb.PEER_CONFLICT,
     AUDIT_SIGNATURE_CHANGE, sb.TEST_FAIL, TEST_FLAKY, sb.NO_BEHAVIORAL_CHANGE, sb.TIMEOUT, sb.RESOURCE_LIMIT,
+    WORKER_ERROR,
 ]
+
+
+def arm_has_result(arm: dict) -> bool:
+    return bool((arm or {}).get("stages")) and not (arm or {}).get("orchestrator_note")
 
 # stage -> outcome name when that stage fails for a reason other than timeout/OOM
 _STAGE_FAIL_OUTCOME = {
@@ -179,6 +188,11 @@ def classify_pair(b0: dict, pdr: dict) -> dict:
                        dist.attestations classifier -- methodology_freeze S9)
       tree_diff_size   number of installed packages whose version differs
     """
+    if not (arm_has_result(b0) and arm_has_result(pdr)):
+        return {"outcome": WORKER_ERROR, "failure_stage": None,
+                "attributable": {s: False for s in STAGES},
+                "b0_test_status": b0_test_status(b0 or {}), "pdr_test_status": test_status(pdr or {}),
+                "audit_parse_ok": None, "attestation_gain": None, "tree_diff_size": 0}
     attributable = {s: True for s in STAGES}
     b0_kind = {s: stage_kind(b0, s) for s in STAGES}
     for s in ("resolve",):
@@ -258,6 +272,8 @@ def validate_record(rec: dict) -> List[str]:
         if not isinstance(arm, dict) or "stages" not in arm:
             problems.append(f"{arm_name}: missing 'stages'")
             continue
+        if not arm_has_result(arm):
+            problems.append(f"{arm_name}: worker produced no result ({arm.get('orchestrator_note') or 'no stages'})")
         for st in arm["stages"]:
             if st not in STAGES:
                 problems.append(f"{arm_name}: unknown stage {st!r}")

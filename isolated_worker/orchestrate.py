@@ -234,10 +234,10 @@ def run_arm(arm: str, exp: dict, snapshot: str, dry: bool) -> dict:
         print("DRY-RUN:", " ".join(shown))
         return {}
     since = time.strftime("%Y-%m-%dT%H:%M:%S", time.gmtime())
-    t0, timed_out, out = time.time(), False, ""
+    t0, timed_out, out, err, rc = time.time(), False, "", "", None
     try:
         r = subprocess.run(cmd, capture_output=True, text=True, timeout=CFG["container_wall_s"])
-        out = r.stdout
+        out, err, rc = r.stdout, r.stderr, r.returncode
     except subprocess.TimeoutExpired:
         timed_out = True
         sh(["docker", "kill", name])
@@ -249,7 +249,10 @@ def run_arm(arm: str, exp: dict, snapshot: str, dry: bool) -> dict:
         sh(["docker", "rm", "-f", name])          # disposable: every worker is destroyed after its single job
     line = next((ln for ln in reversed(out.splitlines()) if ln.startswith("PDR_RESULT_JSON:")), None)
     if line is None:
+        # diagnostic (2026-10-05): the first --limit 2 run produced empty arms with no
+        # visible cause; keep the container's exit code and output tails
         return {"arm": arm, "stages": {}, "tree_versions": {}, "orchestrator_note": "no result line",
+                "container_rc": rc, "container_stdout_tail": out[-1500:], "container_stderr_tail": err[-1500:],
                 "container_timed_out": timed_out, "container_oom": oom, "elapsed_s": round(time.time() - t0, 1)}
     res = json.loads(line[len("PDR_RESULT_JSON:"):])
     res.update(container_timed_out=timed_out, container_oom=oom, denied_hosts=parse_denied_hosts(proxy_log),
