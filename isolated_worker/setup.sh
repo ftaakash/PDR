@@ -30,7 +30,7 @@ docker rm -f pdr-proxy >/dev/null 2>&1 || true
 docker run -d --name pdr-proxy \
   --cap-drop=ALL --security-opt=no-new-privileges \
   -v "$(pwd)/isolated_worker/proxy_allowlist.py:/addon.py:ro" \
-  mitmproxy/mitmproxy:latest \
+  mitmproxy/mitmproxy:12.2.3@sha256:00b77b5d8804c8ad18cb6caefbf9d5849e895e8986c5ce011f4ae30f4385962f \
   mitmdump -s /addon.py --mode regular --listen-port 8888 --set block_global=false
 docker network connect pdr-internal pdr-proxy
 docker network connect bridge pdr-proxy 2>/dev/null || true   # best-effort; may already be attached at creation

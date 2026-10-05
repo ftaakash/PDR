@@ -1,0 +1,79 @@
+# Phase 3 / Layer 3 on a disposable GitHub-hosted Ubuntu runner.
+#
+# The runner VM is created for this job and destroyed afterwards; untrusted
+# package code still only ever runs inside the hardened containers that
+# isolated_worker/orchestrate.py builds (internal-only network, allowlisting
+# proxy, read-only rootfs, no credentials). This workflow adds no secrets,
+# and the job token is read-only.
+#
+# Modes follow docs/phase3_protocol.md Section 9 and TASKS.md T8's stops:
+#   selftest -> setup.sh + orchestrate.py --selftest   (stop a)
+#   dryrun   -> orchestrate.py --dry-run               (stop b)
+#   limit2   -> selftest, then --limit 2               (stop c)
+#   full     -> selftest, then the 23-experiment run   (stop e)
+name: layer3
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "selftest | dryrun | limit2 | full"
+        required: true
+        default: selftest
+
+permissions:
+  contents: read
+
+jobs:
+  layer3:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Host tests (must pass before anything runs)
+        run: |
+          python3 -m pip install --quiet pyyaml pytest
+          npm install --ignore-scripts --no-audit --no-fund
+          python3 -m pytest tests -q
+
+      - name: Dry run (no docker execution)
+        if: inputs.mode == 'dryrun'
+        run: python3 isolated_worker/orchestrate.py --dry-run
+
+      - name: Build isolation infrastructure
+        if: inputs.mode != 'dryrun'
+        run: |
+          bash isolated_worker/setup.sh
+          docker image inspect pdr-worker:phase3-v1 --format '{{.Id}}'
+
+      - name: Network self-test
+        if: inputs.mode != 'dryrun'
+        run: |
+          python3 isolated_worker/orchestrate.py --selftest
+          docker logs pdr-proxy > results/processed/phase3_proxy_selftest.log 2>&1 || true
+
+      - name: Materialize pinned snapshots (git archive only)
+        if: inputs.mode == 'limit2' || inputs.mode == 'full'
+        run: python3 scripts/phase3_pin_snapshots.py --materialize
+
+      - name: Micro-pilot, 2 experiments
+        if: inputs.mode == 'limit2'
+        run: python3 isolated_worker/orchestrate.py --limit 2
+
+      - name: Micro-pilot, full manifest
+        if: inputs.mode == 'full'
+        run: python3 isolated_worker/orchestrate.py
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: layer3-${{ inputs.mode }}-${{ github.run_id }}
+          path: |
+            results/processed/phase3_selftest.json
+            results/processed/phase3_proxy_selftest.log
+            results/processed/phase3_micropilot_results.jsonl
+          if-no-files-found: warn

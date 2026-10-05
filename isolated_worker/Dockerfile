@@ -5,16 +5,10 @@
 # `orchestrate.py --selftest`, which is gated on image ID) rather than
 # floating to "latest 20-bookworm-slim" on every rebuild.
 #
-# HONEST FLAG: this session has no docker daemon and no reachable Docker
-# registry (docker.io is not in this session's network allowlist), so the
-# digest below is a PLACEHOLDER, not a verified one -- it was never resolved
-# against a real registry. Before this Dockerfile is built anywhere real,
-# replace it with the actual digest from:
-#   docker pull node:20-bookworm-slim && docker inspect --format='{{index .RepoDigests 0}}' node:20-bookworm-slim
-# isolated_worker/setup.sh checks for and refuses to build against this
-# exact placeholder string, so a real build cannot proceed with a
-# never-verified base image by accident.
-FROM node@sha256:0000000000000000000000000000000000000000000000000000000000UNVERIFIED
+# Digest resolved 2026-10-05 from registry-1.docker.io (manifest-list digest
+# of library/node:20-bookworm-slim), approved by the project owner (TASKS.md T5).
+# isolated_worker/setup.sh still refuses to build if a placeholder returns.
+FROM node:20-bookworm-slim@sha256:2cf067cfed83d5ea958367df9f966191a942351a2df77d6f0193e162b5febfc0
 
 # Pin npm to the exact version recorded in data_manifest/tool_lock.json so a
 # worker rebuild months from now can't silently change dependency
