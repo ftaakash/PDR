@@ -31,8 +31,8 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from pdr.layer1_alt import (EXPERIMENT_ID, K_MAX, T_CUT, alternative_candidates,  # noqa: E402
-                            classify_npm_failure)
+from pdr.layer1_alt import (EXPERIMENT_ID, K_MAX, PLATFORM_BLOCKED, T_CUT,  # noqa: E402
+                            alternative_candidates, classify_npm_failure)
 from pdr.provenance import fetch_packument  # noqa: E402
 from pdr.sandbox import (OK, RIPPLE, TIMEOUT, PackageJsonCache, append_jsonl, load_jsonl,  # noqa: E402
                          patch_package_json_for_candidate, top_level_versions)
@@ -45,6 +45,24 @@ PKG_CACHE_DIR = "results/raw/provenance_phase1/package_jsons"
 PACKUMENT_DIR = "results/raw/provenance_phase1/packuments"
 PLAN = "results/processed/layer1_alt_v1_plan.json"
 ATTEMPTS = "results/processed/layer1_alt_v1_attempts.jsonl"
+# npm used for attempts: PDR_NPM_CLI=<path to npm-cli.js> runs that npm under the
+# current node (used to match data_manifest/tool_lock.json's npm 10.9.7);
+# otherwise the npm on PATH.
+NPM_CLI = os.environ.get("PDR_NPM_CLI")
+
+
+def npm_cmd(args):
+    if NPM_CLI:
+        return ["node", NPM_CLI, *args], False
+    return ["npm", *args], os.name == "nt"
+
+
+NPM_VERSION = None
+
+
+def npm_version() -> str:
+    cmd, shell = npm_cmd(["--version"])
+    return subprocess.run(cmd, capture_output=True, text=True, shell=shell).stdout.strip()
 
 
 def population():
@@ -118,7 +136,8 @@ def cmd_plan() -> int:
 
 def attempt(repo: str, dep_name: str, version: str, pkg_cache: PackageJsonCache, role: str) -> dict:
     """Same procedure as scripts/layer1_resolution.run_one (docs/phase2_protocol.md S7)."""
-    base = {"experiment_id": EXPERIMENT_ID, "repo": repo, "dep_name": dep_name, "version": version, "role": role}
+    base = {"experiment_id": EXPERIMENT_ID, "repo": repo, "dep_name": dep_name, "version": version, "role": role,
+            "npm_version": NPM_VERSION, "host_os": sys.platform}
     with open(os.path.join(RESOLVE_DIR, repo.replace("/", "_") + ".lock.json"), encoding="utf-8") as f:
         orig_lock = json.load(f)
     pkg = patch_package_json_for_candidate(pkg_cache.get(repo), dep_name, version)
@@ -130,10 +149,9 @@ def attempt(repo: str, dep_name: str, version: str, pkg_cache: PackageJsonCache,
         with open(os.path.join(tmp, "package-lock.json"), "w", encoding="utf-8") as f:
             json.dump(orig_lock, f)
         try:
-            proc = subprocess.run(
-                ["npm", "install", "--package-lock-only", "--ignore-scripts", "--no-audit", "--no-fund"],
-                cwd=tmp, capture_output=True, text=True, timeout=60, shell=(os.name == "nt"),
-                encoding="utf-8", errors="replace")
+            cmd, shell = npm_cmd(["install", "--package-lock-only", "--ignore-scripts", "--no-audit", "--no-fund"])
+            proc = subprocess.run(cmd, cwd=tmp, capture_output=True, text=True, timeout=60, shell=shell,
+                                  encoding="utf-8", errors="replace")
         except subprocess.TimeoutExpired:
             return {**base, "outcome": TIMEOUT, "wall_time_s": round(time.time() - t0, 2)}
         wall = round(time.time() - t0, 2)
@@ -151,6 +169,9 @@ def attempt(repo: str, dep_name: str, version: str, pkg_cache: PackageJsonCache,
 
 
 def cmd_run(limit, workers, budget_s) -> int:
+    global NPM_VERSION
+    NPM_VERSION = npm_version()
+    print(f"[run] npm {NPM_VERSION} on {sys.platform}")
     plan = json.load(open(PLAN, encoding="utf-8"))
     done = {(r["repo"], r["dep_name"], r["version"]): r["outcome"] for r in load_jsonl(ATTEMPTS)}
     print(f"[run] {len(done)} attempts already recorded")
@@ -178,8 +199,11 @@ def cmd_run(limit, workers, budget_s) -> int:
         (repo, dep), edges = item
         if not os.path.exists(os.path.join(RESOLVE_DIR, repo.replace("/", "_") + ".lock.json")):
             return False  # lockfile not (yet) recovered; picked up on a later invocation
-        if get(repo, dep, edges[0]["original_candidate"], "attempt0") is None:
+        o0 = get(repo, dep, edges[0]["original_candidate"], "attempt0")
+        if o0 is None:
             return False
+        if o0 == PLATFORM_BLOCKED:
+            return True  # host cannot resolve this repo's tree; alternatives would measure nothing
         for e in edges:
             for v in e["alternatives"]:
                 o = get(repo, dep, v, "alternative")

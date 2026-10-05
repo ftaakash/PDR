@@ -23,6 +23,10 @@ NO_ALTERNATIVE = "NO_ALTERNATIVE"
 ALT_OK = "ALT_OK"
 ALT_EXHAUSTED = "ALT_EXHAUSTED"     # every tried alternative failed
 DRIFT_OK = "DRIFT_OK"              # original candidate now resolves OK; not credited
+# Environment outcome, not part of the frozen taxonomy: npm refused the repo's
+# EXISTING tree on this host OS (EBADPLATFORM), so no attempt for that repo
+# measures anything. Never credited, never counted as a resolution failure.
+PLATFORM_BLOCKED = "PLATFORM_BLOCKED"
 
 
 def _published_by(time: Optional[str], t_cut: str) -> bool:
@@ -65,7 +69,10 @@ def alternative_candidates(ordered_desc: Iterable[str], facts: Dict[str, dict],
 def classify_npm_failure(stderr: str) -> str:
     """Non-zero `npm install --package-lock-only` exit: ERESOLVE is a peer
     conflict (the rule Layer 1's documented reclassification applied), anything
-    else is a resolution failure."""
+    else is a resolution failure -- except EBADPLATFORM, which means the host OS
+    cannot install the tree at all and is recorded as PLATFORM_BLOCKED."""
+    if "EBADPLATFORM" in (stderr or ""):
+        return PLATFORM_BLOCKED
     return PEER_CONFLICT if "ERESOLVE" in (stderr or "") else RESOLUTION_FAIL
 
 
@@ -79,6 +86,9 @@ def summarise_edge(alternatives: List[str], outcomes: Dict[str, str],
     first OK alternative, and the attempts consumed. Raises KeyError if an
     attempt the walk needs is missing, so an incomplete run cannot be
     summarised by accident."""
+    if attempt0_outcome == PLATFORM_BLOCKED:
+        return {"alt_status": PLATFORM_BLOCKED, "drift": False, "credited": False, "status": PLATFORM_BLOCKED,
+                "first_ok_index": None, "attempts_used": 0, "alt_outcomes": []}
     drift = attempt0_outcome == OK
     tried: List[str] = []
     alt_status, first_ok = (NO_ALTERNATIVE if not alternatives else ALT_EXHAUSTED), None

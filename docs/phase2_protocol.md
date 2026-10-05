@@ -221,3 +221,29 @@ committed before the first attempt), `results/processed/layer1_alt_v1_attempts.j
 one row per `(repo, package, version)` attempt, resumable) and
 `results/processed/layer1_alt_v1_summary.json` (from
 `scripts/layer1_alt_report.py`), registered in `docs/claims.json`.
+
+### 7.1 Amendment 2026-10-05: execution host (before any valid attempt)
+
+The first run of `layer1_alt_v1` was stopped after 666 attempts because the
+host is native Windows, not the Linux machine Layer 1 ran on: npm refused
+`socketio/socket.io`'s *existing* tree with `EBADPLATFORM` (its dependency
+`eiows@7.1.0` excludes win32), so 223 attempts were recorded as
+`RESOLUTION_FAIL` when they measured nothing. npm's `--os`/`--cpu` overrides
+do not reach this check (`build-ideal-tree.js` calls `checkPlatform` without
+the environment in both npm 10.9.2 and 10.9.7). That run is kept unedited as
+`results/processed/layer1_alt_v1_attempts.invalid_win32_npm10.9.2.jsonl` and
+is not used. Changes for the valid run, made before it started:
+
+1. Attempts use npm **10.9.7** (the version in `data_manifest/tool_lock.json`)
+   via `PDR_NPM_CLI`; every attempt row records `npm_version` and `host_os`.
+2. `EBADPLATFORM` is recorded as `PLATFORM_BLOCKED`, an environment outcome
+   outside the frozen taxonomy. A repo whose attempt 0 is platform-blocked gets
+   no further attempts. Its edges stay in every denominator and are **not
+   credited** (the primary estimate is therefore a lower bound); an upper
+   bound that credits every blocked edge having at least one alternative is
+   reported beside it. Running those edges needs a Linux host (WSL2).
+
+For the 244 substitutions outside socket.io, the invalid run's attempt 0
+agreed with the recorded Layer 1 outcome in every case, which suggests the
+Windows host does not otherwise change resolution; the valid run re-measures
+this.

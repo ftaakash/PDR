@@ -57,6 +57,10 @@ def build(layer1: list, plan: dict, attempts: list) -> dict:
     done_ids = {e["edge_id"] for e in edges}
     pop_ids = {e["edge_id"] for e in plan["edges"]}
     credited = {e["edge_id"] for e in edges if e["credited"]}
+    # Best case for edges this host could not run: every blocked edge with >=1
+    # alternative would have recovered. Reported as a bound, never as the estimate.
+    blocked_best = {e["edge_id"] for e in edges if e["status"] == "PLATFORM_BLOCKED" and e["alternatives"]}
+    upper = collections.defaultdict(lambda: [0, 0])
     for r in layer1:
         if r["edge_id"] in pop_ids and r["edge_id"] not in done_ids:
             continue  # incomplete edge: excluded from both rates so they stay comparable
@@ -64,6 +68,8 @@ def build(layer1: list, plan: dict, attempts: list) -> dict:
         anyv[r["repo"]][1] += 1
         single[r["repo"]][0] += r["outcome"] == OK
         anyv[r["repo"]][0] += r["outcome"] == OK or r["edge_id"] in credited
+        upper[r["repo"]][1] += 1
+        upper[r["repo"]][0] += r["outcome"] == OK or r["edge_id"] in credited or r["edge_id"] in blocked_best
 
     pop = [e for e in edges]
     alt_pop = collections.defaultdict(lambda: [0, 0])
@@ -91,6 +97,12 @@ def build(layer1: list, plan: dict, attempts: list) -> dict:
         "population_edges_summarised": len(pop), "population_edges_missing_attempts": missing,
         "n_attempts": len(attempts),
         "primary": {"single_candidate": clustered(single), "exists_any": clustered(anyv)},
+        "platform_blocked": {
+            "edges": sum(e["status"] == "PLATFORM_BLOCKED" for e in pop),
+            "edges_with_alternatives": len(blocked_best),
+            "repos": sorted({e["repo"] for e in pop if e["status"] == "PLATFORM_BLOCKED"}),
+            "exists_any_upper_bound": clustered(upper),
+        },
         "secondary": {
             "alt_ok_within_population": clustered(alt_pop) if alt_pop else None,
             "status_counts": dict(collections.Counter(e["status"] for e in pop)),

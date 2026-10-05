@@ -149,3 +149,11 @@ def test_build_flags_incomplete_runs():
          "resolved_version": "1.0.0", "layer1_outcome": RIPPLE, "alternatives": ["1.0.8"]}]}
     out = _report().build(layer1, plan, [{"repo": "a", "dep_name": "x", "version": "1.0.9", "outcome": RIPPLE}])
     assert not out["complete"] and out["population_edges_missing_attempts"] == 1
+
+
+def test_platform_block_is_its_own_outcome_and_never_credited():
+    from pdr.layer1_alt import PLATFORM_BLOCKED
+    err = "npm error code EBADPLATFORM\nnpm error notsup Unsupported platform for eiows@7.1.0"
+    assert classify_npm_failure(err) == PLATFORM_BLOCKED
+    r = summarise_edge(["1.0.1"], {}, PLATFORM_BLOCKED)   # no alternative outcomes needed
+    assert r["status"] == PLATFORM_BLOCKED and not r["credited"] and r["attempts_used"] == 0
