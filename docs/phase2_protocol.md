@@ -247,3 +247,25 @@ For the 244 substitutions outside socket.io, the invalid run's attempt 0
 agreed with the recorded Layer 1 outcome in every case, which suggests the
 Windows host does not otherwise change resolution; the valid run re-measures
 this.
+
+### 7.2 Correction 2026-10-05: the Phase 1 lockfiles were never missing
+
+Section 7's "Inputs that had to be recovered" paragraph is wrong. The 45
+Phase 1 lockfiles are tracked in git under `results/raw/resolve_phase1/`; a
+truncated directory listing (`ls ... | head`) was misread as showing only
+`_manifest.json`. `scripts/recover_phase1_lockfiles.py` then rewrote the
+files in place. For 42 repos the rewritten bytes were identical to the
+tracked files (no git diff). For 3 (`mochajs/mocha`, `nodejs/undici`,
+`rollup/rollup`) the accepted blob had the same length and the same parsed
+edge multiset but a different root `"version"` field, so the
+length-plus-edges criterion was not sufficient evidence of identity.
+
+What was done: the 3 tracked files were restored from git; the script now
+pins by the exact blob ID of a present lockfile and never overwrites it, and
+the 3 entries in `results/processed/phase1_lockfile_recovery.json` were
+regenerated that way (status `PINNED`). All 29 `layer1_alt_v1` attempts for
+those 3 repos were re-run against the restored files into
+`results/processed/layer1_alt_v1_attempts.recheck_tracked_lockfiles.jsonl`:
+every outcome and every `n_ripple` matched the main run, so no reported
+number changes. The recovery record remains useful as a commit pin for each
+repo's analyzed lockfile.

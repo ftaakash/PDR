@@ -201,15 +201,14 @@
     "status": "RECOVERED"
   },
   "mochajs/mocha": {
-    "blob": "4d2c54903922ae0bfe2c604cbf2044cfedc5ef4e",
-    "blobs_examined": 1,
+    "blob": "62a4b7c906d2059f9e76055f791e8888dbc455aa",
+    "blobs_examined": 2,
     "bytes": 361043,
-    "commit_date": "2026-09-30T19:02:36-07:00",
-    "evidence": "byte length == manifest AND edge multiset == edges.csv",
-    "n_edges": 1285,
+    "commit_date": "2026-09-19T10:59:51-07:00",
+    "evidence": "git blob id == tracked analyzed lockfile",
     "repo": "mochajs/mocha",
-    "sha": "51a0cc5530d8e29272406384723e8871245821f1",
-    "status": "RECOVERED"
+    "sha": "3382fdd29e920deb625e279d3bf83b6bf0bbe405",
+    "status": "PINNED"
   },
   "motdotla/dotenv": {
     "blob": "bf9bf3cd3c945a25c81aa4d3445685d22815746e",
@@ -255,15 +254,14 @@
     "status": "RECOVERED"
   },
   "nodejs/undici": {
-    "blob": "b4b31465c51de5f9d6f6569422eba4b862c52db1",
-    "blobs_examined": 1,
+    "blob": "e71d45795d51188fe900e8de7b1d3a12c4f926be",
+    "blobs_examined": 3,
     "bytes": 397182,
-    "commit_date": "2026-09-24T01:33:51-07:00",
-    "evidence": "byte length == manifest AND edge multiset == edges.csv",
-    "n_edges": 1601,
+    "commit_date": "2026-09-22T08:50:11+02:00",
+    "evidence": "git blob id == tracked analyzed lockfile",
     "repo": "nodejs/undici",
-    "sha": "7e016ad7e5bd6540170069a9a28b1e633b29664f",
-    "status": "RECOVERED"
+    "sha": "6e48f4873a677ed6a13fa3e3571b032f00244bdf",
+    "status": "PINNED"
   },
   "npm/cli": {
     "blob": "4bcdd51466710f657c670e61a8c384294fa72c3f",
@@ -308,15 +306,14 @@
     "status": "RECOVERED"
   },
   "rollup/rollup": {
-    "blob": "03ec5beaa20b46e6e64dd2052a4dc2898a340514",
-    "blobs_examined": 9,
+    "blob": "5eb63467ceb9bad371408ff36eff1ff3ed0d15ee",
+    "blobs_examined": 10,
     "bytes": 615137,
-    "commit_date": "2026-09-24T11:48:55+02:00",
-    "evidence": "byte length == manifest AND edge multiset == edges.csv",
-    "n_edges": 2303,
+    "commit_date": "2026-09-22T07:04:22Z",
+    "evidence": "git blob id == tracked analyzed lockfile",
     "repo": "rollup/rollup",
-    "sha": "3722484c33c58b3ab0cbbfcca09b8f267d420329",
-    "status": "RECOVERED"
+    "sha": "b54c4c2af5762e846109f1b1f09d5a944486498a",
+    "status": "PINNED"
   },
   "showdownjs/showdown": {
     "blob": "6d4d328f2a606e23f649298d1e8b331ebe7c604e",

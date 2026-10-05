@@ -168,8 +168,10 @@ def attempt(repo: str, dep_name: str, version: str, pkg_cache: PackageJsonCache,
             "n_ripple": len(ripple), "ripple_sample": dict(list(ripple.items())[:5]), "wall_time_s": wall}
 
 
-def cmd_run(limit, workers, budget_s) -> int:
-    global NPM_VERSION
+def cmd_run(limit, workers, budget_s, attempts_path=None, only_repos=None) -> int:
+    global NPM_VERSION, ATTEMPTS
+    if attempts_path:
+        ATTEMPTS = attempts_path
     NPM_VERSION = npm_version()
     print(f"[run] npm {NPM_VERSION} on {sys.platform}")
     plan = json.load(open(PLAN, encoding="utf-8"))
@@ -177,6 +179,8 @@ def cmd_run(limit, workers, budget_s) -> int:
     print(f"[run] {len(done)} attempts already recorded")
     groups = collections.defaultdict(list)
     for e in plan["edges"]:
+        if only_repos and e["repo"] not in only_repos:
+            continue
         groups[(e["repo"], e["dep_name"])].append(e)
     pkg_cache = PackageJsonCache(PKG_CACHE_DIR)
     lock, counter, t0 = threading.Lock(), [0], time.time()
@@ -226,8 +230,13 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--budget-s", type=int, default=10 ** 9)
+    ap.add_argument("--attempts-out", help="write attempts here instead (verification reruns)")
+    ap.add_argument("--only-repos", help="comma-separated repos")
     a = ap.parse_args()
-    return cmd_plan() if a.cmd == "plan" else cmd_run(a.limit, a.workers, a.budget_s)
+    if a.cmd == "plan":
+        return cmd_plan()
+    return cmd_run(a.limit, a.workers, a.budget_s, a.attempts_out,
+                   set(a.only_repos.split(",")) if a.only_repos else None)
 
 
 if __name__ == "__main__":

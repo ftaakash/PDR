@@ -10,7 +10,3 @@ results/raw/phase3_snapshots/
 .claude/settings.local.json
 .env
 .env.*
-
-# Phase 1 lockfiles: recovered from git history by scripts/recover_phase1_lockfiles.py
-# (evidence in results/processed/phase1_lockfile_recovery.json)
-results/raw/resolve_phase1/*.lock.json

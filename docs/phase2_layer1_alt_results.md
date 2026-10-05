@@ -70,10 +70,11 @@ attempts.
 
 ## Process notes
 
-- The Phase 1 lockfiles were missing from the handoff and were recovered
-  from git history with exact-match evidence for all 45 repos
-  (`results/processed/phase1_lockfile_recovery.json`: 19 by git blob ID, 26 by
-  byte length plus identical re-parsed edge multiset).
+- I first believed the Phase 1 lockfiles were missing and "recovered" them
+  from git history; they were in fact tracked in the repository, and three
+  were overwritten with near-identical blobs (root `"version"` differed). They
+  were restored and their 29 attempts re-run with identical outcomes; see
+  `docs/phase2_protocol.md` Section 7.2.
 - A first run on npm 10.9.2 was stopped once the `EBADPLATFORM` problem
   appeared; it is kept unedited as
   `results/processed/layer1_alt_v1_attempts.invalid_win32_npm10.9.2.jsonl`

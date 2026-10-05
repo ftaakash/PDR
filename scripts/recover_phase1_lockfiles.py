@@ -114,6 +114,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", help="comma-separated repos")
     ap.add_argument("--budget-s", type=int, default=280)
+    ap.add_argument("--force", action="store_true", help="re-examine repos already recorded")
     args = ap.parse_args()
 
     manifest = json.load(open(MANIFEST, encoding="utf-8"))
@@ -127,19 +128,31 @@ def main() -> int:
     t0 = time.time()
     for r in repos:
         repo = r["repo"]
-        if record.get(repo, {}).get("status") == "RECOVERED" and \
-                os.path.exists(os.path.join(LOCK_DIR, repo.replace("/", "_") + ".lock.json")):
+        local = os.path.join(LOCK_DIR, repo.replace("/", "_") + ".lock.json")
+        if not args.force and record.get(repo, {}).get("status") in ("RECOVERED", "PINNED") and \
+                os.path.exists(local):
             continue
         if time.time() - t0 > args.budget_s:
             print(f"[recover] budget reached; re-run to continue")
             break
         print(f"[recover] {repo} ...", flush=True)
-        want_blob = pins.get(repo, {}).get("lock_blob") if pins.get(repo, {}).get("status") == "PINNED" else None
+        have_local = os.path.exists(local)
+        if have_local:
+            # The analyzed lockfile is present (it is tracked in git): pin by its exact
+            # blob ID and NEVER overwrite it. Correction 2026-10-05: the first run of this
+            # script wrongly assumed these files were missing and overwrote three of them
+            # with blobs of equal length and equal edge multiset whose root "version" differed.
+            want_blob = git("hash-object", local).strip()
+        else:
+            want_blob = pins.get(repo, {}).get("lock_blob") if pins.get(repo, {}).get("status") == "PINNED" else None
         try:
             raw, rec = recover(repo, r["lockfile_bytes"], want_blob, want[repo])
         except (RuntimeError, subprocess.TimeoutExpired) as e:
             raw, rec = None, {"repo": repo, "status": "UNRECOVERED", "reason": str(e)[:300]}
-        if raw is not None:
+        if have_local:
+            if rec["status"] == "RECOVERED":
+                rec["status"], rec["evidence"] = "PINNED", "git blob id == tracked analyzed lockfile"
+        elif raw is not None:
             with open(os.path.join(LOCK_DIR, repo.replace("/", "_") + ".lock.json"), "wb") as f:
                 f.write(raw)
         record[repo] = rec
@@ -147,7 +160,7 @@ def main() -> int:
         with open(OUT, "w", encoding="utf-8") as f:
             json.dump(record, f, indent=2, sort_keys=True)
 
-    n_ok = sum(1 for v in record.values() if v["status"] == "RECOVERED")
+    n_ok = sum(1 for v in record.values() if v["status"] in ("RECOVERED", "PINNED"))
     print(f"[recover] {n_ok}/{len(manifest['repos'])} recovered")
     return 0
 
