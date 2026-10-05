@@ -45,8 +45,8 @@ MANIFEST = "configs/experiments/phase3_micropilot_manifest.json"
 MANIFEST_HASH = "configs/experiments/phase3_micropilot_manifest.sha256"
 PINS = "configs/experiments/phase3_micropilot_pins.json"
 SNAP_DIR = "results/raw/phase3_snapshots"
-EXPERIMENT_ID = "phase3_micropilot_v2"   # docs/phase3_protocol.md Section 11; v1 output kept unchanged
-OUT = "results/processed/phase3_micropilot_v2_results.jsonl"
+EXPERIMENT_ID = "phase3_micropilot_v3"   # docs/phase3_protocol.md Section 12; v1/v2 outputs kept unchanged
+OUT = "results/processed/phase3_micropilot_v3_results.jsonl"
 SELFTEST_OUT = "results/processed/phase3_selftest.json"
 
 CFG = {

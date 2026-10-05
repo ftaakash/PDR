@@ -35,7 +35,7 @@ import sys
 import time
 
 MARKER = "/opt/pdr-worker-image-marker"
-RUNNER_VERSION = "phase3.runner.v1"
+RUNNER_VERSION = "phase3.runner.v3"   # v3: manifest restored before tests (protocol Section 12)
 NET_PATTERN = re.compile(r"ENOTFOUND|ECONNREFUSED|ECONNRESET|ETIMEDOUT|EAI_AGAIN|tunneling socket|"
                          r"Proxying refused|403 Forbidden|Failed to download|getaddrinfo", re.I)
 
@@ -94,6 +94,16 @@ def run_stage(cmd, cwd, timeout, env, tail_bytes, shell=False) -> dict:
     return res
 
 
+def restore_manifest(repo_dir: str, original: bytes) -> bool:
+    """Write the byte-identical original package.json back (protocol Section 12).
+    Returns True if the file on disk now equals `original`."""
+    path = os.path.join(repo_dir, "package.json")
+    with open(path, "wb") as f:
+        f.write(original)
+    with open(path, "rb") as f:
+        return f.read() == original
+
+
 def collect_problems(node, acc: set) -> None:
     if isinstance(node, dict):
         for p in node.get("problems") or []:
@@ -121,7 +131,10 @@ def main() -> int:
     os.makedirs("/work/home", exist_ok=True)
     shutil.copytree("/input/snapshot", work, symlinks=True)
     env = dict(os.environ, HOME="/work/home", CI="true", HUSKY="0", npm_config_update_notifier="false",
-               npm_config_fund="false", npm_config_loglevel="warn")
+               npm_config_fund="false", npm_config_loglevel="warn",
+               NODE_OPTIONS="--max-old-space-size=6144")   # v3 baseline-only tweak, both arms (Section 12)
+    with open(os.path.join(work, "package.json"), "rb") as f:
+        original_manifest = f.read()
     stages: dict = {}
 
     def go(name, cmd, timeout, shell=False, tail_override=None):
@@ -169,6 +182,10 @@ def main() -> int:
         j = run_stage(["npm", "audit", "signatures", "--json"], work, T["audit"], env, tb)
         a["json_stdout_tail"], a["json_exit_code"] = j["stdout_tail"], j["exit_code"]
 
+        if arm == "pdr":
+            # Section 12: the harness's package.json edit is a measurement mechanism; tests
+            # see the repo's own manifest. Lockfile and node_modules (the substitution) stay.
+            result["manifest_restored_before_test"] = restore_manifest(work, original_manifest)
         runs = []
         for _ in range(spec["test_runs"]):
             r = run_stage(spec["test_command"], work, T["test"], env, tb, shell=True)

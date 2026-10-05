@@ -402,3 +402,35 @@ Outputs go to `results/processed/phase3_micropilot_v2_results.jsonl`; the v1
 file is kept unchanged. The worker is re-tagged `freeze/phase3-worker-v2`
 before the full run. The same REWORK, "Layer 3 adds nothing" and Gate D
 thresholds (Section 10) apply to v2.
+
+## 12. Amendment 2026-10-05: experiment `phase3_micropilot_v3` (harness artifact fix + one baseline-only tweak)
+
+Decided by the project owner after v2 (`docs/phase3_micropilot_results.md`),
+written and committed before any v3 run. This is the **last** environment
+rework round for the micro-pilot: whatever v3 shows is reported, with the
+coverage of each round stated.
+
+1. **Original `package.json` restored before the test stage (PDR arm).**
+   Reason: in v1 and v2 every judgeable PDR test failure was the repo's own
+   lint/formatter rejecting the harness's `overrides`/direct-field edit to
+   `package.json` (`content-type`: Prettier names `package.json`;
+   `mini-css-extract-plugin`: `package-json/order-properties`). That edit is a
+   measurement mechanism, not part of the substitution. Rule: the PDR arm
+   uses the patched `package.json` for resolve, install, lifecycle, peer and
+   audit (the stages that must see the manifest that produced the tree), then
+   writes back the byte-identical original `package.json` before the test
+   stage. The resolved `package-lock.json` and installed `node_modules` are
+   kept: changing them is the substitution itself. Recorded per arm as
+   `manifest_restored_before_test`.
+2. **One baseline-only environment tweak:** `NODE_OPTIONS=--max-old-space-size=6144`
+   for both arms (V8 heap out-of-memory in the `stylelint` B0 logs in v2, under
+   an 8 GB container). Identical for B0 and PDR.
+
+Considered and **not** done, to avoid tuning: per-repo test-command changes
+(e.g. Jest `--forceExit` for `winston`; the manifest's test commands are
+frozen) and allowlist additions (`npm.jsr.io`, `registry.yarnpkg.com`,
+`github.com`), which would widen the isolation.
+
+Outputs: `results/processed/phase3_micropilot_v3_results.jsonl`; v1 and v2
+files unchanged. Worker re-tagged `freeze/phase3-worker-v3` before the run.
+Section 10's thresholds apply unchanged.

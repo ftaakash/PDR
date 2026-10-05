@@ -82,5 +82,5 @@ jobs:
           path: |
             results/processed/phase3_selftest.json
             results/processed/phase3_proxy_selftest.log
-            results/processed/phase3_micropilot_v2_results.jsonl
+            results/processed/phase3_micropilot_v3_results.jsonl
           if-no-files-found: warn
