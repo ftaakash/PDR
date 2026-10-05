@@ -371,3 +371,34 @@ update experiments non-reproducible; `docs/literature_matrix.md`).
   test-failure delta (as flaky-B0 pairs already were). Counts of `TEST_FLAKY`
   are reported.
 - Cost: roughly 1.5x the test-stage time per experiment.
+
+## 11. Amendment 2026-10-05: experiment `phase3_micropilot_v2` (environment rework)
+
+Decided by the project owner after the v1 micro-pilot raised the
+pre-specified REWORK flag (13/23 invalid baselines,
+`docs/phase3_micropilot_results.md`). Written and committed before any v2
+experiment runs. The reasons are taken from the v1 **baseline (B0)** logs, which
+do not involve any substitution, so this rework is not tuned to PDR outcomes.
+
+Changes (environment only; cohort, manifest, stages, taxonomy, thresholds and
+analysis are unchanged):
+1. Worker base image `node:22.22.2-bookworm-slim@sha256:9f6d5975...`, matching
+   `data_manifest/tool_lock.json` (Node v22.22.2). v1 used Node 20, on which
+   four pinned repos refuse to run.
+2. `corepack enable` in the image (with the download prompt disabled), so repos
+   whose scripts call `pnpm`/`yarn` get the version their `packageManager`
+   field names, fetched through the same allowlisted registry.
+3. Worker memory cap 8 GB (was 4 GB; v1 Jest workers were killed). CPU, PIDs,
+   tmpfs, network and every hardening flag unchanged.
+
+Not changed, by decision (option 1 of the T9 choice): the harness still edits
+`package.json` for the PDR arm, so a repo whose `npm test` lints
+`package.json` may still fail on that edit; such cases are reported, not
+filtered. Allowlist unchanged (git dependencies from `github.com` and tests
+needing external URLs remain blocked and will again show as invalid
+baselines).
+
+Outputs go to `results/processed/phase3_micropilot_v2_results.jsonl`; the v1
+file is kept unchanged. The worker is re-tagged `freeze/phase3-worker-v2`
+before the full run. The same REWORK, "Layer 3 adds nothing" and Gate D
+thresholds (Section 10) apply to v2.

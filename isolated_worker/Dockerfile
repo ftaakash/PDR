@@ -6,9 +6,10 @@
 # floating to "latest 20-bookworm-slim" on every rebuild.
 #
 # Digest resolved 2026-10-05 from registry-1.docker.io (manifest-list digest
-# of library/node:20-bookworm-slim), approved by the project owner (TASKS.md T5).
+# of library/node:22.22.2-bookworm-slim, matching tool_lock.json's Node v22.22.2);
+# experiment phase3_micropilot_v2, docs/phase3_protocol.md Section 11. v1 used Node 20.
 # isolated_worker/setup.sh still refuses to build if a placeholder returns.
-FROM node:20-bookworm-slim@sha256:2cf067cfed83d5ea958367df9f966191a942351a2df77d6f0193e162b5febfc0
+FROM node:22.22.2-bookworm-slim@sha256:9f6d5975c7dca860947d3915877f85607946403fc55349f39b4bc3688448bb6e
 
 # Pin npm to the exact version recorded in data_manifest/tool_lock.json so a
 # worker rebuild months from now can't silently change dependency
@@ -16,6 +17,11 @@ FROM node:20-bookworm-slim@sha256:2cf067cfed83d5ea958367df9f966191a942351a2df77d
 # results. If tool_lock.json's npm_version changes, this line must change
 # with it, on purpose, in the same commit.
 RUN npm install -g npm@10.9.7 && npm cache clean --force
+
+# Repos that call pnpm/yarn in their scripts get the version their packageManager
+# field names, fetched through the allowlisted registry (phase3_micropilot_v2).
+RUN corepack enable
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 
 # python3: the entrypoint (runner.py) -- node:*-slim images do not ship it; the first
 # real --limit 2 run failed with 'exec: "python3": executable file not found'.

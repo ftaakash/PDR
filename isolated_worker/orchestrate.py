@@ -45,7 +45,8 @@ MANIFEST = "configs/experiments/phase3_micropilot_manifest.json"
 MANIFEST_HASH = "configs/experiments/phase3_micropilot_manifest.sha256"
 PINS = "configs/experiments/phase3_micropilot_pins.json"
 SNAP_DIR = "results/raw/phase3_snapshots"
-OUT = "results/processed/phase3_micropilot_results.jsonl"
+EXPERIMENT_ID = "phase3_micropilot_v2"   # docs/phase3_protocol.md Section 11; v1 output kept unchanged
+OUT = "results/processed/phase3_micropilot_v2_results.jsonl"
 SELFTEST_OUT = "results/processed/phase3_selftest.json"
 
 CFG = {
@@ -53,7 +54,7 @@ CFG = {
     "network": "pdr-internal",        # created with --internal: no route except via the proxy
     "proxy_container": "pdr-proxy",
     "proxy_url": "http://pdr-proxy:8888",
-    "memory": "4g", "cpus": "2", "pids": "512",
+    "memory": "8g", "cpus": "2", "pids": "512",   # v2: 8g (v1 4g killed Jest workers)
     "tmpfs_work": "/work:rw,exec,nosuid,size=3g,uid=10001,gid=10001",   # exec needed: node_modules/.bin, native builds
     "tmpfs_tmp": "/tmp:rw,noexec,nosuid,size=512m",
     "user": "10001:10001",
@@ -305,7 +306,7 @@ def main() -> int:
         n += 1
         if args.dry_run:
             continue
-        rec = {"schema_version": p3.SCHEMA_VERSION, "edge_id": eid, "edge_ids": e["edge_ids"], "repo": e["repo"],
+        rec = {"schema_version": p3.SCHEMA_VERSION, "experiment_id": EXPERIMENT_ID, "edge_id": eid, "edge_ids": e["edge_ids"], "repo": e["repo"],
                "dep_name": e["dep_name"], "resolved_version": e["resolved_version"],
                "candidate_version": e["candidate_version"], "size_bucket": e["size_bucket"],
                "patch_mode": e["patch_mode"], "pinned_sha": pins[e["repo"]]["sha"], "image_id": image_id,
