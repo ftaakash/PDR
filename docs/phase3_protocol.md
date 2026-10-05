@@ -324,3 +324,32 @@ computed later is labelled exploratory.
    flaky) in more than 30% of experiments -> `REWORK`; `NO_BEHAVIORAL_CHANGE`
    in more than 50% of experiments that reached the end -> "Layer 3 adds
    nothing"; fewer than 10 attributable test pairs -> "no Gate D claim".
+
+## 2.1 Amendment 2026-10-05: execution host and proxy behaviour (before any experiment ran)
+
+Approved by the project owner before any Layer 3 experiment ran; only the
+network self-test had been executed. Section 2 is otherwise unchanged.
+
+- **Host.** The local Windows machine has no Hyper-V components, so WSL2
+  and Docker Desktop cannot run there. Layer 3 runs on disposable
+  GitHub-hosted Ubuntu 24.04 runners via `.github/workflows/layer3.yml`
+  (manual dispatch only, read-only job token, no secrets). Untrusted code
+  still runs only inside the containers `orchestrate.py` builds.
+- **Pinned images (T5).** Worker base `node:20-bookworm-slim@sha256:2cf067cf...`
+  and proxy `mitmproxy/mitmproxy:12.2.3@sha256:00b77b5d...`, resolved from
+  Docker Hub on 2026-10-05.
+- **Proxy runs unprivileged.** The image's entrypoint switches user, which
+  `--cap-drop=ALL` forbids (first run: proxy exited, code 3). The proxy now
+  starts directly as the image's `mitmproxy` user; hardening flags unchanged.
+- **No TLS interception.** The first self-test showed every HTTPS request
+  failing certificate verification in the worker (`curl: (60)`), because the
+  proxy was decrypting TLS with a certificate the worker does not trust. The
+  allowlist is now enforced on the HTTPS `CONNECT` target host (exact match,
+  same four hosts, logged 403 on refusal) and allowed tunnels pass through
+  end to end, so clients verify the real certificates. Trade-off, stated: the
+  GET/HEAD/POST method restriction now applies only to plain HTTP, not inside
+  HTTPS tunnels. This does not change any measured quantity; workers hold no
+  credentials, so PUT/DELETE to the allowed hosts gains an attacker nothing
+  that POST did not already allow. Tests: `tests/test_proxy_allowlist.py`.
+- The same self-test confirmed the other isolation layer: a direct
+  (proxy-bypassing) request fails with `Could not resolve host`.
