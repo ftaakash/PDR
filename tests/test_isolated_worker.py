@@ -211,3 +211,17 @@ def test_missing_docker_binary_yields_clean_refusal_not_traceback(monkeypatch):
     with pytest.raises(SystemExit) as e:
         orchestrate.preflight()
     assert "docker daemon not available" in str(e.value)
+
+
+def test_assign_shards_is_deterministic_balanced_and_keeps_repos_whole():
+    import importlib.util, os
+    path = os.path.join(os.path.dirname(__file__), "..", "isolated_worker", "orchestrate.py")
+    spec = importlib.util.spec_from_file_location("orch_shard", path)
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    exps = [{"repo": r} for r, n in [("a", 5), ("b", 5), ("c", 1), ("d", 1), ("e", 2)] for _ in range(n)]
+    o1, o2 = m.assign_shards(exps, 2), m.assign_shards(list(reversed(exps)), 2)
+    assert o1 == o2 and set(o1) == {"a", "b", "c", "d", "e"}
+    assert o1["a"] != o1["b"]                       # the two big repos are split
+    load = [sum(1 for e in exps if o1[e["repo"]] == k) for k in (0, 1)]
+    assert abs(load[0] - load[1]) <= 2

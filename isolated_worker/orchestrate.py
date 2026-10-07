@@ -261,18 +261,87 @@ def run_arm(arm: str, exp: dict, snapshot: str, dry: bool) -> dict:
     return res
 
 
+def assign_shards(exps: list, shards: int) -> dict:
+    """Deterministic, balanced repo -> shard map: repositories sorted by
+    experiment count (desc, then name) go to the currently least-loaded shard.
+    A repository never spans shards, so its B0 runs once per job."""
+    count: dict = {}
+    for e in exps:
+        count[e["repo"]] = count.get(e["repo"], 0) + 1
+    load = [0] * shards
+    owner = {}
+    for repo in sorted(count, key=lambda r: (-count[r], r)):
+        k = min(range(shards), key=lambda i: (load[i], i))
+        owner[repo] = k
+        load[k] += count[repo] + 1          # +1 for the repository's B0 arm
+    return owner
+
+
+def baseline_usable(b0: dict) -> bool:
+    """Stage A rule (docs/phase4_protocol.md Section 5): B0 installed and its
+    tests passed on both runs."""
+    return (p3.arm_has_result(b0) and p3.stage_kind(b0, "install") is None
+            and p3.stage_ran(b0, "install") and p3.b0_test_status(b0) == "PASS")
+
+
+def run_baseline_screen(exps: list, pins: dict, image_id: str, args) -> int:
+    done = set()
+    if os.path.exists(args.out):
+        done = {json.loads(l)["repo"] for l in open(args.out) if l.strip()}
+    first = {}
+    for e in exps:
+        first.setdefault(e["repo"], e)
+    for repo, e in sorted(first.items()):
+        if repo in done:
+            continue
+        snap = os.path.join(SNAP_DIR, repo.replace("/", "_"))
+        if not args.dry_run and not os.path.isdir(snap):
+            raise SystemExit(f"REFUSING: snapshot missing: {snap}")
+        b0 = run_arm("b0", e, snap, args.dry_run)
+        if args.dry_run:
+            continue
+        rec = {"stage": "baseline_screen", "experiment_id": args.experiment_id, "repo": repo,
+               "pinned_sha": pins[repo]["sha"], "image_id": image_id, "b0": b0,
+               "b0_test_status": p3.b0_test_status(b0), "usable": baseline_usable(b0)}
+        with open(args.out, "a") as f:
+            f.write(json.dumps(rec) + "\n")
+        print(f"[screen] {repo}: {'USABLE' if rec['usable'] else 'not usable'} ({rec['b0_test_status']})")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--selftest", action="store_true")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--repo")
+    # scale_v1 plumbing (docs/phase4_protocol.md Section 5); defaults keep the micro-pilot behaviour
+    ap.add_argument("--manifest", default=MANIFEST)
+    ap.add_argument("--manifest-hash", default=MANIFEST_HASH)
+    ap.add_argument("--pins", default=PINS)
+    ap.add_argument("--out", default=OUT)
+    ap.add_argument("--experiment-id", default=EXPERIMENT_ID)
+    ap.add_argument("--shard", type=int, default=0)
+    ap.add_argument("--shards", type=int, default=1)
+    ap.add_argument("--baseline-only", action="store_true", help="Stage A: B0 once per repository")
+    ap.add_argument("--repos-file", help="only these repositories (one per line), e.g. Stage A's testable set")
+    ap.add_argument("--list-shard-repos", action="store_true", help="print this shard's repositories and exit")
     args = ap.parse_args()
+    out_path, man_hash_path = args.out, args.manifest_hash
 
-    manifest = json.load(open(MANIFEST))
-    verify_manifest(manifest, open(MANIFEST_HASH).read())
-    pins = json.load(open(PINS))
+    manifest = json.load(open(args.manifest))
+    verify_manifest(manifest, open(man_hash_path).read())
+    pins = json.load(open(args.pins))
     exps = [e for e in manifest["selected"] if not args.repo or e["repo"] == args.repo]
+    if args.repos_file:
+        keep = {ln.strip() for ln in open(args.repos_file) if ln.strip()}
+        exps = [e for e in exps if e["repo"] in keep]
+    if args.shards > 1:
+        owner = assign_shards(exps, args.shards)
+        exps = [e for e in exps if owner[e["repo"]] == args.shard]
+    if args.list_shard_repos:
+        print("\n".join(sorted({e["repo"] for e in exps})))
+        return 0
     for e in exps:
         if pins.get(e["repo"], {}).get("status") != "PINNED":
             raise SystemExit(f"REFUSING: {e['repo']} has no pinned snapshot commit")
@@ -286,9 +355,12 @@ def main() -> int:
     elif args.selftest:
         raise SystemExit("--selftest needs a live docker daemon; it cannot be a dry run")
 
+    if args.baseline_only:
+        return run_baseline_screen(exps, pins, image_id, args)
+
     done = set()
-    if os.path.exists(OUT):
-        done = {json.loads(l)["edge_id"] for l in open(OUT) if l.strip()}
+    if os.path.exists(out_path):
+        done = {json.loads(l)["edge_id"] for l in open(out_path) if l.strip()}
     b0_cache: dict = {}
     n = 0
     for e in exps:
@@ -306,16 +378,16 @@ def main() -> int:
         n += 1
         if args.dry_run:
             continue
-        rec = {"schema_version": p3.SCHEMA_VERSION, "experiment_id": EXPERIMENT_ID, "edge_id": eid, "edge_ids": e["edge_ids"], "repo": e["repo"],
+        rec = {"schema_version": p3.SCHEMA_VERSION, "experiment_id": args.experiment_id, "edge_id": eid, "edge_ids": e["edge_ids"], "repo": e["repo"],
                "dep_name": e["dep_name"], "resolved_version": e["resolved_version"],
                "candidate_version": e["candidate_version"], "size_bucket": e["size_bucket"],
                "patch_mode": e["patch_mode"], "pinned_sha": pins[e["repo"]]["sha"], "image_id": image_id,
-               "manifest_sha256": open(MANIFEST_HASH).read().strip(), "b0": b0_cache[e["repo"]], "pdr": pdr_arm}
+               "manifest_sha256": open(man_hash_path).read().strip(), "b0": b0_cache[e["repo"]], "pdr": pdr_arm}
         rec["classification"] = p3.classify_pair(rec["b0"], rec["pdr"])
         problems = p3.validate_record(rec)
         if problems:
             rec["schema_problems"] = problems
-        with open(OUT, "a") as f:
+        with open(out_path, "a") as f:
             f.write(json.dumps(rec) + "\n")
         print(f"[phase3] {eid}: {rec['classification']['outcome']}")
     print(f"[phase3] {'dry-run built' if args.dry_run else 'completed'} {n} experiments")

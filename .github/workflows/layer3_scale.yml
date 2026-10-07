@@ -1,0 +1,128 @@
+# scale_v1 Layer 3 (docs/phase4_protocol.md Section 5) on disposable GitHub-hosted
+# runners, split into parallel jobs sharded by repository.
+#   screen      Stage A: B0 once per repository (tests twice) -> usable / not usable
+#   testable    merges Stage A into the list of usable repositories
+#   experiments Stage B: B0 + PDR for every manifest experiment in a usable repository
+# Same worker, proxy allowlist and self-test gate as layer3.yml; no secrets,
+# read-only token, manual dispatch only.
+name: layer3-scale
+
+on:
+  workflow_dispatch:
+    inputs:
+      shards:
+        description: "number of parallel jobs per stage (max 20)"
+        required: true
+        default: "20"
+
+permissions:
+  contents: read
+
+env:
+  MANIFEST: configs/experiments/scale_v1_manifest.json
+  MANIFEST_HASH: configs/experiments/scale_v1_manifest.sha256
+  PINS: configs/experiments/scale_v1_pins.json
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      shards: ${{ steps.m.outputs.shards }}
+    steps:
+      - id: m
+        run: |
+          n=${{ inputs.shards }}
+          echo "shards=$(python3 -c "import json;print(json.dumps(list(range($n))))")" >> "$GITHUB_OUTPUT"
+
+  screen:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJson(needs.plan.outputs.shards) }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - name: Host tests
+        run: |
+          python3 -m pip install --quiet pyyaml pytest
+          npm install --ignore-scripts --no-audit --no-fund
+          python3 -m pytest tests -q
+      - name: Build isolation infrastructure and self-test
+        run: |
+          bash isolated_worker/setup.sh
+          python3 isolated_worker/orchestrate.py --selftest
+      - name: Materialize this shard's snapshots
+        run: |
+          python3 isolated_worker/orchestrate.py --manifest $MANIFEST --manifest-hash $MANIFEST_HASH --pins $PINS \
+            --shards ${{ inputs.shards }} --shard ${{ matrix.shard }} --list-shard-repos > shard_repos.txt
+          python3 scripts/phase3_pin_snapshots.py --materialize --manifest $MANIFEST --pins $PINS --only-file shard_repos.txt
+      - name: Stage A baseline screen
+        run: |
+          python3 isolated_worker/orchestrate.py --baseline-only --manifest $MANIFEST --manifest-hash $MANIFEST_HASH \
+            --pins $PINS --experiment-id scale_v1 --shards ${{ inputs.shards }} --shard ${{ matrix.shard }} \
+            --out results/processed/scale_v1_screen_${{ matrix.shard }}.jsonl
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screen-${{ matrix.shard }}
+          path: results/processed/scale_v1_screen_${{ matrix.shard }}.jsonl
+          if-no-files-found: warn
+
+  testable:
+    needs: screen
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { pattern: screen-*, merge-multiple: true, path: screen }
+      - run: |
+          python3 - <<'EOF'
+          import glob, json
+          usable = sorted({r["repo"] for f in glob.glob("screen/*.jsonl") for l in open(f) if l.strip()
+                           for r in [json.loads(l)] if r["usable"]})
+          open("testable.txt", "w").write("\n".join(usable) + "\n")
+          print(f"{len(usable)} usable repositories")
+          EOF
+      - uses: actions/upload-artifact@v4
+        with: { name: testable, path: testable.txt }
+
+  experiments:
+    needs: [plan, testable]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJson(needs.plan.outputs.shards) }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - uses: actions/download-artifact@v4
+        with: { name: testable, path: . }
+      - name: Build isolation infrastructure and self-test
+        run: |
+          python3 -m pip install --quiet pyyaml
+          bash isolated_worker/setup.sh
+          python3 isolated_worker/orchestrate.py --selftest
+      - name: Materialize this shard's snapshots
+        run: |
+          python3 isolated_worker/orchestrate.py --manifest $MANIFEST --manifest-hash $MANIFEST_HASH --pins $PINS \
+            --repos-file testable.txt --shards ${{ inputs.shards }} --shard ${{ matrix.shard }} --list-shard-repos > shard_repos.txt
+          cat shard_repos.txt
+          if [ -s shard_repos.txt ]; then
+            python3 scripts/phase3_pin_snapshots.py --materialize --manifest $MANIFEST --pins $PINS --only-file shard_repos.txt
+          fi
+      - name: Stage B experiments
+        run: |
+          python3 isolated_worker/orchestrate.py --manifest $MANIFEST --manifest-hash $MANIFEST_HASH --pins $PINS \
+            --experiment-id scale_v1 --repos-file testable.txt --shards ${{ inputs.shards }} --shard ${{ matrix.shard }} \
+            --out results/processed/scale_v1_layer3_${{ matrix.shard }}.jsonl
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: layer3-${{ matrix.shard }}
+          path: results/processed/scale_v1_layer3_${{ matrix.shard }}.jsonl
+          if-no-files-found: warn

@@ -103,15 +103,22 @@ def main() -> int:
     ap.add_argument("--materialize", action="store_true")
     ap.add_argument("--only", help="comma-separated repos (default: all in manifest)")
     ap.add_argument("--budget-s", type=int, default=240, help="stop starting new repos after this many seconds")
+    ap.add_argument("--manifest", default=MANIFEST)
+    ap.add_argument("--pins", default=PINS)
+    ap.add_argument("--only-file", help="file with one repo per line (e.g. a shard's repositories)")
     args = ap.parse_args()
 
     import time
     t0 = time.time()
-    manifest = json.load(open(MANIFEST))
+    manifest = json.load(open(args.manifest))
     repos = sorted({e["repo"] for e in manifest["selected"]})
     if args.only:
         repos = [r for r in repos if r in args.only.split(",")]
-    pins = json.load(open(PINS)) if os.path.exists(PINS) else {}
+    if args.only_file:
+        keep = {ln.strip() for ln in open(args.only_file) if ln.strip()}
+        repos = [r for r in repos if r in keep]
+    PINS_PATH = args.pins
+    pins = json.load(open(PINS_PATH)) if os.path.exists(PINS_PATH) else {}
 
     for repo in repos:
         if repo in pins and pins[repo]["status"] == "PINNED":
@@ -127,7 +134,7 @@ def main() -> int:
         print(f"[pin]   {pins[repo]['status']}"
               + (f" sha={pins[repo]['sha'][:10]} head={pins[repo]['is_head']}" if pins[repo]['status'] == 'PINNED' else f" ({pins[repo].get('reason')})"),
               flush=True)
-        json.dump(pins, open(PINS, "w"), indent=2, sort_keys=True)
+        json.dump(pins, open(PINS_PATH, "w"), indent=2, sort_keys=True)
 
     if args.materialize:
         for repo in repos:
