@@ -1,0 +1,962 @@
+{
+  "7836246/cursor2api": {
+    "repo": "7836246/cursor2api",
+    "sha": "69fc7bba645342ec1ef5ef15a13191a69ae78038",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "APIs-guru/graphql-voyager": {
+    "repo": "APIs-guru/graphql-voyager",
+    "sha": "656b8ddb4e7bec958d7300e2d737f632c7b5ba30",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Authenticator-Extension/Authenticator": {
+    "repo": "Authenticator-Extension/Authenticator",
+    "sha": "9d9660bb73700b3e725800edc22836662d94afac",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Binaryify/OneDark-Pro": {
+    "repo": "Binaryify/OneDark-Pro",
+    "sha": "54c3280b29f2c2ed9751e5ca4e071380b7b42205",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "ChromeDevTools/chrome-devtools-mcp": {
+    "repo": "ChromeDevTools/chrome-devtools-mcp",
+    "sha": "3aa1a77705e9b98cc94912c5e0eb49bb28c52afd",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Clearailhc/clearai-dsh": {
+    "repo": "Clearailhc/clearai-dsh",
+    "sha": "422711b4f6d3f63153c3ef6b97d1d014bffecdcd",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "CookSleep/gpt_image_playground": {
+    "repo": "CookSleep/gpt_image_playground",
+    "sha": "b1a73e542056da64cf2335436a551cd7e5879efe",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "CopilotKit/OpenDots": {
+    "repo": "CopilotKit/OpenDots",
+    "sha": "625452e06cde74cb25b0ce319e2c1be0488f5a5f",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "DanKE123abc/NoUnityCN": {
+    "repo": "DanKE123abc/NoUnityCN",
+    "sha": "e63b073559428a4a314077e2ee99f9a928ac390e",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "DevExpress/testcafe": {
+    "repo": "DevExpress/testcafe",
+    "sha": "2715164974ddeae56f59517d45f828fcf0ce4e1b",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "DialmasterOrg/Youtarr": {
+    "repo": "DialmasterOrg/Youtarr",
+    "sha": "6d76c9a7d53eedde88471d61e40b63c5cf989b2c",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Done-0/fuck-u-code": {
+    "repo": "Done-0/fuck-u-code",
+    "sha": "27ae48f50816a40afc4c6f4923e9444883683093",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Hubs-Foundation/hubs": {
+    "repo": "Hubs-Foundation/hubs",
+    "sha": "986d07a758e9d1184cb355385c6460391bd238d0",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "IsThereAnyDeal/AugmentedSteam": {
+    "repo": "IsThereAnyDeal/AugmentedSteam",
+    "sha": "25f63f2e3dc1ddfcc26631cb2aee67272a5a8956",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Jelmerro/Vieb": {
+    "repo": "Jelmerro/Vieb",
+    "sha": "89da1faac9d85899329cc821f36234fc420d5a01",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Kong/insomnia": {
+    "repo": "Kong/insomnia",
+    "sha": "ab658aa7e419ff155511370dff3d32d53ae5ea53",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "KunAgent/Kun": {
+    "repo": "KunAgent/Kun",
+    "sha": "ebce7f6cd94fc2882009fcf8169d7a59f5f5c289",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "MichalLytek/type-graphql": {
+    "repo": "MichalLytek/type-graphql",
+    "sha": "77a79f2e13a39185a8669087497dcf626bb2f285",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "NangoHQ/nango": {
+    "repo": "NangoHQ/nango",
+    "sha": "ac56c0a9f331d5015e4adc050fa455049d1f136f",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "OWASP/CheatSheetSeries": {
+    "repo": "OWASP/CheatSheetSeries",
+    "sha": "29994dd8a2e6f50fa3d5607b046b54d7c6945afd",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "OpenSignLabs/OpenSign": {
+    "repo": "OpenSignLabs/OpenSign",
+    "sha": "e5f2c5c0a9f65ec01d8a53e4bf3a390c7ade7bcd",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "SwingTheVine/Wplace-BlueMarble": {
+    "repo": "SwingTheVine/Wplace-BlueMarble",
+    "sha": "652db9328d8e62fd44270533a7a3dfb8cba6b8b6",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Tarquinen/opencode-dynamic-context-pruning": {
+    "repo": "Tarquinen/opencode-dynamic-context-pruning",
+    "sha": "f8232fde1e63c2251687e4d9634bd53ce11568cb",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "TypeFox/monaco-languageclient": {
+    "repo": "TypeFox/monaco-languageclient",
+    "sha": "f434133abf1eba76c838e050a1e7395965656817",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Viglino/ol-ext": {
+    "repo": "Viglino/ol-ext",
+    "sha": "52e2719a2b97d1a4c3d4a8d362febd892d1d19ad",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Yeachan-Heo/oh-my-codex": {
+    "repo": "Yeachan-Heo/oh-my-codex",
+    "sha": "2db7d5136b22252e83091a12ea27567b2fdd5971",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "Yomguithereal/mnemonist": {
+    "repo": "Yomguithereal/mnemonist",
+    "sha": "b92dfa0e61e0032cdcb3718b5a05f46ab41c71d7",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "a16z-infra/ai-town": {
+    "repo": "a16z-infra/ai-town",
+    "sha": "8e05997f2409275669c8344b84a51692e83f3f33",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "actions/checkout": {
+    "repo": "actions/checkout",
+    "sha": "f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "advplyr/audiobookshelf": {
+    "repo": "advplyr/audiobookshelf",
+    "sha": "743d9152208507a1dbf7c95c94290071338f44bd",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "americanexpress/jest-image-snapshot": {
+    "repo": "americanexpress/jest-image-snapshot",
+    "sha": "1a9a025c1699e3186b6875020658d2641a7f6984",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "apache/cordova-ios": {
+    "repo": "apache/cordova-ios",
+    "sha": "d2c792250f5a87c352afbe1e0237a25aeaf3ed8a",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "apache/echarts": {
+    "repo": "apache/echarts",
+    "sha": "34f4d927eafe251f26f63afd3aeefa30f2feba30",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "apocas/dockerode": {
+    "repo": "apocas/dockerode",
+    "sha": "a212e195879bd68f32cfe1316f1ea1b6cf81b3d4",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "apollographql/apollo-tooling": {
+    "repo": "apollographql/apollo-tooling",
+    "sha": "a778ca162bdd20be9e60a914887302390c274644",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "astefanutti/decktape": {
+    "repo": "astefanutti/decktape",
+    "sha": "0ab408fe71a5ead3874ceea57b16f89a4c1efb0f",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "avwo/whistle": {
+    "repo": "avwo/whistle",
+    "sha": "b8850fe7da7988a7a2ae990256752ea575abe4cd",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "belnadris/angular-electron": {
+    "repo": "belnadris/angular-electron",
+    "sha": "dcd546c8cf71da85e3d5869e351158207a677cc9",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "betaflight/betaflight-configurator": {
+    "repo": "betaflight/betaflight-configurator",
+    "sha": "d85e797e8674e3059cc3172e38df831e46a5250c",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "bilawalsidhu/gods-eye-view": {
+    "repo": "bilawalsidhu/gods-eye-view",
+    "sha": "e685449a52550775a5279cef1b9090ef24d507a2",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "bitburner-official/bitburner-src": {
+    "repo": "bitburner-official/bitburner-src",
+    "sha": "f8fd557232e0e9826d7e25bcfb9246984312c593",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "bpmn-io/bpmn-js-examples": {
+    "repo": "bpmn-io/bpmn-js-examples",
+    "sha": "e6a99f5c6741599476859c65c6c05a17e2186ae5",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "bpmn-io/diagram-js": {
+    "repo": "bpmn-io/diagram-js",
+    "sha": "084439fa211bd1e6dd131d1115cd42d1a132dbdb",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "brightdata/brightdata-mcp": {
+    "repo": "brightdata/brightdata-mcp",
+    "sha": "7064ed45be734fd71e93622fdecf5dbe41d7daae",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "butterbase-ai/butterbase": {
+    "repo": "butterbase-ai/butterbase",
+    "sha": "830ed6053ab0f437a6b9869c24e3f74328cf6bb1",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "bvibber/ogv.js": {
+    "repo": "bvibber/ogv.js",
+    "sha": "3e7cbd3d0b0274b11191cb2e1bed0186f8661f84",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "byoungd/up": {
+    "repo": "byoungd/up",
+    "sha": "35e2aa9ad3a076fe4e8405877cc560df2593838f",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "chaterm/Chaterm": {
+    "repo": "chaterm/Chaterm",
+    "sha": "4707789f3506e4d6228ee842e12e1415c509c8ce",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "chromium/permission.site": {
+    "repo": "chromium/permission.site",
+    "sha": "5fdc547ead43a0b0266de33081d35cd24fc61fe2",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "chrysb/alphaclaw": {
+    "repo": "chrysb/alphaclaw",
+    "sha": "745a7fdaa878820ad3023445a5179d1d1b5cabe7",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "cloudflare/agentic-inbox": {
+    "repo": "cloudflare/agentic-inbox",
+    "sha": "48039bb6785af34e592c2966f87cde2b255c4c80",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "cookpete/react-player": {
+    "repo": "cookpete/react-player",
+    "sha": "258fce939638a295f6a429ad683935254d1bfda2",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "cryptpad/cryptpad": {
+    "repo": "cryptpad/cryptpad",
+    "sha": "9808cf25c1091d6cf532df13bf5a70ba332f8d4d",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "dagrejs/dagre": {
+    "repo": "dagrejs/dagre",
+    "sha": "32e7f30f97f029fbfc89ce50e072d4fc16145838",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "dalibo/pev2": {
+    "repo": "dalibo/pev2",
+    "sha": "3cca3156640a510e85822771d10760a75a214753",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "darkreader/darkreader": {
+    "repo": "darkreader/darkreader",
+    "sha": "b0969eaeaea946dddaca31bc54f31a41717bf9a6",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "darkzOGx/youtube-automation-agent": {
+    "repo": "darkzOGx/youtube-automation-agent",
+    "sha": "e26792ae00dc1ec2434faf32632896609396dfad",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "denysdovhan/wtfjs": {
+    "repo": "denysdovhan/wtfjs",
+    "sha": "a2c83226a15890004758971264211f116fff367a",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "duckduckgo/duckduckgo-privacy-extension": {
+    "repo": "duckduckgo/duckduckgo-privacy-extension",
+    "sha": "a524a38a9fa5365879ebb3eb65d3c507c70fff8b",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "earendil-works/pi": {
+    "repo": "earendil-works/pi",
+    "sha": "7fb59f995b0a1db552001a8577b234e4105d7179",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "eclipse-theia/theia": {
+    "repo": "eclipse-theia/theia",
+    "sha": "6154f5b17ca07743113e4b1e5b72a0024e672a6f",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "electerm/electerm": {
+    "repo": "electerm/electerm",
+    "sha": "647bcb2ddf739b53664e806ef1cd344f7e07265e",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "epicweb-dev/epic-stack": {
+    "repo": "epicweb-dev/epic-stack",
+    "sha": "8473afd804b66dba6a23f317908dc35d1535e90d",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "fb55/htmlparser2": {
+    "repo": "fb55/htmlparser2",
+    "sha": "1fd6e9f4bcd3ac964cd5f73629a6e35e241a6639",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "fengyuanchen/cropperjs": {
+    "repo": "fengyuanchen/cropperjs",
+    "sha": "0344ca3fbd78d1c1928f8d80e6014f4ab03a6942",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "fengyuanchen/viewerjs": {
+    "repo": "fengyuanchen/viewerjs",
+    "sha": "b342a82834daf34c9cb9a538529c43d21eabdd59",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "firebase/firebase-admin-node": {
+    "repo": "firebase/firebase-admin-node",
+    "sha": "50ab2502c1faaf0685891ee5087a20dfd20eba2a",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "fosrl/pangolin": {
+    "repo": "fosrl/pangolin",
+    "sha": "58a3701fa8f9a19e26b7dfa1fed2b796982e0696",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "franciscop/umbrella": {
+    "repo": "franciscop/umbrella",
+    "sha": "3c2d2dcdbc7c769b202af428b15f4494961fcf8e",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "gildas-lormeau/SingleFileZ": {
+    "repo": "gildas-lormeau/SingleFileZ",
+    "sha": "dc7f42ea9405705e05773a89ee7d7712055c348f",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "goldbergyoni/nodejs-testing-best-practices": {
+    "repo": "goldbergyoni/nodejs-testing-best-practices",
+    "sha": "21178757151ffa91bc126150b2b2d079304730ef",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "google-gemini/gemini-cli": {
+    "repo": "google-gemini/gemini-cli",
+    "sha": "ef59c532f07fbb3a58dd68bac024ae217e9c73ce",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "google-labs-code/design.md": {
+    "repo": "google-labs-code/design.md",
+    "sha": "9bf8eae67128b6cc55ad9bf86665767deb4c11cd",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "googlemaps/google-maps-services-js": {
+    "repo": "googlemaps/google-maps-services-js",
+    "sha": "40c546493b53d89a78819d2eade7d143ee284719",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "gorhill/uBlock": {
+    "repo": "gorhill/uBlock",
+    "sha": "b257eeb7c344028cca8c2a248508d6971ec12953",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "gre/bezier-easing": {
+    "repo": "gre/bezier-easing",
+    "sha": "419250bdad5e482efa04d7cbf370b10a4f4d47b5",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "h5bp/html5-boilerplate": {
+    "repo": "h5bp/html5-boilerplate",
+    "sha": "b6597338e695dc4a8165c5abcb2bfffa586c3ee5",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "hackjutsu/Lepton": {
+    "repo": "hackjutsu/Lepton",
+    "sha": "1744e17f1532bccc50cfe10d410241ae46482542",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "httpcats/http.cat": {
+    "repo": "httpcats/http.cat",
+    "sha": "45485d3397a810427020cc540959da81558bc260",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "hydra-db/open-glean": {
+    "repo": "hydra-db/open-glean",
+    "sha": "6d5b1aec677552a20449b15c2c56393ee3abb51c",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "i18next/next-i18next": {
+    "repo": "i18next/next-i18next",
+    "sha": "30b078efc12bec7f3765cca10ea60ed4cfc545e8",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "iAmCorey/awesome-indie-hacker-tools": {
+    "repo": "iAmCorey/awesome-indie-hacker-tools",
+    "sha": "44d4f2a7bc52e1181f792e9640bfbf2a648bc993",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "iptv-org/iptv": {
+    "repo": "iptv-org/iptv",
+    "sha": "e17e5b223ab102bbe8c091cfad55f0177ac596d2",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "is-a-dev/register": {
+    "repo": "is-a-dev/register",
+    "sha": "67176bf54bb34d38488055b0ab7da8cdb7c8bbc5",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "jackyzha0/quartz": {
+    "repo": "jackyzha0/quartz",
+    "sha": "97a2d05f80c4c50534959b1d0d41cc4b3895625e",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "jaedb/Iris": {
+    "repo": "jaedb/Iris",
+    "sha": "db7c0abec9f522b3681435b2e7133b66aad5f9f8",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "jantimon/html-webpack-plugin": {
+    "repo": "jantimon/html-webpack-plugin",
+    "sha": "9e342d2202e18cd37d5ccc1428c46ad049e24733",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "jarrodwatts/claude-hud": {
+    "repo": "jarrodwatts/claude-hud",
+    "sha": "33b51db6ceb5d0c91dc9c22404abcabacc8603b0",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "jashkenas/underscore": {
+    "repo": "jashkenas/underscore",
+    "sha": "de1c627286567216c1dbbd44f5ba7a871210bdba",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "jgraph/drawio-desktop": {
+    "repo": "jgraph/drawio-desktop",
+    "sha": "830c57cf390be9a1e9ed6c6c8bebc2b049a45982",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "jitsi/jitsi-meet": {
+    "repo": "jitsi/jitsi-meet",
+    "sha": "a17b19fab6dcf9ccc72e87c81bf60f143d06e2de",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "js-primer/js-primer": {
+    "repo": "js-primer/js-primer",
+    "sha": "b4f2bb04dce74868c46e73a8fd9842c67ab24e49",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "juliangarnier/anime": {
+    "repo": "juliangarnier/anime",
+    "sha": "01b81be1df6843ccfe0a71c0699a746bf740dd77",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "konstaui/konsta": {
+    "repo": "konstaui/konsta",
+    "sha": "d9867cfb3ea0d91441e46d945311acea8578f829",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "konvajs/vue-konva": {
+    "repo": "konvajs/vue-konva",
+    "sha": "eedf13ce9f42f62051a717428520d8771032f78b",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "krisk/Fuse": {
+    "repo": "krisk/Fuse",
+    "sha": "edf2fb608eca0461508d1d71317e6e58309ffada",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "leonardomso/33-js-concepts": {
+    "repo": "leonardomso/33-js-concepts",
+    "sha": "16d0d95c02b19df6a8c841f1a0012d7b7367a340",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "live-codes/livecodes": {
+    "repo": "live-codes/livecodes",
+    "sha": "5754e8968e278569a0bc0153ffd683f6453b728c",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "louislam/dockge": {
+    "repo": "louislam/dockge",
+    "sha": "f809ae192b571944ad773e9866d3e67064ae8043",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "mKeRix/room-assistant": {
+    "repo": "mKeRix/room-assistant",
+    "sha": "ed9a860e8ca2f481c76f11b66f632a30551d4416",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "maotoumao/MusicFreeDesktop": {
+    "repo": "maotoumao/MusicFreeDesktop",
+    "sha": "f3b526a6c1ea9313b277810a8e12003605a98982",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "mapbox/polylabel": {
+    "repo": "mapbox/polylabel",
+    "sha": "1d9039fc0131c985b08c12ccd9e5bb20e6aaa200",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "mdaines/viz-js": {
+    "repo": "mdaines/viz-js",
+    "sha": "d3c38383e2d3a47dde8ede185d5ad4f894bd10a2",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "mex-memory/mex": {
+    "repo": "mex-memory/mex",
+    "sha": "101cab45667b6fd7ae51df504d5ae95d311d95f4",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "microsoft/Web-Dev-For-Beginners": {
+    "repo": "microsoft/Web-Dev-For-Beginners",
+    "sha": "78085398be0dea7abaaf5eda914817f46f6ddbbc",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "modelcontextprotocol/inspector": {
+    "repo": "modelcontextprotocol/inspector",
+    "sha": "ae865a19178ddf6f375780a02e9c77c4cf4da184",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "modelcontextprotocol/servers": {
+    "repo": "modelcontextprotocol/servers",
+    "sha": "5abed86c5317b833dd59907492d56c65981642aa",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "mongodb-js/compass": {
+    "repo": "mongodb-js/compass",
+    "sha": "3454bc989d46bbd3fc30a2fad441cef5304fa0b8",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "morsoli/aimangastudio": {
+    "repo": "morsoli/aimangastudio",
+    "sha": "97c902392a1c0bbf4797bedf1929328157916889",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "motion-canvas/motion-canvas": {
+    "repo": "motion-canvas/motion-canvas",
+    "sha": "7b91435c301d530351dcf5ebb91dd139c002e405",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "mozilla-firefox/firefox": {
+    "repo": "mozilla-firefox/firefox",
+    "sha": "2a69ca0225f0a240c61f23f055e4b9b82cc018c4",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "mozilla/pdf.js": {
+    "repo": "mozilla/pdf.js",
+    "sha": "d0295c9da015e81b855cbb16d2dfaa45fd52d011",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "musistudio/claude-code-router": {
+    "repo": "musistudio/claude-code-router",
+    "sha": "f2e01bfe0c01e0c7ea7a37077747473f69869048",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "mxschmitt/action-tmate": {
+    "repo": "mxschmitt/action-tmate",
+    "sha": "7a47031e0b4a52c4e72f1b5ab2b123f8063a5a67",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "neavo/LinguaGacha": {
+    "repo": "neavo/LinguaGacha",
+    "sha": "b81523692261696a5c79708d4b4c5a9a78b5768a",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "nextcloud/mail": {
+    "repo": "nextcloud/mail",
+    "sha": "f4bafd382208d83234bf8c0a2cb22b1515b3c84f",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "node-config/node-config": {
+    "repo": "node-config/node-config",
+    "sha": "ebf81f22bb9b1eb42a4c6defddc70b1cbd29d835",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "nodemailer/mailparser": {
+    "repo": "nodemailer/mailparser",
+    "sha": "e1882ddee154d0dd4c4f1c0fae1f3f04a4eba2c1",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "noflo/noflo": {
+    "repo": "noflo/noflo",
+    "sha": "2f6ed473c36d3e84728acbebebd82079790a43cf",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "openworkflowdev/openworkflow": {
+    "repo": "openworkflowdev/openworkflow",
+    "sha": "b9757c06f8e2fae2a207c67ec815ac8e254689bd",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "orneryd/ui-grid": {
+    "repo": "orneryd/ui-grid",
+    "sha": "9756289a12513c9c7081cc6833e07b52db182f4e",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "paaatrick/playball": {
+    "repo": "paaatrick/playball",
+    "sha": "c87a6d09051d42c135f8f976b2c10b67e8cc18f4",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "painn-n/onchainsms": {
+    "repo": "painn-n/onchainsms",
+    "sha": "d921019fd828d327011dce83c710c9184dac7e21",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "panphora/overtype": {
+    "repo": "panphora/overtype",
+    "sha": "c2f8f110fec2c82cbcf8992b81d6037145a67de7",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "phaserjs/phaser": {
+    "repo": "phaserjs/phaser",
+    "sha": "02d8931b626d9764c133cbb3fbf99966c03c757c",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "phodal/routa": {
+    "repo": "phodal/routa",
+    "sha": "e48861ab81e2b30378fd32f05204a3ab424c4fec",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "pixel-agents-hq/pixel-agents": {
+    "repo": "pixel-agents-hq/pixel-agents",
+    "sha": "3537e140c2094761beae748592aeb92ece8edfdd",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "playcanvas/supersplat": {
+    "repo": "playcanvas/supersplat",
+    "sha": "f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "postmanlabs/newman": {
+    "repo": "postmanlabs/newman",
+    "sha": "46d8756e9e492ed102d4a700831eb5b1b63028c4",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "processing/p5.js-web-editor": {
+    "repo": "processing/p5.js-web-editor",
+    "sha": "eab6aa4bfc542fcbff15e13303c98d3e97d25b4b",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "puneetsl/lotion": {
+    "repo": "puneetsl/lotion",
+    "sha": "a9b20162bc98b47b74c27bf913d1d6b68ec65c24",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "qishibo/AnotherRedisDesktopManager": {
+    "repo": "qishibo/AnotherRedisDesktopManager",
+    "sha": "c149855106628babcdfb7675a8e7ba9434d2492a",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "ramda/ramda": {
+    "repo": "ramda/ramda",
+    "sha": "94e864d0e2c645c2d5e33dbfeb16e5c20165eee6",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "redux-observable/redux-observable": {
+    "repo": "redux-observable/redux-observable",
+    "sha": "847e7e08dae75bfeb0eeaab95b0f74c709d260b7",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "remoteintech/remote-jobs": {
+    "repo": "remoteintech/remote-jobs",
+    "sha": "7d33ab35080c94e96cbf1b618b93809c8c002884",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "reworkcss/rework": {
+    "repo": "reworkcss/rework",
+    "sha": "48773e96d641901759cf710fbd05c447ee825182",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "rtfpessoa/diff2html": {
+    "repo": "rtfpessoa/diff2html",
+    "sha": "72331ff5d13a8d4d1f11256a7b554dd0d69d7014",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "ruvnet/ruflo": {
+    "repo": "ruvnet/ruflo",
+    "sha": "9fa701a466159242dfec06379ce1278c849a3e34",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "ryanseddon/react-frame-component": {
+    "repo": "ryanseddon/react-frame-component",
+    "sha": "3f4cb97f4aed9671d7bfd5dcd67bdfed62aa661d",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "sahat/hackathon-starter": {
+    "repo": "sahat/hackathon-starter",
+    "sha": "020bd4065e75e6c30d23c436537e41badfd6da7c",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "semantic-release/semantic-release": {
+    "repo": "semantic-release/semantic-release",
+    "sha": "04c1923646eb801cf6f0f90455cf00b78b94fdb7",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "shaka-project/shaka-player": {
+    "repo": "shaka-project/shaka-player",
+    "sha": "c353a83604ede3dae2398f36e8413c5acd703c19",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "slackapi/slack-github-action": {
+    "repo": "slackapi/slack-github-action",
+    "sha": "f6cc2f910b7dd2979de296f0817f53df89cc07ac",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "stackryze/FreeDomains": {
+    "repo": "stackryze/FreeDomains",
+    "sha": "6872659e41fa5f40e4c29a99cfc9085c05cfd19a",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "style-dictionary/style-dictionary": {
+    "repo": "style-dictionary/style-dictionary",
+    "sha": "8710de9f9dc5e65fad40a5fba979699ed2f8b3cb",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "swagger-api/swagger-ui": {
+    "repo": "swagger-api/swagger-ui",
+    "sha": "cac3d136b5e37bfbe3288c8591f6f4fcf9870599",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "taniarascia/taniarascia.com": {
+    "repo": "taniarascia/taniarascia.com",
+    "sha": "eb61b7f11a2d32dac73db123fd072b9e6a3641e7",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "tediousjs/tedious": {
+    "repo": "tediousjs/tedious",
+    "sha": "3c9879775ccb7fb8c8eede5e0c2d2895892bb571",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "thomaspark/bootswatch": {
+    "repo": "thomaspark/bootswatch",
+    "sha": "bff83c63ea845c9cb535a3c16e41aef6826cfd05",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "toji/gl-matrix": {
+    "repo": "toji/gl-matrix",
+    "sha": "6f96d577ee0217b5cfce334e2cad92a6ac3572d2",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "trailheadapps/lwc-recipes": {
+    "repo": "trailheadapps/lwc-recipes",
+    "sha": "b3e364aac9d3592a3de41d6d0eabce4677a6743b",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "trekhleb/javascript-algorithms": {
+    "repo": "trekhleb/javascript-algorithms",
+    "sha": "85293e3e2b88f4d2ce330d956b139cf628aa1e82",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "typegoose/mongodb-memory-server": {
+    "repo": "typegoose/mongodb-memory-server",
+    "sha": "50b4914e71cc32ad212b0794234c04d846e14f78",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "virattt/dexter": {
+    "repo": "virattt/dexter",
+    "sha": "534f6be455523c5926eba72bdaf4f914555be5c9",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "vscode-icons/vscode-icons": {
+    "repo": "vscode-icons/vscode-icons",
+    "sha": "b1521d9aa87102610e1a5e7aa1604af6c48726a1",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "wangwangit/SubsTracker": {
+    "repo": "wangwangit/SubsTracker",
+    "sha": "a24a5523f5f479e7878f336f156e032ca183b4eb",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "webpack/minimizer-webpack-plugin": {
+    "repo": "webpack/minimizer-webpack-plugin",
+    "sha": "f185baae2898ea312890841a9917bde6e4fb023c",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "winfunc/opcode": {
+    "repo": "winfunc/opcode",
+    "sha": "d1ca30a3c0c39fff01fde2f86c2d5af6a1db658b",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "woniudiancang/bee": {
+    "repo": "woniudiancang/bee",
+    "sha": "edb27edd56fbc5d1d2a31aa408b250ff5f38ab20",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  },
+  "xiangechen/chili3d": {
+    "repo": "xiangechen/chili3d",
+    "sha": "03a6a542e841a7f1952f67aa729e0658a8096c08",
+    "source": "scale_v1 selection",
+    "status": "PINNED"
+  }
+}

@@ -1,0 +1,1125 @@
+{
+  "config": "configs/experiments/scale_v1.yaml",
+  "repos": [
+    {
+      "repo": "7836246/cursor2api",
+      "ok": true,
+      "ref": "69fc7bba645342ec1ef5ef15a13191a69ae78038",
+      "n_edges": 242,
+      "lockfile_bytes": 74163
+    },
+    {
+      "repo": "APIs-guru/graphql-voyager",
+      "ok": true,
+      "ref": "656b8ddb4e7bec958d7300e2d737f632c7b5ba30",
+      "n_edges": 2292,
+      "lockfile_bytes": 554275
+    },
+    {
+      "repo": "Authenticator-Extension/Authenticator",
+      "ok": true,
+      "ref": "9d9660bb73700b3e725800edc22836662d94afac",
+      "n_edges": 1338,
+      "lockfile_bytes": 347376
+    },
+    {
+      "repo": "Binaryify/OneDark-Pro",
+      "ok": true,
+      "ref": "54c3280b29f2c2ed9751e5ca4e071380b7b42205",
+      "n_edges": 1446,
+      "lockfile_bytes": 397475
+    },
+    {
+      "repo": "ChromeDevTools/chrome-devtools-mcp",
+      "ok": true,
+      "ref": "3aa1a77705e9b98cc94912c5e0eb49bb28c52afd",
+      "n_edges": 969,
+      "lockfile_bytes": 208887
+    },
+    {
+      "repo": "Clearailhc/clearai-dsh",
+      "ok": true,
+      "ref": "422711b4f6d3f63153c3ef6b97d1d014bffecdcd",
+      "n_edges": 103,
+      "lockfile_bytes": 36079
+    },
+    {
+      "repo": "CookSleep/gpt_image_playground",
+      "ok": true,
+      "ref": "b1a73e542056da64cf2335436a551cd7e5879efe",
+      "n_edges": 1075,
+      "lockfile_bytes": 292068
+    },
+    {
+      "repo": "CopilotKit/OpenDots",
+      "ok": true,
+      "ref": "625452e06cde74cb25b0ce319e2c1be0488f5a5f",
+      "n_edges": 2449,
+      "lockfile_bytes": 546056
+    },
+    {
+      "repo": "DanKE123abc/NoUnityCN",
+      "ok": true,
+      "ref": "e63b073559428a4a314077e2ee99f9a928ac390e",
+      "n_edges": 1154,
+      "lockfile_bytes": 179521
+    },
+    {
+      "repo": "DevExpress/testcafe",
+      "ok": true,
+      "ref": "2715164974ddeae56f59517d45f828fcf0ce4e1b",
+      "n_edges": 1983,
+      "lockfile_bytes": 527880
+    },
+    {
+      "repo": "DialmasterOrg/Youtarr",
+      "ok": true,
+      "ref": "6d76c9a7d53eedde88471d61e40b63c5cf989b2c",
+      "n_edges": 1738,
+      "lockfile_bytes": 403911
+    },
+    {
+      "repo": "Done-0/fuck-u-code",
+      "ok": true,
+      "ref": "27ae48f50816a40afc4c6f4923e9444883683093",
+      "n_edges": 745,
+      "lockfile_bytes": 217864
+    },
+    {
+      "repo": "Hubs-Foundation/hubs",
+      "ok": true,
+      "ref": "986d07a758e9d1184cb355385c6460391bd238d0",
+      "n_edges": 3252,
+      "lockfile_bytes": 791722
+    },
+    {
+      "repo": "IsThereAnyDeal/AugmentedSteam",
+      "ok": true,
+      "ref": "25f63f2e3dc1ddfcc26631cb2aee67272a5a8956",
+      "n_edges": 435,
+      "lockfile_bytes": 139576
+    },
+    {
+      "repo": "Jelmerro/Vieb",
+      "ok": true,
+      "ref": "89da1faac9d85899329cc821f36234fc420d5a01",
+      "n_edges": 950,
+      "lockfile_bytes": 324553
+    },
+    {
+      "repo": "Kong/insomnia",
+      "ok": true,
+      "ref": "ab658aa7e419ff155511370dff3d32d53ae5ea53",
+      "n_edges": 4821,
+      "lockfile_bytes": 1025103
+    },
+    {
+      "repo": "KunAgent/Kun",
+      "ok": true,
+      "ref": "ebce7f6cd94fc2882009fcf8169d7a59f5f5c289",
+      "n_edges": 4690,
+      "lockfile_bytes": 973234
+    },
+    {
+      "repo": "MichalLytek/type-graphql",
+      "ok": true,
+      "ref": "77a79f2e13a39185a8669087497dcf626bb2f285",
+      "n_edges": 2483,
+      "lockfile_bytes": 630813
+    },
+    {
+      "repo": "NangoHQ/nango",
+      "ok": true,
+      "ref": "ac56c0a9f331d5015e4adc050fa455049d1f136f",
+      "n_edges": 6953,
+      "lockfile_bytes": 1665519
+    },
+    {
+      "repo": "OWASP/CheatSheetSeries",
+      "ok": true,
+      "ref": "29994dd8a2e6f50fa3d5607b046b54d7c6945afd",
+      "n_edges": 485,
+      "lockfile_bytes": 152410
+    },
+    {
+      "repo": "OpenSignLabs/OpenSign",
+      "ok": true,
+      "ref": "e5f2c5c0a9f65ec01d8a53e4bf3a390c7ade7bcd",
+      "n_edges": 45,
+      "lockfile_bytes": 17606
+    },
+    {
+      "repo": "SwingTheVine/Wplace-BlueMarble",
+      "ok": true,
+      "ref": "652db9328d8e62fd44270533a7a3dfb8cba6b8b6",
+      "n_edges": 76,
+      "lockfile_bytes": 29899
+    },
+    {
+      "repo": "Tarquinen/opencode-dynamic-context-pruning",
+      "ok": true,
+      "ref": "f8232fde1e63c2251687e4d9634bd53ce11568cb",
+      "n_edges": 978,
+      "lockfile_bytes": 321639
+    },
+    {
+      "repo": "TypeFox/monaco-languageclient",
+      "ok": true,
+      "ref": "f434133abf1eba76c838e050a1e7395965656817",
+      "n_edges": 1011,
+      "lockfile_bytes": 314493
+    },
+    {
+      "repo": "Viglino/ol-ext",
+      "ok": true,
+      "ref": "52e2719a2b97d1a4c3d4a8d362febd892d1d19ad",
+      "n_edges": 1195,
+      "lockfile_bytes": 278611
+    },
+    {
+      "repo": "Yeachan-Heo/oh-my-codex",
+      "ok": true,
+      "ref": "2db7d5136b22252e83091a12ea27567b2fdd5971",
+      "n_edges": 322,
+      "lockfile_bytes": 103116
+    },
+    {
+      "repo": "Yomguithereal/mnemonist",
+      "ok": true,
+      "ref": "b92dfa0e61e0032cdcb3718b5a05f46ab41c71d7",
+      "n_edges": 219,
+      "lockfile_bytes": 117343
+    },
+    {
+      "repo": "a16z-infra/ai-town",
+      "ok": true,
+      "ref": "8e05997f2409275669c8344b84a51692e83f3f33",
+      "n_edges": 1539,
+      "lockfile_bytes": 365369
+    },
+    {
+      "repo": "actions/checkout",
+      "ok": true,
+      "ref": "f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a",
+      "n_edges": 1418,
+      "lockfile_bytes": 294209
+    },
+    {
+      "repo": "advplyr/audiobookshelf",
+      "ok": true,
+      "ref": "743d9152208507a1dbf7c95c94290071338f44bd",
+      "n_edges": 851,
+      "lockfile_bytes": 239795
+    },
+    {
+      "repo": "americanexpress/jest-image-snapshot",
+      "ok": true,
+      "ref": "1a9a025c1699e3186b6875020658d2641a7f6984",
+      "n_edges": 2305,
+      "lockfile_bytes": 544195
+    },
+    {
+      "repo": "apache/cordova-ios",
+      "ok": true,
+      "ref": "d2c792250f5a87c352afbe1e0237a25aeaf3ed8a",
+      "n_edges": 701,
+      "lockfile_bytes": 178236
+    },
+    {
+      "repo": "apache/echarts",
+      "ok": true,
+      "ref": "34f4d927eafe251f26f63afd3aeefa30f2feba30",
+      "n_edges": 1680,
+      "lockfile_bytes": 795768
+    },
+    {
+      "repo": "apocas/dockerode",
+      "ok": true,
+      "ref": "a212e195879bd68f32cfe1316f1ea1b6cf81b3d4",
+      "n_edges": 176,
+      "lockfile_bytes": 47468
+    },
+    {
+      "repo": "apollographql/apollo-tooling",
+      "ok": true,
+      "ref": "a778ca162bdd20be9e60a914887302390c274644",
+      "n_edges": 2123,
+      "lockfile_bytes": 939550
+    },
+    {
+      "repo": "astefanutti/decktape",
+      "ok": true,
+      "ref": "0ab408fe71a5ead3874ceea57b16f89a4c1efb0f",
+      "n_edges": 229,
+      "lockfile_bytes": 68693
+    },
+    {
+      "repo": "avwo/whistle",
+      "ok": true,
+      "ref": "b8850fe7da7988a7a2ae990256752ea575abe4cd",
+      "n_edges": 2094,
+      "lockfile_bytes": 522451
+    },
+    {
+      "repo": "belnadris/angular-electron",
+      "ok": true,
+      "ref": "dcd546c8cf71da85e3d5869e351158207a677cc9",
+      "n_edges": 1676,
+      "lockfile_bytes": 466300
+    },
+    {
+      "repo": "betaflight/betaflight-configurator",
+      "ok": true,
+      "ref": "d85e797e8674e3059cc3172e38df831e46a5250c",
+      "n_edges": 2750,
+      "lockfile_bytes": 653985
+    },
+    {
+      "repo": "bilawalsidhu/gods-eye-view",
+      "ok": true,
+      "ref": "e685449a52550775a5279cef1b9090ef24d507a2",
+      "n_edges": 261,
+      "lockfile_bytes": 98802
+    },
+    {
+      "repo": "bitburner-official/bitburner-src",
+      "ok": true,
+      "ref": "f8fd557232e0e9826d7e25bcfb9246984312c593",
+      "n_edges": 3202,
+      "lockfile_bytes": 685766
+    },
+    {
+      "repo": "bpmn-io/bpmn-js-examples",
+      "ok": true,
+      "ref": "e6a99f5c6741599476859c65c6c05a17e2186ae5",
+      "n_edges": 3615,
+      "lockfile_bytes": 695576
+    },
+    {
+      "repo": "bpmn-io/diagram-js",
+      "ok": true,
+      "ref": "084439fa211bd1e6dd131d1115cd42d1a132dbdb",
+      "n_edges": 1299,
+      "lockfile_bytes": 301265
+    },
+    {
+      "repo": "brightdata/brightdata-mcp",
+      "ok": true,
+      "ref": "7064ed45be734fd71e93622fdecf5dbe41d7daae",
+      "n_edges": 443,
+      "lockfile_bytes": 127051
+    },
+    {
+      "repo": "butterbase-ai/butterbase",
+      "ok": true,
+      "ref": "830ed6053ab0f437a6b9869c24e3f74328cf6bb1",
+      "n_edges": 3080,
+      "lockfile_bytes": 730636
+    },
+    {
+      "repo": "bvibber/ogv.js",
+      "ok": true,
+      "ref": "3e7cbd3d0b0274b11191cb2e1bed0186f8661f84",
+      "n_edges": 1277,
+      "lockfile_bytes": 564960
+    },
+    {
+      "repo": "byoungd/up",
+      "ok": true,
+      "ref": "35e2aa9ad3a076fe4e8405877cc560df2593838f",
+      "n_edges": 606,
+      "lockfile_bytes": 169370
+    },
+    {
+      "repo": "chaterm/Chaterm",
+      "ok": true,
+      "ref": "4707789f3506e4d6228ee842e12e1415c509c8ce",
+      "n_edges": 2751,
+      "lockfile_bytes": 553532
+    },
+    {
+      "repo": "chromium/permission.site",
+      "ok": true,
+      "ref": "5fdc547ead43a0b0266de33081d35cd24fc61fe2",
+      "n_edges": 9,
+      "lockfile_bytes": 4847
+    },
+    {
+      "repo": "chrysb/alphaclaw",
+      "ok": true,
+      "ref": "745a7fdaa878820ad3023445a5179d1d1b5cabe7",
+      "n_edges": 866,
+      "lockfile_bytes": 284997
+    },
+    {
+      "repo": "cloudflare/agentic-inbox",
+      "ok": true,
+      "ref": "48039bb6785af34e592c2966f87cde2b255c4c80",
+      "n_edges": 1307,
+      "lockfile_bytes": 318733
+    },
+    {
+      "repo": "cookpete/react-player",
+      "ok": true,
+      "ref": "258fce939638a295f6a429ad683935254d1bfda2",
+      "n_edges": 513,
+      "lockfile_bytes": 141660
+    },
+    {
+      "repo": "cryptpad/cryptpad",
+      "ok": true,
+      "ref": "9808cf25c1091d6cf532df13bf5a70ba332f8d4d",
+      "n_edges": 696,
+      "lockfile_bytes": 151379
+    },
+    {
+      "repo": "dagrejs/dagre",
+      "ok": true,
+      "ref": "32e7f30f97f029fbfc89ce50e072d4fc16145838",
+      "n_edges": 933,
+      "lockfile_bytes": 407227
+    },
+    {
+      "repo": "dalibo/pev2",
+      "ok": true,
+      "ref": "3cca3156640a510e85822771d10760a75a214753",
+      "n_edges": 714,
+      "lockfile_bytes": 203086
+    },
+    {
+      "repo": "darkreader/darkreader",
+      "ok": true,
+      "ref": "b0969eaeaea946dddaca31bc54f31a41717bf9a6",
+      "n_edges": 1638,
+      "lockfile_bytes": 398532
+    },
+    {
+      "repo": "darkzOGx/youtube-automation-agent",
+      "ok": true,
+      "ref": "e26792ae00dc1ec2434faf32632896609396dfad",
+      "n_edges": 784,
+      "lockfile_bytes": 228798
+    },
+    {
+      "repo": "denysdovhan/wtfjs",
+      "ok": true,
+      "ref": "a2c83226a15890004758971264211f116fff367a",
+      "n_edges": 1268,
+      "lockfile_bytes": 532295
+    },
+    {
+      "repo": "duckduckgo/duckduckgo-privacy-extension",
+      "ok": true,
+      "ref": "a524a38a9fa5365879ebb3eb65d3c507c70fff8b",
+      "n_edges": 952,
+      "lockfile_bytes": 342704
+    },
+    {
+      "repo": "earendil-works/pi",
+      "ok": true,
+      "ref": "7fb59f995b0a1db552001a8577b234e4105d7179",
+      "n_edges": 671,
+      "lockfile_bytes": 178682
+    },
+    {
+      "repo": "eclipse-theia/theia",
+      "ok": true,
+      "ref": "6154f5b17ca07743113e4b1e5b72a0024e672a6f",
+      "n_edges": 4708,
+      "lockfile_bytes": 999505
+    },
+    {
+      "repo": "electerm/electerm",
+      "ok": true,
+      "ref": "647bcb2ddf739b53664e806ef1cd344f7e07265e",
+      "n_edges": 2210,
+      "lockfile_bytes": 511867
+    },
+    {
+      "repo": "epicweb-dev/epic-stack",
+      "ok": true,
+      "ref": "8473afd804b66dba6a23f317908dc35d1535e90d",
+      "n_edges": 2748,
+      "lockfile_bytes": 653249
+    },
+    {
+      "repo": "fb55/htmlparser2",
+      "ok": true,
+      "ref": "1fd6e9f4bcd3ac964cd5f73629a6e35e241a6639",
+      "n_edges": 425,
+      "lockfile_bytes": 154463
+    },
+    {
+      "repo": "fengyuanchen/cropperjs",
+      "ok": true,
+      "ref": "0344ca3fbd78d1c1928f8d80e6014f4ab03a6942",
+      "n_edges": 3362,
+      "lockfile_bytes": 838759
+    },
+    {
+      "repo": "fengyuanchen/viewerjs",
+      "ok": true,
+      "ref": "b342a82834daf34c9cb9a538529c43d21eabdd59",
+      "n_edges": 2248,
+      "lockfile_bytes": 975811
+    },
+    {
+      "repo": "firebase/firebase-admin-node",
+      "ok": true,
+      "ref": "50ab2502c1faaf0685891ee5087a20dfd20eba2a",
+      "n_edges": 1840,
+      "lockfile_bytes": 470888
+    },
+    {
+      "repo": "fosrl/pangolin",
+      "ok": true,
+      "ref": "58a3701fa8f9a19e26b7dfa1fed2b796982e0696",
+      "n_edges": 2737,
+      "lockfile_bytes": 748271
+    },
+    {
+      "repo": "franciscop/umbrella",
+      "ok": true,
+      "ref": "3c2d2dcdbc7c769b202af428b15f4494961fcf8e",
+      "n_edges": 826,
+      "lockfile_bytes": 207574
+    },
+    {
+      "repo": "gildas-lormeau/SingleFileZ",
+      "ok": true,
+      "ref": "dc7f42ea9405705e05773a89ee7d7712055c348f",
+      "n_edges": 258,
+      "lockfile_bytes": 71494
+    },
+    {
+      "repo": "goldbergyoni/nodejs-testing-best-practices",
+      "ok": true,
+      "ref": "21178757151ffa91bc126150b2b2d079304730ef",
+      "n_edges": 2512,
+      "lockfile_bytes": 985463
+    },
+    {
+      "repo": "google-gemini/gemini-cli",
+      "ok": true,
+      "ref": "ef59c532f07fbb3a58dd68bac024ae217e9c73ce",
+      "n_edges": 3077,
+      "lockfile_bytes": 743293
+    },
+    {
+      "repo": "google-labs-code/design.md",
+      "ok": true,
+      "ref": "9bf8eae67128b6cc55ad9bf86665767deb4c11cd",
+      "n_edges": 369,
+      "lockfile_bytes": 94364
+    },
+    {
+      "repo": "googlemaps/google-maps-services-js",
+      "ok": true,
+      "ref": "40c546493b53d89a78819d2eade7d143ee284719",
+      "n_edges": 946,
+      "lockfile_bytes": 220837
+    },
+    {
+      "repo": "gorhill/uBlock",
+      "ok": true,
+      "ref": "b257eeb7c344028cca8c2a248508d6971ec12953",
+      "n_edges": 117,
+      "lockfile_bytes": 41033
+    },
+    {
+      "repo": "gre/bezier-easing",
+      "ok": true,
+      "ref": "419250bdad5e482efa04d7cbf370b10a4f4d47b5",
+      "n_edges": 231,
+      "lockfile_bytes": 86951
+    },
+    {
+      "repo": "h5bp/html5-boilerplate",
+      "ok": true,
+      "ref": "b6597338e695dc4a8165c5abcb2bfffa586c3ee5",
+      "n_edges": 509,
+      "lockfile_bytes": 146061
+    },
+    {
+      "repo": "hackjutsu/Lepton",
+      "ok": true,
+      "ref": "1744e17f1532bccc50cfe10d410241ae46482542",
+      "n_edges": 2281,
+      "lockfile_bytes": 564626
+    },
+    {
+      "repo": "httpcats/http.cat",
+      "ok": true,
+      "ref": "45485d3397a810427020cc540959da81558bc260",
+      "n_edges": 1309,
+      "lockfile_bytes": 316584
+    },
+    {
+      "repo": "hydra-db/open-glean",
+      "ok": true,
+      "ref": "6d5b1aec677552a20449b15c2c56393ee3abb51c",
+      "n_edges": 1268,
+      "lockfile_bytes": 310092
+    },
+    {
+      "repo": "i18next/next-i18next",
+      "ok": true,
+      "ref": "30b078efc12bec7f3765cca10ea60ed4cfc545e8",
+      "n_edges": 2278,
+      "lockfile_bytes": 548376
+    },
+    {
+      "repo": "iAmCorey/awesome-indie-hacker-tools",
+      "ok": true,
+      "ref": "44d4f2a7bc52e1181f792e9640bfbf2a648bc993",
+      "n_edges": 467,
+      "lockfile_bytes": 178351
+    },
+    {
+      "repo": "iptv-org/iptv",
+      "ok": true,
+      "ref": "e17e5b223ab102bbe8c091cfad55f0177ac596d2",
+      "n_edges": 578,
+      "lockfile_bytes": 180329
+    },
+    {
+      "repo": "is-a-dev/register",
+      "ok": true,
+      "ref": "67176bf54bb34d38488055b0ab7da8cdb7c8bbc5",
+      "n_edges": 178,
+      "lockfile_bytes": 64858
+    },
+    {
+      "repo": "jackyzha0/quartz",
+      "ok": true,
+      "ref": "97a2d05f80c4c50534959b1d0d41cc4b3895625e",
+      "n_edges": 780,
+      "lockfile_bytes": 226832
+    },
+    {
+      "repo": "jaedb/Iris",
+      "ok": true,
+      "ref": "db7c0abec9f522b3681435b2e7133b66aad5f9f8",
+      "n_edges": 3032,
+      "lockfile_bytes": 663468
+    },
+    {
+      "repo": "jantimon/html-webpack-plugin",
+      "ok": true,
+      "ref": "9e342d2202e18cd37d5ccc1428c46ad049e24733",
+      "n_edges": 1936,
+      "lockfile_bytes": 466720
+    },
+    {
+      "repo": "jarrodwatts/claude-hud",
+      "ok": true,
+      "ref": "33b51db6ceb5d0c91dc9c22404abcabacc8603b0",
+      "n_edges": 93,
+      "lockfile_bytes": 39497
+    },
+    {
+      "repo": "jashkenas/underscore",
+      "ok": true,
+      "ref": "de1c627286567216c1dbbd44f5ba7a871210bdba",
+      "n_edges": 1582,
+      "lockfile_bytes": 791993
+    },
+    {
+      "repo": "jgraph/drawio-desktop",
+      "ok": true,
+      "ref": "830c57cf390be9a1e9ed6c6c8bebc2b049a45982",
+      "n_edges": 529,
+      "lockfile_bytes": 160985
+    },
+    {
+      "repo": "jitsi/jitsi-meet",
+      "ok": true,
+      "ref": "a17b19fab6dcf9ccc72e87c81bf60f143d06e2de",
+      "n_edges": 3818,
+      "lockfile_bytes": 1481898
+    },
+    {
+      "repo": "js-primer/js-primer",
+      "ok": true,
+      "ref": "b4f2bb04dce74868c46e73a8fd9842c67ab24e49",
+      "n_edges": 2836,
+      "lockfile_bytes": 741890
+    },
+    {
+      "repo": "juliangarnier/anime",
+      "ok": true,
+      "ref": "01b81be1df6843ccfe0a71c0699a746bf740dd77",
+      "n_edges": 341,
+      "lockfile_bytes": 72593
+    },
+    {
+      "repo": "konstaui/konsta",
+      "ok": true,
+      "ref": "d9867cfb3ea0d91441e46d945311acea8578f829",
+      "n_edges": 1230,
+      "lockfile_bytes": 300781
+    },
+    {
+      "repo": "konvajs/vue-konva",
+      "ok": true,
+      "ref": "eedf13ce9f42f62051a717428520d8771032f78b",
+      "n_edges": 388,
+      "lockfile_bytes": 129588
+    },
+    {
+      "repo": "krisk/Fuse",
+      "ok": true,
+      "ref": "edf2fb608eca0461508d1d71317e6e58309ffada",
+      "n_edges": 1065,
+      "lockfile_bytes": 310795
+    },
+    {
+      "repo": "leonardomso/33-js-concepts",
+      "ok": true,
+      "ref": "16d0d95c02b19df6a8c841f1a0012d7b7367a340",
+      "n_edges": 219,
+      "lockfile_bytes": 70936
+    },
+    {
+      "repo": "live-codes/livecodes",
+      "ok": true,
+      "ref": "5754e8968e278569a0bc0153ffd683f6453b728c",
+      "n_edges": 3032,
+      "lockfile_bytes": 1381483
+    },
+    {
+      "repo": "louislam/dockge",
+      "ok": true,
+      "ref": "f809ae192b571944ad773e9866d3e67064ae8043",
+      "n_edges": 1505,
+      "lockfile_bytes": 448940
+    },
+    {
+      "repo": "mKeRix/room-assistant",
+      "ok": true,
+      "ref": "ed9a860e8ca2f481c76f11b66f632a30551d4416",
+      "n_edges": 2999,
+      "lockfile_bytes": 1164960
+    },
+    {
+      "repo": "maotoumao/MusicFreeDesktop",
+      "ok": true,
+      "ref": "f3b526a6c1ea9313b277810a8e12003605a98982",
+      "n_edges": 3045,
+      "lockfile_bytes": 728024
+    },
+    {
+      "repo": "mapbox/polylabel",
+      "ok": true,
+      "ref": "1d9039fc0131c985b08c12ccd9e5bb20e6aaa200",
+      "n_edges": 104,
+      "lockfile_bytes": 35890
+    },
+    {
+      "repo": "mdaines/viz-js",
+      "ok": true,
+      "ref": "d3c38383e2d3a47dde8ede185d5ad4f894bd10a2",
+      "n_edges": 1161,
+      "lockfile_bytes": 295950
+    },
+    {
+      "repo": "mex-memory/mex",
+      "ok": true,
+      "ref": "101cab45667b6fd7ae51df504d5ae95d311d95f4",
+      "n_edges": 1011,
+      "lockfile_bytes": 280759
+    },
+    {
+      "repo": "microsoft/Web-Dev-For-Beginners",
+      "ok": true,
+      "ref": "78085398be0dea7abaaf5eda914817f46f6ddbbc",
+      "n_edges": 320,
+      "lockfile_bytes": 168814
+    },
+    {
+      "repo": "modelcontextprotocol/inspector",
+      "ok": true,
+      "ref": "ae865a19178ddf6f375780a02e9c77c4cf4da184",
+      "n_edges": 665,
+      "lockfile_bytes": 194031
+    },
+    {
+      "repo": "modelcontextprotocol/servers",
+      "ok": true,
+      "ref": "5abed86c5317b833dd59907492d56c65981642aa",
+      "n_edges": 465,
+      "lockfile_bytes": 136673
+    },
+    {
+      "repo": "mongodb-js/compass",
+      "ok": true,
+      "ref": "3454bc989d46bbd3fc30a2fad441cef5304fa0b8",
+      "n_edges": 12079,
+      "lockfile_bytes": 2265568
+    },
+    {
+      "repo": "morsoli/aimangastudio",
+      "ok": true,
+      "ref": "97c902392a1c0bbf4797bedf1929328157916889",
+      "n_edges": 117,
+      "lockfile_bytes": 43971
+    },
+    {
+      "repo": "motion-canvas/motion-canvas",
+      "ok": true,
+      "ref": "7b91435c301d530351dcf5ebb91dd139c002e405",
+      "n_edges": 4709,
+      "lockfile_bytes": 1482877
+    },
+    {
+      "repo": "mozilla-firefox/firefox",
+      "ok": true,
+      "ref": "2a69ca0225f0a240c61f23f055e4b9b82cc018c4",
+      "n_edges": 1681,
+      "lockfile_bytes": 390148
+    },
+    {
+      "repo": "mozilla/pdf.js",
+      "ok": true,
+      "ref": "d0295c9da015e81b855cbb16d2dfaa45fd52d011",
+      "n_edges": 1496,
+      "lockfile_bytes": 458594
+    },
+    {
+      "repo": "musistudio/claude-code-router",
+      "ok": true,
+      "ref": "f2e01bfe0c01e0c7ea7a37077747473f69869048",
+      "n_edges": 1143,
+      "lockfile_bytes": 322547
+    },
+    {
+      "repo": "mxschmitt/action-tmate",
+      "ok": true,
+      "ref": "7a47031e0b4a52c4e72f1b5ab2b123f8063a5a67",
+      "n_edges": 1447,
+      "lockfile_bytes": 614383
+    },
+    {
+      "repo": "neavo/LinguaGacha",
+      "ok": true,
+      "ref": "b81523692261696a5c79708d4b4c5a9a78b5768a",
+      "n_edges": 2462,
+      "lockfile_bytes": 653655
+    },
+    {
+      "repo": "nextcloud/mail",
+      "ok": true,
+      "ref": "f4bafd382208d83234bf8c0a2cb22b1515b3c84f",
+      "n_edges": 3069,
+      "lockfile_bytes": 687476
+    },
+    {
+      "repo": "node-config/node-config",
+      "ok": true,
+      "ref": "ebf81f22bb9b1eb42a4c6defddc70b1cbd29d835",
+      "n_edges": 237,
+      "lockfile_bytes": 85408
+    },
+    {
+      "repo": "nodemailer/mailparser",
+      "ok": true,
+      "ref": "e1882ddee154d0dd4c4f1c0fae1f3f04a4eba2c1",
+      "n_edges": 835,
+      "lockfile_bytes": 270211
+    },
+    {
+      "repo": "noflo/noflo",
+      "ok": true,
+      "ref": "2f6ed473c36d3e84728acbebebd82079790a43cf",
+      "n_edges": 165,
+      "lockfile_bytes": 41694
+    },
+    {
+      "repo": "openworkflowdev/openworkflow",
+      "ok": true,
+      "ref": "b9757c06f8e2fae2a207c67ec815ac8e254689bd",
+      "n_edges": 1860,
+      "lockfile_bytes": 529571
+    },
+    {
+      "repo": "orneryd/ui-grid",
+      "ok": true,
+      "ref": "9756289a12513c9c7081cc6833e07b52db182f4e",
+      "n_edges": 1203,
+      "lockfile_bytes": 352675
+    },
+    {
+      "repo": "paaatrick/playball",
+      "ok": true,
+      "ref": "c87a6d09051d42c135f8f976b2c10b67e8cc18f4",
+      "n_edges": 1235,
+      "lockfile_bytes": 552623
+    },
+    {
+      "repo": "painn-n/onchainsms",
+      "ok": true,
+      "ref": "d921019fd828d327011dce83c710c9184dac7e21",
+      "n_edges": 2924,
+      "lockfile_bytes": 661092
+    },
+    {
+      "repo": "panphora/overtype",
+      "ok": true,
+      "ref": "c2f8f110fec2c82cbcf8992b81d6037145a67de7",
+      "n_edges": 296,
+      "lockfile_bytes": 102456
+    },
+    {
+      "repo": "phaserjs/phaser",
+      "ok": true,
+      "ref": "02d8931b626d9764c133cbb3fbf99966c03c757c",
+      "n_edges": 586,
+      "lockfile_bytes": 191591
+    },
+    {
+      "repo": "phodal/routa",
+      "ok": true,
+      "ref": "e48861ab81e2b30378fd32f05204a3ab424c4fec",
+      "n_edges": 5971,
+      "lockfile_bytes": 1437311
+    },
+    {
+      "repo": "pixel-agents-hq/pixel-agents",
+      "ok": true,
+      "ref": "3537e140c2094761beae748592aeb92ece8edfdd",
+      "n_edges": 1455,
+      "lockfile_bytes": 398512
+    },
+    {
+      "repo": "playcanvas/supersplat",
+      "ok": true,
+      "ref": "f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b",
+      "n_edges": 900,
+      "lockfile_bytes": 289408
+    },
+    {
+      "repo": "postmanlabs/newman",
+      "ok": true,
+      "ref": "46d8756e9e492ed102d4a700831eb5b1b63028c4",
+      "n_edges": 997,
+      "lockfile_bytes": 474325
+    },
+    {
+      "repo": "processing/p5.js-web-editor",
+      "ok": true,
+      "ref": "eab6aa4bfc542fcbff15e13303c98d3e97d25b4b",
+      "n_edges": 6391,
+      "lockfile_bytes": 2423287
+    },
+    {
+      "repo": "puneetsl/lotion",
+      "ok": true,
+      "ref": "a9b20162bc98b47b74c27bf913d1d6b68ec65c24",
+      "n_edges": 1764,
+      "lockfile_bytes": 467303
+    },
+    {
+      "repo": "qishibo/AnotherRedisDesktopManager",
+      "ok": true,
+      "ref": "c149855106628babcdfb7675a8e7ba9434d2492a",
+      "n_edges": 3479,
+      "lockfile_bytes": 1490421
+    },
+    {
+      "repo": "ramda/ramda",
+      "ok": true,
+      "ref": "94e864d0e2c645c2d5e33dbfeb16e5c20165eee6",
+      "n_edges": 1770,
+      "lockfile_bytes": 775726
+    },
+    {
+      "repo": "redux-observable/redux-observable",
+      "ok": true,
+      "ref": "847e7e08dae75bfeb0eeaab95b0f74c709d260b7",
+      "n_edges": 634,
+      "lockfile_bytes": 340014
+    },
+    {
+      "repo": "remoteintech/remote-jobs",
+      "ok": true,
+      "ref": "7d33ab35080c94e96cbf1b618b93809c8c002884",
+      "n_edges": 686,
+      "lockfile_bytes": 209782
+    },
+    {
+      "repo": "reworkcss/rework",
+      "ok": true,
+      "ref": "48773e96d641901759cf710fbd05c447ee825182",
+      "n_edges": 11,
+      "lockfile_bytes": 4123
+    },
+    {
+      "repo": "rtfpessoa/diff2html",
+      "ok": true,
+      "ref": "72331ff5d13a8d4d1f11256a7b554dd0d69d7014",
+      "n_edges": 2645,
+      "lockfile_bytes": 663008
+    },
+    {
+      "repo": "ruvnet/ruflo",
+      "ok": true,
+      "ref": "9fa701a466159242dfec06379ce1278c849a3e34",
+      "n_edges": 2008,
+      "lockfile_bytes": 533347
+    },
+    {
+      "repo": "ryanseddon/react-frame-component",
+      "ok": true,
+      "ref": "3f4cb97f4aed9671d7bfd5dcd67bdfed62aa661d",
+      "n_edges": 2029,
+      "lockfile_bytes": 502853
+    },
+    {
+      "repo": "sahat/hackathon-starter",
+      "ok": true,
+      "ref": "020bd4065e75e6c30d23c436537e41badfd6da7c",
+      "n_edges": 1130,
+      "lockfile_bytes": 317677
+    },
+    {
+      "repo": "semantic-release/semantic-release",
+      "ok": true,
+      "ref": "04c1923646eb801cf6f0f90455cf00b78b94fdb7",
+      "n_edges": 2105,
+      "lockfile_bytes": 509949
+    },
+    {
+      "repo": "shaka-project/shaka-player",
+      "ok": true,
+      "ref": "c353a83604ede3dae2398f36e8413c5acd703c19",
+      "n_edges": 2017,
+      "lockfile_bytes": 884103
+    },
+    {
+      "repo": "slackapi/slack-github-action",
+      "ok": true,
+      "ref": "f6cc2f910b7dd2979de296f0817f53df89cc07ac",
+      "n_edges": 194,
+      "lockfile_bytes": 60547
+    },
+    {
+      "repo": "stackryze/FreeDomains",
+      "ok": true,
+      "ref": "6872659e41fa5f40e4c29a99cfc9085c05cfd19a",
+      "n_edges": 1078,
+      "lockfile_bytes": 218476
+    },
+    {
+      "repo": "style-dictionary/style-dictionary",
+      "ok": true,
+      "ref": "8710de9f9dc5e65fad40a5fba979699ed2f8b3cb",
+      "n_edges": 3241,
+      "lockfile_bytes": 785287
+    },
+    {
+      "repo": "swagger-api/swagger-ui",
+      "ok": true,
+      "ref": "cac3d136b5e37bfbe3288c8591f6f4fcf9870599",
+      "n_edges": 4838,
+      "lockfile_bytes": 949725
+    },
+    {
+      "repo": "taniarascia/taniarascia.com",
+      "ok": true,
+      "ref": "eb61b7f11a2d32dac73db123fd072b9e6a3641e7",
+      "n_edges": 3979,
+      "lockfile_bytes": 1445693
+    },
+    {
+      "repo": "tediousjs/tedious",
+      "ok": true,
+      "ref": "3c9879775ccb7fb8c8eede5e0c2d2895892bb571",
+      "n_edges": 2137,
+      "lockfile_bytes": 506804
+    },
+    {
+      "repo": "thomaspark/bootswatch",
+      "ok": true,
+      "ref": "bff83c63ea845c9cb535a3c16e41aef6826cfd05",
+      "n_edges": 552,
+      "lockfile_bytes": 297739
+    },
+    {
+      "repo": "toji/gl-matrix",
+      "ok": true,
+      "ref": "6f96d577ee0217b5cfce334e2cad92a6ac3572d2",
+      "n_edges": 1379,
+      "lockfile_bytes": 324367
+    },
+    {
+      "repo": "trailheadapps/lwc-recipes",
+      "ok": true,
+      "ref": "b3e364aac9d3592a3de41d6d0eabce4677a6743b",
+      "n_edges": 2370,
+      "lockfile_bytes": 579004
+    },
+    {
+      "repo": "trekhleb/javascript-algorithms",
+      "ok": true,
+      "ref": "85293e3e2b88f4d2ce330d956b139cf628aa1e82",
+      "n_edges": 1646,
+      "lockfile_bytes": 353913
+    },
+    {
+      "repo": "typegoose/mongodb-memory-server",
+      "ok": true,
+      "ref": "50b4914e71cc32ad212b0794234c04d846e14f78",
+      "n_edges": 1222,
+      "lockfile_bytes": 321543
+    },
+    {
+      "repo": "virattt/dexter",
+      "ok": true,
+      "ref": "534f6be455523c5926eba72bdaf4f914555be5c9",
+      "n_edges": 2349,
+      "lockfile_bytes": 345836
+    },
+    {
+      "repo": "vscode-icons/vscode-icons",
+      "ok": true,
+      "ref": "b1521d9aa87102610e1a5e7aa1604af6c48726a1",
+      "n_edges": 922,
+      "lockfile_bytes": 172127
+    },
+    {
+      "repo": "wangwangit/SubsTracker",
+      "ok": true,
+      "ref": "a24a5523f5f479e7878f336f156e032ca183b4eb",
+      "n_edges": 327,
+      "lockfile_bytes": 120653
+    },
+    {
+      "repo": "webpack/minimizer-webpack-plugin",
+      "ok": true,
+      "ref": "f185baae2898ea312890841a9917bde6e4fb023c",
+      "n_edges": 3039,
+      "lockfile_bytes": 770505
+    },
+    {
+      "repo": "winfunc/opcode",
+      "ok": true,
+      "ref": "d1ca30a3c0c39fff01fde2f86c2d5af6a1db658b",
+      "n_edges": 1243,
+      "lockfile_bytes": 288683
+    },
+    {
+      "repo": "woniudiancang/bee",
+      "ok": true,
+      "ref": "edb27edd56fbc5d1d2a31aa408b250ff5f38ab20",
+      "n_edges": 40,
+      "lockfile_bytes": 18587
+    },
+    {
+      "repo": "xiangechen/chili3d",
+      "ok": true,
+      "ref": "03a6a542e841a7f1952f67aa729e0658a8096c08",
+      "n_edges": 460,
+      "lockfile_bytes": 162964
+    }
+  ]
+}

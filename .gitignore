@@ -14,3 +14,4 @@ results/raw/phase3_snapshots/
 # scale_v1: packument cache (junction to D:) and refetchable pinned lockfiles
 results/raw/provenance_scale/packuments/
 results/raw/resolve_scale/*.lock.json
+results/raw/provenance_scale/edges.csv

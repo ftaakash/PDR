@@ -1,0 +1,5745 @@
+{
+  "experiment": "scale_v1",
+  "frozen_parameters": {
+    "non_hermetic_keywords": [
+      "browser",
+      "chrome",
+      "playwright",
+      "puppeteer",
+      "wireit",
+      "submodule",
+      "e2e",
+      "selenium",
+      "docker"
+    ],
+    "non_hermetic_repos": {
+      "redis/node-redis": "tests require a running Redis server"
+    },
+    "per_repo_cap": 5,
+    "seed": 20261007
+  },
+  "generated_on": "2026-10-07",
+  "n_selected": 363,
+  "outcome_blind": true,
+  "pool": {
+    "layer1_ok_edges": 5003,
+    "repos_excluded_by_screen": {
+      "7836246/cursor2api": "no real test script",
+      "IsThereAnyDeal/AugmentedSteam": "no real test script",
+      "OpenSignLabs/OpenSign": "no real test script",
+      "SwingTheVine/Wplace-BlueMarble": "no real test script",
+      "astefanutti/decktape": "test script mentions 'playwright' (non-hermetic screen)",
+      "bpmn-io/bpmn-js-examples": "no real test script",
+      "cloudflare/agentic-inbox": "no real test script",
+      "cryptpad/cryptpad": "test script mentions 'selenium' (non-hermetic screen)",
+      "eclipse-theia/theia": "test script mentions 'browser' (non-hermetic screen)",
+      "httpcats/http.cat": "no real test script",
+      "iAmCorey/awesome-indie-hacker-tools": "no real test script",
+      "konstaui/konsta": "no real test script",
+      "louislam/dockge": "no real test script",
+      "maotoumao/MusicFreeDesktop": "no real test script",
+      "microsoft/Web-Dev-For-Beginners": "no real test script",
+      "modelcontextprotocol/inspector": "no real test script",
+      "morsoli/aimangastudio": "no real test script",
+      "motion-canvas/motion-canvas": "no real test script",
+      "mozilla-firefox/firefox": "no real test script",
+      "mozilla/pdf.js": "no real test script",
+      "nextcloud/mail": "no real test script",
+      "painn-n/onchainsms": "no real test script",
+      "playcanvas/supersplat": "no real test script",
+      "puneetsl/lotion": "no real test script",
+      "qishibo/AnotherRedisDesktopManager": "no real test script",
+      "shaka-project/shaka-player": "no real test script",
+      "stackryze/FreeDomains": "no real test script",
+      "taniarascia/taniarascia.com": "no real test script"
+    },
+    "repos_with_ok": 119,
+    "unique_experiments_after_screen": 1068
+  },
+  "protocol": "docs/phase4_protocol.md",
+  "selected": [
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/compat-data",
+      "edge_ids": [
+        "APIs-guru/graphql-voyager#44254",
+        "APIs-guru/graphql-voyager#44255",
+        "APIs-guru/graphql-voyager#47769"
+      ],
+      "experiment_id": "APIs-guru/graphql-voyager::@babel/compat-data@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "APIs-guru/graphql-voyager",
+      "resolved_version": "7.25.7",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.10.1",
+      "dep_field": null,
+      "dep_name": "@eslint-community/eslint-utils",
+      "edge_ids": [
+        "APIs-guru/graphql-voyager#47721",
+        "APIs-guru/graphql-voyager#47879"
+      ],
+      "experiment_id": "APIs-guru/graphql-voyager::@eslint-community/eslint-utils@4.10.1",
+      "patch_mode": "overrides",
+      "repo": "APIs-guru/graphql-voyager",
+      "resolved_version": "4.4.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.12.2",
+      "dep_field": null,
+      "dep_name": "@eslint-community/regexpp",
+      "edge_ids": [
+        "APIs-guru/graphql-voyager#47712",
+        "APIs-guru/graphql-voyager#47894"
+      ],
+      "experiment_id": "APIs-guru/graphql-voyager::@eslint-community/regexpp@4.12.2",
+      "patch_mode": "overrides",
+      "repo": "APIs-guru/graphql-voyager",
+      "resolved_version": "4.11.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "APIs-guru/graphql-voyager#47797"
+      ],
+      "experiment_id": "APIs-guru/graphql-voyager::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "APIs-guru/graphql-voyager",
+      "resolved_version": "2.0.27",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "APIs-guru/graphql-voyager#47817"
+      ],
+      "experiment_id": "APIs-guru/graphql-voyager::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "APIs-guru/graphql-voyager",
+      "resolved_version": "1.2.2",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "Authenticator-Extension/Authenticator#49014",
+        "Authenticator-Extension/Authenticator#49015",
+        "Authenticator-Extension/Authenticator#49016"
+      ],
+      "experiment_id": "Authenticator-Extension/Authenticator::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "Authenticator-Extension/Authenticator",
+      "resolved_version": "0.1.3",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.9.2",
+      "dep_field": null,
+      "dep_name": "bare-events",
+      "edge_ids": [
+        "Authenticator-Extension/Authenticator#48978",
+        "Authenticator-Extension/Authenticator#49132"
+      ],
+      "experiment_id": "Authenticator-Extension/Authenticator::bare-events@2.9.2",
+      "patch_mode": "overrides",
+      "repo": "Authenticator-Extension/Authenticator",
+      "resolved_version": "2.4.2",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.0.30001815",
+      "dep_field": null,
+      "dep_name": "caniuse-lite",
+      "edge_ids": [
+        "Authenticator-Extension/Authenticator#48983"
+      ],
+      "experiment_id": "Authenticator-Extension/Authenticator::caniuse-lite@1.0.30001815",
+      "patch_mode": "overrides",
+      "repo": "Authenticator-Extension/Authenticator",
+      "resolved_version": "1.0.30001655",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "Authenticator-Extension/Authenticator#48986"
+      ],
+      "experiment_id": "Authenticator-Extension/Authenticator::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "Authenticator-Extension/Authenticator",
+      "resolved_version": "2.0.18",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "9.6.2",
+      "dep_field": "devDependencies",
+      "dep_name": "ts-loader",
+      "edge_ids": [
+        "Authenticator-Extension/Authenticator#48665"
+      ],
+      "experiment_id": "Authenticator-Extension/Authenticator::ts-loader@9.6.2",
+      "patch_mode": "direct_field",
+      "repo": "Authenticator-Extension/Authenticator",
+      "resolved_version": "9.4.2",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.11.3",
+      "dep_field": null,
+      "dep_name": "@emnapi/runtime",
+      "edge_ids": [
+        "ChromeDevTools/chrome-devtools-mcp#49270"
+      ],
+      "experiment_id": "ChromeDevTools/chrome-devtools-mcp::@emnapi/runtime@1.11.3",
+      "patch_mode": "overrides",
+      "repo": "ChromeDevTools/chrome-devtools-mcp",
+      "resolved_version": "1.5.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.4.0",
+      "dep_field": null,
+      "dep_name": "@rollup/pluginutils",
+      "edge_ids": [
+        "ChromeDevTools/chrome-devtools-mcp#49273",
+        "ChromeDevTools/chrome-devtools-mcp#49274",
+        "ChromeDevTools/chrome-devtools-mcp#49294"
+      ],
+      "experiment_id": "ChromeDevTools/chrome-devtools-mcp::@rollup/pluginutils@5.4.0",
+      "patch_mode": "overrides",
+      "repo": "ChromeDevTools/chrome-devtools-mcp",
+      "resolved_version": "5.3.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.2.2",
+      "dep_field": null,
+      "dep_name": "chrome-launcher",
+      "edge_ids": [
+        "ChromeDevTools/chrome-devtools-mcp#49308"
+      ],
+      "experiment_id": "ChromeDevTools/chrome-devtools-mcp::chrome-launcher@1.2.2",
+      "patch_mode": "overrides",
+      "repo": "ChromeDevTools/chrome-devtools-mcp",
+      "resolved_version": "1.2.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.1",
+      "dep_field": null,
+      "dep_name": "eventsource-parser",
+      "edge_ids": [
+        "ChromeDevTools/chrome-devtools-mcp#44143",
+        "ChromeDevTools/chrome-devtools-mcp#49253"
+      ],
+      "experiment_id": "ChromeDevTools/chrome-devtools-mcp::eventsource-parser@3.1.1",
+      "patch_mode": "overrides",
+      "repo": "ChromeDevTools/chrome-devtools-mcp",
+      "resolved_version": "3.0.6",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.14.3",
+      "dep_field": null,
+      "dep_name": "get-tsconfig",
+      "edge_ids": [
+        "ChromeDevTools/chrome-devtools-mcp#49303",
+        "ChromeDevTools/chrome-devtools-mcp#49304"
+      ],
+      "experiment_id": "ChromeDevTools/chrome-devtools-mcp::get-tsconfig@4.14.3",
+      "patch_mode": "overrides",
+      "repo": "ChromeDevTools/chrome-devtools-mcp",
+      "resolved_version": "4.12.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-globals",
+      "edge_ids": [
+        "CookSleep/gpt_image_playground#50372"
+      ],
+      "experiment_id": "CookSleep/gpt_image_playground::@babel/helper-globals@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "CookSleep/gpt_image_playground",
+      "resolved_version": "7.28.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "CookSleep/gpt_image_playground#47321"
+      ],
+      "experiment_id": "CookSleep/gpt_image_playground::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "CookSleep/gpt_image_playground",
+      "resolved_version": "7.27.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "CookSleep/gpt_image_playground#49326",
+        "CookSleep/gpt_image_playground#49327",
+        "CookSleep/gpt_image_playground#49328"
+      ],
+      "experiment_id": "CookSleep/gpt_image_playground::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "CookSleep/gpt_image_playground",
+      "resolved_version": "7.28.5",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.0.2",
+      "dep_field": null,
+      "dep_name": "read-cache",
+      "edge_ids": [
+        "CookSleep/gpt_image_playground#48207"
+      ],
+      "experiment_id": "CookSleep/gpt_image_playground::read-cache@1.0.2",
+      "patch_mode": "overrides",
+      "repo": "CookSleep/gpt_image_playground",
+      "resolved_version": "1.0.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "CookSleep/gpt_image_playground#50740"
+      ],
+      "experiment_id": "CookSleep/gpt_image_playground::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "CookSleep/gpt_image_playground",
+      "resolved_version": "1.2.3",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.1.0",
+      "dep_field": null,
+      "dep_name": "is-plain-object",
+      "edge_ids": [
+        "DevExpress/testcafe#52260",
+        "DevExpress/testcafe#52261",
+        "DevExpress/testcafe#52262",
+        "DevExpress/testcafe#52263"
+      ],
+      "experiment_id": "DevExpress/testcafe::is-plain-object@5.1.0",
+      "patch_mode": "overrides",
+      "repo": "DevExpress/testcafe",
+      "resolved_version": "5.0.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.31.0",
+      "dep_field": "dependencies",
+      "dep_name": "moment",
+      "edge_ids": [
+        "DevExpress/testcafe#52216",
+        "DevExpress/testcafe#52360"
+      ],
+      "experiment_id": "DevExpress/testcafe::moment@2.31.0",
+      "patch_mode": "direct_field",
+      "repo": "DevExpress/testcafe",
+      "resolved_version": "2.30.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.4.0",
+      "dep_field": "devDependencies",
+      "dep_name": "multer",
+      "edge_ids": [
+        "DevExpress/testcafe#52231"
+      ],
+      "experiment_id": "DevExpress/testcafe::multer@2.4.0",
+      "patch_mode": "direct_field",
+      "repo": "DevExpress/testcafe",
+      "resolved_version": "2.2.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.3.20",
+      "dep_field": "dependencies",
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "DevExpress/testcafe#52225",
+        "DevExpress/testcafe#52226",
+        "DevExpress/testcafe#52359"
+      ],
+      "experiment_id": "DevExpress/testcafe::nanoid@3.3.20",
+      "patch_mode": "direct_field",
+      "repo": "DevExpress/testcafe",
+      "resolved_version": "3.3.12",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "DevExpress/testcafe#50741"
+      ],
+      "experiment_id": "DevExpress/testcafe::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "DevExpress/testcafe",
+      "resolved_version": "1.2.3",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-plugin-utils",
+      "edge_ids": [
+        "DialmasterOrg/Youtarr#46649",
+        "DialmasterOrg/Youtarr#46650",
+        "DialmasterOrg/Youtarr#46651",
+        "DialmasterOrg/Youtarr#46652",
+        "DialmasterOrg/Youtarr#46653",
+        "DialmasterOrg/Youtarr#46654",
+        "DialmasterOrg/Youtarr#46655",
+        "DialmasterOrg/Youtarr#46859",
+        "DialmasterOrg/Youtarr#46891",
+        "DialmasterOrg/Youtarr#46892",
+        "DialmasterOrg/Youtarr#46893",
+        "DialmasterOrg/Youtarr#46991",
+        "DialmasterOrg/Youtarr#46992",
+        "DialmasterOrg/Youtarr#46993",
+        "DialmasterOrg/Youtarr#47232",
+        "DialmasterOrg/Youtarr#52361",
+        "DialmasterOrg/Youtarr#52362",
+        "DialmasterOrg/Youtarr#52363"
+      ],
+      "experiment_id": "DialmasterOrg/Youtarr::@babel/helper-plugin-utils@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "DialmasterOrg/Youtarr",
+      "resolved_version": "7.28.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/runtime",
+      "edge_ids": [
+        "DialmasterOrg/Youtarr#52614"
+      ],
+      "experiment_id": "DialmasterOrg/Youtarr::@babel/runtime@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "DialmasterOrg/Youtarr",
+      "resolved_version": "7.28.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "DialmasterOrg/Youtarr#49017",
+        "DialmasterOrg/Youtarr#52563",
+        "DialmasterOrg/Youtarr#52564"
+      ],
+      "experiment_id": "DialmasterOrg/Youtarr::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "DialmasterOrg/Youtarr",
+      "resolved_version": "0.1.3",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.6.1",
+      "dep_field": null,
+      "dep_name": "pidtree",
+      "edge_ids": [
+        "DialmasterOrg/Youtarr#52661"
+      ],
+      "experiment_id": "DialmasterOrg/Youtarr::pidtree@0.6.1",
+      "patch_mode": "overrides",
+      "repo": "DialmasterOrg/Youtarr",
+      "resolved_version": "0.6.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "DialmasterOrg/Youtarr#47908"
+      ],
+      "experiment_id": "DialmasterOrg/Youtarr::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "DialmasterOrg/Youtarr",
+      "resolved_version": "2.0.7",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/runtime",
+      "edge_ids": [
+        "Done-0/fuck-u-code#47484"
+      ],
+      "experiment_id": "Done-0/fuck-u-code::@babel/runtime@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "Done-0/fuck-u-code",
+      "resolved_version": "7.28.6",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.9",
+      "dep_field": null,
+      "dep_name": "@inquirer/figures",
+      "edge_ids": [
+        "Done-0/fuck-u-code#52678",
+        "Done-0/fuck-u-code#52679",
+        "Done-0/fuck-u-code#52680",
+        "Done-0/fuck-u-code#52681"
+      ],
+      "experiment_id": "Done-0/fuck-u-code::@inquirer/figures@2.0.9",
+      "patch_mode": "overrides",
+      "repo": "Done-0/fuck-u-code",
+      "resolved_version": "2.0.3",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.2.0",
+      "dep_field": null,
+      "dep_name": "@inquirer/type",
+      "edge_ids": [
+        "Done-0/fuck-u-code#52682",
+        "Done-0/fuck-u-code#52683",
+        "Done-0/fuck-u-code#52684",
+        "Done-0/fuck-u-code#52685",
+        "Done-0/fuck-u-code#52686",
+        "Done-0/fuck-u-code#52687",
+        "Done-0/fuck-u-code#52688",
+        "Done-0/fuck-u-code#52689",
+        "Done-0/fuck-u-code#52690",
+        "Done-0/fuck-u-code#52691",
+        "Done-0/fuck-u-code#52692",
+        "Done-0/fuck-u-code#52693"
+      ],
+      "experiment_id": "Done-0/fuck-u-code::@inquirer/type@4.2.0",
+      "patch_mode": "overrides",
+      "repo": "Done-0/fuck-u-code",
+      "resolved_version": "4.0.3",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.1",
+      "dep_field": null,
+      "dep_name": "eventsource-parser",
+      "edge_ids": [
+        "Done-0/fuck-u-code#44144",
+        "Done-0/fuck-u-code#49254"
+      ],
+      "experiment_id": "Done-0/fuck-u-code::eventsource-parser@3.1.1",
+      "patch_mode": "overrides",
+      "repo": "Done-0/fuck-u-code",
+      "resolved_version": "3.0.6",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "Done-0/fuck-u-code#44164"
+      ],
+      "experiment_id": "Done-0/fuck-u-code::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "Done-0/fuck-u-code",
+      "resolved_version": "2.0.7",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.9",
+      "dep_field": "devDependencies",
+      "dep_name": "@babel/eslint-parser",
+      "edge_ids": [
+        "Hubs-Foundation/hubs#52723"
+      ],
+      "experiment_id": "Hubs-Foundation/hubs::@babel/eslint-parser@7.29.9",
+      "patch_mode": "direct_field",
+      "repo": "Hubs-Foundation/hubs",
+      "resolved_version": "7.28.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.3.20",
+      "dep_field": null,
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "Hubs-Foundation/hubs#50771"
+      ],
+      "experiment_id": "Hubs-Foundation/hubs::nanoid@3.3.20",
+      "patch_mode": "overrides",
+      "repo": "Hubs-Foundation/hubs",
+      "resolved_version": "3.3.11",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.0",
+      "dep_field": null,
+      "dep_name": "regenerate",
+      "edge_ids": [
+        "Hubs-Foundation/hubs#48288",
+        "Hubs-Foundation/hubs#48289"
+      ],
+      "experiment_id": "Hubs-Foundation/hubs::regenerate@1.5.0",
+      "patch_mode": "overrides",
+      "repo": "Hubs-Foundation/hubs",
+      "resolved_version": "1.4.2",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "9.6.2",
+      "dep_field": "devDependencies",
+      "dep_name": "ts-loader",
+      "edge_ids": [
+        "Hubs-Foundation/hubs#52737"
+      ],
+      "experiment_id": "Hubs-Foundation/hubs::ts-loader@9.6.2",
+      "patch_mode": "direct_field",
+      "repo": "Hubs-Foundation/hubs",
+      "resolved_version": "9.4.3",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.5.2",
+      "dep_field": null,
+      "dep_name": "watchpack",
+      "edge_ids": [
+        "Hubs-Foundation/hubs#49236"
+      ],
+      "experiment_id": "Hubs-Foundation/hubs::watchpack@2.5.2",
+      "patch_mode": "overrides",
+      "repo": "Hubs-Foundation/hubs",
+      "resolved_version": "2.4.4",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.4.1",
+      "dep_field": null,
+      "dep_name": "pkijs",
+      "edge_ids": [
+        "Jelmerro/Vieb#54479"
+      ],
+      "experiment_id": "Jelmerro/Vieb::pkijs@3.4.1",
+      "patch_mode": "overrides",
+      "repo": "Jelmerro/Vieb",
+      "resolved_version": "3.4.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.2.0",
+      "dep_field": null,
+      "dep_name": "pvutils",
+      "edge_ids": [
+        "Jelmerro/Vieb#54487",
+        "Jelmerro/Vieb#54496"
+      ],
+      "experiment_id": "Jelmerro/Vieb::pvutils@1.2.0",
+      "patch_mode": "overrides",
+      "repo": "Jelmerro/Vieb",
+      "resolved_version": "1.1.5",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "Jelmerro/Vieb#50742"
+      ],
+      "experiment_id": "Jelmerro/Vieb::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "Jelmerro/Vieb",
+      "resolved_version": "1.2.3",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/compat-data",
+      "edge_ids": [
+        "Kong/insomnia#49731"
+      ],
+      "experiment_id": "Kong/insomnia::@babel/compat-data@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "Kong/insomnia",
+      "resolved_version": "7.29.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "Kong/insomnia#47325"
+      ],
+      "experiment_id": "Kong/insomnia::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "Kong/insomnia",
+      "resolved_version": "7.27.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "Kong/insomnia#49332",
+        "Kong/insomnia#49333",
+        "Kong/insomnia#49334",
+        "Kong/insomnia#49335"
+      ],
+      "experiment_id": "Kong/insomnia::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "Kong/insomnia",
+      "resolved_version": "7.28.5",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.1.16",
+      "dep_field": null,
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "Kong/insomnia#55093",
+        "Kong/insomnia#55096"
+      ],
+      "experiment_id": "Kong/insomnia::nanoid@5.1.16",
+      "patch_mode": "overrides",
+      "repo": "Kong/insomnia",
+      "resolved_version": "5.1.7",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "Kong/insomnia#50737"
+      ],
+      "experiment_id": "Kong/insomnia::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "Kong/insomnia",
+      "resolved_version": "2.0.37",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.3.0",
+      "dep_field": null,
+      "dep_name": "@alloc/quick-lru",
+      "edge_ids": [
+        "KunAgent/Kun#50884"
+      ],
+      "experiment_id": "KunAgent/Kun::@alloc/quick-lru@5.3.0",
+      "patch_mode": "overrides",
+      "repo": "KunAgent/Kun",
+      "resolved_version": "5.2.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/runtime",
+      "edge_ids": [
+        "KunAgent/Kun#47851",
+        "KunAgent/Kun#48251",
+        "KunAgent/Kun#55174",
+        "KunAgent/Kun#55175",
+        "KunAgent/Kun#55176",
+        "KunAgent/Kun#55177",
+        "KunAgent/Kun#55178",
+        "KunAgent/Kun#55179",
+        "KunAgent/Kun#55180",
+        "KunAgent/Kun#55181",
+        "KunAgent/Kun#55182",
+        "KunAgent/Kun#55183",
+        "KunAgent/Kun#55184",
+        "KunAgent/Kun#55185",
+        "KunAgent/Kun#55186",
+        "KunAgent/Kun#55187",
+        "KunAgent/Kun#55188",
+        "KunAgent/Kun#55189",
+        "KunAgent/Kun#55190",
+        "KunAgent/Kun#55191",
+        "KunAgent/Kun#55192",
+        "KunAgent/Kun#55377",
+        "KunAgent/Kun#55378"
+      ],
+      "experiment_id": "KunAgent/Kun::@babel/runtime@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "KunAgent/Kun",
+      "resolved_version": "7.29.2",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "KunAgent/Kun#50738"
+      ],
+      "experiment_id": "KunAgent/Kun::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "KunAgent/Kun",
+      "resolved_version": "2.0.38",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.2.0",
+      "dep_field": null,
+      "dep_name": "tinyrainbow",
+      "edge_ids": [
+        "KunAgent/Kun#50669",
+        "KunAgent/Kun#50670",
+        "KunAgent/Kun#50671",
+        "KunAgent/Kun#50672"
+      ],
+      "experiment_id": "KunAgent/Kun::tinyrainbow@3.2.0",
+      "patch_mode": "overrides",
+      "repo": "KunAgent/Kun",
+      "resolved_version": "3.1.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.3.0",
+      "dep_field": null,
+      "dep_name": "ts-dedent",
+      "edge_ids": [
+        "KunAgent/Kun#50760",
+        "KunAgent/Kun#50761"
+      ],
+      "experiment_id": "KunAgent/Kun::ts-dedent@2.3.0",
+      "patch_mode": "overrides",
+      "repo": "KunAgent/Kun",
+      "resolved_version": "2.2.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-option",
+      "edge_ids": [
+        "MichalLytek/type-graphql#49756"
+      ],
+      "experiment_id": "MichalLytek/type-graphql::@babel/helper-validator-option@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "MichalLytek/type-graphql",
+      "resolved_version": "7.27.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.0.1",
+      "dep_field": null,
+      "dep_name": "@envelop/instrumentation",
+      "edge_ids": [
+        "MichalLytek/type-graphql#55593",
+        "MichalLytek/type-graphql#55594",
+        "MichalLytek/type-graphql#55595"
+      ],
+      "experiment_id": "MichalLytek/type-graphql::@envelop/instrumentation@1.0.1",
+      "patch_mode": "overrides",
+      "repo": "MichalLytek/type-graphql",
+      "resolved_version": "1.0.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.2.2",
+      "dep_field": null,
+      "dep_name": "@envelop/types",
+      "edge_ids": [
+        "MichalLytek/type-graphql#55596"
+      ],
+      "experiment_id": "MichalLytek/type-graphql::@envelop/types@5.2.2",
+      "patch_mode": "overrides",
+      "repo": "MichalLytek/type-graphql",
+      "resolved_version": "5.2.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "MichalLytek/type-graphql#47624"
+      ],
+      "experiment_id": "MichalLytek/type-graphql::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "MichalLytek/type-graphql",
+      "resolved_version": "1.15.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.3.3",
+      "dep_field": null,
+      "dep_name": "tapable",
+      "edge_ids": [
+        "MichalLytek/type-graphql#47860"
+      ],
+      "experiment_id": "MichalLytek/type-graphql::tapable@2.3.3",
+      "patch_mode": "overrides",
+      "repo": "MichalLytek/type-graphql",
+      "resolved_version": "2.2.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.9.2",
+      "dep_field": null,
+      "dep_name": "bare-events",
+      "edge_ids": [
+        "NangoHQ/nango#49133",
+        "NangoHQ/nango#56400",
+        "NangoHQ/nango#56421"
+      ],
+      "experiment_id": "NangoHQ/nango::bare-events@2.9.2",
+      "patch_mode": "overrides",
+      "repo": "NangoHQ/nango",
+      "resolved_version": "2.5.4",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.9.3",
+      "dep_field": null,
+      "dep_name": "bare-os",
+      "edge_ids": [
+        "NangoHQ/nango#56414"
+      ],
+      "experiment_id": "NangoHQ/nango::bare-os@3.9.3",
+      "patch_mode": "overrides",
+      "repo": "NangoHQ/nango",
+      "resolved_version": "3.6.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.2",
+      "dep_field": null,
+      "dep_name": "bare-path",
+      "edge_ids": [
+        "NangoHQ/nango#54441",
+        "NangoHQ/nango#54442",
+        "NangoHQ/nango#54443"
+      ],
+      "experiment_id": "NangoHQ/nango::bare-path@3.1.2",
+      "patch_mode": "overrides",
+      "repo": "NangoHQ/nango",
+      "resolved_version": "3.0.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.1.2",
+      "dep_field": null,
+      "dep_name": "detect-libc",
+      "edge_ids": [
+        "NangoHQ/nango#48369"
+      ],
+      "experiment_id": "NangoHQ/nango::detect-libc@2.1.2",
+      "patch_mode": "overrides",
+      "repo": "NangoHQ/nango",
+      "resolved_version": "2.0.4",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.6.1",
+      "dep_field": null,
+      "dep_name": "pidtree",
+      "edge_ids": [
+        "NangoHQ/nango#52663"
+      ],
+      "experiment_id": "NangoHQ/nango::pidtree@0.6.1",
+      "patch_mode": "overrides",
+      "repo": "NangoHQ/nango",
+      "resolved_version": "0.6.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "OWASP/CheatSheetSeries#49337"
+      ],
+      "experiment_id": "OWASP/CheatSheetSeries::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "OWASP/CheatSheetSeries",
+      "resolved_version": "7.28.5",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.5.0",
+      "dep_field": null,
+      "dep_name": "@cacheable/utils",
+      "edge_ids": [
+        "OWASP/CheatSheetSeries#56505",
+        "OWASP/CheatSheetSeries#56506"
+      ],
+      "experiment_id": "OWASP/CheatSheetSeries::@cacheable/utils@2.5.0",
+      "patch_mode": "overrides",
+      "repo": "OWASP/CheatSheetSeries",
+      "resolved_version": "2.4.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.3",
+      "dep_field": null,
+      "dep_name": "@mapbox/jsonlint-lines-primitives",
+      "edge_ids": [
+        "Viglino/ol-ext#56659"
+      ],
+      "experiment_id": "Viglino/ol-ext::@mapbox/jsonlint-lines-primitives@2.0.3",
+      "patch_mode": "overrides",
+      "repo": "Viglino/ol-ext",
+      "resolved_version": "2.0.2",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.9.3",
+      "dep_field": null,
+      "dep_name": "@petamoriken/float16",
+      "edge_ids": [
+        "Viglino/ol-ext#56663"
+      ],
+      "experiment_id": "Viglino/ol-ext::@petamoriken/float16@3.9.3",
+      "patch_mode": "overrides",
+      "repo": "Viglino/ol-ext",
+      "resolved_version": "3.8.1",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.0.30001815",
+      "dep_field": null,
+      "dep_name": "caniuse-lite",
+      "edge_ids": [
+        "Viglino/ol-ext#56660",
+        "Viglino/ol-ext#56661"
+      ],
+      "experiment_id": "Viglino/ol-ext::caniuse-lite@1.0.30001815",
+      "patch_mode": "overrides",
+      "repo": "Viglino/ol-ext",
+      "resolved_version": "1.0.30000865",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.449",
+      "dep_field": null,
+      "dep_name": "electron-to-chromium",
+      "edge_ids": [
+        "Viglino/ol-ext#56662"
+      ],
+      "experiment_id": "Viglino/ol-ext::electron-to-chromium@1.5.449",
+      "patch_mode": "overrides",
+      "repo": "Viglino/ol-ext",
+      "resolved_version": "1.3.52",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.12",
+      "dep_field": "devDependencies",
+      "dep_name": "gulp-header",
+      "edge_ids": [
+        "Viglino/ol-ext#56657"
+      ],
+      "experiment_id": "Viglino/ol-ext::gulp-header@2.0.12",
+      "patch_mode": "direct_field",
+      "repo": "Viglino/ol-ext",
+      "resolved_version": "2.0.5",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "Yeachan-Heo/oh-my-codex#49020",
+        "Yeachan-Heo/oh-my-codex#52567"
+      ],
+      "experiment_id": "Yeachan-Heo/oh-my-codex::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "Yeachan-Heo/oh-my-codex",
+      "resolved_version": "0.1.3",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.1",
+      "dep_field": null,
+      "dep_name": "eventsource-parser",
+      "edge_ids": [
+        "Yeachan-Heo/oh-my-codex#44146",
+        "Yeachan-Heo/oh-my-codex#49256"
+      ],
+      "experiment_id": "Yeachan-Heo/oh-my-codex::eventsource-parser@3.1.1",
+      "patch_mode": "overrides",
+      "repo": "Yeachan-Heo/oh-my-codex",
+      "resolved_version": "3.0.6",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "10.7.3",
+      "dep_field": null,
+      "dep_name": "ip-address",
+      "edge_ids": [
+        "Yeachan-Heo/oh-my-codex#56665"
+      ],
+      "experiment_id": "Yeachan-Heo/oh-my-codex::ip-address@10.7.3",
+      "patch_mode": "overrides",
+      "repo": "Yeachan-Heo/oh-my-codex",
+      "resolved_version": "10.2.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "Yeachan-Heo/oh-my-codex#44167"
+      ],
+      "experiment_id": "Yeachan-Heo/oh-my-codex::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "Yeachan-Heo/oh-my-codex",
+      "resolved_version": "2.0.7",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.8.5",
+      "dep_field": null,
+      "dep_name": "semver",
+      "edge_ids": [
+        "Yomguithereal/mnemonist#56669"
+      ],
+      "experiment_id": "Yomguithereal/mnemonist::semver@7.8.5",
+      "patch_mode": "overrides",
+      "repo": "Yomguithereal/mnemonist",
+      "resolved_version": "7.3.5",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "a16z-infra/ai-town#56829"
+      ],
+      "experiment_id": "a16z-infra/ai-town::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "a16z-infra/ai-town",
+      "resolved_version": "7.25.9",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-option",
+      "edge_ids": [
+        "a16z-infra/ai-town#56741"
+      ],
+      "experiment_id": "a16z-infra/ai-town::@babel/helper-validator-option@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "a16z-infra/ai-town",
+      "resolved_version": "7.22.5",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.6.0",
+      "dep_field": null,
+      "dep_name": "chokidar",
+      "edge_ids": [
+        "a16z-infra/ai-town#54145"
+      ],
+      "experiment_id": "a16z-infra/ai-town::chokidar@3.6.0",
+      "patch_mode": "overrides",
+      "repo": "a16z-infra/ai-town",
+      "resolved_version": "3.5.3",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "a16z-infra/ai-town#57029"
+      ],
+      "experiment_id": "a16z-infra/ai-town::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "a16z-infra/ai-town",
+      "resolved_version": "2.0.13",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.0.2",
+      "dep_field": null,
+      "dep_name": "read-cache",
+      "edge_ids": [
+        "a16z-infra/ai-town#48210"
+      ],
+      "experiment_id": "a16z-infra/ai-town::read-cache@1.0.2",
+      "patch_mode": "overrides",
+      "repo": "a16z-infra/ai-town",
+      "resolved_version": "1.0.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "actions/checkout#47328"
+      ],
+      "experiment_id": "actions/checkout::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "actions/checkout",
+      "resolved_version": "7.27.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "actions/checkout#47405",
+        "actions/checkout#47406",
+        "actions/checkout#48835"
+      ],
+      "experiment_id": "actions/checkout::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "actions/checkout",
+      "resolved_version": "7.27.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.27.12",
+      "dep_field": null,
+      "dep_name": "@sinclair/typebox",
+      "edge_ids": [
+        "actions/checkout#55616"
+      ],
+      "experiment_id": "actions/checkout::@sinclair/typebox@0.27.12",
+      "patch_mode": "overrides",
+      "repo": "actions/checkout",
+      "resolved_version": "0.27.8",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.4.0",
+      "dep_field": null,
+      "dep_name": "eslint-plugin-no-only-tests",
+      "edge_ids": [
+        "actions/checkout#57199"
+      ],
+      "experiment_id": "actions/checkout::eslint-plugin-no-only-tests@3.4.0",
+      "patch_mode": "overrides",
+      "repo": "actions/checkout",
+      "resolved_version": "3.1.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "actions/checkout#50745"
+      ],
+      "experiment_id": "actions/checkout::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "actions/checkout",
+      "resolved_version": "1.2.3",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "advplyr/audiobookshelf#57257"
+      ],
+      "experiment_id": "advplyr/audiobookshelf::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "advplyr/audiobookshelf",
+      "resolved_version": "7.22.5",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.6.0",
+      "dep_field": null,
+      "dep_name": "chokidar",
+      "edge_ids": [
+        "advplyr/audiobookshelf#57277"
+      ],
+      "experiment_id": "advplyr/audiobookshelf::chokidar@3.6.0",
+      "patch_mode": "overrides",
+      "repo": "advplyr/audiobookshelf",
+      "resolved_version": "3.5.3",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.31.0",
+      "dep_field": null,
+      "dep_name": "moment",
+      "edge_ids": [
+        "advplyr/audiobookshelf#52217",
+        "advplyr/audiobookshelf#52218"
+      ],
+      "experiment_id": "advplyr/audiobookshelf::moment@2.31.0",
+      "patch_mode": "overrides",
+      "repo": "advplyr/audiobookshelf",
+      "resolved_version": "2.29.4",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "advplyr/audiobookshelf#57030"
+      ],
+      "experiment_id": "advplyr/audiobookshelf::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "advplyr/audiobookshelf",
+      "resolved_version": "2.0.13",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.2.7",
+      "dep_field": null,
+      "dep_name": "socket.io-parser",
+      "edge_ids": [
+        "advplyr/audiobookshelf#57291"
+      ],
+      "experiment_id": "advplyr/audiobookshelf::socket.io-parser@4.2.7",
+      "patch_mode": "overrides",
+      "repo": "advplyr/audiobookshelf",
+      "resolved_version": "4.2.4",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "americanexpress/jest-image-snapshot#47329"
+      ],
+      "experiment_id": "americanexpress/jest-image-snapshot::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "americanexpress/jest-image-snapshot",
+      "resolved_version": "7.27.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "americanexpress/jest-image-snapshot#49031",
+        "americanexpress/jest-image-snapshot#52569",
+        "americanexpress/jest-image-snapshot#52570"
+      ],
+      "experiment_id": "americanexpress/jest-image-snapshot::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "americanexpress/jest-image-snapshot",
+      "resolved_version": "0.1.3",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.4.0",
+      "dep_field": null,
+      "dep_name": "ci-info",
+      "edge_ids": [
+        "americanexpress/jest-image-snapshot#57322",
+        "americanexpress/jest-image-snapshot#57323",
+        "americanexpress/jest-image-snapshot#57324"
+      ],
+      "experiment_id": "americanexpress/jest-image-snapshot::ci-info@4.4.0",
+      "patch_mode": "overrides",
+      "repo": "americanexpress/jest-image-snapshot",
+      "resolved_version": "4.3.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.0.2",
+      "dep_field": null,
+      "dep_name": "issue-parser",
+      "edge_ids": [
+        "americanexpress/jest-image-snapshot#57336"
+      ],
+      "experiment_id": "americanexpress/jest-image-snapshot::issue-parser@7.0.2",
+      "patch_mode": "overrides",
+      "repo": "americanexpress/jest-image-snapshot",
+      "resolved_version": "7.0.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "americanexpress/jest-image-snapshot#54219"
+      ],
+      "experiment_id": "americanexpress/jest-image-snapshot::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "americanexpress/jest-image-snapshot",
+      "resolved_version": "1.1.3",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "18.2.0",
+      "dep_field": null,
+      "dep_name": "yargs",
+      "edge_ids": [
+        "apache/cordova-ios#55425"
+      ],
+      "experiment_id": "apache/cordova-ios::yargs@18.2.0",
+      "patch_mode": "overrides",
+      "repo": "apache/cordova-ios",
+      "resolved_version": "18.1.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/compat-data",
+      "edge_ids": [
+        "apache/echarts#57358"
+      ],
+      "experiment_id": "apache/echarts::@babel/compat-data@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "apache/echarts",
+      "resolved_version": "7.26.2",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-plugin-utils",
+      "edge_ids": [
+        "apache/echarts#46686",
+        "apache/echarts#46687",
+        "apache/echarts#46688",
+        "apache/echarts#46689",
+        "apache/echarts#46690",
+        "apache/echarts#46691",
+        "apache/echarts#46692",
+        "apache/echarts#46864",
+        "apache/echarts#46903",
+        "apache/echarts#46904",
+        "apache/echarts#46905",
+        "apache/echarts#47006",
+        "apache/echarts#47007",
+        "apache/echarts#47008",
+        "apache/echarts#47238",
+        "apache/echarts#57379"
+      ],
+      "experiment_id": "apache/echarts::@babel/helper-plugin-utils@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "apache/echarts",
+      "resolved_version": "7.25.9",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "apache/echarts#56830",
+        "apache/echarts#56831",
+        "apache/echarts#56832",
+        "apache/echarts#56833",
+        "apache/echarts#56834",
+        "apache/echarts#56835",
+        "apache/echarts#56836",
+        "apache/echarts#56837",
+        "apache/echarts#56838",
+        "apache/echarts#56839"
+      ],
+      "experiment_id": "apache/echarts::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "apache/echarts",
+      "resolved_version": "7.25.9",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "apache/echarts#49032",
+        "apache/echarts#49033",
+        "apache/echarts#49034",
+        "apache/echarts#49035"
+      ],
+      "experiment_id": "apache/echarts::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "apache/echarts",
+      "resolved_version": "0.1.3",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.5.8",
+      "dep_field": "devDependencies",
+      "dep_name": "jest-canvas-mock",
+      "edge_ids": [
+        "apache/echarts#57351"
+      ],
+      "experiment_id": "apache/echarts::jest-canvas-mock@2.5.8",
+      "patch_mode": "direct_field",
+      "repo": "apache/echarts",
+      "resolved_version": "2.5.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-plugin-utils",
+      "edge_ids": [
+        "apollographql/apollo-tooling#46693",
+        "apollographql/apollo-tooling#46694",
+        "apollographql/apollo-tooling#46695",
+        "apollographql/apollo-tooling#46696",
+        "apollographql/apollo-tooling#46697",
+        "apollographql/apollo-tooling#46698",
+        "apollographql/apollo-tooling#46699",
+        "apollographql/apollo-tooling#46865",
+        "apollographql/apollo-tooling#46906",
+        "apollographql/apollo-tooling#47009",
+        "apollographql/apollo-tooling#47010",
+        "apollographql/apollo-tooling#47011",
+        "apollographql/apollo-tooling#47239",
+        "apollographql/apollo-tooling#57727"
+      ],
+      "experiment_id": "apollographql/apollo-tooling::@babel/helper-plugin-utils@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "apollographql/apollo-tooling",
+      "resolved_version": "7.17.12",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/runtime",
+      "edge_ids": [
+        "apollographql/apollo-tooling#48253",
+        "apollographql/apollo-tooling#48254",
+        "apollographql/apollo-tooling#57741",
+        "apollographql/apollo-tooling#57742",
+        "apollographql/apollo-tooling#57743",
+        "apollographql/apollo-tooling#57744",
+        "apollographql/apollo-tooling#57745",
+        "apollographql/apollo-tooling#57746",
+        "apollographql/apollo-tooling#57747",
+        "apollographql/apollo-tooling#57748"
+      ],
+      "experiment_id": "apollographql/apollo-tooling::@babel/runtime@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "apollographql/apollo-tooling",
+      "resolved_version": "7.17.9",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.0.13",
+      "dep_field": null,
+      "dep_name": "@tsconfig/node10",
+      "edge_ids": [
+        "apollographql/apollo-tooling#55788"
+      ],
+      "experiment_id": "apollographql/apollo-tooling::@tsconfig/node10@1.0.13",
+      "patch_mode": "overrides",
+      "repo": "apollographql/apollo-tooling",
+      "resolved_version": "1.0.8",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.449",
+      "dep_field": null,
+      "dep_name": "electron-to-chromium",
+      "edge_ids": [
+        "apollographql/apollo-tooling#57796"
+      ],
+      "experiment_id": "apollographql/apollo-tooling::electron-to-chromium@1.5.449",
+      "patch_mode": "overrides",
+      "repo": "apollographql/apollo-tooling",
+      "resolved_version": "1.4.99",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "15.10.3",
+      "dep_field": "devDependencies",
+      "dep_name": "graphql",
+      "edge_ids": [
+        "apollographql/apollo-tooling#57544",
+        "apollographql/apollo-tooling#57811",
+        "apollographql/apollo-tooling#57812",
+        "apollographql/apollo-tooling#57814"
+      ],
+      "experiment_id": "apollographql/apollo-tooling::graphql@15.10.3",
+      "patch_mode": "direct_field",
+      "repo": "apollographql/apollo-tooling",
+      "resolved_version": "15.2.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.9",
+      "dep_field": null,
+      "dep_name": "@inquirer/ansi",
+      "edge_ids": [
+        "belnadris/angular-electron#57826",
+        "belnadris/angular-electron#57827",
+        "belnadris/angular-electron#57828",
+        "belnadris/angular-electron#57829",
+        "belnadris/angular-electron#57830",
+        "belnadris/angular-electron#57831",
+        "belnadris/angular-electron#57832",
+        "belnadris/angular-electron#57833",
+        "belnadris/angular-electron#57834",
+        "belnadris/angular-electron#57835",
+        "belnadris/angular-electron#57836",
+        "belnadris/angular-electron#57837",
+        "belnadris/angular-electron#57838"
+      ],
+      "experiment_id": "belnadris/angular-electron::@inquirer/ansi@2.0.9",
+      "patch_mode": "overrides",
+      "repo": "belnadris/angular-electron",
+      "resolved_version": "2.0.7",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.4.1",
+      "dep_field": null,
+      "dep_name": "pkijs",
+      "edge_ids": [
+        "belnadris/angular-electron#54482"
+      ],
+      "experiment_id": "belnadris/angular-electron::pkijs@3.4.1",
+      "patch_mode": "overrides",
+      "repo": "belnadris/angular-electron",
+      "resolved_version": "3.4.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.1.0",
+      "dep_field": null,
+      "dep_name": "postcss-safe-parser",
+      "edge_ids": [
+        "belnadris/angular-electron#57848"
+      ],
+      "experiment_id": "belnadris/angular-electron::postcss-safe-parser@7.1.0",
+      "patch_mode": "overrides",
+      "repo": "belnadris/angular-electron",
+      "resolved_version": "7.0.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "belnadris/angular-electron#44168"
+      ],
+      "experiment_id": "belnadris/angular-electron::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "belnadris/angular-electron",
+      "resolved_version": "2.0.7",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "18.2.0",
+      "dep_field": null,
+      "dep_name": "yargs",
+      "edge_ids": [
+        "belnadris/angular-electron#55426"
+      ],
+      "experiment_id": "belnadris/angular-electron::yargs@18.2.0",
+      "patch_mode": "overrides",
+      "repo": "belnadris/angular-electron",
+      "resolved_version": "18.1.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.0",
+      "dep_field": null,
+      "dep_name": "regenerate",
+      "edge_ids": [
+        "betaflight/betaflight-configurator#48290",
+        "betaflight/betaflight-configurator#48291"
+      ],
+      "experiment_id": "betaflight/betaflight-configurator::regenerate@1.5.0",
+      "patch_mode": "overrides",
+      "repo": "betaflight/betaflight-configurator",
+      "resolved_version": "1.4.2",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "18.2.0",
+      "dep_field": null,
+      "dep_name": "yargs",
+      "edge_ids": [
+        "bilawalsidhu/gods-eye-view#55427"
+      ],
+      "experiment_id": "bilawalsidhu/gods-eye-view::yargs@18.2.0",
+      "patch_mode": "overrides",
+      "repo": "bilawalsidhu/gods-eye-view",
+      "resolved_version": "18.1.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-option",
+      "edge_ids": [
+        "bitburner-official/bitburner-src#49758",
+        "bitburner-official/bitburner-src#49759",
+        "bitburner-official/bitburner-src#49760",
+        "bitburner-official/bitburner-src#49761"
+      ],
+      "experiment_id": "bitburner-official/bitburner-src::@babel/helper-validator-option@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "bitburner-official/bitburner-src",
+      "resolved_version": "7.27.1",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.27.12",
+      "dep_field": null,
+      "dep_name": "@sinclair/typebox",
+      "edge_ids": [
+        "bitburner-official/bitburner-src#55617"
+      ],
+      "experiment_id": "bitburner-official/bitburner-src::@sinclair/typebox@0.27.12",
+      "patch_mode": "overrides",
+      "repo": "bitburner-official/bitburner-src",
+      "resolved_version": "0.27.8",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "19.3.0",
+      "dep_field": null,
+      "dep_name": "react-is",
+      "edge_ids": [
+        "bitburner-official/bitburner-src#58125",
+        "bitburner-official/bitburner-src#58126"
+      ],
+      "experiment_id": "bitburner-official/bitburner-src::react-is@19.3.0",
+      "patch_mode": "overrides",
+      "repo": "bitburner-official/bitburner-src",
+      "resolved_version": "19.2.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.3.3",
+      "dep_field": null,
+      "dep_name": "tapable",
+      "edge_ids": [
+        "bitburner-official/bitburner-src#48070",
+        "bitburner-official/bitburner-src#48522",
+        "bitburner-official/bitburner-src#48523",
+        "bitburner-official/bitburner-src#54256"
+      ],
+      "experiment_id": "bitburner-official/bitburner-src::tapable@2.3.3",
+      "patch_mode": "overrides",
+      "repo": "bitburner-official/bitburner-src",
+      "resolved_version": "2.3.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.2.6",
+      "dep_field": "devDependencies",
+      "dep_name": "webpack-dev-server",
+      "edge_ids": [
+        "bitburner-official/bitburner-src#57866",
+        "bitburner-official/bitburner-src#58132",
+        "bitburner-official/bitburner-src#58185"
+      ],
+      "experiment_id": "bitburner-official/bitburner-src::webpack-dev-server@5.2.6",
+      "patch_mode": "direct_field",
+      "repo": "bitburner-official/bitburner-src",
+      "resolved_version": "5.2.4",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-plugin-utils",
+      "edge_ids": [
+        "bpmn-io/diagram-js#47243"
+      ],
+      "experiment_id": "bpmn-io/diagram-js::@babel/helper-plugin-utils@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "bpmn-io/diagram-js",
+      "resolved_version": "7.18.9",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.449",
+      "dep_field": null,
+      "dep_name": "electron-to-chromium",
+      "edge_ids": [
+        "bpmn-io/diagram-js#47783"
+      ],
+      "experiment_id": "bpmn-io/diagram-js::electron-to-chromium@1.5.449",
+      "patch_mode": "overrides",
+      "repo": "bpmn-io/diagram-js",
+      "resolved_version": "1.5.267",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "bpmn-io/diagram-js#47630"
+      ],
+      "experiment_id": "bpmn-io/diagram-js::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "bpmn-io/diagram-js",
+      "resolved_version": "1.13.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "bpmn-io/diagram-js#47801"
+      ],
+      "experiment_id": "bpmn-io/diagram-js::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "bpmn-io/diagram-js",
+      "resolved_version": "2.0.27",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.5.8",
+      "dep_field": null,
+      "dep_name": "socket.io-adapter",
+      "edge_ids": [
+        "bpmn-io/diagram-js#57285"
+      ],
+      "experiment_id": "bpmn-io/diagram-js::socket.io-adapter@2.5.8",
+      "patch_mode": "overrides",
+      "repo": "bpmn-io/diagram-js",
+      "resolved_version": "2.5.5",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.19.17",
+      "dep_field": null,
+      "dep_name": "@hono/node-server",
+      "edge_ids": [
+        "brightdata/brightdata-mcp#58287"
+      ],
+      "experiment_id": "brightdata/brightdata-mcp::@hono/node-server@1.19.17",
+      "patch_mode": "overrides",
+      "repo": "brightdata/brightdata-mcp",
+      "resolved_version": "1.19.10",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.1",
+      "dep_field": null,
+      "dep_name": "eventsource-parser",
+      "edge_ids": [
+        "brightdata/brightdata-mcp#44147",
+        "brightdata/brightdata-mcp#49257",
+        "brightdata/brightdata-mcp#49258"
+      ],
+      "experiment_id": "brightdata/brightdata-mcp::eventsource-parser@3.1.1",
+      "patch_mode": "overrides",
+      "repo": "brightdata/brightdata-mcp",
+      "resolved_version": "3.0.6",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.13.13",
+      "dep_field": null,
+      "dep_name": "hono",
+      "edge_ids": [
+        "brightdata/brightdata-mcp#58282",
+        "brightdata/brightdata-mcp#58286",
+        "brightdata/brightdata-mcp#58291"
+      ],
+      "experiment_id": "brightdata/brightdata-mcp::hono@4.13.13",
+      "patch_mode": "overrides",
+      "repo": "brightdata/brightdata-mcp",
+      "resolved_version": "4.12.4",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "brightdata/brightdata-mcp#44170"
+      ],
+      "experiment_id": "brightdata/brightdata-mcp::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "brightdata/brightdata-mcp",
+      "resolved_version": "2.0.7",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.1.16",
+      "dep_field": null,
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "butterbase-ai/butterbase#58783"
+      ],
+      "experiment_id": "butterbase-ai/butterbase::nanoid@5.1.16",
+      "patch_mode": "overrides",
+      "repo": "butterbase-ai/butterbase",
+      "resolved_version": "5.1.9",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.23.15",
+      "dep_field": "devDependencies",
+      "dep_name": "tsx",
+      "edge_ids": [
+        "butterbase-ai/butterbase#56528",
+        "butterbase-ai/butterbase#56529",
+        "butterbase-ai/butterbase#56530",
+        "butterbase-ai/butterbase#56642",
+        "butterbase-ai/butterbase#56643",
+        "butterbase-ai/butterbase#56644",
+        "butterbase-ai/butterbase#58782"
+      ],
+      "experiment_id": "butterbase-ai/butterbase::tsx@4.23.15",
+      "patch_mode": "direct_field",
+      "repo": "butterbase-ai/butterbase",
+      "resolved_version": "4.21.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-option",
+      "edge_ids": [
+        "bvibber/ogv.js#57621",
+        "bvibber/ogv.js#57622"
+      ],
+      "experiment_id": "bvibber/ogv.js::@babel/helper-validator-option@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "bvibber/ogv.js",
+      "resolved_version": "7.16.7",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.10.1",
+      "dep_field": null,
+      "dep_name": "@eslint-community/eslint-utils",
+      "edge_ids": [
+        "bvibber/ogv.js#47884"
+      ],
+      "experiment_id": "bvibber/ogv.js::@eslint-community/eslint-utils@4.10.1",
+      "patch_mode": "overrides",
+      "repo": "bvibber/ogv.js",
+      "resolved_version": "4.4.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.449",
+      "dep_field": null,
+      "dep_name": "electron-to-chromium",
+      "edge_ids": [
+        "bvibber/ogv.js#59345"
+      ],
+      "experiment_id": "bvibber/ogv.js::electron-to-chromium@1.5.449",
+      "patch_mode": "overrides",
+      "repo": "bvibber/ogv.js",
+      "resolved_version": "1.4.40",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "bvibber/ogv.js#47916"
+      ],
+      "experiment_id": "bvibber/ogv.js::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "bvibber/ogv.js",
+      "resolved_version": "2.0.7",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.5.2",
+      "dep_field": null,
+      "dep_name": "watchpack",
+      "edge_ids": [
+        "bvibber/ogv.js#59367"
+      ],
+      "experiment_id": "bvibber/ogv.js::watchpack@2.5.2",
+      "patch_mode": "overrides",
+      "repo": "bvibber/ogv.js",
+      "resolved_version": "2.4.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.7.2",
+      "dep_field": null,
+      "dep_name": "@smithy/config-resolver",
+      "edge_ids": [
+        "chaterm/Chaterm#56025",
+        "chaterm/Chaterm#56026",
+        "chaterm/Chaterm#58303",
+        "chaterm/Chaterm#58304"
+      ],
+      "experiment_id": "chaterm/Chaterm::@smithy/config-resolver@4.7.2",
+      "patch_mode": "overrides",
+      "repo": "chaterm/Chaterm",
+      "resolved_version": "4.4.17",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.5.2",
+      "dep_field": null,
+      "dep_name": "@smithy/middleware-content-length",
+      "edge_ids": [
+        "chaterm/Chaterm#58635"
+      ],
+      "experiment_id": "chaterm/Chaterm::@smithy/middleware-content-length@4.5.2",
+      "patch_mode": "overrides",
+      "repo": "chaterm/Chaterm",
+      "resolved_version": "4.2.14",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.5.2",
+      "dep_field": null,
+      "dep_name": "@smithy/property-provider",
+      "edge_ids": [
+        "chaterm/Chaterm#56345",
+        "chaterm/Chaterm#56346",
+        "chaterm/Chaterm#58715",
+        "chaterm/Chaterm#58716",
+        "chaterm/Chaterm#58717"
+      ],
+      "experiment_id": "chaterm/Chaterm::@smithy/property-provider@4.5.2",
+      "patch_mode": "overrides",
+      "repo": "chaterm/Chaterm",
+      "resolved_version": "4.2.14",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.5.2",
+      "dep_field": null,
+      "dep_name": "@smithy/util-utf8",
+      "edge_ids": [
+        "chaterm/Chaterm#56301",
+        "chaterm/Chaterm#56302",
+        "chaterm/Chaterm#56303",
+        "chaterm/Chaterm#56304"
+      ],
+      "experiment_id": "chaterm/Chaterm::@smithy/util-utf8@4.5.2",
+      "patch_mode": "overrides",
+      "repo": "chaterm/Chaterm",
+      "resolved_version": "4.2.2",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "chaterm/Chaterm#44172"
+      ],
+      "experiment_id": "chaterm/Chaterm::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "chaterm/Chaterm",
+      "resolved_version": "2.0.7",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "chrysb/alphaclaw#44173"
+      ],
+      "experiment_id": "chrysb/alphaclaw::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "chrysb/alphaclaw",
+      "resolved_version": "2.0.7",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.13.0",
+      "dep_field": "devDependencies",
+      "dep_name": "wouter-preact",
+      "edge_ids": [
+        "chrysb/alphaclaw#59399"
+      ],
+      "experiment_id": "chrysb/alphaclaw::wouter-preact@3.13.0",
+      "patch_mode": "direct_field",
+      "repo": "chrysb/alphaclaw",
+      "resolved_version": "3.11.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "cookpete/react-player#49045",
+        "cookpete/react-player#52573"
+      ],
+      "experiment_id": "cookpete/react-player::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "cookpete/react-player",
+      "resolved_version": "0.1.3",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-globals",
+      "edge_ids": [
+        "dagrejs/dagre#50381"
+      ],
+      "experiment_id": "dagrejs/dagre::@babel/helper-globals@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "dagrejs/dagre",
+      "resolved_version": "7.28.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "dagrejs/dagre#47411",
+        "dagrejs/dagre#47412",
+        "dagrejs/dagre#49346"
+      ],
+      "experiment_id": "dagrejs/dagre::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "dagrejs/dagre",
+      "resolved_version": "7.28.5",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.449",
+      "dep_field": null,
+      "dep_name": "electron-to-chromium",
+      "edge_ids": [
+        "dagrejs/dagre#59465"
+      ],
+      "experiment_id": "dagrejs/dagre::electron-to-chromium@1.5.449",
+      "patch_mode": "overrides",
+      "repo": "dagrejs/dagre",
+      "resolved_version": "1.5.258",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.23.15",
+      "dep_field": "devDependencies",
+      "dep_name": "tsx",
+      "edge_ids": [
+        "dagrejs/dagre#56531"
+      ],
+      "experiment_id": "dagrejs/dagre::tsx@4.23.15",
+      "patch_mode": "direct_field",
+      "repo": "dagrejs/dagre",
+      "resolved_version": "4.21.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "dagrejs/dagre#59467"
+      ],
+      "experiment_id": "dagrejs/dagre::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "dagrejs/dagre",
+      "resolved_version": "1.1.4",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "11.12.0",
+      "dep_field": "dependencies",
+      "dep_name": "highlight.js",
+      "edge_ids": [
+        "dalibo/pev2#55137"
+      ],
+      "experiment_id": "dalibo/pev2::highlight.js@11.12.0",
+      "patch_mode": "direct_field",
+      "repo": "dalibo/pev2",
+      "resolved_version": "11.11.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/plugin-syntax-import-attributes",
+      "edge_ids": [
+        "darkreader/darkreader#52605"
+      ],
+      "experiment_id": "darkreader/darkreader::@babel/plugin-syntax-import-attributes@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "darkreader/darkreader",
+      "resolved_version": "7.28.6",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.34.52",
+      "dep_field": null,
+      "dep_name": "@sinclair/typebox",
+      "edge_ids": [
+        "darkreader/darkreader#57332"
+      ],
+      "experiment_id": "darkreader/darkreader::@sinclair/typebox@0.34.52",
+      "patch_mode": "overrides",
+      "repo": "darkreader/darkreader",
+      "resolved_version": "0.34.41",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.4.0",
+      "dep_field": null,
+      "dep_name": "ci-info",
+      "edge_ids": [
+        "darkreader/darkreader#57326",
+        "darkreader/darkreader#57327",
+        "darkreader/darkreader#57328"
+      ],
+      "experiment_id": "darkreader/darkreader::ci-info@4.4.0",
+      "patch_mode": "overrides",
+      "repo": "darkreader/darkreader",
+      "resolved_version": "4.2.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "darkreader/darkreader#47632"
+      ],
+      "experiment_id": "darkreader/darkreader::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "darkreader/darkreader",
+      "resolved_version": "1.17.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.30.21",
+      "dep_field": null,
+      "dep_name": "magic-string",
+      "edge_ids": [
+        "darkreader/darkreader#58248"
+      ],
+      "experiment_id": "darkreader/darkreader::magic-string@0.30.21",
+      "patch_mode": "overrides",
+      "repo": "darkreader/darkreader",
+      "resolved_version": "0.30.8",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.2.0",
+      "dep_field": null,
+      "dep_name": "chardet",
+      "edge_ids": [
+        "darkzOGx/youtube-automation-agent#55134"
+      ],
+      "experiment_id": "darkzOGx/youtube-automation-agent::chardet@2.2.0",
+      "patch_mode": "overrides",
+      "repo": "darkzOGx/youtube-automation-agent",
+      "resolved_version": "2.1.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.1.2",
+      "dep_field": null,
+      "dep_name": "detect-libc",
+      "edge_ids": [
+        "darkzOGx/youtube-automation-agent#48370",
+        "darkzOGx/youtube-automation-agent#54054"
+      ],
+      "experiment_id": "darkzOGx/youtube-automation-agent::detect-libc@2.1.2",
+      "patch_mode": "overrides",
+      "repo": "darkzOGx/youtube-automation-agent",
+      "resolved_version": "2.0.4",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "10.7.3",
+      "dep_field": null,
+      "dep_name": "ip-address",
+      "edge_ids": [
+        "darkzOGx/youtube-automation-agent#55768"
+      ],
+      "experiment_id": "darkzOGx/youtube-automation-agent::ip-address@10.7.3",
+      "patch_mode": "overrides",
+      "repo": "darkzOGx/youtube-automation-agent",
+      "resolved_version": "10.0.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.14",
+      "dep_field": "devDependencies",
+      "dep_name": "nodemon",
+      "edge_ids": [
+        "darkzOGx/youtube-automation-agent#59473"
+      ],
+      "experiment_id": "darkzOGx/youtube-automation-agent::nodemon@3.1.14",
+      "patch_mode": "direct_field",
+      "repo": "darkzOGx/youtube-automation-agent",
+      "resolved_version": "3.1.10",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "darkzOGx/youtube-automation-agent#47918"
+      ],
+      "experiment_id": "darkzOGx/youtube-automation-agent::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "darkzOGx/youtube-automation-agent",
+      "resolved_version": "2.0.7",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "denysdovhan/wtfjs#59475"
+      ],
+      "experiment_id": "denysdovhan/wtfjs::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "denysdovhan/wtfjs",
+      "resolved_version": "7.12.11",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.1",
+      "dep_field": null,
+      "dep_name": "@tootallnate/once",
+      "edge_ids": [
+        "denysdovhan/wtfjs#54279",
+        "denysdovhan/wtfjs#54280"
+      ],
+      "experiment_id": "denysdovhan/wtfjs::@tootallnate/once@2.0.1",
+      "patch_mode": "overrides",
+      "repo": "denysdovhan/wtfjs",
+      "resolved_version": "2.0.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "denysdovhan/wtfjs#47633"
+      ],
+      "experiment_id": "denysdovhan/wtfjs::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "denysdovhan/wtfjs",
+      "resolved_version": "1.13.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.1.0",
+      "dep_field": null,
+      "dep_name": "is-plain-object",
+      "edge_ids": [
+        "denysdovhan/wtfjs#52268",
+        "denysdovhan/wtfjs#52269"
+      ],
+      "experiment_id": "denysdovhan/wtfjs::is-plain-object@5.1.0",
+      "patch_mode": "overrides",
+      "repo": "denysdovhan/wtfjs",
+      "resolved_version": "5.0.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.8.5",
+      "dep_field": null,
+      "dep_name": "semver",
+      "edge_ids": [
+        "denysdovhan/wtfjs#57755",
+        "denysdovhan/wtfjs#57762",
+        "denysdovhan/wtfjs#57763",
+        "denysdovhan/wtfjs#57764",
+        "denysdovhan/wtfjs#57765",
+        "denysdovhan/wtfjs#57766",
+        "denysdovhan/wtfjs#57767",
+        "denysdovhan/wtfjs#57768",
+        "denysdovhan/wtfjs#57769",
+        "denysdovhan/wtfjs#57770",
+        "denysdovhan/wtfjs#57771",
+        "denysdovhan/wtfjs#57782",
+        "denysdovhan/wtfjs#57783",
+        "denysdovhan/wtfjs#57784",
+        "denysdovhan/wtfjs#59488",
+        "denysdovhan/wtfjs#59490",
+        "denysdovhan/wtfjs#59491",
+        "denysdovhan/wtfjs#59492",
+        "denysdovhan/wtfjs#59493",
+        "denysdovhan/wtfjs#59494",
+        "denysdovhan/wtfjs#59495",
+        "denysdovhan/wtfjs#59496",
+        "denysdovhan/wtfjs#59497"
+      ],
+      "experiment_id": "denysdovhan/wtfjs::semver@7.8.5",
+      "patch_mode": "overrides",
+      "repo": "denysdovhan/wtfjs",
+      "resolved_version": "7.3.7",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/cli",
+      "edge_ids": [
+        "duckduckgo/duckduckgo-privacy-extension#59499"
+      ],
+      "experiment_id": "duckduckgo/duckduckgo-privacy-extension::@babel/cli@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "duckduckgo/duckduckgo-privacy-extension",
+      "resolved_version": "7.28.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/runtime",
+      "edge_ids": [
+        "duckduckgo/duckduckgo-privacy-extension#59500"
+      ],
+      "experiment_id": "duckduckgo/duckduckgo-privacy-extension::@babel/runtime@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "duckduckgo/duckduckgo-privacy-extension",
+      "resolved_version": "7.28.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.3.3",
+      "dep_field": null,
+      "dep_name": "tapable",
+      "edge_ids": [
+        "fb55/htmlparser2#48526"
+      ],
+      "experiment_id": "fb55/htmlparser2::tapable@2.3.3",
+      "patch_mode": "overrides",
+      "repo": "fb55/htmlparser2",
+      "resolved_version": "2.3.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "fengyuanchen/cropperjs#49049",
+        "fengyuanchen/cropperjs#49050",
+        "fengyuanchen/cropperjs#49051",
+        "fengyuanchen/cropperjs#52579"
+      ],
+      "experiment_id": "fengyuanchen/cropperjs::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "fengyuanchen/cropperjs",
+      "resolved_version": "0.1.3",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.27.12",
+      "dep_field": null,
+      "dep_name": "@sinclair/typebox",
+      "edge_ids": [
+        "fengyuanchen/cropperjs#55618"
+      ],
+      "experiment_id": "fengyuanchen/cropperjs::@sinclair/typebox@0.27.12",
+      "patch_mode": "overrides",
+      "repo": "fengyuanchen/cropperjs",
+      "resolved_version": "0.27.8",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "6.3.0",
+      "dep_field": null,
+      "dep_name": "cosmiconfig-typescript-loader",
+      "edge_ids": [
+        "fengyuanchen/cropperjs#59826"
+      ],
+      "experiment_id": "fengyuanchen/cropperjs::cosmiconfig-typescript-loader@6.3.0",
+      "patch_mode": "overrides",
+      "repo": "fengyuanchen/cropperjs",
+      "resolved_version": "6.2.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "fengyuanchen/cropperjs#47634"
+      ],
+      "experiment_id": "fengyuanchen/cropperjs::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "fengyuanchen/cropperjs",
+      "resolved_version": "1.19.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "6.5.0",
+      "dep_field": null,
+      "dep_name": "tabbable",
+      "edge_ids": [
+        "fengyuanchen/cropperjs#58253"
+      ],
+      "experiment_id": "fengyuanchen/cropperjs::tabbable@6.5.0",
+      "patch_mode": "overrides",
+      "repo": "fengyuanchen/cropperjs",
+      "resolved_version": "6.2.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.10.1",
+      "dep_field": null,
+      "dep_name": "@eslint-community/eslint-utils",
+      "edge_ids": [
+        "fengyuanchen/viewerjs#47885"
+      ],
+      "experiment_id": "fengyuanchen/viewerjs::@eslint-community/eslint-utils@4.10.1",
+      "patch_mode": "overrides",
+      "repo": "fengyuanchen/viewerjs",
+      "resolved_version": "4.4.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.12.2",
+      "dep_field": null,
+      "dep_name": "@eslint-community/regexpp",
+      "edge_ids": [
+        "fengyuanchen/viewerjs#47899"
+      ],
+      "experiment_id": "fengyuanchen/viewerjs::@eslint-community/regexpp@4.12.2",
+      "patch_mode": "overrides",
+      "repo": "fengyuanchen/viewerjs",
+      "resolved_version": "4.8.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.0.13",
+      "dep_field": null,
+      "dep_name": "@tsconfig/node10",
+      "edge_ids": [
+        "fengyuanchen/viewerjs#55789"
+      ],
+      "experiment_id": "fengyuanchen/viewerjs::@tsconfig/node10@1.0.13",
+      "patch_mode": "overrides",
+      "repo": "fengyuanchen/viewerjs",
+      "resolved_version": "1.0.9",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "fengyuanchen/viewerjs#47635"
+      ],
+      "experiment_id": "fengyuanchen/viewerjs::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "fengyuanchen/viewerjs",
+      "resolved_version": "1.14.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.0",
+      "dep_field": null,
+      "dep_name": "regenerate",
+      "edge_ids": [
+        "fengyuanchen/viewerjs#48298",
+        "fengyuanchen/viewerjs#48299"
+      ],
+      "experiment_id": "fengyuanchen/viewerjs::regenerate@1.5.0",
+      "patch_mode": "overrides",
+      "repo": "fengyuanchen/viewerjs",
+      "resolved_version": "1.4.2",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "firebase/firebase-admin-node#49053",
+        "firebase/firebase-admin-node#49054",
+        "firebase/firebase-admin-node#52582"
+      ],
+      "experiment_id": "firebase/firebase-admin-node::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "firebase/firebase-admin-node",
+      "resolved_version": "0.1.3",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.9.0",
+      "dep_field": null,
+      "dep_name": "b4a",
+      "edge_ids": [
+        "firebase/firebase-admin-node#49152"
+      ],
+      "experiment_id": "firebase/firebase-admin-node::b4a@1.9.0",
+      "patch_mode": "overrides",
+      "repo": "firebase/firebase-admin-node",
+      "resolved_version": "1.8.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.9.2",
+      "dep_field": null,
+      "dep_name": "bare-events",
+      "edge_ids": [
+        "firebase/firebase-admin-node#55708"
+      ],
+      "experiment_id": "firebase/firebase-admin-node::bare-events@2.9.2",
+      "patch_mode": "overrides",
+      "repo": "firebase/firebase-admin-node",
+      "resolved_version": "2.8.2",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.1.0",
+      "dep_field": null,
+      "dep_name": "is-plain-object",
+      "edge_ids": [
+        "firebase/firebase-admin-node#52271",
+        "firebase/firebase-admin-node#52272",
+        "firebase/firebase-admin-node#52273",
+        "firebase/firebase-admin-node#52274"
+      ],
+      "experiment_id": "firebase/firebase-admin-node::is-plain-object@5.1.0",
+      "patch_mode": "overrides",
+      "repo": "firebase/firebase-admin-node",
+      "resolved_version": "5.0.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "franciscop/umbrella#49353"
+      ],
+      "experiment_id": "franciscop/umbrella::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "franciscop/umbrella",
+      "resolved_version": "7.28.5",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.2",
+      "dep_field": null,
+      "dep_name": "bare-path",
+      "edge_ids": [
+        "franciscop/umbrella#54453",
+        "franciscop/umbrella#54454",
+        "franciscop/umbrella#54455"
+      ],
+      "experiment_id": "franciscop/umbrella::bare-path@3.1.2",
+      "patch_mode": "overrides",
+      "repo": "franciscop/umbrella",
+      "resolved_version": "3.0.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "10.7.3",
+      "dep_field": null,
+      "dep_name": "ip-address",
+      "edge_ids": [
+        "franciscop/umbrella#57346"
+      ],
+      "experiment_id": "franciscop/umbrella::ip-address@10.7.3",
+      "patch_mode": "overrides",
+      "repo": "franciscop/umbrella",
+      "resolved_version": "10.2.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-option",
+      "edge_ids": [
+        "goldbergyoni/nodejs-testing-best-practices#57363"
+      ],
+      "experiment_id": "goldbergyoni/nodejs-testing-best-practices::@babel/helper-validator-option@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "goldbergyoni/nodejs-testing-best-practices",
+      "resolved_version": "7.25.9",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "goldbergyoni/nodejs-testing-best-practices#47636"
+      ],
+      "experiment_id": "goldbergyoni/nodejs-testing-best-practices::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "goldbergyoni/nodejs-testing-best-practices",
+      "resolved_version": "1.17.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "goldbergyoni/nodejs-testing-best-practices#51993"
+      ],
+      "experiment_id": "goldbergyoni/nodejs-testing-best-practices::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "goldbergyoni/nodejs-testing-best-practices",
+      "resolved_version": "2.0.19",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "goldbergyoni/nodejs-testing-best-practices#47920"
+      ],
+      "experiment_id": "goldbergyoni/nodejs-testing-best-practices::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "goldbergyoni/nodejs-testing-best-practices",
+      "resolved_version": "2.0.7",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.0.8",
+      "dep_field": null,
+      "dep_name": "unpartial",
+      "edge_ids": [
+        "goldbergyoni/nodejs-testing-best-practices#59931"
+      ],
+      "experiment_id": "goldbergyoni/nodejs-testing-best-practices::unpartial@1.0.8",
+      "patch_mode": "overrides",
+      "repo": "goldbergyoni/nodejs-testing-best-practices",
+      "resolved_version": "1.0.5",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-globals",
+      "edge_ids": [
+        "google-gemini/gemini-cli#50384"
+      ],
+      "experiment_id": "google-gemini/gemini-cli::@babel/helper-globals@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "google-gemini/gemini-cli",
+      "resolved_version": "7.28.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "google-gemini/gemini-cli#47337"
+      ],
+      "experiment_id": "google-gemini/gemini-cli::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "google-gemini/gemini-cli",
+      "resolved_version": "7.27.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.14.3",
+      "dep_field": null,
+      "dep_name": "get-tsconfig",
+      "edge_ids": [
+        "google-gemini/gemini-cli#56653"
+      ],
+      "experiment_id": "google-gemini/gemini-cli::get-tsconfig@4.14.3",
+      "patch_mode": "overrides",
+      "repo": "google-gemini/gemini-cli",
+      "resolved_version": "4.10.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.3.20",
+      "dep_field": null,
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "google-gemini/gemini-cli#50778"
+      ],
+      "experiment_id": "google-gemini/gemini-cli::nanoid@3.3.20",
+      "patch_mode": "overrides",
+      "repo": "google-gemini/gemini-cli",
+      "resolved_version": "3.3.11",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "google-gemini/gemini-cli#44178"
+      ],
+      "experiment_id": "google-gemini/gemini-cli::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "google-gemini/gemini-cli",
+      "resolved_version": "2.0.7",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.10.1",
+      "dep_field": null,
+      "dep_name": "@eslint-community/eslint-utils",
+      "edge_ids": [
+        "googlemaps/google-maps-services-js#47726",
+        "googlemaps/google-maps-services-js#47886"
+      ],
+      "experiment_id": "googlemaps/google-maps-services-js::@eslint-community/eslint-utils@4.10.1",
+      "patch_mode": "overrides",
+      "repo": "googlemaps/google-maps-services-js",
+      "resolved_version": "4.4.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "googlemaps/google-maps-services-js#49059",
+        "googlemaps/google-maps-services-js#49060",
+        "googlemaps/google-maps-services-js#49061",
+        "googlemaps/google-maps-services-js#49062"
+      ],
+      "experiment_id": "googlemaps/google-maps-services-js::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "googlemaps/google-maps-services-js",
+      "resolved_version": "0.1.3",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.27.12",
+      "dep_field": null,
+      "dep_name": "@sinclair/typebox",
+      "edge_ids": [
+        "googlemaps/google-maps-services-js#55620"
+      ],
+      "experiment_id": "googlemaps/google-maps-services-js::@sinclair/typebox@0.27.12",
+      "patch_mode": "overrides",
+      "repo": "googlemaps/google-maps-services-js",
+      "resolved_version": "0.27.8",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "googlemaps/google-maps-services-js#47638"
+      ],
+      "experiment_id": "googlemaps/google-maps-services-js::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "googlemaps/google-maps-services-js",
+      "resolved_version": "1.15.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "29.4.14",
+      "dep_field": "devDependencies",
+      "dep_name": "ts-jest",
+      "edge_ids": [
+        "googlemaps/google-maps-services-js#56677"
+      ],
+      "experiment_id": "googlemaps/google-maps-services-js::ts-jest@29.4.14",
+      "patch_mode": "direct_field",
+      "repo": "googlemaps/google-maps-services-js",
+      "resolved_version": "29.4.4",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.9.0",
+      "dep_field": null,
+      "dep_name": "b4a",
+      "edge_ids": [
+        "h5bp/html5-boilerplate#49156"
+      ],
+      "experiment_id": "h5bp/html5-boilerplate::b4a@1.9.0",
+      "patch_mode": "overrides",
+      "repo": "h5bp/html5-boilerplate",
+      "resolved_version": "1.6.4",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "h5bp/html5-boilerplate#47639",
+        "h5bp/html5-boilerplate#59965"
+      ],
+      "experiment_id": "h5bp/html5-boilerplate::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "h5bp/html5-boilerplate",
+      "resolved_version": "1.19.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.1.0",
+      "dep_field": null,
+      "dep_name": "is-plain-object",
+      "edge_ids": [
+        "h5bp/html5-boilerplate#52275",
+        "h5bp/html5-boilerplate#52276",
+        "h5bp/html5-boilerplate#52277",
+        "h5bp/html5-boilerplate#52278"
+      ],
+      "experiment_id": "h5bp/html5-boilerplate::is-plain-object@5.1.0",
+      "patch_mode": "overrides",
+      "repo": "h5bp/html5-boilerplate",
+      "resolved_version": "5.0.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "11.12.0",
+      "dep_field": "dependencies",
+      "dep_name": "highlight.js",
+      "edge_ids": [
+        "hackjutsu/Lepton#59966"
+      ],
+      "experiment_id": "hackjutsu/Lepton::highlight.js@11.12.0",
+      "patch_mode": "direct_field",
+      "repo": "hackjutsu/Lepton",
+      "resolved_version": "11.0.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.4.1",
+      "dep_field": null,
+      "dep_name": "pkijs",
+      "edge_ids": [
+        "hackjutsu/Lepton#54484"
+      ],
+      "experiment_id": "hackjutsu/Lepton::pkijs@3.4.1",
+      "patch_mode": "overrides",
+      "repo": "hackjutsu/Lepton",
+      "resolved_version": "3.4.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.2.0",
+      "dep_field": null,
+      "dep_name": "pvutils",
+      "edge_ids": [
+        "hackjutsu/Lepton#54492",
+        "hackjutsu/Lepton#54502"
+      ],
+      "experiment_id": "hackjutsu/Lepton::pvutils@1.2.0",
+      "patch_mode": "overrides",
+      "repo": "hackjutsu/Lepton",
+      "resolved_version": "1.1.5",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.0",
+      "dep_field": null,
+      "dep_name": "regenerate",
+      "edge_ids": [
+        "hackjutsu/Lepton#48300",
+        "hackjutsu/Lepton#48301"
+      ],
+      "experiment_id": "hackjutsu/Lepton::regenerate@1.5.0",
+      "patch_mode": "overrides",
+      "repo": "hackjutsu/Lepton",
+      "resolved_version": "1.4.2",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.7.0",
+      "dep_field": null,
+      "dep_name": "use-sync-external-store",
+      "edge_ids": [
+        "hackjutsu/Lepton#55262"
+      ],
+      "experiment_id": "hackjutsu/Lepton::use-sync-external-store@1.7.0",
+      "patch_mode": "overrides",
+      "repo": "hackjutsu/Lepton",
+      "resolved_version": "1.6.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.3.0",
+      "dep_field": null,
+      "dep_name": "@alloc/quick-lru",
+      "edge_ids": [
+        "hydra-db/open-glean#50889"
+      ],
+      "experiment_id": "hydra-db/open-glean::@alloc/quick-lru@5.3.0",
+      "patch_mode": "overrides",
+      "repo": "hydra-db/open-glean",
+      "resolved_version": "5.2.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.6.0",
+      "dep_field": null,
+      "dep_name": "@mongodb-js/saslprep",
+      "edge_ids": [
+        "hydra-db/open-glean#59987"
+      ],
+      "experiment_id": "hydra-db/open-glean::@mongodb-js/saslprep@1.6.0",
+      "patch_mode": "overrides",
+      "repo": "hydra-db/open-glean",
+      "resolved_version": "1.5.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "10.4.2",
+      "dep_field": "devDependencies",
+      "dep_name": "@testing-library/dom",
+      "edge_ids": [
+        "i18next/next-i18next#55142",
+        "i18next/next-i18next#55154"
+      ],
+      "experiment_id": "i18next/next-i18next::@testing-library/dom@10.4.2",
+      "patch_mode": "direct_field",
+      "repo": "i18next/next-i18next",
+      "resolved_version": "10.4.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.0",
+      "dep_field": null,
+      "dep_name": "regenerate",
+      "edge_ids": [
+        "i18next/next-i18next#48302",
+        "i18next/next-i18next#48303"
+      ],
+      "experiment_id": "i18next/next-i18next::regenerate@1.5.0",
+      "patch_mode": "overrides",
+      "repo": "i18next/next-i18next",
+      "resolved_version": "1.4.2",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.7.0",
+      "dep_field": null,
+      "dep_name": "use-sync-external-store",
+      "edge_ids": [
+        "i18next/next-i18next#54982"
+      ],
+      "experiment_id": "i18next/next-i18next::use-sync-external-store@1.7.0",
+      "patch_mode": "overrides",
+      "repo": "i18next/next-i18next",
+      "resolved_version": "1.6.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.1.0",
+      "dep_field": null,
+      "dep_name": "is-plain-object",
+      "edge_ids": [
+        "is-a-dev/register#52279"
+      ],
+      "experiment_id": "is-a-dev/register::is-plain-object@5.1.0",
+      "patch_mode": "overrides",
+      "repo": "is-a-dev/register",
+      "resolved_version": "5.0.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "18.2.0",
+      "dep_field": null,
+      "dep_name": "yargs",
+      "edge_ids": [
+        "is-a-dev/register#55432"
+      ],
+      "experiment_id": "is-a-dev/register::yargs@18.2.0",
+      "patch_mode": "overrides",
+      "repo": "is-a-dev/register",
+      "resolved_version": "18.1.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/compat-data",
+      "edge_ids": [
+        "jaedb/Iris#53434",
+        "jaedb/Iris#57165",
+        "jaedb/Iris#59341",
+        "jaedb/Iris#60181"
+      ],
+      "experiment_id": "jaedb/Iris::@babel/compat-data@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "jaedb/Iris",
+      "resolved_version": "7.23.5",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.1",
+      "dep_field": null,
+      "dep_name": "@tootallnate/once",
+      "edge_ids": [
+        "jaedb/Iris#54282"
+      ],
+      "experiment_id": "jaedb/Iris::@tootallnate/once@2.0.1",
+      "patch_mode": "overrides",
+      "repo": "jaedb/Iris",
+      "resolved_version": "2.0.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.10",
+      "dep_field": null,
+      "dep_name": "http-proxy-middleware",
+      "edge_ids": [
+        "jaedb/Iris#60279"
+      ],
+      "experiment_id": "jaedb/Iris::http-proxy-middleware@2.0.10",
+      "patch_mode": "overrides",
+      "repo": "jaedb/Iris",
+      "resolved_version": "2.0.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.1.0",
+      "dep_field": null,
+      "dep_name": "is-plain-object",
+      "edge_ids": [
+        "jaedb/Iris#52280"
+      ],
+      "experiment_id": "jaedb/Iris::is-plain-object@5.1.0",
+      "patch_mode": "overrides",
+      "repo": "jaedb/Iris",
+      "resolved_version": "5.0.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.6.0",
+      "dep_field": null,
+      "dep_name": "webpack-sources",
+      "edge_ids": [
+        "jaedb/Iris#49245"
+      ],
+      "experiment_id": "jaedb/Iris::webpack-sources@3.6.0",
+      "patch_mode": "overrides",
+      "repo": "jaedb/Iris",
+      "resolved_version": "3.2.3",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "jarrodwatts/claude-hud#49069",
+        "jarrodwatts/claude-hud#52585"
+      ],
+      "experiment_id": "jarrodwatts/claude-hud::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "jarrodwatts/claude-hud",
+      "resolved_version": "0.1.3",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "jashkenas/underscore#49070",
+        "jashkenas/underscore#49071",
+        "jashkenas/underscore#49072"
+      ],
+      "experiment_id": "jashkenas/underscore::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "jashkenas/underscore",
+      "resolved_version": "0.1.3",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.6.0",
+      "dep_field": null,
+      "dep_name": "chokidar",
+      "edge_ids": [
+        "jashkenas/underscore#60385"
+      ],
+      "experiment_id": "jashkenas/underscore::chokidar@3.6.0",
+      "patch_mode": "overrides",
+      "repo": "jashkenas/underscore",
+      "resolved_version": "3.5.3",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.449",
+      "dep_field": null,
+      "dep_name": "electron-to-chromium",
+      "edge_ids": [
+        "jashkenas/underscore#60379"
+      ],
+      "experiment_id": "jashkenas/underscore::electron-to-chromium@1.5.449",
+      "patch_mode": "overrides",
+      "repo": "jashkenas/underscore",
+      "resolved_version": "1.4.251",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "11.12.0",
+      "dep_field": null,
+      "dep_name": "highlight.js",
+      "edge_ids": [
+        "jashkenas/underscore#60382"
+      ],
+      "experiment_id": "jashkenas/underscore::highlight.js@11.12.0",
+      "patch_mode": "overrides",
+      "repo": "jashkenas/underscore",
+      "resolved_version": "11.6.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "jashkenas/underscore#60380"
+      ],
+      "experiment_id": "jashkenas/underscore::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "jashkenas/underscore",
+      "resolved_version": "2.0.6",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "6.0.1",
+      "dep_field": null,
+      "dep_name": "data-urls",
+      "edge_ids": [
+        "leonardomso/33-js-concepts#60934"
+      ],
+      "experiment_id": "leonardomso/33-js-concepts::data-urls@6.0.1",
+      "patch_mode": "overrides",
+      "repo": "leonardomso/33-js-concepts",
+      "resolved_version": "6.0.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.3.20",
+      "dep_field": null,
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "leonardomso/33-js-concepts#59959"
+      ],
+      "experiment_id": "leonardomso/33-js-concepts::nanoid@3.3.20",
+      "patch_mode": "overrides",
+      "repo": "leonardomso/33-js-concepts",
+      "resolved_version": "3.3.12",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.2.0",
+      "dep_field": null,
+      "dep_name": "tinyrainbow",
+      "edge_ids": [
+        "leonardomso/33-js-concepts#50689",
+        "leonardomso/33-js-concepts#50690",
+        "leonardomso/33-js-concepts#50691",
+        "leonardomso/33-js-concepts#50692",
+        "leonardomso/33-js-concepts#50693"
+      ],
+      "experiment_id": "leonardomso/33-js-concepts::tinyrainbow@3.2.0",
+      "patch_mode": "overrides",
+      "repo": "leonardomso/33-js-concepts",
+      "resolved_version": "3.1.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.4.16",
+      "dep_field": null,
+      "dep_name": "tldts-core",
+      "edge_ids": [
+        "leonardomso/33-js-concepts#59796"
+      ],
+      "experiment_id": "leonardomso/33-js-concepts::tldts-core@7.4.16",
+      "patch_mode": "overrides",
+      "repo": "leonardomso/33-js-concepts",
+      "resolved_version": "7.0.19",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "8.0.1",
+      "dep_field": null,
+      "dep_name": "webidl-conversions",
+      "edge_ids": [
+        "leonardomso/33-js-concepts#60935",
+        "leonardomso/33-js-concepts#60936"
+      ],
+      "experiment_id": "leonardomso/33-js-concepts::webidl-conversions@8.0.1",
+      "patch_mode": "overrides",
+      "repo": "leonardomso/33-js-concepts",
+      "resolved_version": "8.0.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/compat-data",
+      "edge_ids": [
+        "live-codes/livecodes#57167"
+      ],
+      "experiment_id": "live-codes/livecodes::@babel/compat-data@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "live-codes/livecodes",
+      "resolved_version": "7.24.4",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-plugin-utils",
+      "edge_ids": [
+        "live-codes/livecodes#46757",
+        "live-codes/livecodes#46758",
+        "live-codes/livecodes#46759",
+        "live-codes/livecodes#46760",
+        "live-codes/livecodes#46761",
+        "live-codes/livecodes#46762",
+        "live-codes/livecodes#46763",
+        "live-codes/livecodes#46874",
+        "live-codes/livecodes#46923",
+        "live-codes/livecodes#47035",
+        "live-codes/livecodes#47036",
+        "live-codes/livecodes#47037",
+        "live-codes/livecodes#47253",
+        "live-codes/livecodes#57191",
+        "live-codes/livecodes#57192"
+      ],
+      "experiment_id": "live-codes/livecodes::@babel/helper-plugin-utils@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "live-codes/livecodes",
+      "resolved_version": "7.24.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "live-codes/livecodes#48849",
+        "live-codes/livecodes#48850",
+        "live-codes/livecodes#48851"
+      ],
+      "experiment_id": "live-codes/livecodes::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "live-codes/livecodes",
+      "resolved_version": "7.22.20",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.27.12",
+      "dep_field": null,
+      "dep_name": "@sinclair/typebox",
+      "edge_ids": [
+        "live-codes/livecodes#55649"
+      ],
+      "experiment_id": "live-codes/livecodes::@sinclair/typebox@0.27.12",
+      "patch_mode": "overrides",
+      "repo": "live-codes/livecodes",
+      "resolved_version": "0.27.8",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "19.3.0",
+      "dep_field": null,
+      "dep_name": "react",
+      "edge_ids": [
+        "live-codes/livecodes#52128",
+        "live-codes/livecodes#52129",
+        "live-codes/livecodes#59432"
+      ],
+      "experiment_id": "live-codes/livecodes::react@19.3.0",
+      "patch_mode": "overrides",
+      "repo": "live-codes/livecodes",
+      "resolved_version": "19.2.4",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.11.3",
+      "dep_field": null,
+      "dep_name": "@emnapi/core",
+      "edge_ids": [
+        "mongodb-js/compass#59504"
+      ],
+      "experiment_id": "mongodb-js/compass::@emnapi/core@1.11.3",
+      "patch_mode": "overrides",
+      "repo": "mongodb-js/compass",
+      "resolved_version": "1.4.5",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.5.2",
+      "dep_field": null,
+      "dep_name": "@smithy/middleware-content-length",
+      "edge_ids": [
+        "mongodb-js/compass#58636",
+        "mongodb-js/compass#58637"
+      ],
+      "experiment_id": "mongodb-js/compass::@smithy/middleware-content-length@4.5.2",
+      "patch_mode": "overrides",
+      "repo": "mongodb-js/compass",
+      "resolved_version": "4.2.12",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.6.2",
+      "dep_field": null,
+      "dep_name": "@smithy/node-config-provider",
+      "edge_ids": [
+        "mongodb-js/compass#56042",
+        "mongodb-js/compass#56043",
+        "mongodb-js/compass#56044",
+        "mongodb-js/compass#56045",
+        "mongodb-js/compass#56046",
+        "mongodb-js/compass#56047",
+        "mongodb-js/compass#56048",
+        "mongodb-js/compass#56049",
+        "mongodb-js/compass#56050",
+        "mongodb-js/compass#56051",
+        "mongodb-js/compass#56052",
+        "mongodb-js/compass#56053"
+      ],
+      "experiment_id": "mongodb-js/compass::@smithy/node-config-provider@4.6.2",
+      "patch_mode": "overrides",
+      "repo": "mongodb-js/compass",
+      "resolved_version": "4.3.12",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.6.2",
+      "dep_field": null,
+      "dep_name": "@smithy/util-base64",
+      "edge_ids": [
+        "mongodb-js/compass#56381",
+        "mongodb-js/compass#56382",
+        "mongodb-js/compass#56383",
+        "mongodb-js/compass#56384",
+        "mongodb-js/compass#56385"
+      ],
+      "experiment_id": "mongodb-js/compass::@smithy/util-base64@4.6.2",
+      "patch_mode": "overrides",
+      "repo": "mongodb-js/compass",
+      "resolved_version": "4.3.2",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.5.2",
+      "dep_field": null,
+      "dep_name": "@smithy/util-body-length-node",
+      "edge_ids": [
+        "mongodb-js/compass#58576",
+        "mongodb-js/compass#58577"
+      ],
+      "experiment_id": "mongodb-js/compass::@smithy/util-body-length-node@4.5.2",
+      "patch_mode": "overrides",
+      "repo": "mongodb-js/compass",
+      "resolved_version": "4.2.3",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.31.0",
+      "dep_field": null,
+      "dep_name": "moment",
+      "edge_ids": [
+        "musistudio/claude-code-router#52223",
+        "musistudio/claude-code-router#61864"
+      ],
+      "experiment_id": "musistudio/claude-code-router::moment@2.31.0",
+      "patch_mode": "overrides",
+      "repo": "musistudio/claude-code-router",
+      "resolved_version": "2.30.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.4.1",
+      "dep_field": null,
+      "dep_name": "pkijs",
+      "edge_ids": [
+        "musistudio/claude-code-router#54485"
+      ],
+      "experiment_id": "musistudio/claude-code-router::pkijs@3.4.1",
+      "patch_mode": "overrides",
+      "repo": "musistudio/claude-code-router",
+      "resolved_version": "3.4.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.2.0",
+      "dep_field": null,
+      "dep_name": "pvutils",
+      "edge_ids": [
+        "musistudio/claude-code-router#54494",
+        "musistudio/claude-code-router#54504"
+      ],
+      "experiment_id": "musistudio/claude-code-router::pvutils@1.2.0",
+      "patch_mode": "overrides",
+      "repo": "musistudio/claude-code-router",
+      "resolved_version": "1.1.5",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.3.0",
+      "dep_field": null,
+      "dep_name": "reselect",
+      "edge_ids": [
+        "musistudio/claude-code-router#61865"
+      ],
+      "experiment_id": "musistudio/claude-code-router::reselect@5.3.0",
+      "patch_mode": "overrides",
+      "repo": "musistudio/claude-code-router",
+      "resolved_version": "5.1.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.7.0",
+      "dep_field": null,
+      "dep_name": "use-sync-external-store",
+      "edge_ids": [
+        "musistudio/claude-code-router#52010",
+        "musistudio/claude-code-router#55263"
+      ],
+      "experiment_id": "musistudio/claude-code-router::use-sync-external-store@1.7.0",
+      "patch_mode": "overrides",
+      "repo": "musistudio/claude-code-router",
+      "resolved_version": "1.6.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.0",
+      "dep_field": null,
+      "dep_name": "regenerate",
+      "edge_ids": [
+        "mxschmitt/action-tmate#48322",
+        "mxschmitt/action-tmate#48323"
+      ],
+      "experiment_id": "mxschmitt/action-tmate::regenerate@1.5.0",
+      "patch_mode": "overrides",
+      "repo": "mxschmitt/action-tmate",
+      "resolved_version": "1.4.2",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "mxschmitt/action-tmate#50746"
+      ],
+      "experiment_id": "mxschmitt/action-tmate::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "mxschmitt/action-tmate",
+      "resolved_version": "1.2.3",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.4.1",
+      "dep_field": null,
+      "dep_name": "pkijs",
+      "edge_ids": [
+        "neavo/LinguaGacha#54486"
+      ],
+      "experiment_id": "neavo/LinguaGacha::pkijs@3.4.1",
+      "patch_mode": "overrides",
+      "repo": "neavo/LinguaGacha",
+      "resolved_version": "3.4.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "neavo/LinguaGacha#44183"
+      ],
+      "experiment_id": "neavo/LinguaGacha::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "neavo/LinguaGacha",
+      "resolved_version": "2.0.7",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.7.0",
+      "dep_field": null,
+      "dep_name": "use-sync-external-store",
+      "edge_ids": [
+        "neavo/LinguaGacha#54985",
+        "neavo/LinguaGacha#54986"
+      ],
+      "experiment_id": "neavo/LinguaGacha::use-sync-external-store@1.7.0",
+      "patch_mode": "overrides",
+      "repo": "neavo/LinguaGacha",
+      "resolved_version": "1.6.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "node-config/node-config#49089",
+        "node-config/node-config#52589"
+      ],
+      "experiment_id": "node-config/node-config::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "node-config/node-config",
+      "resolved_version": "0.1.3",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/compat-data",
+      "edge_ids": [
+        "nodemailer/mailparser#53435",
+        "nodemailer/mailparser#57168"
+      ],
+      "experiment_id": "nodemailer/mailparser::@babel/compat-data@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "nodemailer/mailparser",
+      "resolved_version": "7.23.5",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/core",
+      "edge_ids": [
+        "nodemailer/mailparser#44492",
+        "nodemailer/mailparser#46016",
+        "nodemailer/mailparser#46017",
+        "nodemailer/mailparser#46018",
+        "nodemailer/mailparser#46019",
+        "nodemailer/mailparser#46020",
+        "nodemailer/mailparser#46021",
+        "nodemailer/mailparser#61890"
+      ],
+      "experiment_id": "nodemailer/mailparser::@babel/core@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "nodemailer/mailparser",
+      "resolved_version": "7.23.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "nodemailer/mailparser#48954"
+      ],
+      "experiment_id": "nodemailer/mailparser::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "nodemailer/mailparser",
+      "resolved_version": "7.23.4",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helpers",
+      "edge_ids": [
+        "nodemailer/mailparser#61887"
+      ],
+      "experiment_id": "nodemailer/mailparser::@babel/helpers@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "nodemailer/mailparser",
+      "resolved_version": "7.23.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "nodemailer/mailparser#57271"
+      ],
+      "experiment_id": "nodemailer/mailparser::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "nodemailer/mailparser",
+      "resolved_version": "1.0.13",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "10.4.1",
+      "dep_field": null,
+      "dep_name": "conventional-changelog-conventionalcommits",
+      "edge_ids": [
+        "openworkflowdev/openworkflow#61895"
+      ],
+      "experiment_id": "openworkflowdev/openworkflow::conventional-changelog-conventionalcommits@10.4.1",
+      "patch_mode": "overrides",
+      "repo": "openworkflowdev/openworkflow",
+      "resolved_version": "10.2.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.1.3",
+      "dep_field": null,
+      "dep_name": "conventional-commits-parser",
+      "edge_ids": [
+        "openworkflowdev/openworkflow#61896",
+        "openworkflowdev/openworkflow#61897",
+        "openworkflowdev/openworkflow#61900"
+      ],
+      "experiment_id": "openworkflowdev/openworkflow::conventional-commits-parser@7.1.3",
+      "patch_mode": "overrides",
+      "repo": "openworkflowdev/openworkflow",
+      "resolved_version": "7.1.2",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/compat-data",
+      "edge_ids": [
+        "paaatrick/playball#47772",
+        "paaatrick/playball#47773",
+        "paaatrick/playball#47774",
+        "paaatrick/playball#61922"
+      ],
+      "experiment_id": "paaatrick/playball::@babel/compat-data@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "paaatrick/playball",
+      "resolved_version": "7.22.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "paaatrick/playball#57259"
+      ],
+      "experiment_id": "paaatrick/playball::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "paaatrick/playball",
+      "resolved_version": "7.22.5",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/register",
+      "edge_ids": [
+        "paaatrick/playball#61920"
+      ],
+      "experiment_id": "paaatrick/playball::@babel/register@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "paaatrick/playball",
+      "resolved_version": "7.22.5",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.449",
+      "dep_field": null,
+      "dep_name": "electron-to-chromium",
+      "edge_ids": [
+        "paaatrick/playball#61951"
+      ],
+      "experiment_id": "paaatrick/playball::electron-to-chromium@1.5.449",
+      "patch_mode": "overrides",
+      "repo": "paaatrick/playball",
+      "resolved_version": "1.4.454",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "paaatrick/playball#61952"
+      ],
+      "experiment_id": "paaatrick/playball::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "paaatrick/playball",
+      "resolved_version": "2.0.13",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "panphora/overtype#47426"
+      ],
+      "experiment_id": "panphora/overtype::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "panphora/overtype",
+      "resolved_version": "7.27.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.2.12",
+      "dep_field": null,
+      "dep_name": "@floating-ui/utils",
+      "edge_ids": [
+        "panphora/overtype#60693",
+        "panphora/overtype#60694"
+      ],
+      "experiment_id": "panphora/overtype::@floating-ui/utils@0.2.12",
+      "patch_mode": "overrides",
+      "repo": "panphora/overtype",
+      "resolved_version": "0.2.10",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "11.12.0",
+      "dep_field": "devDependencies",
+      "dep_name": "highlight.js",
+      "edge_ids": [
+        "panphora/overtype#61845"
+      ],
+      "experiment_id": "panphora/overtype::highlight.js@11.12.0",
+      "patch_mode": "direct_field",
+      "repo": "panphora/overtype",
+      "resolved_version": "11.11.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "phaserjs/phaser#49362"
+      ],
+      "experiment_id": "phaserjs/phaser::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "phaserjs/phaser",
+      "resolved_version": "7.28.5",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.3.20",
+      "dep_field": null,
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "phaserjs/phaser#50783"
+      ],
+      "experiment_id": "phaserjs/phaser::nanoid@3.3.20",
+      "patch_mode": "overrides",
+      "repo": "phaserjs/phaser",
+      "resolved_version": "3.3.11",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "phaserjs/phaser#50739"
+      ],
+      "experiment_id": "phaserjs/phaser::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "phaserjs/phaser",
+      "resolved_version": "2.0.37",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.2.0",
+      "dep_field": null,
+      "dep_name": "tinyrainbow",
+      "edge_ids": [
+        "phaserjs/phaser#50716",
+        "phaserjs/phaser#50717",
+        "phaserjs/phaser#50718",
+        "phaserjs/phaser#50719"
+      ],
+      "experiment_id": "phaserjs/phaser::tinyrainbow@3.2.0",
+      "patch_mode": "overrides",
+      "repo": "phaserjs/phaser",
+      "resolved_version": "3.1.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.5.2",
+      "dep_field": null,
+      "dep_name": "watchpack",
+      "edge_ids": [
+        "phaserjs/phaser#56494"
+      ],
+      "experiment_id": "phaserjs/phaser::watchpack@2.5.2",
+      "patch_mode": "overrides",
+      "repo": "phaserjs/phaser",
+      "resolved_version": "2.5.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.1",
+      "dep_field": null,
+      "dep_name": "fast-xml-builder",
+      "edge_ids": [
+        "pixel-agents-hq/pixel-agents#56435"
+      ],
+      "experiment_id": "pixel-agents-hq/pixel-agents::fast-xml-builder@1.3.1",
+      "patch_mode": "overrides",
+      "repo": "pixel-agents-hq/pixel-agents",
+      "resolved_version": "1.3.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.2",
+      "dep_field": null,
+      "dep_name": "is-unsafe",
+      "edge_ids": [
+        "pixel-agents-hq/pixel-agents#56437"
+      ],
+      "experiment_id": "pixel-agents-hq/pixel-agents::is-unsafe@2.0.2",
+      "patch_mode": "overrides",
+      "repo": "pixel-agents-hq/pixel-agents",
+      "resolved_version": "2.0.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.8.4",
+      "dep_field": null,
+      "dep_name": "json-e",
+      "edge_ids": [
+        "pixel-agents-hq/pixel-agents#62098"
+      ],
+      "experiment_id": "pixel-agents-hq/pixel-agents::json-e@4.8.4",
+      "patch_mode": "overrides",
+      "repo": "pixel-agents-hq/pixel-agents",
+      "resolved_version": "4.8.2",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.2.8",
+      "dep_field": null,
+      "dep_name": "path-equal",
+      "edge_ids": [
+        "pixel-agents-hq/pixel-agents#62099"
+      ],
+      "experiment_id": "pixel-agents-hq/pixel-agents::path-equal@1.2.8",
+      "patch_mode": "overrides",
+      "repo": "pixel-agents-hq/pixel-agents",
+      "resolved_version": "1.2.5",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.4.2",
+      "dep_field": null,
+      "dep_name": "strnum",
+      "edge_ids": [
+        "pixel-agents-hq/pixel-agents#56439"
+      ],
+      "experiment_id": "pixel-agents-hq/pixel-agents::strnum@2.4.2",
+      "patch_mode": "overrides",
+      "repo": "pixel-agents-hq/pixel-agents",
+      "resolved_version": "2.4.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "postmanlabs/newman#48955"
+      ],
+      "experiment_id": "postmanlabs/newman::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "postmanlabs/newman",
+      "resolved_version": "7.23.4",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "postmanlabs/newman#48858",
+        "postmanlabs/newman#48859"
+      ],
+      "experiment_id": "postmanlabs/newman::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "postmanlabs/newman",
+      "resolved_version": "7.22.20",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.10.1",
+      "dep_field": null,
+      "dep_name": "@eslint-community/eslint-utils",
+      "edge_ids": [
+        "postmanlabs/newman#47890"
+      ],
+      "experiment_id": "postmanlabs/newman::@eslint-community/eslint-utils@4.10.1",
+      "patch_mode": "overrides",
+      "repo": "postmanlabs/newman",
+      "resolved_version": "4.4.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.12.2",
+      "dep_field": null,
+      "dep_name": "@eslint-community/regexpp",
+      "edge_ids": [
+        "postmanlabs/newman#47903"
+      ],
+      "experiment_id": "postmanlabs/newman::@eslint-community/regexpp@4.12.2",
+      "patch_mode": "overrides",
+      "repo": "postmanlabs/newman",
+      "resolved_version": "4.8.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.1.1",
+      "dep_field": null,
+      "dep_name": "isobject",
+      "edge_ids": [
+        "postmanlabs/newman#62129"
+      ],
+      "experiment_id": "postmanlabs/newman::isobject@4.1.1",
+      "patch_mode": "overrides",
+      "repo": "postmanlabs/newman",
+      "resolved_version": "4.0.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-optimise-call-expression",
+      "edge_ids": [
+        "processing/p5.js-web-editor#53087",
+        "processing/p5.js-web-editor#53088"
+      ],
+      "experiment_id": "processing/p5.js-web-editor::@babel/helper-optimise-call-expression@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "processing/p5.js-web-editor",
+      "resolved_version": "7.27.1",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": "dependencies",
+      "dep_name": "@babel/register",
+      "edge_ids": [
+        "processing/p5.js-web-editor#62130"
+      ],
+      "experiment_id": "processing/p5.js-web-editor::@babel/register@7.29.7",
+      "patch_mode": "direct_field",
+      "repo": "processing/p5.js-web-editor",
+      "resolved_version": "7.24.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.27.12",
+      "dep_field": null,
+      "dep_name": "@sinclair/typebox",
+      "edge_ids": [
+        "processing/p5.js-web-editor#55651"
+      ],
+      "experiment_id": "processing/p5.js-web-editor::@sinclair/typebox@0.27.12",
+      "patch_mode": "overrides",
+      "repo": "processing/p5.js-web-editor",
+      "resolved_version": "0.27.8",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "processing/p5.js-web-editor#47653"
+      ],
+      "experiment_id": "processing/p5.js-web-editor::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "processing/p5.js-web-editor",
+      "resolved_version": "1.13.0",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.1.0",
+      "dep_field": null,
+      "dep_name": "svg-parser",
+      "edge_ids": [
+        "processing/p5.js-web-editor#62511"
+      ],
+      "experiment_id": "processing/p5.js-web-editor::svg-parser@2.1.0",
+      "patch_mode": "overrides",
+      "repo": "processing/p5.js-web-editor",
+      "resolved_version": "2.0.4",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "ramda/ramda#57260"
+      ],
+      "experiment_id": "ramda/ramda::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "ramda/ramda",
+      "resolved_version": "7.22.5",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "ramda/ramda#48860",
+        "ramda/ramda#48861",
+        "ramda/ramda#48862",
+        "ramda/ramda#48863"
+      ],
+      "experiment_id": "ramda/ramda::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "ramda/ramda",
+      "resolved_version": "7.22.20",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.10.1",
+      "dep_field": null,
+      "dep_name": "@eslint-community/eslint-utils",
+      "edge_ids": [
+        "ramda/ramda#47891"
+      ],
+      "experiment_id": "ramda/ramda::@eslint-community/eslint-utils@4.10.1",
+      "patch_mode": "overrides",
+      "repo": "ramda/ramda",
+      "resolved_version": "4.4.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.12.2",
+      "dep_field": null,
+      "dep_name": "@eslint-community/regexpp",
+      "edge_ids": [
+        "ramda/ramda#47904"
+      ],
+      "experiment_id": "ramda/ramda::@eslint-community/regexpp@4.12.2",
+      "patch_mode": "overrides",
+      "repo": "ramda/ramda",
+      "resolved_version": "4.10.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.8",
+      "dep_field": null,
+      "dep_name": "proxy-addr",
+      "edge_ids": [
+        "ramda/ramda#47931"
+      ],
+      "experiment_id": "ramda/ramda::proxy-addr@2.0.8",
+      "patch_mode": "overrides",
+      "repo": "ramda/ramda",
+      "resolved_version": "2.0.7",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "redux-observable/redux-observable#48956"
+      ],
+      "experiment_id": "redux-observable/redux-observable::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "redux-observable/redux-observable",
+      "resolved_version": "7.23.4",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "redux-observable/redux-observable#47427",
+        "redux-observable/redux-observable#48864"
+      ],
+      "experiment_id": "redux-observable/redux-observable::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "redux-observable/redux-observable",
+      "resolved_version": "7.28.5",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.10.1",
+      "dep_field": null,
+      "dep_name": "@eslint-community/eslint-utils",
+      "edge_ids": [
+        "redux-observable/redux-observable#47729",
+        "redux-observable/redux-observable#47892",
+        "redux-observable/redux-observable#47893"
+      ],
+      "experiment_id": "redux-observable/redux-observable::@eslint-community/eslint-utils@4.10.1",
+      "patch_mode": "overrides",
+      "repo": "redux-observable/redux-observable",
+      "resolved_version": "4.4.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.27.12",
+      "dep_field": null,
+      "dep_name": "@sinclair/typebox",
+      "edge_ids": [
+        "redux-observable/redux-observable#55652"
+      ],
+      "experiment_id": "redux-observable/redux-observable::@sinclair/typebox@0.27.12",
+      "patch_mode": "overrides",
+      "repo": "redux-observable/redux-observable",
+      "resolved_version": "0.27.8",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.0.13",
+      "dep_field": null,
+      "dep_name": "@tsconfig/node10",
+      "edge_ids": [
+        "redux-observable/redux-observable#55796"
+      ],
+      "experiment_id": "redux-observable/redux-observable::@tsconfig/node10@1.0.13",
+      "patch_mode": "overrides",
+      "repo": "redux-observable/redux-observable",
+      "resolved_version": "1.0.9",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "rtfpessoa/diff2html#49364",
+        "rtfpessoa/diff2html#49365",
+        "rtfpessoa/diff2html#49366"
+      ],
+      "experiment_id": "rtfpessoa/diff2html::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "rtfpessoa/diff2html",
+      "resolved_version": "7.28.5",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/runtime",
+      "edge_ids": [
+        "rtfpessoa/diff2html#59974",
+        "rtfpessoa/diff2html#59986"
+      ],
+      "experiment_id": "rtfpessoa/diff2html::@babel/runtime@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "rtfpessoa/diff2html",
+      "resolved_version": "7.26.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "rtfpessoa/diff2html#47656"
+      ],
+      "experiment_id": "rtfpessoa/diff2html::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "rtfpessoa/diff2html",
+      "resolved_version": "1.18.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.3.20",
+      "dep_field": null,
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "rtfpessoa/diff2html#50784"
+      ],
+      "experiment_id": "rtfpessoa/diff2html::nanoid@3.3.20",
+      "patch_mode": "overrides",
+      "repo": "rtfpessoa/diff2html",
+      "resolved_version": "3.3.11",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.3.3",
+      "dep_field": null,
+      "dep_name": "tapable",
+      "edge_ids": [
+        "rtfpessoa/diff2html#47875",
+        "rtfpessoa/diff2html#48076",
+        "rtfpessoa/diff2html#48533",
+        "rtfpessoa/diff2html#54265"
+      ],
+      "experiment_id": "rtfpessoa/diff2html::tapable@2.3.3",
+      "patch_mode": "overrides",
+      "repo": "rtfpessoa/diff2html",
+      "resolved_version": "2.3.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.9.1",
+      "dep_field": null,
+      "dep_name": "@opentelemetry/api",
+      "edge_ids": [
+        "ruvnet/ruflo#56587",
+        "ruvnet/ruflo#56588",
+        "ruvnet/ruflo#56589",
+        "ruvnet/ruflo#56590",
+        "ruvnet/ruflo#56591",
+        "ruvnet/ruflo#56592",
+        "ruvnet/ruflo#56593",
+        "ruvnet/ruflo#56594",
+        "ruvnet/ruflo#56595",
+        "ruvnet/ruflo#56596",
+        "ruvnet/ruflo#56597",
+        "ruvnet/ruflo#56598",
+        "ruvnet/ruflo#56599",
+        "ruvnet/ruflo#56600",
+        "ruvnet/ruflo#56601",
+        "ruvnet/ruflo#56619",
+        "ruvnet/ruflo#56620",
+        "ruvnet/ruflo#56621",
+        "ruvnet/ruflo#56622",
+        "ruvnet/ruflo#56623",
+        "ruvnet/ruflo#56631",
+        "ruvnet/ruflo#56632",
+        "ruvnet/ruflo#56633",
+        "ruvnet/ruflo#56634",
+        "ruvnet/ruflo#56637",
+        "ruvnet/ruflo#56640",
+        "ruvnet/ruflo#59573",
+        "ruvnet/ruflo#59574",
+        "ruvnet/ruflo#59575",
+        "ruvnet/ruflo#59576",
+        "ruvnet/ruflo#59577",
+        "ruvnet/ruflo#59578",
+        "ruvnet/ruflo#59579",
+        "ruvnet/ruflo#59926"
+      ],
+      "experiment_id": "ruvnet/ruflo::@opentelemetry/api@1.9.1",
+      "patch_mode": "overrides",
+      "repo": "ruvnet/ruflo",
+      "resolved_version": "1.9.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.2.0",
+      "dep_field": null,
+      "dep_name": "chardet",
+      "edge_ids": [
+        "ruvnet/ruflo#52698"
+      ],
+      "experiment_id": "ruvnet/ruflo::chardet@2.2.0",
+      "patch_mode": "overrides",
+      "repo": "ruvnet/ruflo",
+      "resolved_version": "2.1.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.1",
+      "dep_field": null,
+      "dep_name": "eventsource-parser",
+      "edge_ids": [
+        "ruvnet/ruflo#44157",
+        "ruvnet/ruflo#49267"
+      ],
+      "experiment_id": "ruvnet/ruflo::eventsource-parser@3.1.1",
+      "patch_mode": "overrides",
+      "repo": "ruvnet/ruflo",
+      "resolved_version": "3.0.6",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.14.3",
+      "dep_field": null,
+      "dep_name": "get-tsconfig",
+      "edge_ids": [
+        "ruvnet/ruflo#56656"
+      ],
+      "experiment_id": "ruvnet/ruflo::get-tsconfig@4.14.3",
+      "patch_mode": "overrides",
+      "repo": "ruvnet/ruflo",
+      "resolved_version": "4.13.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.14.2",
+      "dep_field": null,
+      "dep_name": "sql.js",
+      "edge_ids": [
+        "ruvnet/ruflo#62838",
+        "ruvnet/ruflo#62839",
+        "ruvnet/ruflo#62840",
+        "ruvnet/ruflo#62842",
+        "ruvnet/ruflo#62845",
+        "ruvnet/ruflo#62846"
+      ],
+      "experiment_id": "ruvnet/ruflo::sql.js@1.14.2",
+      "patch_mode": "overrides",
+      "repo": "ruvnet/ruflo",
+      "resolved_version": "1.13.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": "devDependencies",
+      "dep_name": "@babel/cli",
+      "edge_ids": [
+        "ryanseddon/react-frame-component#62852"
+      ],
+      "experiment_id": "ryanseddon/react-frame-component::@babel/cli@7.29.7",
+      "patch_mode": "direct_field",
+      "repo": "ryanseddon/react-frame-component",
+      "resolved_version": "7.28.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-plugin-utils",
+      "edge_ids": [
+        "ryanseddon/react-frame-component#47124",
+        "ryanseddon/react-frame-component#47125",
+        "ryanseddon/react-frame-component#47267",
+        "ryanseddon/react-frame-component#50235",
+        "ryanseddon/react-frame-component#50236",
+        "ryanseddon/react-frame-component#50237",
+        "ryanseddon/react-frame-component#50238",
+        "ryanseddon/react-frame-component#50239",
+        "ryanseddon/react-frame-component#50240",
+        "ryanseddon/react-frame-component#50241",
+        "ryanseddon/react-frame-component#50242",
+        "ryanseddon/react-frame-component#50243",
+        "ryanseddon/react-frame-component#50244",
+        "ryanseddon/react-frame-component#50245",
+        "ryanseddon/react-frame-component#50246",
+        "ryanseddon/react-frame-component#50247",
+        "ryanseddon/react-frame-component#50248",
+        "ryanseddon/react-frame-component#50249",
+        "ryanseddon/react-frame-component#50250",
+        "ryanseddon/react-frame-component#50251",
+        "ryanseddon/react-frame-component#50252",
+        "ryanseddon/react-frame-component#50253",
+        "ryanseddon/react-frame-component#50254",
+        "ryanseddon/react-frame-component#50255",
+        "ryanseddon/react-frame-component#50256",
+        "ryanseddon/react-frame-component#50257",
+        "ryanseddon/react-frame-component#50258",
+        "ryanseddon/react-frame-component#50259",
+        "ryanseddon/react-frame-component#50260",
+        "ryanseddon/react-frame-component#50261",
+        "ryanseddon/react-frame-component#50262",
+        "ryanseddon/react-frame-component#50263",
+        "ryanseddon/react-frame-component#50264",
+        "ryanseddon/react-frame-component#50265",
+        "ryanseddon/react-frame-component#50266",
+        "ryanseddon/react-frame-component#52449",
+        "ryanseddon/react-frame-component#52450",
+        "ryanseddon/react-frame-component#52451",
+        "ryanseddon/react-frame-component#52452",
+        "ryanseddon/react-frame-component#52453",
+        "ryanseddon/react-frame-component#52454",
+        "ryanseddon/react-frame-component#52455",
+        "ryanseddon/react-frame-component#52456",
+        "ryanseddon/react-frame-component#52457",
+        "ryanseddon/react-frame-component#52458",
+        "ryanseddon/react-frame-component#52459",
+        "ryanseddon/react-frame-component#52460",
+        "ryanseddon/react-frame-component#52461",
+        "ryanseddon/react-frame-component#52462",
+        "ryanseddon/react-frame-component#52463",
+        "ryanseddon/react-frame-component#52464",
+        "ryanseddon/react-frame-component#52465",
+        "ryanseddon/react-frame-component#52466",
+        "ryanseddon/react-frame-component#52467",
+        "ryanseddon/react-frame-component#52468",
+        "ryanseddon/react-frame-component#52469",
+        "ryanseddon/react-frame-component#52470",
+        "ryanseddon/react-frame-component#52471",
+        "ryanseddon/react-frame-component#52472",
+        "ryanseddon/react-frame-component#52473",
+        "ryanseddon/react-frame-component#52474",
+        "ryanseddon/react-frame-component#52475",
+        "ryanseddon/react-frame-component#52476",
+        "ryanseddon/react-frame-component#52477",
+        "ryanseddon/react-frame-component#52478",
+        "ryanseddon/react-frame-component#52479",
+        "ryanseddon/react-frame-component#52480",
+        "ryanseddon/react-frame-component#52481",
+        "ryanseddon/react-frame-component#52482",
+        "ryanseddon/react-frame-component#52483"
+      ],
+      "experiment_id": "ryanseddon/react-frame-component::@babel/helper-plugin-utils@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "ryanseddon/react-frame-component",
+      "resolved_version": "7.28.6",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-option",
+      "edge_ids": [
+        "ryanseddon/react-frame-component#49777",
+        "ryanseddon/react-frame-component#49778",
+        "ryanseddon/react-frame-component#49779"
+      ],
+      "experiment_id": "ryanseddon/react-frame-component::@babel/helper-validator-option@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "ryanseddon/react-frame-component",
+      "resolved_version": "7.27.1",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.2.0",
+      "dep_field": null,
+      "dep_name": "chardet",
+      "edge_ids": [
+        "ryanseddon/react-frame-component#52699"
+      ],
+      "experiment_id": "ryanseddon/react-frame-component::chardet@2.2.0",
+      "patch_mode": "overrides",
+      "repo": "ryanseddon/react-frame-component",
+      "resolved_version": "2.1.1",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.6.0",
+      "dep_field": null,
+      "dep_name": "webpack-sources",
+      "edge_ids": [
+        "ryanseddon/react-frame-component#58184"
+      ],
+      "experiment_id": "ryanseddon/react-frame-component::webpack-sources@3.6.0",
+      "patch_mode": "overrides",
+      "repo": "ryanseddon/react-frame-component",
+      "resolved_version": "3.3.4",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.0",
+      "dep_field": null,
+      "dep_name": "@yarnpkg/parsers",
+      "edge_ids": [
+        "semantic-release/semantic-release#57344"
+      ],
+      "experiment_id": "semantic-release/semantic-release::@yarnpkg/parsers@3.1.0",
+      "patch_mode": "overrides",
+      "repo": "semantic-release/semantic-release",
+      "resolved_version": "3.0.3",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "10.7.3",
+      "dep_field": null,
+      "dep_name": "ip-address",
+      "edge_ids": [
+        "semantic-release/semantic-release#57348",
+        "semantic-release/semantic-release#57349"
+      ],
+      "experiment_id": "semantic-release/semantic-release::ip-address@10.7.3",
+      "patch_mode": "overrides",
+      "repo": "semantic-release/semantic-release",
+      "resolved_version": "10.2.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "5.1.0",
+      "dep_field": null,
+      "dep_name": "is-plain-object",
+      "edge_ids": [
+        "semantic-release/semantic-release#52293"
+      ],
+      "experiment_id": "semantic-release/semantic-release::is-plain-object@5.1.0",
+      "patch_mode": "overrides",
+      "repo": "semantic-release/semantic-release",
+      "resolved_version": "5.0.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "18.2.0",
+      "dep_field": "dependencies",
+      "dep_name": "yargs",
+      "edge_ids": [
+        "semantic-release/semantic-release#55438",
+        "semantic-release/semantic-release#55439",
+        "semantic-release/semantic-release#55440",
+        "semantic-release/semantic-release#55441"
+      ],
+      "experiment_id": "semantic-release/semantic-release::yargs@18.2.0",
+      "patch_mode": "direct_field",
+      "repo": "semantic-release/semantic-release",
+      "resolved_version": "18.0.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "style-dictionary/style-dictionary#47347"
+      ],
+      "experiment_id": "style-dictionary/style-dictionary::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "style-dictionary/style-dictionary",
+      "resolved_version": "7.27.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "style-dictionary/style-dictionary#49372",
+        "style-dictionary/style-dictionary#49373"
+      ],
+      "experiment_id": "style-dictionary/style-dictionary::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "style-dictionary/style-dictionary",
+      "resolved_version": "7.28.5",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/runtime",
+      "edge_ids": [
+        "style-dictionary/style-dictionary#48263",
+        "style-dictionary/style-dictionary#48264"
+      ],
+      "experiment_id": "style-dictionary/style-dictionary::@babel/runtime@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "style-dictionary/style-dictionary",
+      "resolved_version": "7.29.2",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.2.0",
+      "dep_field": null,
+      "dep_name": "chardet",
+      "edge_ids": [
+        "style-dictionary/style-dictionary#52700"
+      ],
+      "experiment_id": "style-dictionary/style-dictionary::chardet@2.2.0",
+      "patch_mode": "overrides",
+      "repo": "style-dictionary/style-dictionary",
+      "resolved_version": "2.1.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.7.0",
+      "dep_field": null,
+      "dep_name": "ultrahtml",
+      "edge_ids": [
+        "style-dictionary/style-dictionary#58297",
+        "style-dictionary/style-dictionary#58298"
+      ],
+      "experiment_id": "style-dictionary/style-dictionary::ultrahtml@1.7.0",
+      "patch_mode": "overrides",
+      "repo": "style-dictionary/style-dictionary",
+      "resolved_version": "1.6.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/plugin-transform-destructuring",
+      "edge_ids": [
+        "swagger-api/swagger-ui#62914",
+        "swagger-api/swagger-ui#62920"
+      ],
+      "experiment_id": "swagger-api/swagger-ui::@babel/plugin-transform-destructuring@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "swagger-api/swagger-ui",
+      "resolved_version": "7.27.3",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/plugin-transform-json-strings",
+      "edge_ids": [
+        "swagger-api/swagger-ui#53788"
+      ],
+      "experiment_id": "swagger-api/swagger-ui::@babel/plugin-transform-json-strings@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "swagger-api/swagger-ui",
+      "resolved_version": "7.27.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/plugin-transform-logical-assignment-operators",
+      "edge_ids": [
+        "swagger-api/swagger-ui#53802"
+      ],
+      "experiment_id": "swagger-api/swagger-ui::@babel/plugin-transform-logical-assignment-operators@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "swagger-api/swagger-ui",
+      "resolved_version": "7.27.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.8",
+      "dep_field": null,
+      "dep_name": "@babel/plugin-transform-modules-systemjs",
+      "edge_ids": [
+        "swagger-api/swagger-ui#53840"
+      ],
+      "experiment_id": "swagger-api/swagger-ui::@babel/plugin-transform-modules-systemjs@7.29.8",
+      "patch_mode": "overrides",
+      "repo": "swagger-api/swagger-ui",
+      "resolved_version": "7.29.4",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.0.4",
+      "dep_field": null,
+      "dep_name": "postcss-normalize-positions",
+      "edge_ids": [
+        "swagger-api/swagger-ui#62815"
+      ],
+      "experiment_id": "swagger-api/swagger-ui::postcss-normalize-positions@7.0.4",
+      "patch_mode": "overrides",
+      "repo": "swagger-api/swagger-ui",
+      "resolved_version": "7.0.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.0",
+      "dep_field": null,
+      "dep_name": "regenerate",
+      "edge_ids": [
+        "tediousjs/tedious#48344",
+        "tediousjs/tedious#48345"
+      ],
+      "experiment_id": "tediousjs/tedious::regenerate@1.5.0",
+      "patch_mode": "overrides",
+      "repo": "tediousjs/tedious",
+      "resolved_version": "1.4.2",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "tediousjs/tedious#50751"
+      ],
+      "experiment_id": "tediousjs/tedious::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "tediousjs/tedious",
+      "resolved_version": "1.2.3",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "thomaspark/bootswatch#56782"
+      ],
+      "experiment_id": "thomaspark/bootswatch::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "thomaspark/bootswatch",
+      "resolved_version": "7.22.5",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.449",
+      "dep_field": null,
+      "dep_name": "electron-to-chromium",
+      "edge_ids": [
+        "thomaspark/bootswatch#60245"
+      ],
+      "experiment_id": "thomaspark/bootswatch::electron-to-chromium@1.5.449",
+      "patch_mode": "overrides",
+      "repo": "thomaspark/bootswatch",
+      "resolved_version": "1.4.685",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.12.1",
+      "dep_field": null,
+      "dep_name": "morgan",
+      "edge_ids": [
+        "thomaspark/bootswatch#61993"
+      ],
+      "experiment_id": "thomaspark/bootswatch::morgan@1.12.1",
+      "patch_mode": "overrides",
+      "repo": "thomaspark/bootswatch",
+      "resolved_version": "1.10.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.3.20",
+      "dep_field": null,
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "thomaspark/bootswatch#48204"
+      ],
+      "experiment_id": "thomaspark/bootswatch::nanoid@3.3.20",
+      "patch_mode": "overrides",
+      "repo": "thomaspark/bootswatch",
+      "resolved_version": "3.3.11",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "thomaspark/bootswatch#60249"
+      ],
+      "experiment_id": "thomaspark/bootswatch::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "thomaspark/bootswatch",
+      "resolved_version": "2.0.14",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-plugin-utils",
+      "edge_ids": [
+        "toji/gl-matrix#44924",
+        "toji/gl-matrix#47131",
+        "toji/gl-matrix#47271",
+        "toji/gl-matrix#57443",
+        "toji/gl-matrix#57444",
+        "toji/gl-matrix#57445",
+        "toji/gl-matrix#57446",
+        "toji/gl-matrix#57447",
+        "toji/gl-matrix#57448",
+        "toji/gl-matrix#57449",
+        "toji/gl-matrix#57450",
+        "toji/gl-matrix#57451",
+        "toji/gl-matrix#57452",
+        "toji/gl-matrix#57453",
+        "toji/gl-matrix#57454",
+        "toji/gl-matrix#57455",
+        "toji/gl-matrix#57456",
+        "toji/gl-matrix#57457",
+        "toji/gl-matrix#57458",
+        "toji/gl-matrix#57459",
+        "toji/gl-matrix#57460",
+        "toji/gl-matrix#57461",
+        "toji/gl-matrix#57462",
+        "toji/gl-matrix#57463",
+        "toji/gl-matrix#57464",
+        "toji/gl-matrix#57465",
+        "toji/gl-matrix#57466",
+        "toji/gl-matrix#57467",
+        "toji/gl-matrix#57468",
+        "toji/gl-matrix#57469",
+        "toji/gl-matrix#57470",
+        "toji/gl-matrix#57471",
+        "toji/gl-matrix#57472",
+        "toji/gl-matrix#57473",
+        "toji/gl-matrix#57474",
+        "toji/gl-matrix#57475",
+        "toji/gl-matrix#57476",
+        "toji/gl-matrix#57477",
+        "toji/gl-matrix#57478",
+        "toji/gl-matrix#57479",
+        "toji/gl-matrix#57480",
+        "toji/gl-matrix#57481",
+        "toji/gl-matrix#57482",
+        "toji/gl-matrix#57483",
+        "toji/gl-matrix#57484",
+        "toji/gl-matrix#57485",
+        "toji/gl-matrix#57486",
+        "toji/gl-matrix#57487",
+        "toji/gl-matrix#57488",
+        "toji/gl-matrix#57489",
+        "toji/gl-matrix#57490",
+        "toji/gl-matrix#57491",
+        "toji/gl-matrix#57492",
+        "toji/gl-matrix#57493",
+        "toji/gl-matrix#57494",
+        "toji/gl-matrix#57495",
+        "toji/gl-matrix#57496",
+        "toji/gl-matrix#57497",
+        "toji/gl-matrix#57498",
+        "toji/gl-matrix#57499",
+        "toji/gl-matrix#57500"
+      ],
+      "experiment_id": "toji/gl-matrix::@babel/helper-plugin-utils@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "toji/gl-matrix",
+      "resolved_version": "7.25.9",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.0.30001815",
+      "dep_field": null,
+      "dep_name": "caniuse-lite",
+      "edge_ids": [
+        "toji/gl-matrix#51986"
+      ],
+      "experiment_id": "toji/gl-matrix::caniuse-lite@1.0.30001815",
+      "patch_mode": "overrides",
+      "repo": "toji/gl-matrix",
+      "resolved_version": "1.0.30001689",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.449",
+      "dep_field": null,
+      "dep_name": "electron-to-chromium",
+      "edge_ids": [
+        "toji/gl-matrix#51989"
+      ],
+      "experiment_id": "toji/gl-matrix::electron-to-chromium@1.5.449",
+      "patch_mode": "overrides",
+      "repo": "toji/gl-matrix",
+      "resolved_version": "1.5.73",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.20.3",
+      "dep_field": null,
+      "dep_name": "fastq",
+      "edge_ids": [
+        "toji/gl-matrix#47660"
+      ],
+      "experiment_id": "toji/gl-matrix::fastq@1.20.3",
+      "patch_mode": "overrides",
+      "repo": "toji/gl-matrix",
+      "resolved_version": "1.17.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.3.3",
+      "dep_field": null,
+      "dep_name": "update-browserslist-db",
+      "edge_ids": [
+        "toji/gl-matrix#52000"
+      ],
+      "experiment_id": "toji/gl-matrix::update-browserslist-db@1.3.3",
+      "patch_mode": "overrides",
+      "repo": "toji/gl-matrix",
+      "resolved_version": "1.1.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/compat-data",
+      "edge_ids": [
+        "trailheadapps/lwc-recipes#49744"
+      ],
+      "experiment_id": "trailheadapps/lwc-recipes::@babel/compat-data@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "trailheadapps/lwc-recipes",
+      "resolved_version": "7.29.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-plugin-utils",
+      "edge_ids": [
+        "trailheadapps/lwc-recipes#46836",
+        "trailheadapps/lwc-recipes#46837",
+        "trailheadapps/lwc-recipes#46838",
+        "trailheadapps/lwc-recipes#46839",
+        "trailheadapps/lwc-recipes#46840",
+        "trailheadapps/lwc-recipes#46841",
+        "trailheadapps/lwc-recipes#46842",
+        "trailheadapps/lwc-recipes#46843",
+        "trailheadapps/lwc-recipes#46885",
+        "trailheadapps/lwc-recipes#46968",
+        "trailheadapps/lwc-recipes#46969",
+        "trailheadapps/lwc-recipes#46970",
+        "trailheadapps/lwc-recipes#47068",
+        "trailheadapps/lwc-recipes#47069",
+        "trailheadapps/lwc-recipes#47070",
+        "trailheadapps/lwc-recipes#47132",
+        "trailheadapps/lwc-recipes#47272",
+        "trailheadapps/lwc-recipes#50269",
+        "trailheadapps/lwc-recipes#50270",
+        "trailheadapps/lwc-recipes#50271",
+        "trailheadapps/lwc-recipes#50272",
+        "trailheadapps/lwc-recipes#50273",
+        "trailheadapps/lwc-recipes#52485",
+        "trailheadapps/lwc-recipes#52486",
+        "trailheadapps/lwc-recipes#52487",
+        "trailheadapps/lwc-recipes#52488",
+        "trailheadapps/lwc-recipes#52489",
+        "trailheadapps/lwc-recipes#52490",
+        "trailheadapps/lwc-recipes#52491",
+        "trailheadapps/lwc-recipes#52492",
+        "trailheadapps/lwc-recipes#52493",
+        "trailheadapps/lwc-recipes#52494"
+      ],
+      "experiment_id": "trailheadapps/lwc-recipes::@babel/helper-plugin-utils@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "trailheadapps/lwc-recipes",
+      "resolved_version": "7.28.6",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "trailheadapps/lwc-recipes#47349",
+        "trailheadapps/lwc-recipes#47350",
+        "trailheadapps/lwc-recipes#47351",
+        "trailheadapps/lwc-recipes#47352",
+        "trailheadapps/lwc-recipes#47353",
+        "trailheadapps/lwc-recipes#47354",
+        "trailheadapps/lwc-recipes#47355",
+        "trailheadapps/lwc-recipes#47356",
+        "trailheadapps/lwc-recipes#47357",
+        "trailheadapps/lwc-recipes#47358",
+        "trailheadapps/lwc-recipes#47359"
+      ],
+      "experiment_id": "trailheadapps/lwc-recipes::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "trailheadapps/lwc-recipes",
+      "resolved_version": "7.27.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-option",
+      "edge_ids": [
+        "trailheadapps/lwc-recipes#49781",
+        "trailheadapps/lwc-recipes#49782"
+      ],
+      "experiment_id": "trailheadapps/lwc-recipes::@babel/helper-validator-option@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "trailheadapps/lwc-recipes",
+      "resolved_version": "7.27.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "trailheadapps/lwc-recipes#49103",
+        "trailheadapps/lwc-recipes#49104",
+        "trailheadapps/lwc-recipes#49105",
+        "trailheadapps/lwc-recipes#52593"
+      ],
+      "experiment_id": "trailheadapps/lwc-recipes::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "trailheadapps/lwc-recipes",
+      "resolved_version": "0.1.3",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": "devDependencies",
+      "dep_name": "@babel/cli",
+      "edge_ids": [
+        "trekhleb/javascript-algorithms#63191"
+      ],
+      "experiment_id": "trekhleb/javascript-algorithms::@babel/cli@7.29.7",
+      "patch_mode": "direct_field",
+      "repo": "trekhleb/javascript-algorithms",
+      "resolved_version": "7.28.6",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "trekhleb/javascript-algorithms#47360"
+      ],
+      "experiment_id": "trekhleb/javascript-algorithms::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "trekhleb/javascript-algorithms",
+      "resolved_version": "7.27.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-option",
+      "edge_ids": [
+        "trekhleb/javascript-algorithms#49783",
+        "trekhleb/javascript-algorithms#49784"
+      ],
+      "experiment_id": "trekhleb/javascript-algorithms::@babel/helper-validator-option@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "trekhleb/javascript-algorithms",
+      "resolved_version": "7.27.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "trekhleb/javascript-algorithms#49106",
+        "trekhleb/javascript-algorithms#52594",
+        "trekhleb/javascript-algorithms#52595"
+      ],
+      "experiment_id": "trekhleb/javascript-algorithms::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "trekhleb/javascript-algorithms",
+      "resolved_version": "0.1.3",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "trekhleb/javascript-algorithms#47814"
+      ],
+      "experiment_id": "trekhleb/javascript-algorithms::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "trekhleb/javascript-algorithms",
+      "resolved_version": "2.0.27",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-globals",
+      "edge_ids": [
+        "typegoose/mongodb-memory-server#50400"
+      ],
+      "experiment_id": "typegoose/mongodb-memory-server::@babel/helper-globals@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "typegoose/mongodb-memory-server",
+      "resolved_version": "7.28.0",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-string-parser",
+      "edge_ids": [
+        "typegoose/mongodb-memory-server#47361"
+      ],
+      "experiment_id": "typegoose/mongodb-memory-server::@babel/helper-string-parser@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "typegoose/mongodb-memory-server",
+      "resolved_version": "7.27.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-identifier",
+      "edge_ids": [
+        "typegoose/mongodb-memory-server#47432",
+        "typegoose/mongodb-memory-server#47433",
+        "typegoose/mongodb-memory-server#49391"
+      ],
+      "experiment_id": "typegoose/mongodb-memory-server::@babel/helper-validator-identifier@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "typegoose/mongodb-memory-server",
+      "resolved_version": "7.28.5",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-validator-option",
+      "edge_ids": [
+        "typegoose/mongodb-memory-server#49785"
+      ],
+      "experiment_id": "typegoose/mongodb-memory-server::@babel/helper-validator-option@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "typegoose/mongodb-memory-server",
+      "resolved_version": "7.27.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/plugin-syntax-import-attributes",
+      "edge_ids": [
+        "typegoose/mongodb-memory-server#52612"
+      ],
+      "experiment_id": "typegoose/mongodb-memory-server::@babel/plugin-syntax-import-attributes@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "typegoose/mongodb-memory-server",
+      "resolved_version": "7.27.1",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "7.29.7",
+      "dep_field": null,
+      "dep_name": "@babel/helper-globals",
+      "edge_ids": [
+        "virattt/dexter#50401",
+        "virattt/dexter#50402",
+        "virattt/dexter#50403",
+        "virattt/dexter#50404",
+        "virattt/dexter#50405",
+        "virattt/dexter#50406",
+        "virattt/dexter#50407",
+        "virattt/dexter#50408",
+        "virattt/dexter#50409",
+        "virattt/dexter#50410",
+        "virattt/dexter#50411",
+        "virattt/dexter#50412",
+        "virattt/dexter#50413",
+        "virattt/dexter#50414",
+        "virattt/dexter#50415",
+        "virattt/dexter#50416",
+        "virattt/dexter#50417",
+        "virattt/dexter#50418",
+        "virattt/dexter#50419"
+      ],
+      "experiment_id": "virattt/dexter::@babel/helper-globals@7.29.7",
+      "patch_mode": "overrides",
+      "repo": "virattt/dexter",
+      "resolved_version": "7.28.0",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.1.6",
+      "dep_field": null,
+      "dep_name": "@istanbuljs/schema",
+      "edge_ids": [
+        "virattt/dexter#49108",
+        "virattt/dexter#49109",
+        "virattt/dexter#49110",
+        "virattt/dexter#49111",
+        "virattt/dexter#49112",
+        "virattt/dexter#49113",
+        "virattt/dexter#49114",
+        "virattt/dexter#49115",
+        "virattt/dexter#49116",
+        "virattt/dexter#49117",
+        "virattt/dexter#49118",
+        "virattt/dexter#49119",
+        "virattt/dexter#49120",
+        "virattt/dexter#52598",
+        "virattt/dexter#52599"
+      ],
+      "experiment_id": "virattt/dexter::@istanbuljs/schema@0.1.6",
+      "patch_mode": "overrides",
+      "repo": "virattt/dexter",
+      "resolved_version": "0.1.3",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.449",
+      "dep_field": null,
+      "dep_name": "electron-to-chromium",
+      "edge_ids": [
+        "virattt/dexter#47796",
+        "virattt/dexter#59466"
+      ],
+      "experiment_id": "virattt/dexter::electron-to-chromium@1.5.449",
+      "patch_mode": "overrides",
+      "repo": "virattt/dexter",
+      "resolved_version": "1.5.263",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.25.0",
+      "dep_field": "dependencies",
+      "dep_name": "exa-js",
+      "edge_ids": [
+        "virattt/dexter#63193"
+      ],
+      "experiment_id": "virattt/dexter::exa-js@2.25.0",
+      "patch_mode": "direct_field",
+      "repo": "virattt/dexter",
+      "resolved_version": "2.10.1",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.0.57",
+      "dep_field": null,
+      "dep_name": "node-releases",
+      "edge_ids": [
+        "virattt/dexter#47815",
+        "virattt/dexter#47816"
+      ],
+      "experiment_id": "virattt/dexter::node-releases@2.0.57",
+      "patch_mode": "overrides",
+      "repo": "virattt/dexter",
+      "resolved_version": "2.0.27",
+      "size_bucket": "20k+",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.1.2",
+      "dep_field": null,
+      "dep_name": "bare-path",
+      "edge_ids": [
+        "vscode-icons/vscode-icons#54468",
+        "vscode-icons/vscode-icons#54469",
+        "vscode-icons/vscode-icons#54470"
+      ],
+      "experiment_id": "vscode-icons/vscode-icons::bare-path@3.1.2",
+      "patch_mode": "overrides",
+      "repo": "vscode-icons/vscode-icons",
+      "resolved_version": "3.0.0",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "2.5.2",
+      "dep_field": null,
+      "dep_name": "watchpack",
+      "edge_ids": [
+        "vscode-icons/vscode-icons#56498"
+      ],
+      "experiment_id": "vscode-icons/vscode-icons::watchpack@2.5.2",
+      "patch_mode": "overrides",
+      "repo": "vscode-icons/vscode-icons",
+      "resolved_version": "2.5.1",
+      "size_bucket": "5k-20k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "4.13.13",
+      "dep_field": "dependencies",
+      "dep_name": "hono",
+      "edge_ids": [
+        "wangwangit/SubsTracker#63199"
+      ],
+      "experiment_id": "wangwangit/SubsTracker::hono@4.13.13",
+      "patch_mode": "direct_field",
+      "repo": "wangwangit/SubsTracker",
+      "resolved_version": "4.12.22",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.3.20",
+      "dep_field": null,
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "wangwangit/SubsTracker#59961",
+        "wangwangit/SubsTracker#63200"
+      ],
+      "experiment_id": "wangwangit/SubsTracker::nanoid@3.3.20",
+      "patch_mode": "overrides",
+      "repo": "wangwangit/SubsTracker",
+      "resolved_version": "3.3.12",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "1.5.0",
+      "dep_field": null,
+      "dep_name": "regenerate",
+      "edge_ids": [
+        "webpack/minimizer-webpack-plugin#48352",
+        "webpack/minimizer-webpack-plugin#48353"
+      ],
+      "experiment_id": "webpack/minimizer-webpack-plugin::regenerate@1.5.0",
+      "patch_mode": "overrides",
+      "repo": "webpack/minimizer-webpack-plugin",
+      "resolved_version": "1.4.2",
+      "size_bucket": "1k-2k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "0.5.23",
+      "dep_field": null,
+      "dep_name": "@swc/helpers",
+      "edge_ids": [
+        "xiangechen/chili3d#63214",
+        "xiangechen/chili3d#63215"
+      ],
+      "experiment_id": "xiangechen/chili3d::@swc/helpers@0.5.23",
+      "patch_mode": "overrides",
+      "repo": "xiangechen/chili3d",
+      "resolved_version": "0.5.21",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    },
+    {
+      "candidate_version": "3.3.20",
+      "dep_field": null,
+      "dep_name": "nanoid",
+      "edge_ids": [
+        "xiangechen/chili3d#50788"
+      ],
+      "experiment_id": "xiangechen/chili3d::nanoid@3.3.20",
+      "patch_mode": "overrides",
+      "repo": "xiangechen/chili3d",
+      "resolved_version": "3.3.12",
+      "size_bucket": "2k-5k",
+      "test_command": "npm test"
+    }
+  ]
+}
