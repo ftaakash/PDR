@@ -2,6 +2,12 @@
 % scripts/make_figures.py generates from docs/claims.json (recomputed from raw
 % data by scripts/check_claims.py). Do not type numbers by hand.
 \documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% Layout follows the Overleaf "IEEE Conference Template" (IEEEtran, conference mode).
+\usepackage{cite}
+\usepackage{textcomp}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
@@ -14,8 +20,24 @@
 
 \title{Missing Provenance in npm Dependency Trees:\\How Much Can Version Choice Recover?}
 
-\author{\IEEEauthorblockN{\todo{Author full name(s)}}
-\IEEEauthorblockA{\todo{Affiliation, email}}}
+\author{\IEEEauthorblockN{Aakash G S}
+\IEEEauthorblockA{\textit{Department of Computer Science and Business Systems} \
+\textit{SRM Institute of Science and Technology}\
+Chennai, India \
+ag5901@srmist.edu.in}
+\and
+\IEEEauthorblockN{Hariharan J P}
+\IEEEauthorblockA{\textit{Department of Computer Science and Business Systems} \
+\textit{SRM Institute of Science and Technology}\
+Chennai, India \
+hj0956@srmist.edu.in}
+\and
+\IEEEauthorblockN{Jaswanth Raj}
+\IEEEauthorblockA{\textit{Department of Computer Science and Business Systems} \
+\textit{SRM Institute of Science and Technology}\
+Chennai, India \
+jj3494@srmist.edu.in}
+}
 
 \maketitle
 
@@ -39,6 +61,10 @@ the availability of provenance-bearing versions and their acceptance by the
 resolver, not breakage. All data, pre-registration tags and analysis code are
 public.
 \end{abstract}
+
+\begin{IEEEkeywords}
+software supply chain, npm, build provenance, dependency resolution, empirical study
+\end{IEEEkeywords}
 
 \section{Introduction}
 
