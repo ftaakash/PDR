@@ -78,10 +78,10 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
   human (environment only). New experiment ID and a newly frozen, hash-locked
   manifest: larger corpus with popularity/age metadata, 100–200
   Layer-1-confirmed candidates for Layer 3. Selection stays outcome-blind.
-- [ ] **T11 [AUTO] Final analysis + figures.** Funnel figure, forest plot of
+- [x] **T11 [AUTO] Final analysis + figures.** *(2026-10-07: `scripts/make_figures.py` builds funnel, forest, ripple figures, tables and `paper/numbers.tex` from `claims.json` only.)* Funnel figure, forest plot of
   repo-clustered estimates, subgroup tables, sensitivity analyses, failure
   taxonomy. Every number registered in `claims.json`.
-- [ ] **T12 [AUTO, then HUMAN-GATE] Paper draft** in `paper/` (IEEEtran
+- [ ] **T12 [AUTO, then HUMAN-GATE] Paper draft** *(2026-10-07: draft done, `paper/main.tex` -> `paper/main.pdf`, 4 pages; awaiting owner review of every claim, author block, acknowledgment and the `check` notes in `refs.bib`.)* in `paper/` (IEEEtran
   LaTeX). Contribution framed as an empirical study of practical recoverability
   of missing npm provenance, not a new security system. Threats-to-validity
   taken from the limitations already documented. Only verified citations.
