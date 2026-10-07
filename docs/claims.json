@@ -331,5 +331,35 @@
       "median": 1.0
     }
   },
+  "phase1_45_clustered": {
+    "opg": {
+      "successes": 57415,
+      "n": 68931,
+      "edge_weighted_pct": 83.29,
+      "edge_weighted_ci95_pct": [
+        79.3,
+        87.0
+      ],
+      "repo_weighted_pct": 81.3,
+      "repo_weighted_ci95_pct": [
+        77.9,
+        84.8
+      ]
+    },
+    "proxy_positive_among_deficient": {
+      "successes": 2349,
+      "n": 57415,
+      "edge_weighted_pct": 4.09,
+      "edge_weighted_ci95_pct": [
+        2.0,
+        6.3
+      ],
+      "repo_weighted_pct": 2.7,
+      "repo_weighted_ci95_pct": [
+        1.6,
+        3.9
+      ]
+    }
+  },
   "_note": "Registry of headline numbers quoted in docs. Recomputed from raw data by scripts/check_claims.py (tested in tests/test_claims_registry.py). Change a value ONLY in the same commit as the data change and the doc edits that quote it. Seeded values recorded on 2026-10; see PILOT_RUN_REPORT.md."
 }

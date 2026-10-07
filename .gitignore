@@ -15,3 +15,12 @@ results/raw/phase3_snapshots/
 results/raw/provenance_scale/packuments/
 results/raw/resolve_scale/*.lock.json
 results/raw/provenance_scale/edges.csv
+
+# LaTeX build outputs
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk

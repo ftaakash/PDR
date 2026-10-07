@@ -1,0 +1,307 @@
+% PDR paper draft (TASKS.md T12). Every number comes from numbers.tex, which
+% scripts/make_figures.py generates from docs/claims.json (recomputed from raw
+% data by scripts/check_claims.py). Do not type numbers by hand.
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{xcolor}
+\input{numbers.tex}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+\begin{document}
+
+\title{Missing Provenance in npm Dependency Trees:\\How Much Can Version Choice Recover?}
+
+\author{\IEEEauthorblockN{\todo{Author full name(s)}}
+\IEEEauthorblockA{\todo{Affiliation, email}}}
+
+\maketitle
+
+\begin{abstract}
+npm can attach build provenance to published package versions, and tools now
+let projects require it. We ask a practical question: when a resolved
+dependency lacks provenance, can a project recover it by choosing a different
+version inside the range it already declares, and what does that cost? On
+\SRepos{} randomly sampled, commit-pinned open-source repositories
+(\SEdges{} resolved dependency edges) we measure a funnel with attrition at
+every stage. \SOPG\% of edges lack provenance; only \SProxyPct\% of those have
+an in-range provenance-bearing version within a minor/patch step of what is
+resolved; and only \SLPct\% of those (repository-clustered 95\% CI \SLCi) are
+accepted by npm's own resolver without changing any other package. End to end,
+\SEndToEnd\% of deficient edges are recoverable this way. Once a candidate passes
+the resolver, however, switching to it caused no attributable failure in
+installation, lifecycle scripts, peer dependencies, signature audit, or the
+repository's own tests in any of \SExp{} isolated experiments across
+\STestable{} repositories with reproducible test suites. The limiting factor is
+the availability of provenance-bearing versions and their acceptance by the
+resolver, not breakage. All data, pre-registration tags and analysis code are
+public.
+\end{abstract}
+
+\section{Introduction}
+
+Software supply-chain attacks on package registries have made the origin of a
+package version a first-class question. npm provenance records, as a signed
+attestation, the source repository and build that produced a published
+version~\cite{npmprovenance2023}. Provenance is \emph{origin evidence}; it is
+not a statement that a package is safe, and we never use it as one.
+
+Registries and package managers are beginning to let consumers require such
+evidence. A project that enables such a policy will find that most of its
+resolved dependencies lack provenance. The natural remedy is version choice:
+pick, within the semantic-versioning range each dependency already declares,
+a version that carries provenance. Whether this works in practice depends on
+three things that are easy to assume and hard to know: whether such versions
+exist, whether npm's real resolver accepts them without disturbing the rest
+of the tree, and whether the project still installs and passes its tests.
+
+We measure all three. Our contributions are:
+\begin{itemize}
+\item A funnel measurement of provenance recoverability on two corpora
+  (\POneRepos{} and \SRepos{} repositories), separating availability, resolver
+  acceptance, and behaviour, with edge- and repository-weighted estimates and
+  repository-clustered confidence intervals.
+\item An isolated execution harness (disposable containers, an
+  allowlisting network proxy, a verified network self-test) that runs real
+  installs, lifecycle scripts and test suites of untrusted packages for both
+  the original and the substituted dependency tree.
+\item Evidence that the binding constraint is availability and resolution:
+  the resolver rejects most screening-positive candidates, lower
+  provenance-bearing versions almost never help, and resolver-accepted
+  substitutions showed no attributable behavioural failures.
+\item A public, pre-registered artifact in which every number in this paper
+  is recomputed from raw data by a test.
+\end{itemize}
+
+\section{Research Questions}
+\textbf{RQ1} How many resolved dependency edges lack provenance?
+\textbf{RQ2} How many deficient edges have an in-range provenance-bearing
+candidate, and how many does npm's resolver accept (single best candidate and
+any candidate)?
+\textbf{RQ3} Among resolver-accepted substitutions, how many keep the project
+installable, its lifecycle scripts and peer dependencies intact, its audit
+signature status, and its own tests passing?
+\textbf{RQ4} How sensitive are these answers to the definition of ``without
+disturbing the tree''?
+
+\section{Method}
+
+\subsection{Corpora}
+\emph{Phase~1} covers \POneRepos{} well-known JavaScript projects with a
+committed lockfile (\POneEdges{} edges), selected in an earlier pilot.
+\emph{scale\_v1} is a stratified random sample designed and frozen in
+version control before any data were fetched: from a frame of public GitHub
+repositories in JavaScript or TypeScript with at least 1,000 stars, active
+in the last six months, we drew 20 repositories in each of eight strata
+(four star bands $\times$ created before/after 2018) that have a root
+\texttt{package-lock.json} (lockfile version $\geq 2$). Each repository is
+pinned to the commit it was sampled at.
+
+\subsection{Classification (RQ1, RQ2)}
+We parse every lockfile into dependency edges (requester, declared range,
+resolved version). A version has provenance iff its registry metadata carries
+\texttt{dist.attestations}. An edge is \emph{deficient} if its resolved version
+lacks provenance and \emph{screening-positive} if the highest
+provenance-bearing version satisfying the declared range differs from the
+resolved one by at most a minor or patch step. All range logic uses npm's own
+\texttt{semver} library.
+
+\subsection{Resolver confirmation, Layer 1 (RQ2, RQ4)}
+For each screening-positive edge we force the candidate with an
+\texttt{overrides} entry (or by editing the direct dependency when the package
+is a root dependency, which \texttt{overrides} rejects) and re-resolve with
+\texttt{npm install --package-lock-only --ignore-scripts}, npm 10.9.7. A
+candidate is \emph{OK} if it is applied and no other top-level package changes
+version; otherwise \emph{RIPPLE}, or \emph{PEER\_CONFLICT} on
+\texttt{ERESOLVE}. Nothing executes. A pre-registered follow-up experiment tried up to five lower
+provenance-bearing in-range versions for every non-OK edge.
+
+\subsection{Behaviour, Layer 3 (RQ3)}
+Untrusted package code runs only in a disposable container per arm: no Linux
+capabilities, read-only root filesystem, non-root user, memory, CPU and
+process limits, the repository snapshot mounted read-only, and an internal
+network whose only exit is a proxy that admits the npm registry and Sigstore
+hosts and refuses all others. A network self-test (allowed hosts reachable,
+others refused and logged, direct egress impossible) must pass before any
+experiment. For each experiment we run the unmodified repository (B0) and
+the substituted one (PDR) through install, lifecycle scripts, a peer check,
+\texttt{npm audit signatures}, and the repository's own tests, twice per arm.
+The PDR arm restores the original \texttt{package.json} before testing so the
+repository's own linters do not react to our edit. A failure is
+\emph{attributable} only if B0 passed the same stage. In scale\_v1, a
+baseline screen first ran B0 alone and only repositories whose own tests
+passed twice proceeded.
+
+\subsection{Statistics and pre-registration}
+Edges within a repository are not independent. Every rate is reported
+edge-weighted and repository-weighted, each with a 95\% repository-clustered
+percentile bootstrap (5,000 resamples, fixed seed); repository-level
+proportions use Wilson intervals. Designs, cohorts and analysis scripts were
+committed and tagged before the runs they govern; changes were made only as
+dated amendments with reasons stated before outcomes.
+
+\section{Results}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_funnel.pdf}
+\caption{Attrition from resolved edges to resolver-confirmed recoverable edges
+(log scale) in both corpora.}
+\label{fig:funnel}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_forest.pdf}
+\caption{Edge- and repository-weighted rates with 95\% repository-clustered CIs.
+Screening-positive is among deficient edges; Layer~1 OK is among
+screening-positive edges.}
+\label{fig:forest}
+\end{figure}
+
+\subsection{RQ1: Most resolved edges lack provenance}
+In scale\_v1, \SOPG\% of known edges lack provenance (CI \SOPGci;
+repository-weighted \SOPGrepo\%, \SOPGrepoCi). Phase~1 gives \POneOPG\%
+(\POneOPGci). Unknown status is below 2\% in both corpora.
+
+\subsection{RQ2: Few candidates exist, and the resolver rejects most}
+Only \SProxyPct\% of deficient edges in scale\_v1 have a screening-positive
+candidate (\SProxyCi; repository-weighted \SProxyRepo\%), and \POneProxyPct\%
+in Phase~1. Forcing the candidate through npm's resolver confirms
+\SLPct\% of them in scale\_v1 (\SLCi; repository-weighted \SLRepo\%,
+\SLRepoCi) and \LOnePct\% in Phase~1 (\LOneCi; repository-weighted \LOneRepo\%).
+Table~\ref{tab:l1} shows that rejection is overwhelmingly a \emph{ripple}: the
+candidate applies, but other packages move. End to end, \SEndToEnd\% of deficient
+edges in scale\_v1 are recoverable by version choice without disturbing the
+tree. Edge- and repository-weighted figures diverge because a few repositories
+contribute many near-identical candidates (Fig.~\ref{fig:forest}).
+
+Trying lower versions barely helps. For the \AltPop{} Phase~1 edges whose
+best candidate failed, up to five lower provenance-bearing in-range versions
+recovered \AltRecovered{}; the exists-any rate is \AltExists\% (\AltExistsCi)
+against \LOnePct\% for the single best candidate. \AltNoAlt{} of those edges had
+no lower candidate at all, and \AltBlocked{} could not be evaluated on the
+analysis host (reported as a bound).
+
+\begin{table}[t]
+\centering
+\caption{Layer 1 outcomes (screening-positive edges).}
+\label{tab:l1}
+\input{tables/tab_layer1.tex}
+\end{table}
+
+\subsection{RQ3: Accepted substitutions behaved like the baseline}
+In scale\_v1, \STestable{} of \SScreened{} repositories (\STestablePct\%, Wilson
+\STestableCi) had a test suite that installed and passed twice in the isolated
+worker. Across their \SExp{} experiments, no failure at any stage was
+attributable to the substitution: paired failure deltas were zero for
+installation (\SNewInstall{} of \SPairsInstall{} pairs), lifecycle scripts
+(\SNewLifecycle{}) and tests (\SNewTest{} of \SPairsTest{}). The
+\SLifecycle{} non-OK lifecycle outcomes occurred identically in the unmodified
+baseline (blocked post-install downloads, a vendored binary build). With zero
+events, a rule-of-three upper bound is about \SRuleThree\% per experiment and
+\SRuleThreeRepo\% per repository. Audit signature status never got worse, and
+\SGainPos{} of \SGainN{} substitutions increased the number of verified
+attestations, as intended. Table~\ref{tab:l3} also reports the three rounds
+of a pre-registered 23-experiment micro-pilot that preceded the scale-up; its
+final round gave \MPOK{} OK of \MPJudge{} judgeable experiments, with
+\MPInvalid{} of \MPN{} baselines unusable.
+
+\begin{table}[t]
+\centering
+\caption{Layer 3 outcomes. MP = micro-pilot rounds (environment fixes between
+rounds were baseline-only and pre-registered). $^\dagger$scale\_v1 screened
+baselines first and ran only testable repositories.}
+\label{tab:l3}
+\input{tables/tab_layer3.tex}
+\end{table}
+
+\subsection{RQ4: The definition of ``undisturbed'' matters}
+Layer~1's \emph{OK} allows zero other packages to change. Allowing one raises
+the Phase~1 rate from \LOnePct\% to \RipOne\% (repository-weighted \RipOneRepo\%);
+allowing five raises it to \RipFive\% (\RipFiveRepo\%) (Fig.~\ref{fig:ripple}).
+Our headline figures use the strictest definition, so they are lower bounds on
+what a project willing to accept small side effects could recover.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_ripple.pdf}
+\caption{Phase~1 Layer~1 OK rate when up to $k$ other top-level packages may
+change version (sensitivity analysis; $k=0$ is the frozen definition).}
+\label{fig:ripple}
+\end{figure}
+
+\section{Discussion}
+The funnel locates the problem. Provenance is missing for most edges, and for
+over nine in ten deficient edges no provenance-bearing version exists close
+to what is resolved. Where one exists, npm usually cannot adopt it in
+isolation, because adopting it moves other packages. Where npm can adopt
+it, we observed no behavioural cost. For maintainers this means enforcing
+provenance today mostly fails for lack of supply, not because switching
+breaks projects; for registry and tool designers it means the leverage is
+upstream (publishers adopting provenance) and in resolution (letting a
+resolver optimise for provenance rather than forcing single candidates). A
+configurable solver such as MaxNPM~\cite{pinckney2023maxnpm} could find
+combinations npm's resolver does not; we measured npm's own behaviour and do
+not claim that better solutions are impossible.
+
+\section{Threats to Validity}
+\emph{Construct.} Provenance presence is read from the registry's current
+metadata, not at publish time. Tests measure what each project chose to test.
+\emph{Internal.} Layer~3 covers only repositories whose own tests were
+reproducible in a locked-down worker (\STestablePct\% of eligible ones);
+projects needing network services, browsers or specific toolchains are not
+represented. Single-run test outcomes can be unstable~\cite{maksymiuk2026reproducible};
+we ran every arm twice and excluded flaky pairs. Our edit of
+\texttt{package.json} initially caused lint failures that looked like
+regressions; we found and removed this artifact before the scale-up.
+\emph{External.} Both corpora are popular, actively maintained GitHub
+projects with committed lockfiles; results may not hold for the long tail of
+the registry or for other ecosystems. Provenance-bearing versions come from
+projects whose practices may differ systematically from others~\cite{solarin2026verifiability}.
+\emph{Conclusion.} With zero observed attributable failures, Layer~3 bounds
+the failure rate rather than estimating it.
+
+\section{Related Work}
+Studies of npm updates measure how new versions propagate through semantic
+versioning ranges~\cite{pinckney2023semver}, how often non-major updates break
+clients~\cite{venturini2023broke}, how dependency bots and their
+compatibility signals are used~\cite{he2023dependabot,rombaut2024crowd}, and
+how other projects' tests can expose breaking versions~\cite{mujahid2020tests};
+BUMP provides reproducible breaking updates for Maven~\cite{reyes2024bump}.
+He, Vasilescu and K\"astner simulate npm resolution counterfactually to show
+that pinning alone does not prevent supply-chain exposure~\cite{he2025pinning},
+and peer-dependency conflicts can trap the resolver~\cite{wang2025peerspin}.
+On origin evidence, signing adoption has been measured in four registries
+other than npm~\cite{schorlemmer2024signing}; artifact verifiability
+including npm provenance~\cite{solarin2026verifiability}; and changes in
+release authority, including provenance, across ecosystems~\cite{santos2026authority}.
+In the corpus we searched, no directly matching work was identified that
+measures, on real application lockfiles, whether provenance-bearing versions
+exist within declared ranges and how much of that apparent recovery survives
+npm's resolver, installation and the project's own tests.
+
+\section{Conclusion}
+Version choice recovers provenance for only about \SEndToEnd\% of deficient
+dependency edges in our sample, almost entirely because suitable versions are
+missing or the resolver cannot adopt them without side effects. When it can,
+the switch did not break the projects we could test. Raising provenance
+coverage is therefore mainly a question of publisher adoption and
+provenance-aware resolution.
+
+\section*{Data Availability}
+Code, data, pre-registration tags and the claims registry:
+\todo{repository URL / archival DOI}.
+
+\section*{Acknowledgment}
+\todo{Disclose AI assistance per the venue's policy, e.g.: ``The authors used
+Claude (Anthropic) to help implement the data-collection and analysis
+pipeline and to draft documentation and text; all of it was reviewed and
+verified by the authors.''}
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

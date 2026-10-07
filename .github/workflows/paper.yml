@@ -1,0 +1,20 @@
+# Compiles paper/main.tex (IEEEtran) into a PDF artifact. No secrets, read-only token.
+name: paper
+on:
+  workflow_dispatch:
+  push:
+    paths: ["paper/**"]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: paper
+      - uses: actions/upload-artifact@v4
+        with: { name: paper-pdf, path: paper/main.pdf }

@@ -161,6 +161,11 @@ def compute():
     s3 = sr.layer3(jsonl(p("results", "processed", "scale_v1_screen.jsonl")),
                    jsonl(p("results", "processed", "scale_v1_layer3.jsonl")), smeta)
     pick = ("successes", "n", "edge_weighted_pct", "edge_weighted_ci95_pct", "repo_weighted_pct", "repo_weighted_ci95_pct")
+    with open(p("results", "raw", "provenance_phase1", "edges.csv"), encoding="utf-8") as f:
+        p1c = sr.phase1(list(csv.DictReader(f)))
+    out["phase1_45_clustered"] = {"opg": {k: p1c["opg"][k] for k in pick},
+                                  "proxy_positive_among_deficient": {k: p1c["proxy_positive_among_deficient"][k]
+                                                                     for k in pick}}
     deltas = s3["report"]["paired_deltas"]
     out["scale_v1"] = {
         "edges": s1["edges"], "repos": s1["repos"], "unknown_pct": s1["unknown_pct"],
