@@ -11,7 +11,7 @@
 ![Claims](https://img.shields.io/badge/claims%20registry-verified-blue)
 ![Pre-registered](https://img.shields.io/badge/design-pre--registered-purple)
 
-*Aakash G S · Hariharan J P · Jaswanth Raj*
+*Aakash G S · Hariharan J P · Jaswanth Raj*<br>
 *Department of Computer Science and Business Systems, SRM Institute of Science and Technology, Chennai, India*
 
 [Paper (PDF)](paper/main.pdf) · [Project guide](docs/PROJECT_GUIDE.md) · [Scale-up results](docs/phase4_results.md) · [Claims registry](docs/claims.json)
@@ -45,15 +45,15 @@ Provenance is **origin evidence, never a safety claim**. A package with provenan
 </p>
 
 ```mermaid
-flowchart TD
-    A["Resolved dependency edges<br/><b>262,066</b> (160 repos)"] --> B["Lacking provenance<br/><b>84.80%</b> [82.7, 87.0]"]
-    B --> C["Screening-positive in-range candidate<br/><b>8.05%</b> of deficient [6.7, 9.4]"]
-    C --> D["Layer 1: npm resolver accepts, nothing else moves<br/><b>28.51%</b> [23.8, 33.3] · repo-weighted 45.2%"]
-    D --> E["≈ <b>2.3%</b> of deficient edges recoverable"]
-    D --> F["Layer 3: testable projects<br/><b>31 of 91</b> (34.1%)"]
-    F --> G["Attributable failures at any stage<br/><b>0 of 110</b> experiments"]
-    style E fill:#fde9d9,stroke:#c55a11
-    style G fill:#dbe9f6,stroke:#1f4e79
+flowchart LR
+    A["262,066 edges<br/>160 repos"] --> B["84.80%<br/>lack provenance"]
+    B --> C["8.05%<br/>have an in-range<br/>candidate"]
+    C --> D["28.51%<br/>accepted by npm<br/>(Layer 1)"]
+    D --> E["≈2.3% of deficient<br/>edges recoverable"]
+    D --> F["31 of 91 repos<br/>testable"]
+    F --> G["0 of 110<br/>attributable failures"]
+    style E fill:#fde9d9,stroke:#c55a11,color:#000
+    style G fill:#dbe9f6,stroke:#1f4e79,color:#000
 ```
 
 *Brackets are 95% repository-clustered bootstrap CIs (5,000 resamples). Every number on this page is recomputed from raw data by `scripts/check_claims.py`.*
