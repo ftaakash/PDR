@@ -1,0 +1,412 @@
+{
+ "experiment": "scale_v1",
+ "phase1": {
+  "edges": 262066,
+  "repos": 160,
+  "unknown_pct": 1.94,
+  "opg": {
+   "successes": 217924,
+   "n": 256995,
+   "n_repos": 160,
+   "edge_weighted_pct": 84.8,
+   "edge_weighted_ci95_pct": [
+    82.7,
+    87.0
+   ],
+   "repo_weighted_pct": 83.4,
+   "repo_weighted_ci95_pct": [
+    80.8,
+    85.8
+   ],
+   "repo_weighted_median_pct": 86.9
+  },
+  "proxy_positive_among_deficient": {
+   "successes": 17549,
+   "n": 217924,
+   "n_repos": 159,
+   "edge_weighted_pct": 8.05,
+   "edge_weighted_ci95_pct": [
+    6.7,
+    9.4
+   ],
+   "repo_weighted_pct": 5.8,
+   "repo_weighted_ci95_pct": [
+    4.7,
+    7.0
+   ],
+   "repo_weighted_median_pct": 2.6
+  }
+ },
+ "layer1": {
+  "n": 17549,
+  "outcomes": {
+   "OK": 5003,
+   "RIPPLE": 10860,
+   "PEER_CONFLICT": 1573,
+   "RESOLUTION_FAIL": 113
+  },
+  "platform_blocked": 0,
+  "ok_rate": {
+   "successes": 5003,
+   "n": 17549,
+   "n_repos": 144,
+   "edge_weighted_pct": 28.51,
+   "edge_weighted_ci95_pct": [
+    23.8,
+    33.3
+   ],
+   "repo_weighted_pct": 45.2,
+   "repo_weighted_ci95_pct": [
+    39.8,
+    50.8
+   ],
+   "repo_weighted_median_pct": 37.5
+  }
+ },
+ "layer3": {
+  "screened_repos": 91,
+  "testable_repos": 31,
+  "testable_pct": 34.1,
+  "testable_wilson_ci95": [
+   25.2,
+   44.3
+  ],
+  "untestable_reasons": {
+   "tests_fail": 41,
+   "install_fail": 18,
+   "tests_flaky": 1
+  },
+  "experiments_run": 110,
+  "judgeable_experiments": 108,
+  "judgeable_repos": 30,
+  "judgeable_outcomes": {
+   "OK": 96,
+   "LIFECYCLE_FAIL": 12
+  },
+  "ok_rate_among_judgeable": {
+   "successes": 96,
+   "n": 108,
+   "n_repos": 30,
+   "edge_weighted_pct": 88.89,
+   "edge_weighted_ci95_pct": [
+    75.5,
+    100.0
+   ],
+   "repo_weighted_pct": 90.0,
+   "repo_weighted_ci95_pct": [
+    80.0,
+    100.0
+   ],
+   "repo_weighted_median_pct": 100.0
+  },
+  "rate_reported": true,
+  "report": {
+   "n_records": 110,
+   "n_valid": 110,
+   "invalid_records": [],
+   "outcome_counts": {
+    "OK": 97,
+    "LIFECYCLE_FAIL": 12,
+    "TEST_FAIL": 1
+   },
+   "per_repo": {
+    "CookSleep/gpt_image_playground": {
+     "OK": 5
+    },
+    "Done-0/fuck-u-code": {
+     "OK": 5
+    },
+    "MichalLytek/type-graphql": {
+     "OK": 5
+    },
+    "Yomguithereal/mnemonist": {
+     "OK": 1
+    },
+    "a16z-infra/ai-town": {
+     "OK": 5
+    },
+    "actions/checkout": {
+     "OK": 5
+    },
+    "dagrejs/dagre": {
+     "OK": 5
+    },
+    "dalibo/pev2": {
+     "OK": 1
+    },
+    "darkreader/darkreader": {
+     "OK": 5
+    },
+    "denysdovhan/wtfjs": {
+     "OK": 5
+    },
+    "fb55/htmlparser2": {
+     "OK": 1
+    },
+    "googlemaps/google-maps-services-js": {
+     "OK": 5
+    },
+    "h5bp/html5-boilerplate": {
+     "OK": 3
+    },
+    "hydra-db/open-glean": {
+     "OK": 2
+    },
+    "i18next/next-i18next": {
+     "OK": 3
+    },
+    "jarrodwatts/claude-hud": {
+     "OK": 1
+    },
+    "jashkenas/underscore": {
+     "OK": 5
+    },
+    "leonardomso/33-js-concepts": {
+     "OK": 5
+    },
+    "mxschmitt/action-tmate": {
+     "OK": 2
+    },
+    "node-config/node-config": {
+     "OK": 1
+    },
+    "paaatrick/playball": {
+     "LIFECYCLE_FAIL": 5
+    },
+    "panphora/overtype": {
+     "OK": 3
+    },
+    "redux-observable/redux-observable": {
+     "OK": 5
+    },
+    "rtfpessoa/diff2html": {
+     "LIFECYCLE_FAIL": 5
+    },
+    "tediousjs/tedious": {
+     "OK": 2
+    },
+    "thomaspark/bootswatch": {
+     "OK": 5
+    },
+    "toji/gl-matrix": {
+     "OK": 5
+    },
+    "trailheadapps/lwc-recipes": {
+     "OK": 5
+    },
+    "vscode-icons/vscode-icons": {
+     "LIFECYCLE_FAIL": 2
+    },
+    "wangwangit/SubsTracker": {
+     "TEST_FAIL": 1,
+     "OK": 1
+    },
+    "webpack/minimizer-webpack-plugin": {
+     "OK": 1
+    }
+   },
+   "funnel": [
+    {
+     "stage": "resolve",
+     "label": "C0 resolves in worker",
+     "entering": 110,
+     "attributable": 110,
+     "passed": 110,
+     "failed": 0,
+     "pass_rate": 1.0
+    },
+    {
+     "stage": "install",
+     "label": "C1 structurally installable",
+     "entering": 110,
+     "attributable": 110,
+     "passed": 110,
+     "failed": 0,
+     "pass_rate": 1.0
+    },
+    {
+     "stage": "lifecycle",
+     "label": "C1b lifecycle scripts complete",
+     "entering": 110,
+     "attributable": 98,
+     "passed": 98,
+     "failed": 0,
+     "pass_rate": 1.0
+    },
+    {
+     "stage": "peer",
+     "label": "C2 no new peer problem",
+     "entering": 98,
+     "attributable": 98,
+     "passed": 98,
+     "failed": 0,
+     "pass_rate": 1.0
+    },
+    {
+     "stage": "audit",
+     "label": "C3 audit-signature status preserved",
+     "entering": 98,
+     "attributable": 98,
+     "passed": 98,
+     "failed": 0,
+     "pass_rate": 1.0
+    },
+    {
+     "stage": "test",
+     "label": "C4 tests do not newly fail",
+     "entering": 98,
+     "attributable": 96,
+     "passed": 96,
+     "failed": 0,
+     "pass_rate": 1.0
+    }
+   ],
+   "paired_deltas": {
+    "install": {
+     "stage": "install",
+     "n_pairs": 110,
+     "new_failures_b": 0,
+     "fixes_c": 0,
+     "pdr_failure_rate": 0.0,
+     "b0_failure_rate": 0.0,
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "n_repos": 31
+    },
+    "lifecycle": {
+     "stage": "lifecycle",
+     "n_pairs": 110,
+     "new_failures_b": 0,
+     "fixes_c": 0,
+     "pdr_failure_rate": 0.10909090909090909,
+     "b0_failure_rate": 0.10909090909090909,
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "n_repos": 31
+    },
+    "test": {
+     "stage": "test",
+     "n_pairs": 108,
+     "new_failures_b": 0,
+     "fixes_c": 0,
+     "pdr_failure_rate": 0.0,
+     "b0_failure_rate": 0.0,
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "n_repos": 30
+    }
+   },
+   "primary": {
+    "stage": "test",
+    "n_pairs": 108,
+    "new_failures_b": 0,
+    "fixes_c": 0,
+    "pdr_failure_rate": 0.0,
+    "b0_failure_rate": 0.0,
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n_repos": 30,
+    "underpowered": false
+   },
+   "audit": {
+    "pairs_with_audit_on_both_arms": 110,
+    "pairs_parse_ok": 110,
+    "pairs_parse_failed": 0,
+    "audit_signature_change": 0,
+    "invalid_delta_sum": 0,
+    "missing_delta_sum": 0
+   },
+   "attestation_gain": {
+    "n": 110,
+    "gain_gt0": 99,
+    "gain_eq0": 11,
+    "gain_lt0": 0,
+    "median": 1.0
+   },
+   "viability_ok_rate": {
+    "all_valid": {
+     "successes": 97,
+     "n": 110,
+     "n_repos": 31,
+     "edge_weighted_pct": 88.18,
+     "edge_weighted_ci95_pct": [
+      74.8,
+      99.0
+     ],
+     "repo_weighted_pct": 88.7,
+     "repo_weighted_ci95_pct": [
+      77.4,
+      98.4
+     ],
+     "repo_weighted_median_pct": 100.0
+    },
+    "usable_baseline": {
+     "successes": 96,
+     "n": 108,
+     "n_repos": 30,
+     "edge_weighted_pct": 88.89,
+     "edge_weighted_ci95_pct": [
+      75.5,
+      100.0
+     ],
+     "repo_weighted_pct": 90.0,
+     "repo_weighted_ci95_pct": [
+      80.0,
+      100.0
+     ],
+     "repo_weighted_median_pct": 100.0
+    }
+   },
+   "flags": {
+    "b0_invalid": 2,
+    "b0_invalid_share": 0.01818181818181818,
+    "REWORK": false,
+    "no_behavioral_change_share_of_completed": 0.0,
+    "LAYER3_ADDS_NOTHING": false,
+    "NO_GATE_D_CLAIM": false
+   }
+  },
+  "exploratory_subgroups": {
+   "band": {
+    "1k-2k": {
+     "ok": 5,
+     "n": 10
+    },
+    "20k+": {
+     "ok": 24,
+     "n": 24
+    },
+    "2k-5k": {
+     "ok": 23,
+     "n": 28
+    },
+    "5k-20k": {
+     "ok": 44,
+     "n": 46
+    }
+   },
+   "age": {
+    "post2018": {
+     "ok": 48,
+     "n": 48
+    },
+    "pre2018": {
+     "ok": 48,
+     "n": 60
+    }
+   }
+  }
+ }
+}

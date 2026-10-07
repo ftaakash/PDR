@@ -68,13 +68,13 @@ one-line dated note when done. Each AUTO task ends with: tests pass,
   checked against real `npm audit signatures` output and fixed if wrong (the
   regexes are unvalidated); (e) full 23-experiment micro-pilot. Tag
   `freeze/phase3-worker-v1` once the worker image is final. *(2026-10-05: all stops done on GitHub runners; pre-specified REWORK flag raised, 13/23 invalid baselines; `docs/phase3_micropilot_results.md`.)*
-- [ ] **T9 [HUMAN-GATE] Verdict on the micro-pilot.** Present the funnel and
+- [x] **T9 [HUMAN-GATE] Verdict on the micro-pilot.** *(2026-10-07: owner chose to scale up (T10).)* Present the funnel and
   deltas with all limitations (hermetic-test screen selection effect, small
   n). Human decides whether to scale. Do not choose the paper's story.
 
 ## Track 3 — scale, analysis, paper
 
-- [ ] **T10 [AUTO after T9] Scale-up (Phase 4).** Needs `GITHUB_TOKEN` from the
+- [x] **T10 [AUTO after T9] Scale-up (Phase 4).** *(2026-10-07: `scale_v1`, 160 pinned repos, 262,066 edges; Layer 1 OK 28.51%; Layer 3 110 experiments in 31 testable repos, 0 attributable failures; `docs/phase4_results.md`.)* Needs `GITHUB_TOKEN` from the
   human (environment only). New experiment ID and a newly frozen, hash-locked
   manifest: larger corpus with popularity/age metadata, 100–200
   Layer-1-confirmed candidates for Layer 3. Selection stays outcome-blind.

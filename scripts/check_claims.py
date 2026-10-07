@@ -148,6 +148,34 @@ def compute():
         "test_delta_n_pairs": m3["primary"]["n_pairs"], "test_delta_new_failures": m3["primary"]["new_failures_b"],
         "judgeable_attributable_test": next(r["attributable"] for r in m3["funnel"] if r["stage"] == "test"),
     }
+    spec_s = importlib.util.spec_from_file_location("scale_report", p("scripts", "scale_report.py"))
+    sr = importlib.util.module_from_spec(spec_s)
+    spec_s.loader.exec_module(sr)
+    import gzip
+    import yaml as _yaml
+    with gzip.open(p("results", "raw", "provenance_scale", "edges.csv.gz"), "rt", encoding="utf-8") as f:
+        sedges = list(csv.DictReader(f))
+    smeta = {r["repo"]: r for r in _yaml.safe_load(open(p("configs", "experiments", "scale_v1.yaml"),
+                                                           encoding="utf-8"))["repos"]}
+    s1, sl1 = sr.phase1(sedges), sr.layer1(jsonl(p("results", "processed", "scale_v1_layer1.jsonl")))
+    s3 = sr.layer3(jsonl(p("results", "processed", "scale_v1_screen.jsonl")),
+                   jsonl(p("results", "processed", "scale_v1_layer3.jsonl")), smeta)
+    pick = ("successes", "n", "edge_weighted_pct", "edge_weighted_ci95_pct", "repo_weighted_pct", "repo_weighted_ci95_pct")
+    deltas = s3["report"]["paired_deltas"]
+    out["scale_v1"] = {
+        "edges": s1["edges"], "repos": s1["repos"], "unknown_pct": s1["unknown_pct"],
+        "opg": {k: s1["opg"][k] for k in pick},
+        "proxy_positive_among_deficient": {k: s1["proxy_positive_among_deficient"][k] for k in pick},
+        "layer1_outcomes": sl1["outcomes"], "layer1_ok": {k: sl1["ok_rate"][k] for k in pick},
+        "screened_repos": s3["screened_repos"], "testable_repos": s3["testable_repos"],
+        "testable_wilson_ci95": s3["testable_wilson_ci95"], "experiments_run": s3["experiments_run"],
+        "judgeable_experiments": s3["judgeable_experiments"], "judgeable_repos": s3["judgeable_repos"],
+        "outcome_counts": s3["report"]["outcome_counts"],
+        "ok_among_judgeable": {k: s3["ok_rate_among_judgeable"][k] for k in pick},
+        "new_failures": {st: deltas[st]["new_failures_b"] for st in deltas},
+        "pairs": {st: deltas[st]["n_pairs"] for st in deltas},
+        "attestation_gain": s3["report"]["attestation_gain"],
+    }
     l2 = jsonl(p("results", "processed", "phase2_layer2_results.jsonl"))
     out["layer2"] = {"n": len(l2), "pdr_install_ok": sum(1 for r in l2 if r["pdr"]["install"]["install_ok"])}
     man = json.load(open(p("configs", "experiments", "phase3_micropilot_manifest.json")))

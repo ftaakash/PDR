@@ -233,5 +233,103 @@
     "test_delta_new_failures": 0,
     "judgeable_attributable_test": 12
   },
+  "scale_v1": {
+    "edges": 262066,
+    "repos": 160,
+    "unknown_pct": 1.94,
+    "opg": {
+      "successes": 217924,
+      "n": 256995,
+      "edge_weighted_pct": 84.8,
+      "edge_weighted_ci95_pct": [
+        82.7,
+        87.0
+      ],
+      "repo_weighted_pct": 83.4,
+      "repo_weighted_ci95_pct": [
+        80.8,
+        85.8
+      ]
+    },
+    "proxy_positive_among_deficient": {
+      "successes": 17549,
+      "n": 217924,
+      "edge_weighted_pct": 8.05,
+      "edge_weighted_ci95_pct": [
+        6.7,
+        9.4
+      ],
+      "repo_weighted_pct": 5.8,
+      "repo_weighted_ci95_pct": [
+        4.7,
+        7.0
+      ]
+    },
+    "layer1_outcomes": {
+      "OK": 5003,
+      "RIPPLE": 10860,
+      "PEER_CONFLICT": 1573,
+      "RESOLUTION_FAIL": 113
+    },
+    "layer1_ok": {
+      "successes": 5003,
+      "n": 17549,
+      "edge_weighted_pct": 28.51,
+      "edge_weighted_ci95_pct": [
+        23.8,
+        33.3
+      ],
+      "repo_weighted_pct": 45.2,
+      "repo_weighted_ci95_pct": [
+        39.8,
+        50.8
+      ]
+    },
+    "screened_repos": 91,
+    "testable_repos": 31,
+    "testable_wilson_ci95": [
+      25.2,
+      44.3
+    ],
+    "experiments_run": 110,
+    "judgeable_experiments": 108,
+    "judgeable_repos": 30,
+    "outcome_counts": {
+      "OK": 97,
+      "LIFECYCLE_FAIL": 12,
+      "TEST_FAIL": 1
+    },
+    "ok_among_judgeable": {
+      "successes": 96,
+      "n": 108,
+      "edge_weighted_pct": 88.89,
+      "edge_weighted_ci95_pct": [
+        75.5,
+        100.0
+      ],
+      "repo_weighted_pct": 90.0,
+      "repo_weighted_ci95_pct": [
+        80.0,
+        100.0
+      ]
+    },
+    "new_failures": {
+      "install": 0,
+      "lifecycle": 0,
+      "test": 0
+    },
+    "pairs": {
+      "install": 110,
+      "lifecycle": 110,
+      "test": 108
+    },
+    "attestation_gain": {
+      "n": 110,
+      "gain_gt0": 99,
+      "gain_eq0": 11,
+      "gain_lt0": 0,
+      "median": 1.0
+    }
+  },
   "_note": "Registry of headline numbers quoted in docs. Recomputed from raw data by scripts/check_claims.py (tested in tests/test_claims_registry.py). Change a value ONLY in the same commit as the data change and the doc edits that quote it. Seeded values recorded on 2026-10; see PILOT_RUN_REPORT.md."
 }
