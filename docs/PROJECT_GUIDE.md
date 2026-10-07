@@ -26,6 +26,14 @@ because suitable versions rarely exist or npm can't adopt them without changing
 other packages. But **when npm *can* adopt them, nothing broke**: 0 failures in
 110 isolated experiments.
 
+**Where this sits.** PDR is a *consumer-side, resolution-time* study. Release-side
+work such as Santos-Grueiro's *On Good Authority* (arXiv 2606.22593, 2026) looks
+at each new release and asks whether its publication path changed compared with
+the release before it (new publisher, workflow, repository, lost provenance,
+signing change). We look at the project that installs packages and ask what it
+can do about missing provenance with the ranges it already declares and npm's
+real resolver. Same topic, opposite end of the supply chain.
+
 ---
 
 ## 2. Words you must know
@@ -406,7 +414,10 @@ Being able to explain these shows the work was checked, not just run.
    and when they do, npm can't adopt them without moving other packages.
 3. **When npm can adopt them, switching is safe in practice** for the projects
    we could test (0/110 failures).
-4. **So the bottleneck is availability and resolution, not breakage.** Progress
+4. **This is the consumer's view.** Release-side studies can flag a release
+   whose provenance disappeared; our funnel says whether the projects that
+   depend on it could have stayed on a provenance-bearing version.
+5. **So the bottleneck is availability and resolution, not breakage.** Progress
    depends on publishers adding provenance and on resolvers that can optimise
    for it (e.g. MaxNPM-style solvers), not on projects fearing breakage.
 
@@ -431,7 +442,7 @@ Being able to explain these shows the work was checked, not just run.
 | Path | What it is |
 |---|---|
 | `pdr/resolve.py` | Lockfile → edges (handles workspaces) |
-| `pdr/provenance.py` | Reads `dist.attestations` from registry metadata |
+| `pdr/provenance.py` | Reads `dist.attestations` from registry metadata (reusable by MCP-Lock, see `docs/mcp_lock_reuse.md`) |
 | `pdr/policy.py` | Classifies edges (PROVENANCED / DEFICIENT_* / UNKNOWN) |
 | `pdr/semver_client.py`, `scripts/semver_helper.js` | npm's own semver, batched |
 | `pdr/sandbox.py` | Outcome names, `overrides`/direct-field patch logic |
@@ -480,6 +491,17 @@ that moves other packages (ripple).
 **Q: Why count edges and not packages?**
 An edge is the real decision point ("this requirement resolved to this
 version"). We also report per-project averages so big projects don't dominate.
+
+**Q: Isn't this already covered by Santos-Grueiro's release-authority paper (arXiv 2606.22593)?**
+No, it is the other end of the supply chain. That paper is producer-side and
+release-time: it compares each release with the one before it (publisher,
+workflow, repository, provenance, signing) across 45,812 releases in five
+registries and builds a review queue of 204 discontinuities. It leaves
+dependency graphs out on purpose. We are consumer-side and resolution-time: our
+unit is a resolved edge in a project's lockfile, and we ask whether that project
+can get provenance within its own ranges through npm's resolver, and whether
+switching breaks it. Both use provenance loss between releases; their rates
+(shares of releases) and ours (shares of resolved edges) are not comparable.
 
 **Q: Couldn't a smarter solver do better than npm?**
 Possibly; MaxNPM-style solvers optimise across the whole tree. We measured what

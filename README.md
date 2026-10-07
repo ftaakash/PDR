@@ -38,6 +38,24 @@ Provenance is **origin evidence, never a safety claim**. A package with provenan
 
 ---
 
+## Where PDR sits: consumer-side, resolution-time
+
+Release-side measurement looks at how each release reached the registry. Santos-Grueiro, [*On Good Authority*](https://arxiv.org/abs/2606.22593) (arXiv 2606.22593, 2026), compares every release with its predecessor across publisher, repository, workflow, provenance and signing evidence in five registries and turns release-path discontinuities, including provenance disappearance, into a review queue. It sets dependency graphs aside on purpose.
+
+PDR studies the other end: the **consumer at resolution time**. Our unit is a resolved edge in a real application lockfile, and we ask how much origin evidence that project can get through the versions its own ranges and npm's resolver allow, and what switching costs.
+
+| | Santos-Grueiro 2026 | PDR |
+|---|---|---|
+| Side of the supply chain | Producer (publication) | Consumer (installation) |
+| When | Release time | Resolution time |
+| Unit | A release vs its immediate predecessor | A resolved dependency edge in a lockfile |
+| User | Reviewer triaging a new release | Project that must live with npm's resolution |
+| Question | Did the release path change? | Can this project obtain provenance, and at what cost? |
+
+The two views share one signal (provenance lost between adjacent releases) and compose: a release-side trigger flags the release, and PDR's funnel says whether consumers could have stayed on a provenance-bearing version. Their rates are shares of sampled releases and ours are shares of resolved edges, so they are not comparable.
+
+---
+
 ## The funnel
 
 <p align="center">
@@ -198,6 +216,7 @@ Layer 3: manual dispatch of `.github/workflows/layer3_scale.yml`. **Never run st
 | [`docs/phase3_protocol.md`](docs/phase3_protocol.md) / [`phase3_micropilot_results.md`](docs/phase3_micropilot_results.md) | Isolation design and micro-pilot (v1–v3) |
 | [`docs/phase2_layer1_results.md`](docs/phase2_layer1_results.md) / [`phase2_layer1_alt_results.md`](docs/phase2_layer1_alt_results.md) | Layer 1, ripple sensitivity, lower-version retry |
 | [`docs/literature_matrix.md`](docs/literature_matrix.md) | Related work (verified sources only) |
+| [`docs/mcp_lock_reuse.md`](docs/mcp_lock_reuse.md) | Which PDR modules MCP-Lock can reuse for attestation parsing |
 
 ## Limitations
 

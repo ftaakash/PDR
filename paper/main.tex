@@ -18,7 +18,7 @@
 
 \begin{document}
 
-\title{Missing Provenance in npm Dependency Trees:\\How Much Can Version Choice Recover?}
+\title{Missing Provenance at Resolution Time:\\A Consumer-Side Study of How Much\\npm Version Choice Can Recover}
 
 \author{\IEEEauthorblockN{Aakash G S}
 \IEEEauthorblockA{\textit{Department of Computer Science and Business Systems} \
@@ -43,7 +43,9 @@ jj3494@srmist.edu.in}
 
 \begin{abstract}
 npm can attach build provenance to published package versions, and tools now
-let projects require it. We ask a practical question: when a resolved
+let projects require it. Recent release-side measurement asks how each release
+reached the registry; we study the other end of the supply chain, the
+consumer at resolution time. We ask a practical question: when a resolved
 dependency lacks provenance, can a project recover it by choosing a different
 version inside the range it already declares, and what does that cost? On
 \SRepos{} randomly sampled, commit-pinned open-source repositories
@@ -63,7 +65,7 @@ public.
 \end{abstract}
 
 \begin{IEEEkeywords}
-software supply chain, npm, build provenance, dependency resolution, empirical study
+software supply chain, npm, build provenance, dependency resolution, consumer-side, empirical study
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -73,6 +75,20 @@ package version a first-class question. npm provenance records, as a signed
 attestation, the source repository and build that produced a published
 version~\cite{npmprovenance2023}. Provenance is \emph{origin evidence}; it is
 not a statement that a package is safe, and we never use it as one.
+
+Most measurement of this evidence is \emph{producer-side}: it looks at
+releases as they are published. Santos-Grueiro~\cite{santos2026authority}
+compares each release with its immediate predecessor across publisher,
+repository, workflow, provenance and signing evidence in five registries, and
+turns public release-path discontinuities, including provenance
+disappearance, into a release-time review queue. That work deliberately sets
+dependency graphs aside as describing consumption rather than production, so
+it does not ask what a \emph{consumer} can do. A project does not choose
+releases one at a time; it declares ranges and lets a resolver pick a whole
+tree. This paper is a \emph{consumer-side, resolution-time} study. Our unit is
+a resolved dependency edge in a real application lockfile, and our question is
+how much origin evidence that project can obtain through the version choices
+its own declared ranges and npm's resolver allow.
 
 Registries and package managers are beginning to let consumers require such
 evidence. A project that enables such a policy will find that most of its
@@ -85,6 +101,10 @@ of the tree, and whether the project still installs and passes its tests.
 
 We measure all three. Our contributions are:
 \begin{itemize}
+\item A consumer-side, resolution-time view of provenance that complements
+  release-side measurement~\cite{santos2026authority}: we measure origin
+  evidence where a project actually acquires it, on resolved lockfile edges,
+  under its own declared ranges and npm's real resolver.
 \item A funnel measurement of provenance recoverability on two corpora
   (\POneRepos{} and \SRepos{} repositories), separating availability, resolver
   acceptance, and behaviour, with edge- and repository-weighted estimates and
@@ -273,6 +293,12 @@ resolver optimise for provenance rather than forcing single candidates). A
 configurable solver such as MaxNPM~\cite{pinckney2023maxnpm} could find
 combinations npm's resolver does not; we measured npm's own behaviour and do
 not claim that better solutions are impossible.
+The two ends of the supply chain also compose. A release-side trigger such as
+provenance disappearance~\cite{santos2026authority} tells a reviewer that a
+release path changed; at resolution time the same event appears as a
+deficient edge, and our funnel says whether the consuming project could have
+stayed on a provenance-bearing version without disturbing its tree. Neither
+view substitutes for the other.
 
 \section{Threats to Validity}
 \emph{Construct.} Provenance presence is read from the registry's current
@@ -302,17 +328,30 @@ He, Vasilescu and K\"astner simulate npm resolution counterfactually to show
 that pinning alone does not prevent supply-chain exposure~\cite{he2025pinning},
 and peer-dependency conflicts can trap the resolver~\cite{wang2025peerspin}.
 On origin evidence, signing adoption has been measured in four registries
-other than npm~\cite{schorlemmer2024signing}; artifact verifiability
-including npm provenance~\cite{solarin2026verifiability}; and changes in
-release authority, including provenance, across ecosystems~\cite{santos2026authority}.
+other than npm~\cite{schorlemmer2024signing}, and artifact verifiability
+including npm provenance~\cite{solarin2026verifiability}. Closest in subject
+is Santos-Grueiro's release-authority study~\cite{santos2026authority}. For
+45,812 releases in npm, PyPI, Maven Central, crates.io and RubyGems (3,427 of
+them npm), it reconstructs a predecessor-aware record of publisher,
+repository, workflow, provenance, signing and mediation evidence and finds 204
+policy-triggering release-path discontinuities that form a bounded review
+queue. Its unit is a package release compared with the previous release of
+the same package, from a purposefully sampled registry cohort; its user is a
+reviewer deciding whether a new release needs attention. Our unit is a
+resolved dependency edge in a sampled application, and our user is the
+project that must live with npm's resolution. The studies answer different
+questions and their rates are not comparable: their npm provenance visibility
+is a share of sampled releases, ours a share of resolved edges. They share one
+signal, provenance loss between adjacent releases, which that study uses as a
+review trigger and which we observe downstream as deficiency.
 In the corpus we searched, no directly matching work was identified that
 measures, on real application lockfiles, whether provenance-bearing versions
 exist within declared ranges and how much of that apparent recovery survives
 npm's resolver, installation and the project's own tests.
 
 \section{Conclusion}
-Version choice recovers provenance for only about \SEndToEnd\% of deficient
-dependency edges in our sample, almost entirely because suitable versions are
+Seen from the consumer at resolution time, version choice recovers provenance
+for only about \SEndToEnd\% of deficient dependency edges in our sample, almost entirely because suitable versions are
 missing or the resolver cannot adopt them without side effects. When it can,
 the switch did not break the projects we could test. Raising provenance
 coverage is therefore mainly a question of publisher adoption and

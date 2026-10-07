@@ -59,7 +59,7 @@ an abstract page was readable, that is stated.
 |---|---|---|---|
 | Schorlemmer et al. *Signing in Four Public Software Package Registries: Quantity, Quality, and Influencing Factors*. IEEE S&P 2024 (arXiv 2401.14635) | https://arxiv.org/abs/2401.14635 (abstract) | Signing prevalence, quality and trends in Maven, PyPI, Docker Hub, Hugging Face; mandates raise quantity, tooling raises quality | Package-level adoption, **npm not covered**; PDR measures consumer-side recoverability |
 | Solarin, Kalu, Davis, Amusuo. *Reproducibility is Not Enough: Artifact Verifiability in Decentralized-Build Package Ecosystems*. arXiv 2608.18180 (2026) | https://arxiv.org/html/2608.18180 (full HTML) | Crates.io, npm, PyPI, RubyGems; for npm, provenance raises rebuild completion from 50.9% to 72.4%, but with the package set held constant the direct gain is 1.5 points; most of the advantage reflects adopting projects' practices | Different construct ("recovery" of source state for rebuilds). Required threat to validity for PDR: provenance-bearing candidates come from projects with different practices (audit v2 condition 6) |
-| Santos-Grueiro. *On Good Authority: Release-Authority Measurement for Registry-Mediated Package Ecosystems*. arXiv 2606.22593 (2026) | https://arxiv.org/abs/2606.22593 (abstract) | 45,812 releases across npm, PyPI, Maven Central, crates.io, RubyGems; predecessor-aware record of publisher, repo, workflow, provenance and signing changes; 204 release-path discontinuities | Overlaps PDR's secondary RQ4 (provenance regression) as detection; does not measure in-range recoverability or resolution effects |
+| Santos-Grueiro. *On Good Authority: Release-Authority Measurement for Registry-Mediated Package Ecosystems*. arXiv 2606.22593 (2026) | https://arxiv.org/abs/2606.22593 (abstract, 2026-10-05); full text v2 (30 Jun 2026) read 2026-10-08 via alphaXiv, body Sections 1-7 and ethics, appendices skimmed | **Producer-side, release-time.** 45,812 releases (3,427 npm) in a purposefully sampled Apr 2024-Jun 2026 cohort across npm, PyPI, Maven Central, crates.io, RubyGems (Go as a boundary adapter); each release compared with its immediate predecessor on publisher, repository, workflow, provenance, signing and mediation; 204 policy-triggering discontinuities form a review queue (npm: 66 triggers). User: a registry analyst or downstream reviewer triaging a new release before payload analysis. Explicitly treats dependency graphs as describing consumption, not production, and leaves them out | **PDR is consumer-side, resolution-time.** Unit = resolved edge in an application lockfile, not a release; asks what origin evidence a project can obtain under its own declared ranges and npm's resolver, and what switching costs (install, scripts, tests). Shared signal: provenance loss between adjacent releases (their trigger; our secondary RQ4 regression scan and, downstream, a deficient edge). Rates not comparable (share of sampled releases vs share of resolved edges) |
 | Peruma, Choy, Lee, De Oliveira Santos. *Understanding npm Developers' Practices, Challenges, and Recommendations for Secure Package Development*. CHASE 2026 (arXiv 2601.20240) | https://arxiv.org/abs/2601.20240 (abstract) | Survey of 75 npm package developers; 40% satisfied with npm security tools | Producer-side perceptions; context only |
 | pnpm `trustPolicy`, danielroe/provenance-action, vlt `reproduce` README | see `docs/audit_v2.md` (opened 2026-10-04, not re-opened 2026-10-05) | Enforcement/detection tooling and package-level adoption counts | Baselines; they block or detect, they do not search for in-range alternatives |
 
@@ -80,13 +80,16 @@ an abstract page was readable, that is stated.
 > Prior work measures how updates flow through npm's semver ranges and how
 > often they break clients (Pinckney et al.; Venturini et al.; He et al.;
 > Rombaut et al.), how pinning interacts with npm's resolver (He, Vasilescu
-> and Kästner), how to compute policy-optimal dependency sets (MaxNPM), and how
+> and Kästner), how to compute policy-optimal dependency sets (MaxNPM), how
 > widely registries carry signatures or provenance (Schorlemmer et al.;
-> Solarin et al.; Santos-Grueiro). In the searched corpus, no directly matching
+> Solarin et al.), and how release-authority evidence, including provenance,
+> changes between adjacent releases at publication time (Santos-Grueiro, a
+> producer-side, release-time study). In the searched corpus, no directly matching
 > work was identified that measures, on real application lockfiles, whether a
 > provenance-bearing version exists within a deficient dependency's declared
 > range and how much of that apparent recovery survives npm's actual resolver,
-> installation, and the repository's own tests.
+> installation, and the repository's own tests, that is, provenance seen from
+> the consumer at resolution time.
 
 Search scope for this pass: general web search plus arXiv, conference and
 institutional pages; no IEEE Xplore / ACM DL full-text access (ACM pages
